@@ -35,9 +35,6 @@ module.exports = [{
   // JavaScript
   entry: [
     './js/theme.js',
-    './css/normalize.css',
-    './css/example.less',
-    './css/st/dev.styl',
     './css/theme.scss'
   ],
   output: {
@@ -56,18 +53,6 @@ module.exports = [{
           "css-loader?sourceMap!postcss!sass-loader?sourceMap"
       )
     }, {
-      test: /\.styl$/,
-      loader: ExtractTextPlugin.extract(
-          "style",
-          "css-loader?sourceMap!postcss!stylus-loader?sourceMap"
-      )
-    }, {
-      test: /\.less$/,
-      loader: ExtractTextPlugin.extract(
-          "style",
-          "css-loader?sourceMap!postcss!less-loader?sourceMap"
-      )
-    }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(
           'style',
@@ -78,11 +63,16 @@ module.exports = [{
       loader: 'file-loader?name=../css/[hash].[ext]'
     }]
   },
+  postcss: function() {
+    return [
+      require('autoprefixer')
+    ]
+  },
   externals: {
     prestashop: 'prestashop'
   },
   plugins: plugins,
   resolve: {
-    extensions: ['', '.js', '.scss', '.styl', '.less', '.css']
+    extensions: ['', '.js', '.scss', '.css']
   }
 }];
