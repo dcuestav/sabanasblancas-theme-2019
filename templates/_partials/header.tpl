@@ -62,20 +62,22 @@
   <div class="header-top">
     <div class="container">
        <div class="row">
-        <div class="col-md-2 d-none d-md-block" id="_desktop_logo">
+        <div class="col text-center" id="_desktop_logo">
             {if $page.page_name == 'index'}
-              <h1>
+              <h1 class="text-center">
                 <a href="{$urls.base_url}">
                   <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
                 </a>
               </h1>
             {else}
-                <a href="{$urls.base_url}">
-                  <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
-                </a>
+              <a href="{$urls.base_url}">
+                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
+              </a>
             {/if}
         </div>
-        <div class="col-md-10 col-sm-12 position-static">
+      </div>
+      <div class="row">
+        <div class="col position-static">
           {hook h='displayTop'}
           <div class="clearfix"></div>
         </div>

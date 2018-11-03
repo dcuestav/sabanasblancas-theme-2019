@@ -26,7 +26,7 @@
   <div class="user-info">
     {if $logged}
       <a
-        class="logout d-none d-md-block"
+        class="logout d-none d-md-inline-block"
         href="{$logout_url}"
         rel="nofollow"
       >
@@ -49,7 +49,7 @@
         rel="nofollow"
       >
         <i class="material-icons">&#xE7FF;</i>
-        <span class="d-none d-md-block">{l s='Sign in' d='Shop.Theme.Actions'}</span>
+        <span class="d-none d-md-inline-block">{l s='Sign in' d='Shop.Theme.Actions'}</span>
       </a>
     {/if}
   </div>
