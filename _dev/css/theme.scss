@@ -1,11 +1,3 @@
-/*
-$body-background-color: #fefefe;
-
-body {
-  background: $body-background-color;
-}
-*/
-
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 @import "~material-design-icons/iconfont/material-icons.css";
@@ -20,5 +12,14 @@ body {
   .right-nav>div {
     display: inline-block;
   }
+
+}
+
+#header #search_widget {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 250px;
+  height: 60px;
 
 }

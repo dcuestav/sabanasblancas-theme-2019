@@ -60,7 +60,7 @@
 
 {block name='header_top'}
   <div class="header-top">
-    <div class="container">
+    <div class="container position-relative">
        <div class="row">
         <div class="col text-center" id="_desktop_logo">
             {if $page.page_name == 'index'}
