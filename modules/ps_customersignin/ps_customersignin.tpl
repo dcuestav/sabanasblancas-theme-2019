@@ -22,7 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="_desktop_user_info">
+<div id="_desktop_user_info" class="ml-3">
   <div class="user-info">
     {if $logged}
       <a
@@ -30,8 +30,8 @@
         href="{$logout_url}"
         rel="nofollow"
       >
-        <i class="material-icons">&#xE7FF;</i>
-        {l s='Sign out' d='Shop.Theme.Actions'}
+        <i class="material-icons position-absolute">&#xE7FF;</i>
+        <span class="pl-4">{l s='Sign out' d='Shop.Theme.Actions'}</span>
       </a>
       <a
         class="account"
@@ -39,8 +39,8 @@
         title="{l s='View my customer account' d='Shop.Theme.Customeraccount'}"
         rel="nofollow"
       >
-        <i class="material-icons d-lg-none logged">&#xE7FF;</i>
-        <span class="d-none d-md-block">{$customerName}</span>
+        <i class="material-icons d-lg-none logged position-absolute">&#xE7FF;</i>
+        <span class="d-none d-md-block pl-4">{$customerName}</span>
       </a>
     {else}
       <a
@@ -48,8 +48,8 @@
         title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}"
         rel="nofollow"
       >
-        <i class="material-icons">&#xE7FF;</i>
-        <span class="d-none d-md-inline-block">{l s='Sign in' d='Shop.Theme.Actions'}</span>
+        <i class="material-icons position-absolute">&#xE7FF;</i>
+        <span class="d-none d-md-inline-block pl-4">{l s='Sign in' d='Shop.Theme.Actions'}</span>
       </a>
     {/if}
   </div>

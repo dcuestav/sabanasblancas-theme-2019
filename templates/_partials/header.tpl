@@ -33,11 +33,11 @@
     <div class="container">
       <!-- Desktop -->
       <div class="d-none d-md-block">
-        <div class="row">
-          <div class="col-md-5 col-xs-12 left-nav d-flex justify-content-start">
+        <div class="row pt-1 pb-1">
+          <div class="col-md-5 col-xs-12">
             {hook h='displayNav1'}
           </div>
-          <div class="col-md-7 right-nav d-flex justify-content-end">
+          <div class="col-md-7 right-nav text-right">
             {hook h='displayNav2'}
           </div>
         </div>
