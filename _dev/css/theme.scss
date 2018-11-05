@@ -21,5 +21,35 @@
   right: 15px;
   width: 250px;
   height: 60px;
+}
 
+// JQuery overrides
+
+body {
+
+  .ui-widget {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  
+  .ui-widget-content {
+    border: 1px solid $border-color;
+    background: $body-bg;
+    color: $body-color;
+    a {
+      color: $body-color;
+    }
+  }
+  
+  .ui-state-focus, 
+  .ui-widget-content .ui-state-focus {
+    border: none;
+    color: $list-group-action-hover-color;
+    text-decoration: none;
+    background: $list-group-hover-bg none;
+  }
+  
+  .ui-menu .ui-menu-item a.ui-state-focus {
+    margin: 0;
+  }
 }

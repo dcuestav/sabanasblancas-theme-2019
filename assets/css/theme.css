@@ -6693,3 +6693,24 @@ a.text-dark:hover, a.text-dark:focus {
   width: 250px;
   height: 60px; }
 
+body .ui-widget {
+  font-family: inherit;
+  font-size: inherit; }
+
+body .ui-widget-content {
+  border: 1px solid #dee2e6;
+  background: #fff;
+  color: #212529; }
+  body .ui-widget-content a {
+    color: #212529; }
+
+body .ui-state-focus,
+body .ui-widget-content .ui-state-focus {
+  border: none;
+  color: #495057;
+  text-decoration: none;
+  background: #f8f9fa none; }
+
+body .ui-menu .ui-menu-item a.ui-state-focus {
+  margin: 0; }
+
