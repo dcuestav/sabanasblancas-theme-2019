@@ -1,11 +1,11 @@
 <div class="d-none d-md-block">
-  <div class="menu main-menu d-flex justify-content-between">
+  <ul class="nav nav-pills nav-fill">
       {foreach from=$menu.children item=node}
         
         {if $node.children|count}
-          <div class="dropdown d-inline-block">
+          <li class="nav-item dropdown">
             <a id="{$node.page_identifier}"
-              class="btn btn-light dropdown-toggle {if $node.current} active {/if}" 
+              class="nav-link dropdown-toggle {if $node.current} active {/if}" 
               href="#" 
               {if $node.open_in_new_window} target="_blank" {/if} 
               role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node.label}
@@ -15,18 +15,20 @@
                   <a class="dropdown-item {if $child.current} active {/if}" href="{$child.url}">{$child.label}</a>
                 {/foreach}
               </div>
-          </div>
+          </li>
 
         {else}
-          <a id="{$node.page_identifier}"
-            class="btn btn-light {if $node.current} active {/if}" 
-            href="{$node.url}" 
-            {if $node.open_in_new_window} target="_blank" {/if} 
-            role="button">{$node.label}</a>
+          <li class="nav-item">
+            <a id="{$node.page_identifier}"
+              class="nav-link {if $node.current} active {/if}" 
+              href="{$node.url}" 
+              {if $node.open_in_new_window} target="_blank" {/if} 
+              role="button">{$node.label}</a>
+          </li>
         {/if}
 
       {/foreach}
-  </div>
+  </ul>
 </div>
 
 
