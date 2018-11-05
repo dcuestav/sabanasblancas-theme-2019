@@ -26,6 +26,9 @@ import 'flexslider/jquery.flexslider'
       return (window.innerWidth < 769) ? 2 :
                 (window.innerWidth < 992) ? 3 : 4;
     }
+
+    $.flexslider.defaults.prevText = '';
+    $.flexslider.defaults.nextText = '';
    
     $window.load(function() {
       $('.flexslider').flexslider({

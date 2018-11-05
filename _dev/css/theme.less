@@ -1,0 +1,39 @@
+@import "../node_modules/flexslider/css/variables.less";
+@font-name:                           'Material Icons';
+@flex-direction-nav-icon-prev:        '';
+@flex-direction-nav-icon-next:        '';
+@import "../node_modules/flexslider/css/mixins.less";
+// @import "../node_modules/flexslider/css/font.less";
+@import "../node_modules/flexslider/css/resets.less";
+@import "../node_modules/flexslider/css/base.less";
+@import "../node_modules/flexslider/css/theme.less";
+@import "../node_modules/flexslider/css/responsive.less";
+
+.flex-direction-nav a {
+    text-shadow: none;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0;
+}
+
+.flex-direction-nav a:before {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid black;
+    border-bottom: none;
+    border-right: none;
+}
+
+.flex-direction-nav a.flex-prev:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.flex-direction-nav a.flex-next:before {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}

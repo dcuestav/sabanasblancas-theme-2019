@@ -6,7 +6,8 @@ module.exports = {
   mode: 'development',
   entry: [
     './js/theme.js',
-    './css/theme.scss'
+    './css/theme.scss',
+    './css/theme.less'
   ],
   output: {
     path: path.resolve(__dirname, "../assets/js"),
@@ -29,7 +30,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
           },
           {
             loader: 'postcss-loader', // Run post css actions
@@ -43,6 +47,24 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'less-loader',
             options: {
               sourceMap: true
             }
