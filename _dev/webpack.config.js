@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: [
     './js/theme.js',
     './css/theme.scss'
