@@ -23,9 +23,9 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section class="featured-products clearfix">
-  <h2 class="h2 products-section-title text-uppercase">
+  <h4 class="products-section-title">
     {l s='Popular Products' d='Shop.Theme.Catalog'}
-  </h2>
+  </h4>
   <div id="featuredProductsCarousel" class="flexslider carousel">
     {* <div class="flex-viewport" style="overflow: hidden; position:relative;"> *}
       <ul class="slides">
