@@ -1,3 +1,37 @@
+<div class="d-none d-md-block">
+  <div class="menu main-menu d-flex justify-content-between">
+      {foreach from=$menu.children item=node}
+        
+        {if $node.children|count}
+          <div class="dropdown d-inline-block">
+            <a id="{$node.page_identifier}"
+              class="btn btn-light dropdown-toggle {if $node.current} active {/if}" 
+              href="#" 
+              {if $node.open_in_new_window} target="_blank" {/if} 
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node.label}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="{$node.page_identifier}">
+                {foreach from=$node.children item=child}
+                  <a class="dropdown-item {if $child.current} active {/if}" href="{$child.url}">{$child.label}</a>
+                {/foreach}
+              </div>
+          </div>
+
+        {else}
+          <a id="{$node.page_identifier}"
+            class="btn btn-light {if $node.current} active {/if}" 
+            href="{$node.url}" 
+            {if $node.open_in_new_window} target="_blank" {/if} 
+            role="button">{$node.label}</a>
+        {/if}
+
+      {/foreach}
+  </div>
+</div>
+
+
+{**
+
 {assign var=_counter value=0}
 {function name="menu" nodes=[] depth=0 parent=null}
     {if $nodes|count}
@@ -11,7 +45,7 @@
                 {if $node.open_in_new_window} target="_blank" {/if}
               >
                 {if $node.children|count}
-                  {* Cannot use page identifier as we can have the same page several times *}
+                  <!-- Cannot use page identifier as we can have the same page several times -->
                   {assign var=_expand_id value=10|mt_rand:100000}
                   <span class="float-xs-right d-lg-none">
                     <span data-target="#top_sub_menu_{$_expand_id}" data-toggle="collapse" class="navbar-toggler collapse-icons">
@@ -37,3 +71,4 @@
     {menu nodes=$menu.children}
     <div class="clearfix"></div>
 </div>
+*}
