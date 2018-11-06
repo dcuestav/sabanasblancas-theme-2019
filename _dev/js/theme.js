@@ -37,7 +37,7 @@ import 'flexslider/jquery.flexslider'
         animationSpeed: 400,
         animationLoop: false,
         itemWidth: 252,
-        itemMargin: 5,
+        itemMargin: 16,
         minItems: 1, // use function to pull in initial value
         maxItems: getGridSize() // use function to pull in initial value
       });

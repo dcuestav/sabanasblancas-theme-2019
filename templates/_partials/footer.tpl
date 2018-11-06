@@ -27,7 +27,9 @@
 {/block}
 
 {block name='hook_footer'}
-  {hook h='displayFooter'}
+  <div class="row">
+    {hook h='displayFooter'}
+  </div>
 {/block}
 
 {block name='hook_footer_after'}
@@ -36,9 +38,6 @@
 
 <p>
   {block name='copyright_link'}
-    <a class="_blank" href="http://www.prestashop.com" target="_blank">
-      {l s='%copyright% %year% - Ecommerce software by %prestashop%'
-      sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
-    </a>
+    <div class="row justify-content-center">© 2019 - Nidara Online S.L. - CIF B12938577</div>
   {/block}
 </p>

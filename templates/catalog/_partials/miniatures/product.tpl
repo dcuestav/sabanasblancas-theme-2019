@@ -5,6 +5,7 @@
     {block name='product_thumbnail'}
       <a href="{$product.url}" class="card-img-top">
         <img
+          class="img-fluid"
           src = "{$product.cover.medium.url}"
           alt = "{$product.cover.legend}"
           data-full-size-image-url = "{$product.cover.large.url}"
@@ -23,7 +24,7 @@
 
       {block name='product_list_actions'}
         <div class="product-list-actions">
-          {if $product.add_to_cart_url}
+          {* {if $product.add_to_cart_url}
               <a
                 class = "add-to-cart"
                 href  = "{$product.add_to_cart_url}"
@@ -32,7 +33,7 @@
                 data-id-product-attribute="{$product.id_product_attribute}"
                 data-link-action="add-to-cart"
               >{l s='Add to cart' d='Shop.Theme.Actions'}</a>
-          {/if}
+          {/if} *}
           {hook h='displayProductListFunctionalButtons' product=$product}
         </div>
       {/block}

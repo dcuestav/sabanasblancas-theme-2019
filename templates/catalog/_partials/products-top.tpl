@@ -22,6 +22,9 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+
+{* Deshabilitado en product-list.tpl *}
+
 <div id="js-product-list-top" class="products-selection">
   {if $listing.pagination.total_items > 1}
     <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.pagination.total_items]}</p>

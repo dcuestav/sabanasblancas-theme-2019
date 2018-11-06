@@ -22,27 +22,29 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<nav class="pagination">
-  {block name='pagination_summary'}
+<nav class="pagination-block d-flex justify-content-center">
+  {* {block name='pagination_summary'}
     {l s='Showing %from%-%to% of %total% item(s)' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items] d='Shop.Theme.Catalog'}
-  {/block}
+  {/block} *}
 
   {block name='pagination_page_list'}
-    <ul>
+    <ul class="pagination">
       {foreach from=$pagination.pages item="page"}
-        <li {if $page.current} class="current" {/if}>
+        <li class="page-item {if $page.current} active {/if}">
           {if $page.type === 'spacer'}
-            <span class="spacer">&hellip;</span>
+            <span class="page-link">&hellip;</span>
           {else}
             <a
               rel="{if $page.type === 'previous'}prev{elseif $page.type === 'next'}next{else}nofollow{/if}"
               href="{$page.url}"
-              class="{['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
+              class="page-link {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
             >
               {if $page.type === 'previous'}
-                {l s='Previous' d='Shop.Theme.Actions'}
+                {* {l s='Previous' d='Shop.Theme.Actions'} *}
+                <i class="material-icons navigate-before">navigate_before</i>
               {elseif $page.type === 'next'}
-                {l s='Next' d='Shop.Theme.Actions'}
+                {* {l s='Next' d='Shop.Theme.Actions'} *}
+                <i class="material-icons navigate-next">navigate_next</i>
               {else}
                 {$page.page}
               {/if}

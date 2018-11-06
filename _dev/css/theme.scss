@@ -2,6 +2,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~material-design-icons/iconfont/material-icons.css";
 
+.container-fluid.max-width {
+  max-width: 1170px;
+}
 
 #header .header-nav {
   border-bottom: 2px solid #f1f1f1;
@@ -22,7 +25,25 @@
   height: 60px;
 }
 
-// JQuery overrides
+.card-img-top {
+  text-align: center;
+}
+
+.card-body {
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+.pagination .navigate-before,
+.pagination .navigate-next {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 14px;
+  top: -2px;
+  left: -5px;
+}
+
+// JQuery UI overrides
 
 body {
 

@@ -23,17 +23,26 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="js-product-list">
-  {foreach from=$listing.products item="product"}
-    {block name='product_miniature'}
-      {include file='catalog/_partials/miniatures/product.tpl' product=$product}
-    {/block}
-  {/foreach}
+  <div class="row">
+    {foreach from=$listing.products item="product"}
+      <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-3 pl-sm-1 pl-md-2 pl-lg-3 pl-xl-4 pr-sm-1 pr-md-2 pr-lg-3 pr-xl-4">
+        {block name='product_miniature'}
+          {include file='catalog/_partials/miniatures/product.tpl' product=$product}
+        {/block}
+      </div>
+    {/foreach}
+  </div>
 
   {block name='pagination'}
     {include file='_partials/pagination.tpl' pagination=$listing.pagination}
   {/block}
 
   {block name='back_to_top'}
-    <div><a href="#header">{l s='Back to top' d='Shop.Theme.Actions'}</a></div>
+    <div class="text-center">
+      <a href="#header">
+        <i class="material-icons position-absolute">keyboard_arrow_up</i>
+        <span class="d-inline-block pl-4">{l s='Back to top' d='Shop.Theme.Actions'}</span>
+      </a>
+    </div>
   {/block}
 </div>

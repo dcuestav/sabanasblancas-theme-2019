@@ -30,7 +30,7 @@
 
 {block name='header_nav'}
   <nav class="header-nav">
-    <div class="container">
+    <div class="container-fluid max-width">
       <!-- Desktop -->
       <div class="d-none d-md-block">
         <div class="row pt-1 pb-1">
@@ -60,7 +60,7 @@
 
 {block name='header_top'}
   <div class="header-top">
-    <div class="container position-relative">
+    <div class="container-fluid max-width position-relative">
        <div class="row">
         <div class="col text-center" id="_desktop_logo">
             {if $page.page_name == 'index'}

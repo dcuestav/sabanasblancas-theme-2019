@@ -6398,6 +6398,9 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+.container-fluid.max-width {
+  max-width: 1170px; }
+
 #header .header-nav {
   border-bottom: 2px solid #f1f1f1;
   margin-bottom: 10px; }
@@ -6411,6 +6414,21 @@ a.text-dark:hover, a.text-dark:focus {
   right: 15px;
   width: 250px;
   height: 60px; }
+
+.card-img-top {
+  text-align: center; }
+
+.card-body {
+  padding: 1rem 0.5rem 0.5rem; }
+
+.pagination .navigate-before,
+.pagination .navigate-next {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 14px;
+  top: -2px;
+  left: -5px; }
 
 body .ui-widget {
   font-family: inherit;
@@ -6718,3 +6736,5 @@ html[xmlns] .flexslider .slides {
   transform: rotate(135deg);
 }
 
+
+/*# sourceMappingURL=theme.css.map*/

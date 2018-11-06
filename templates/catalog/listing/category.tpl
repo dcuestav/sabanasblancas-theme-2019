@@ -26,7 +26,7 @@
 
 {block name='product_list_header'}
 
-  <h1>{$category.name}</h1>
+  {* <h1>{$category.name}</h1> *}
   <div class="category-cover">
     <img src="{$category.image.large.url}" alt="{$category.image.legend}">
   </div>

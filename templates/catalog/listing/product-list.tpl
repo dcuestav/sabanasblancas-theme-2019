@@ -34,13 +34,13 @@
     <section id="products">
       {if $listing.products|count}
 
-        {block name='product_list_top'}
+        {* {block name='product_list_top'}
           {include file='catalog/_partials/products-top.tpl' listing=$listing}
-        {/block}
+        {/block} *}
 
-        {block name='product_list_active_filters'}
+        {* {block name='product_list_active_filters'}
           {$listing.rendered_active_filters nofilter}
-        {/block}
+        {/block} *}
 
         {block name='product_list'}
           {include file='catalog/_partials/products.tpl' listing=$listing}
