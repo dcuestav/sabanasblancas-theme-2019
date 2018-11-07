@@ -28,45 +28,41 @@
     <p id="block-newsletter-label" class="col-md-5 col-xs-12">{l s='Get our latest news and special sales' d='Shop.Theme.Global'}</p>
     <div class="col-md-7 col-xs-12">
       <form action="{$urls.pages.index}#footer" method="post">
-        <div class="row">
-          <div class="col-xs-12">
+        <input type="hidden" name="action" value="0">
+        <div class="form-group">
+          <div class="input-group">
             <input
-              class="btn btn-primary float-xs-right d-none d-sm-block"
-              name="submitNewsletter"
-              type="submit"
-              value="{l s='Subscribe' d='Shop.Theme.Actions'}"
+              class="form-control {if $msg}{if $nw_error}is-invalid{else}is-valid{/if}{/if}"
+              name="email"
+              type="email"
+              value="{$value}"
+              placeholder="{l s='Your email address' d='Shop.Forms.Labels'}"
+              aria-labelledby="block-newsletter-label"
             >
-            <input
-              class="btn btn-primary float-xs-right d-md-none"
-              name="submitNewsletter"
-              type="submit"
-              value="{l s='OK' d='Shop.Theme.Actions'}"
-            >
-            <div class="input-wrapper">
+            <div class="input-group-append">
               <input
-                name="email"
-                type="email"
-                value="{$value}"
-                placeholder="{l s='Your email address' d='Shop.Forms.Labels'}"
-                aria-labelledby="block-newsletter-label"
+                class="btn btn-primary"
+                name="submitNewsletter"
+                type="submit"
+                value="{l s='Subscribe' d='Shop.Theme.Actions'}"
               >
             </div>
-            <input type="hidden" name="action" value="0">
-            <div class="clearfix"></div>
+            {if $msg}
+              <p class="{if $nw_error}invalid-feedback{else}valid-feedback{/if}">
+                {$msg}
+              </p>
+            {/if}
           </div>
-          <div class="col-xs-12">
-              {if $conditions}
-                <p>{$conditions}</p>
-              {/if}
-              {if $msg}
-                <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}">
-                  {$msg}
-                </p>
-              {/if}
-              {if isset($id_module)}
-                {hook h='displayGDPRConsent' id_module=$id_module}
-              {/if}
-          </div>
+        </div>
+        <div class="form-group">
+          {if isset($id_module)}
+            <div class="gdpr-consent">
+              {hook h='displayGDPRConsent' id_module=$id_module}
+            </div>
+          {/if}
+          {if $conditions}
+            <p>{$conditions}</p>
+          {/if}           
         </div>
       </form>
     </div>

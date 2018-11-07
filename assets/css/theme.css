@@ -6415,20 +6415,8 @@ a.text-dark:hover, a.text-dark:focus {
   width: 250px;
   height: 60px; }
 
-.card-img-top {
-  text-align: center; }
-
-.card-body {
-  padding: 1rem 0.5rem 0.5rem; }
-
-.pagination .navigate-before,
-.pagination .navigate-next {
-  display: block;
-  position: relative;
-  height: 20px;
-  width: 14px;
-  top: -2px;
-  left: -5px; }
+.psgdpr_consent_message i {
+  display: none !important; }
 
 .category-description h1,
 #category-description h1 {
@@ -6461,6 +6449,21 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 1076px) {
     .product-grid {
       grid-template-columns: repeat(5, 1fr); } }
+
+.card-img-top {
+  text-align: center; }
+
+.card-body {
+  padding: 1rem 0.5rem 0.5rem; }
+
+.pagination .navigate-before,
+.pagination .navigate-next {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 14px;
+  top: -2px;
+  left: -5px; }
 
 body .ui-widget {
   font-family: inherit;

@@ -53,13 +53,18 @@ global_settings:
   modules:
    to_enable:
      - ps_linklist
+   to_disable:
+     - ps_socialfollow
+     - ps_sharebuttons
+     - ps_currencyselector
+     - ps_imageslider
+     - ps_banner
   hooks:
     modules_to_hook:
       displayNav1:
         - ps_contactinfo
       displayNav2:
         - ps_languageselector
-        - ps_currencyselector
         - ps_customersignin
         - ps_shoppingcart
       displayTop:
@@ -68,14 +73,14 @@ global_settings:
       displayHome:
         - ps_featuredproducts
         - ps_customtext
+      displayFooterBefore:
+        - ps_emailsubscription # oculto
       displayFooter:
         - ps_linklist
         - ps_customeraccountlinks
         - ps_contactinfo
       displaySearch:
         - ps_searchbar
-      displayProductAdditionalInfo:
-        - ps_sharebuttons
       displayReassurance:
         - blockreassurance
       displayOrderConfirmation2:
