@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<li>
+<li class="list-group-item">
   <a href="{url entity='module' name='ps_emailalerts' controller='account'}" title="{l s='My alerts' d='Shop.Theme.Catalog'}">
     {l s='My alerts' d='Shop.Theme.Catalog'}
   </a>
