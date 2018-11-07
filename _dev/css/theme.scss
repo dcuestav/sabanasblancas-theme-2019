@@ -43,6 +43,44 @@
   left: -5px;
 }
 
+// Category
+
+// TODO: Hay que eliminar el h1 de la descripción de las categorías o convertirlo en un subtítulo
+.category-description h1,
+#category-description h1 { 
+  display: none !important;
+}
+
+.category-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 546px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 811px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 281px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 546px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 811px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1076px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 // JQuery UI overrides
 
 body {

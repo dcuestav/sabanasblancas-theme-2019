@@ -23,15 +23,15 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div id="js-product-list">
-  <div class="row">
+  <ul class="product-grid list-unstyled">
     {foreach from=$listing.products item="product"}
-      <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-3 pl-sm-1 pl-md-2 pl-lg-3 pl-xl-4 pr-sm-1 pr-md-2 pr-lg-3 pr-xl-4">
+      <li>
         {block name='product_miniature'}
           {include file='catalog/_partials/miniatures/product.tpl' product=$product}
         {/block}
-      </div>
+      </li>
     {/foreach}
-  </div>
+  </ul>
 
   {block name='pagination'}
     {include file='_partials/pagination.tpl' pagination=$listing.pagination}
