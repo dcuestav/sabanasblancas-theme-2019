@@ -12,7 +12,8 @@ import 'bootstrap/js/dist/modal';
 // import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/tooltip';
 
-import 'flexslider/jquery.flexslider'
+import 'flexslider/jquery.flexslider';
+import './product-detail'
 
 
 (function() {

@@ -29,16 +29,16 @@
         {assign var=imagesCount value=$product.images|count}
         <figure>
           <img class="js-modal-product-cover product-cover-modal" width="{$product.cover.large.width}" src="{$product.cover.large.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
-          <figcaption class="image-caption">
+          {* <figcaption class="image-caption">
           {block name='product_description_short'}
             <div id="product-description-short" itemprop="description">{$product.description_short nofilter}</div>
           {/block}
-        </figcaption>
+        </figcaption> *}
         </figure>
         <aside id="thumbnails" class="thumbnails js-thumbnails text-sm-center">
           {block name='product_images'}
             <div class="js-modal-mask mask {if $imagesCount <= 5} nomargin {/if}">
-              <ul class="product-images js-modal-product-images">
+              <ul class="product-images js-modal-product-images list-unstyled">
                 {foreach from=$product.images item=image}
                   <li class="thumb-container">
                     <img data-image-large-src="{$image.large.url}" class="thumb js-modal-thumb" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">

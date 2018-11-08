@@ -3920,18 +3920,18 @@ button.close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 600px;
     margin: 1.75rem auto; }
   .modal-dialog-centered {
     min-height: calc(100% - (1.75rem * 2)); }
     .modal-dialog-centered::before {
       height: calc(100vh - (1.75rem * 2)); }
   .modal-sm {
-    max-width: 300px; } }
+    max-width: 600px; } }
 
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 800px; } }
+    max-width: 600px; } }
 
 .tooltip {
   position: absolute;
@@ -6418,6 +6418,10 @@ a.text-dark:hover, a.text-dark:focus {
 .psgdpr_consent_message i {
   display: none !important; }
 
+.product-accessories,
+.featured-products {
+  overflow-x: hidden; }
+
 .category-description h1,
 #category-description h1 {
   display: none !important; }
@@ -6465,19 +6469,55 @@ a.text-dark:hover, a.text-dark:focus {
   top: -2px;
   left: -5px; }
 
-.product-detail-layout {
-  display: flex;
-  flex-direction: row-reverse; }
-  .product-detail-layout .product-detail-left-column {
-    flex-grow: 1; }
-  .product-detail-layout .product-detail-right-column {
-    margin-left: 30px;
-    width: 600px; }
-
 .images-container {
   position: relative;
-  max-width: 452px;
+  max-width: 500px;
   margin: 0 auto; }
+  .images-container .product-images {
+    max-height: 120px;
+    overflow-y: hidden;
+    white-space: nowrap; }
+  .images-container .product-cover {
+    margin-bottom: 1.25rem;
+    position: relative; }
+    .images-container .product-cover .layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      cursor: pointer; }
+      .images-container .product-cover .layer:hover {
+        opacity: 1; }
+      .images-container .product-cover .layer .zoom-in {
+        font-size: 6.25rem;
+        color: #7a7a7a; }
+
+.thumb.selected,
+.thumb:hover {
+  border: 3px solid #6610f2;
+  cursor: pointer; }
+
+.modal.show .modal-content {
+  background: transparent;
+  border: none;
+  padding: 0;
+  max-width: 600px; }
+  .modal.show .modal-content .modal-body {
+    margin-left: -30%;
+    display: flex; }
+    .modal.show .modal-content .modal-body .product-images {
+      margin-left: 2.5rem; }
+    .modal.show .modal-content .modal-body .product-images img {
+      width: 9.25rem;
+      margin-bottom: 0.625rem; }
 
 body .ui-widget {
   font-family: inherit;
