@@ -23,19 +23,19 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {if $product.show_price}
-  <div class="product-prices">
+  <div class="product-prices mb-3">
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="product-discount">
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="regular-price">{$product.regular_price}</span>
+          <span class="regular-price text-muted"><s>{$product.regular_price}</s></span>
         </div>
       {/if}
     {/block}
 
     {block name='product_price'}
       <div
-        class="product-price h5 {if $product.has_discount}has-discount{/if}"
+        class="product-price h1 {if $product.has_discount}has-discount{/if}"
         itemprop="offers"
         itemscope
         itemtype="https://schema.org/Offer"
@@ -48,9 +48,9 @@
 
           {if $product.has_discount}
             {if $product.discount_type === 'percentage'}
-              <span class="discount discount-percentage">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
+              <span class="discount discount-percentage badge badge-secondary">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
             {else}
-              <span class="discount discount-amount">
+              <span class="discount discount-amount badge badge-secondary">
                   {l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]}
               </span>
             {/if}
@@ -77,7 +77,7 @@
       {/if}
     {/block}
 
-    {block name='product_ecotax'}
+    {* {block name='product_ecotax'}
       {if $product.ecotax.amount > 0}
         <p class="price-ecotax">{l s='Including %amount% for ecotax' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.ecotax.value]}
           {if $product.has_discount}
@@ -85,11 +85,11 @@
           {/if}
         </p>
       {/if}
-    {/block}
+    {/block} *}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-    <div class="tax-shipping-delivery-label">
+    <div class="tax-shipping-delivery-label text-muted">
       {if $configuration.display_taxes_label}
         {$product.labels.tax_long}
       {/if}

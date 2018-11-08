@@ -1,0 +1,89 @@
+// Prices
+
+.has-discount .discount {
+    opacity: .7;
+}
+
+.qty-space {
+    display: inline-block;
+    width: calc(100% - 110px);
+    input {
+        text-align: center;
+    }
+}
+
+.qty-button-space {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+// Gallery
+
+.images-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+
+    .product-images {
+        max-height: 120px;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .product-cover {
+        margin-bottom: 1.25rem;
+        position: relative;
+
+        .layer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background: hsla(0,0%,100%,.7);
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .zoom-in {
+            font-size: 6.25rem;
+            color: #7a7a7a;
+        }
+        }
+    }
+}
+
+.thumb.selected, 
+.thumb:hover {
+    border: 3px solid $indigo;
+    cursor: pointer;
+}
+
+.modal.show {
+.modal-content {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-width: 600px;
+    .modal-body {
+        margin-left: -30%;
+        display: flex;
+        .product-images {
+            margin-left: 2.5rem;
+        }
+        .product-images img {
+            width: 9.25rem;
+            margin-bottom: 0.625rem;
+        }
+        }
+    }
+}

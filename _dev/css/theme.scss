@@ -1,6 +1,7 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 @import "~material-design-icons/iconfont/material-icons.css";
+@import "product-detail";
 
 .container-fluid.max-width {
   max-width: 1350px;
@@ -27,6 +28,12 @@
 
 .psgdpr_consent_message i {
   display: none !important;
+}
+
+.btn i.material-icons {
+  margin: -3px;
+  position: relative;
+  top: 4px;
 }
 
 .product-accessories, 
@@ -74,13 +81,19 @@
   }
 }
 
-.card-img-top {
-  text-align: center;
+.featured-products,
+.product-accessories {
+
+  .card-img-top {
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 1rem 0.5rem 0.5rem;
+  }
 }
 
-.card-body {
-  padding: 1rem 0.5rem 0.5rem;
-}
+
 
 .pagination .navigate-before,
 .pagination .navigate-next {
@@ -90,76 +103,6 @@
   width: 14px;
   top: -2px;
   left: -5px;
-}
-
-// Product detail
-
-.images-container {
-  position: relative;
-  max-width: 500px;
-  margin: 0 auto;
-
-  .product-images {
-    max-height: 120px;
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
-
-  .product-cover {
-    margin-bottom: 1.25rem;
-    position: relative;
-
-    .layer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      background: hsla(0,0%,100%,.7);
-      text-align: center;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 1;
-      }
-
-      .zoom-in {
-        font-size: 6.25rem;
-        color: #7a7a7a;
-      }
-    }
-  }
-}
-
-.thumb.selected, 
-.thumb:hover {
-  border: 3px solid $indigo;
-  cursor: pointer;
-}
-
-.modal.show {
-  .modal-content {
-    background: transparent;
-    border: none;
-    padding: 0;
-    max-width: 600px;
-    .modal-body {
-      margin-left: -30%;
-      display: flex;
-      .product-images {
-        margin-left: 2.5rem;
-      }
-      .product-images img {
-        width: 9.25rem;
-        margin-bottom: 0.625rem;
-      }
-    }
-  }
 }
 
 // JQuery UI overrides

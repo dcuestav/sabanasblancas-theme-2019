@@ -24,11 +24,39 @@
  *}
 <div class="product-add-to-cart">
   {if !$configuration.is_catalog}
-    <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
+
+    <div class="form-row mb-3">
+      {* <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label> *}
+      <div class="col-6">
+        <div class="qty-button-space">
+          <button class="btn btn-secondary rounded-circle" type="button" id="button_remove_qty"><i class="material-icons">remove</i></button>
+        </div>
+        <div class="qty-space">
+          <input
+            type="number"
+            name="qty"
+            id="quantity_wanted"
+            value="{$product.quantity_wanted}"
+            class="form-control"
+            min="{$product.minimal_quantity}"
+            aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
+          >
+        </div>
+        <div class="qty-button-space">
+          <button class="btn btn-secondary rounded-circle" type="button" id="button_add_qty"><i class="material-icons">add</i></button>
+        </div>
+      </div>
+      <div class="col-6">
+      </div>
+    </div>
+
+
+
+    
 
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
-        <div class="qty">
+        {* <div class="qty">
           <input
             type="text"
             name="qty"
@@ -38,11 +66,11 @@
             min="{$product.minimal_quantity}"
             aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
           >
-        </div>
+        </div> *}
 
         <div class="add">
           <button
-            class="btn btn-primary add-to-cart"
+            class="btn btn-lg btn-block btn-primary add-to-cart"
             data-button-action="add-to-cart"
             type="submit"
             {if !$product.add_to_cart_url}
