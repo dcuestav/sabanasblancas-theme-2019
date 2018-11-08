@@ -6399,7 +6399,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 .container-fluid.max-width {
-  max-width: 1170px; }
+  max-width: 1350px; }
 
 #header .header-nav {
   border-bottom: 2px solid #f1f1f1;
@@ -6464,6 +6464,20 @@ a.text-dark:hover, a.text-dark:focus {
   width: 14px;
   top: -2px;
   left: -5px; }
+
+.product-detail-layout {
+  display: flex;
+  flex-direction: row-reverse; }
+  .product-detail-layout .product-detail-left-column {
+    flex-grow: 1; }
+  .product-detail-layout .product-detail-right-column {
+    margin-left: 30px;
+    width: 600px; }
+
+.images-container {
+  position: relative;
+  max-width: 452px;
+  margin: 0 auto; }
 
 body .ui-widget {
   font-family: inherit;

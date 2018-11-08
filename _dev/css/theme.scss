@@ -3,7 +3,7 @@
 @import "~material-design-icons/iconfont/material-icons.css";
 
 .container-fluid.max-width {
-  max-width: 1170px;
+  max-width: 1350px;
 }
 
 #header .header-nav {
@@ -85,6 +85,27 @@
   width: 14px;
   top: -2px;
   left: -5px;
+}
+
+// Product detail
+
+.product-detail-layout {
+  display: flex;
+  flex-direction: row-reverse;
+  
+  .product-detail-left-column {
+    flex-grow: 1;
+  }
+  .product-detail-right-column {
+    margin-left: 30px;
+    width: 600px;
+  }
+}
+
+.images-container {
+  position: relative;
+  max-width: 452px;
+  margin: 0 auto;
 }
 
 // JQuery UI overrides

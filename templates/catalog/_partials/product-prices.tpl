@@ -1,5 +1,5 @@
 {**
- * 2007-2017 PrestaShop
+ * 2007-2018 PrestaShop
  *
  * NOTICE OF LICENSE
  *
@@ -18,7 +18,7 @@
  * needs please refer to http://www.prestashop.com for more information.
  *
  * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2017 PrestaShop SA
+ * @copyright 2007-2018 PrestaShop SA
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
@@ -26,30 +26,43 @@
   <div class="product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
-        <p class="product-discount">
+        <div class="product-discount">
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
           <span class="regular-price">{$product.regular_price}</span>
-        </p>
+        </div>
       {/if}
     {/block}
 
     {block name='product_price'}
-      <p class="product-price {if $product.has_discount}has-discount{/if}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-        <link itemprop="availability" href="https://schema.org/InStock"/>
-        <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
-        {if $configuration.display_taxes_label}
-         <small>{$product.labels.tax_short}</small>
-        {/if}
+      <div
+        class="product-price h5 {if $product.has_discount}has-discount{/if}"
+        itemprop="offers"
+        itemscope
+        itemtype="https://schema.org/Offer"
+      >
+        <link itemprop="availability" href="{$product.seo_availability}"/>
         <meta itemprop="priceCurrency" content="{$currency.iso_code}">
-        {hook h='displayProductPriceBlock' product=$product type="price"}
-        {if $product.has_discount}
-          {if $product.discount_type === 'percentage'}
-            <span class="discount-percentage">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage]}</span>
-          {else}
-            <span class="discount-amount">{l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_amount]}</span>
+
+        <div class="current-price">
+          <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
+
+          {if $product.has_discount}
+            {if $product.discount_type === 'percentage'}
+              <span class="discount discount-percentage">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
+            {else}
+              <span class="discount discount-amount">
+                  {l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]}
+              </span>
+            {/if}
           {/if}
-        {/if}
-      </p>
+        </div>
+
+        {block name='product_unit_price'}
+          {if $displayUnitPrice}
+            <p class="product-unit-price sub">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
+          {/if}
+        {/block}
+      </div>
     {/block}
 
     {block name='product_without_taxes'}
@@ -74,17 +87,26 @@
       {/if}
     {/block}
 
-    {block name='product_unit_price'}
-      {if $displayUnitPrice}
-        <p class="product-unit-price">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
-      {/if}
-    {/block}
-
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
-    {hook h='displayProductPriceBlock' product=$product type="after_price"}
 
-    {if $product.delivery_information}
-      <span class="delivery-information">{$product.delivery_information}</span>
-    {/if}
+    <div class="tax-shipping-delivery-label">
+      {if $configuration.display_taxes_label}
+        {$product.labels.tax_long}
+      {/if}
+      {hook h='displayProductPriceBlock' product=$product type="price"}
+      {hook h='displayProductPriceBlock' product=$product type="after_price"}
+      {if $product.additional_delivery_times == 1}
+        {if $product.delivery_information}
+          <span class="delivery-information">{$product.delivery_information}</span>
+        {/if}
+      {elseif $product.additional_delivery_times == 2}
+        {if $product.quantity > 0}
+          <span class="delivery-information">{$product.delivery_in_stock}</span>
+        {* Out of stock message should not be displayed if customer can't order the product. *}
+        {elseif $product.quantity == 0 && $product.add_to_cart_url}
+          <span class="delivery-information">{$product.delivery_out_stock}</span>
+        {/if}
+      {/if}
+    </div>
   </div>
 {/if}
