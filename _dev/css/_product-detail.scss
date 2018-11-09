@@ -4,18 +4,19 @@
     opacity: .7;
 }
 
-.qty-space {
-    display: inline-block;
-    width: calc(100% - 110px);
-    input {
-        text-align: center;
-    }
-}
+.quantity-button {
 
-.qty-button-space {
-    display: inline-block;
-    width: 50px;
-    text-align: center;
+    button i.material-icons {
+        margin: -6px;
+        top: 6px;
+    }
+
+    input {
+        margin: 0 10px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+    }
 }
 
 // Gallery

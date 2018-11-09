@@ -6401,16 +6401,15 @@ a.text-dark:hover, a.text-dark:focus {
 .has-discount .discount {
   opacity: .7; }
 
-.qty-space {
-  display: inline-block;
-  width: calc(100% - 110px); }
-  .qty-space input {
-    text-align: center; }
+.quantity-button button i.material-icons {
+  margin: -6px;
+  top: 6px; }
 
-.qty-button-space {
-  display: inline-block;
-  width: 50px;
-  text-align: center; }
+.quantity-button input {
+  margin: 0 10px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600; }
 
 .images-container {
   position: relative;
