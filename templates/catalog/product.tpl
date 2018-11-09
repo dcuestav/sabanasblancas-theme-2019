@@ -50,6 +50,11 @@
   <section id="main" itemscope itemtype="https://schema.org/Product">
     <meta itemprop="url" content="{$product.url}">
 
+    {* DEBUG *}
+    <div id="product-debug" class="hidden" data-product="{$product|json_encode}"></div>
+    <script>productDebug = JSON.parse(document.getElementById('product-debug').dataset.product);console.log(productDebug);</script>
+    {* FIN DEBUG *}
+
     <div class="row">
       <div class="col-md-6">
         {block name='page_content_container'}

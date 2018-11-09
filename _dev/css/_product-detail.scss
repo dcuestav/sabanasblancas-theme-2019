@@ -1,3 +1,59 @@
+// Variants
+
+.product-variants {
+
+    .color-option {
+
+        .input-color {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+
+        .input-color:checked+span, 
+        .input-color:hover+span, 
+        .input-radio:checked+span, 
+        .input-radio:hover+span {
+            border: 2px solid #232323;
+        }
+
+        .color {
+            margin-left: 0;
+            margin-top: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            display: inline-block;
+            margin: .3125rem;
+            // box-shadow: 2px 2px 4px 0 rgba(0,0,0,.2);
+            border: 1px solid rgba(0,0,0,.5);
+            cursor: pointer;
+            background-size: contain;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        &.selected label {
+            font-weight: 600;
+        }
+    }
+
+    .radio-option {
+
+        label, input {
+            cursor: pointer;
+        }
+
+        &.selected label {
+            font-weight: 600;
+        }
+    }
+
+}
+
 // Prices
 
 .has-discount .discount {
