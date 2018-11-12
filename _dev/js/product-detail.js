@@ -20,7 +20,12 @@
 
     $('#quantity_wanted').change(updateTotalPrice);
 
-    function productImagesActions() {
+    function productImagesActions(data) {
+
+        if (data) {
+            $('#product-modal').replaceWith(data.product_images_modal);
+        }
+
         $('.js-thumb').click(function(){
             var largeImage = $(this).attr('data-image-large-src');
             $('.js-qv-product-cover, .js-modal-product-cover').attr('src', largeImage);
@@ -32,6 +37,7 @@
             var largeImage = $(this).attr('data-image-large-src');
             $('.js-modal-product-cover').attr('src', largeImage);
         });
+        
     }
 
     function formatNumber(value) {
