@@ -51,8 +51,8 @@
     <meta itemprop="url" content="{$product.url}">
 
     {* DEBUG *}
-    <div id="product-debug" class="hidden" data-product="{$product|json_encode}"></div>
-    <script>productDebug = JSON.parse(document.getElementById('product-debug').dataset.product);console.log(productDebug);</script>
+    {* <div id="product-debug" class="hidden" data-product="{$product|json_encode}"></div>
+    <script>productDebug = JSON.parse(document.getElementById('product-debug').dataset.product);console.log(productDebug);</script> *}
     {* FIN DEBUG *}
 
     <div class="row">
@@ -80,7 +80,7 @@
         </div>
         <div class="col-md-6">
 
-          <div class="card bg-light mb-4">
+          <div class="card bg-light mb-3">
             <div class="card-header">
               {block name='page_header_container'}
                 {block name='page_header'}
