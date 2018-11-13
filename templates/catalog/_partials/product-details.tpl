@@ -1,4 +1,5 @@
 <div id="product-details" data-product="{$product|json_encode}">
+  <h4 class="section-title">{l s='Product Details' d='Shop.Theme.Catalog'}</h4>
   {block name='product_reference'}
     {if isset($product_manufacturer->id)}
       <div>

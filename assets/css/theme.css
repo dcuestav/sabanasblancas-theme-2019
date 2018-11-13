@@ -6539,6 +6539,9 @@ a.text-dark:hover, a.text-dark:focus {
 .featured-products {
   overflow-x: hidden; }
 
+.section-title {
+  border-bottom: 1px solid #adb5bd; }
+
 .category-description h1,
 #category-description h1 {
   display: none !important; }

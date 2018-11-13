@@ -41,9 +41,13 @@
   overflow-x: hidden;
 }
 
+.section-title {
+  border-bottom: 1px solid $gray-500;
+}
+
 // Category
 
-// TODO: Hay que eliminar el h1 de la descripción de las categorías o convertirlo en un subtítulo
+// TODO: Hay que eliminar el h1 de dentro de la descripción de las categorías o convertirlo en un subtítulo
 .category-description h1,
 #category-description h1 { 
   display: none !important;
@@ -92,8 +96,6 @@
     padding: 1rem 0.5rem 0.5rem;
   }
 }
-
-
 
 .pagination .navigate-before,
 .pagination .navigate-next {
