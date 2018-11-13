@@ -6398,6 +6398,10 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+.product-flags {
+  position: relative;
+  top: -2px; }
+
 .product-variants .color-option .input-color {
   position: absolute;
   opacity: 0;
@@ -6436,6 +6440,25 @@ a.text-dark:hover, a.text-dark:focus {
 
 .has-discount .discount {
   opacity: .7; }
+
+.product-prices .main-price {
+  position: relative;
+  top: -0.75em; }
+  .product-prices .main-price .product-price {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 700;
+    color: #6610f2; }
+
+.product-prices .price-info-column {
+  color: #495057;
+  text-align: center; }
+  .product-prices .price-info-column .price-info-column-text {
+    font-size: 0.75em; }
+  .product-prices .price-info-column .price-info-column-data {
+    font-size: 1.25em;
+    font-weight: 700;
+    line-height: 2em; }
 
 .quantity-button button i.material-icons {
   margin: -6px;
@@ -6534,6 +6557,13 @@ a.text-dark:hover, a.text-dark:focus {
   margin: -3px;
   position: relative;
   top: 4px; }
+
+.icon-adjust {
+  position: relative; }
+  .icon-adjust i.material-icons {
+    position: absolute; }
+  .icon-adjust i.material-icons + * {
+    margin-left: 2em; }
 
 .product-accessories,
 .featured-products {

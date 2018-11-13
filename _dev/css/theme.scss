@@ -36,6 +36,16 @@
   top: 4px;
 }
 
+.icon-adjust {
+  position: relative;
+  i.material-icons {
+    position: absolute;
+  }
+  i.material-icons + * {
+    margin-left: 2em;
+  }
+}
+
 .product-accessories, 
 .featured-products {
   overflow-x: hidden;

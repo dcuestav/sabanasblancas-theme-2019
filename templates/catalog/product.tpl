@@ -84,22 +84,24 @@
           <div class="card-header">
             {block name='page_header_container'}
               {block name='page_header'}
-                <h1 class="h3" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+                <h1 class="h3 d-inline" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
               {/block}
             {/block}
             {block name='product_flags'}
-              <ul class="product-flags list-unstyled h5">
+              <ul class="product-flags list-unstyled h5 d-inline-block ml-2 mt-2 mb-0">
                 {foreach from=$product.flags item=flag}
                   <li class="badge badge-success {$flag.type}">{$flag.label}</li>
                 {/foreach}
               </ul>
             {/block}
           </div>
+
           <div class="card-body">
+
             {block name='product_prices'}
               {include file='catalog/_partials/product-prices.tpl'}
             {/block}
-
+            
             <div class="product-actions">
 
               {block name='product_buy'}
@@ -125,18 +127,14 @@
                     {/if}
                   {/block}
 
-                  {block name='product_discounts'}
+                  {* {block name='product_discounts'}
                     {include file='catalog/_partials/product-discounts.tpl'}
-                  {/block}
+                  {/block} *}
 
                   <hr class="mb-4 mt-4">
 
                   {block name='product_add_to_cart'}
                     {include file='catalog/_partials/product-add-to-cart.tpl'}
-                  {/block}
-
-                  {block name='product_additional_info'}
-                    {include file='catalog/_partials/product-additional-info.tpl'}
                   {/block}
 
                   {* Input to refresh product HTML removed, block kept for compatibility with themes *}
@@ -192,6 +190,10 @@
                 </section>
               </div>
             {/if}
+          {/block}
+
+          {block name='product_additional_info'}
+            {include file='catalog/_partials/product-additional-info.tpl'}
           {/block}
 
           {foreach from=$product.extraContent item=extra key=extraKey}
