@@ -42,7 +42,7 @@
           </div>
 
         {elseif $group.group_type == 'color'}
-          <div class="d-flex flex-row">
+          <div class="d-flex flex-wrap">
             {foreach from=$group.attributes key=id_attribute item=group_attribute}
               <div class="form-check form-check-inline color-option {if $group_attribute.selected}selected{/if}">
                 <input id="attribute-{$id_attribute_group}-{$id_attribute}" class="form-check-input input-color" type="radio" data-product-attribute="{$id_attribute_group}"

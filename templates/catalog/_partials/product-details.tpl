@@ -1,4 +1,6 @@
 <div id="product-details" data-product="{$product|json_encode}">
+
+  <section class="mb-3">
   <h4 class="section-title">{l s='Product Details' d='Shop.Theme.Catalog'}</h4>
   {block name='product_reference'}
     {if isset($product_manufacturer->id)}
@@ -22,6 +24,16 @@
       </div>
     {/if}
   {/block}
+
+  {* {block name='product_condition'}
+    {if $product.condition}
+      <div class="product-condition">
+        <label class="label">{l s='Condition' d='Shop.Theme.Catalog'} </label>
+        <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
+        <span>{$product.condition.label}</span>
+      </div>
+    {/if}
+  {/block} *}
 
   {block name='product_quantities'}
     {if $product.show_quantities}
@@ -47,16 +59,20 @@
     </div>
   {/block}
 
+  </section>
+
   {block name='product_features'}
     {if $product.grouped_features}
       <section>
-        <h3>{l s='Data sheet' d='Shop.Theme.Catalog'}</h3>
-        <dl>
+        <h4 class="section-title">{l s='Data sheet' d='Shop.Theme.Catalog'}</h4>
+        <div class="list-group">
           {foreach from=$product.grouped_features item=feature}
-            <dt>{$feature.name}</dt>
-            <dd>{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
+            <div class="list-group-item list-group-item-action">
+              <div class="d-inline-block w-50">{$feature.name}</div>
+              <div class="d-inline-block"><strong>{$feature.value|escape:'htmlall'|nl2br nofilter}</strong></div>
+            </div>
           {/foreach}
-        </dl>
+        </div>
       </section>
     {/if}
   {/block}
@@ -76,13 +92,4 @@
     {/if}
   {/block}
 
-  {block name='product_condition'}
-    {if $product.condition}
-      <div class="product-condition">
-        <label class="label">{l s='Condition' d='Shop.Theme.Catalog'} </label>
-        <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
-        <span>{$product.condition.label}</span>
-      </div>
-    {/if}
-  {/block}
 </div>
