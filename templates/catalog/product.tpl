@@ -80,8 +80,13 @@
       </div>
       <div class="col-md-6">
 
-        <div class="card bg-light mb-3">
+        <div class="card product-details-card bg-light mb-3">
           <div class="card-header">
+            {if isset($manufacturer_image_url)}
+              <a href="{$product_brand_url}" class="brand-logo">
+                <img src="{$manufacturer_image_url}"/>
+              </a>
+            {/if}
             {block name='page_header_container'}
               {block name='page_header'}
                 <h1 class="h3 d-inline" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>

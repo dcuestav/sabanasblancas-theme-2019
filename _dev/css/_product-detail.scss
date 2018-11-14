@@ -1,7 +1,22 @@
-.product-flags {
-    position: relative;
-    top: -2px;
+.product-details-card {
+    .card-header {
+        a.brand-logo {
+            float: right;
+            margin: -0.25rem -0.75rem;
+
+            img {
+                max-height: 60px;
+                max-width: 120px;
+            }
+        }
+    }
+
+    .product-flags {
+        position: relative;
+        top: -2px;
+    }
 }
+
 
 // Variants
 

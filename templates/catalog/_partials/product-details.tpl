@@ -5,16 +5,10 @@
   {block name='product_reference'}
     {if isset($product_manufacturer->id)}
       <div>
-        {if isset($manufacturer_image_url)}
-          <a href="{$product_brand_url}">
-            <img src="{$manufacturer_image_url}" />
-          </a>
-        {else}
-          <label>{l s='Brand' d='Shop.Theme.Catalog'}</label>
-          <span>
-            <a href="{$product_brand_url}">{$product_manufacturer->name}</a>
-          </span>
-        {/if}
+        <label>{l s='Brand' d='Shop.Theme.Catalog'}</label>
+        <span>
+          <a href="{$product_brand_url}">{$product_manufacturer->name}</a>
+        </span>
       </div>
     {/if}
     {if $product.reference}
