@@ -1,11 +1,11 @@
 {if $product.show_price}
   <div class="product-prices mb-3">
 
-    <div class="row">
+    <div class="d-flex justify-content-around">
 
       {* PRECIO FINAL Y ORIGINAL *}
       {block name='product_price'}
-        <div class="col price-info-column main-price">
+        <div class="price-info-column main-price">
           <div
             class="product-price"
             itemprop="offers"
@@ -26,7 +26,7 @@
         </div>
 
         {if $product.has_discount}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <div class="price-info-column-text">{l s='Before' d='Shop.Theme.Catalog'}</div>
             <div class="price-info-column-data">
               {hook h='displayProductPriceBlock' product=$product type="old_price"}
@@ -39,7 +39,7 @@
       {* DESCUENTO *}
       {block name='product_discount'}
         {if $product.has_discount}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <div class="price-info-column-text">{l s='Discount' d='Shop.Theme.Catalog'}</div>
             <div class="price-info-column-data">
               {if $product.discount_type === 'percentage'}
@@ -55,7 +55,7 @@
       {* PRECIO UNITARIO *}
       {block name='product_unit_price'}
         {if $displayUnitPrice}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <div class="price-info-column-text">{l s='Per unit' d='Shop.Theme.Catalog'}</div>
             <div class="price-info-column-data">
               <span class="product-unit-price sub">{$product.unit_price_full}</span>
@@ -67,7 +67,7 @@
       {* PRECIO SIN IMPUESTOS *}
       {block name='product_without_taxes'}
         {if $priceDisplay == 2}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <div class="price-info-column-text">{l s='Tax. excl.' d='Shop.Theme.Catalog'}</div>
             <div class="price-info-column-data">
               <span class="product-without-taxes">{$product.price_tax_exc}</span>
@@ -79,7 +79,7 @@
       {* PRECIO PACK *}
       {block name='product_pack_price'}
         {if $displayPackPrice}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <div class="price-info-column-text">{l s='Separate' d='Shop.Theme.Catalog'}</div>
             <div class="price-info-column-data">
               <span>{$noPackPrice}</span>
@@ -91,7 +91,7 @@
       {* ECOTASA *}
       {* {block name='product_ecotax'}
         {if $product.ecotax.amount > 0}
-          <div class="col price-info-column">
+          <div class="price-info-column">
             <p class="price-ecotax price-info-column-text">{l s='Including %amount% for ecotax' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.ecotax.value]}
               {if $product.has_discount}
                 {l s='(not impacted by the discount)' d='Shop.Theme.Catalog'}
@@ -120,8 +120,8 @@
       delivery_out_stock: {$product.delivery_out_stock}<br>
     </div> *}
 
-    <div class="row">
-      <div class="col text-center">
+    <div class="d-flex justify-content-around">
+      <div class="">
           {if $product.show_availability && $product.availability_message}
             {if $product.availability == 'available'}
               {if $product.quantity == 0}
@@ -154,12 +154,12 @@
       {if $product.additional_delivery_times == 1}
         {if $product.delivery_information}
           {if $product.quantity > 0}
-            <div class="col text-center text-success icon-adjust">
+            <div class="text-success icon-adjust">
               <i class="material-icons">check_circle</i>
               <span>{$product.delivery_information}</span>
             </div>
           {elseif $product.quantity == 0 && $product.add_to_cart_url}
-            <div class="col text-center icon-adjust">
+            <div class="icon-adjust">
               <i class="material-icons">error_outline</i>
               <span>{$product.delivery_information}</span>
             </div>
@@ -168,13 +168,13 @@
         
       {elseif $product.additional_delivery_times == 2}
         {if $product.quantity > 0}
-          <div class="col text-center text-success icon-adjust">
+          <div class="text-success icon-adjust">
             <i class="material-icons">check_circle</i>
             <span>{$product.delivery_in_stock}</span>
           </div>
         <!-- Out of stock message should not be displayed if customer can't order the product. -->
         {elseif $product.quantity == 0 && $product.add_to_cart_url}
-          <div class="col text-center icon-adjust">
+          <div class="icon-adjust">
             <i class="material-icons">error_outline</i>
             <span>{$product.delivery_out_stock}</span>
           </div>
