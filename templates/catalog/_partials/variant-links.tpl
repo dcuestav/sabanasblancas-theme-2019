@@ -1,4 +1,4 @@
-<div class="variant-links">
+<div class="variant-links d-flex justify-content-center mb-2">
   {foreach from=$variants item=variant}
     <a href="{$variant.url}"
        class="{$variant.type}"
@@ -12,5 +12,5 @@
       {if $variant.texture} style="background-image: url({$variant.texture})" {/if}
     ><span class="sr-only">{$variant.name}</span></a>
   {/foreach}
-  <span class="js-count count"></span>
+  <span class="js-count count d-none"></span>
 </div>

@@ -25,7 +25,7 @@
 
     <div class="card-body text-center">
       {block name='product_name'}
-        <h5 class="card-title mb-2" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
+        <h5 class="card-title mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
       {/block}
 
       {block name='product_description_short'}
@@ -77,22 +77,13 @@
 
       {block name='product_availability'}
         {if $product.show_availability && $product.availability_message}
-          <div class="text-center mb-2">
-            {* availability may take the values "available" or "unavailable" *}
-            {if $product.availability == 'available'}
-              {if $product.quantity > 0}
-                <span id="product-availability" class="text-success icon-adjust">
-                  <i class="material-icons">check_circle</i>
-                  <span>{$product.availability_message}</span>
-                </span>
-              {/if}
-            {elseif $product.availability == 'last_remaining_items'}
-              <span id="product-availability" class="icon-adjust">
-                <i class="material-icons">error_outline</i>
-                <span>{$product.availability_message}</span>
-              </span>
+          {if $product.availability == 'available'}
+            {if $product.quantity > 0}
+              <small class="text-success">{$product.availability_message}</small>
             {/if}
-          </div>
+          {elseif $product.availability == 'last_remaining_items'}
+            <small>{$product.availability_message}</small>
+          {/if}
         {/if}
       {/block}
 
