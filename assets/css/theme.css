@@ -6408,6 +6408,12 @@ a.text-dark:hover, a.text-dark:focus {
 .product-details-card .product-flags {
   position: relative;
   top: -2px; }
+  .product-details-card .product-flags > li {
+    background-color: #007bff; }
+    .product-details-card .product-flags > li.discount {
+      background-color: #28a745; }
+    .product-details-card .product-flags > li.on-sale {
+      background-color: #fd7e14; }
 
 .product-variants .color-option .input-color {
   position: absolute;
@@ -6594,6 +6600,30 @@ a.text-dark:hover, a.text-dark:focus {
     .category-grid {
       grid-template-columns: repeat(3, 1fr); } }
 
+.product-miniature-card .card-img-top {
+  text-align: center; }
+
+.product-miniature-card ul.product-flags {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem; }
+  .product-miniature-card ul.product-flags > li {
+    display: block;
+    margin-bottom: 0.5rem;
+    background-color: #007bff; }
+    .product-miniature-card ul.product-flags > li.discount {
+      background-color: #28a745; }
+    .product-miniature-card ul.product-flags > li.on-sale {
+      background-color: #fd7e14; }
+
+.product-miniature-card .card-body {
+  padding: 1rem 0.5rem 0.5rem; }
+
+.product-miniature-card .price {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 0.25rem; }
+
 .product-grid {
   display: grid;
   grid-gap: 15px;
@@ -6610,14 +6640,6 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 1076px) {
     .product-grid {
       grid-template-columns: repeat(5, 1fr); } }
-
-.featured-products .card-img-top,
-.product-accessories .card-img-top {
-  text-align: center; }
-
-.featured-products .card-body,
-.product-accessories .card-body {
-  padding: 1rem 0.5rem 0.5rem; }
 
 .pagination .navigate-before,
 .pagination .navigate-next {

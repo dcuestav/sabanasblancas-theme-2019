@@ -67,7 +67,7 @@
 
               {block name='product_description'}
                 {if $product.description}
-                  <div class="product-description d-none d-md-block">
+                  <div class="product-description d-none d-md-block mb-md-3">
                     <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
                     {$product.description nofilter}
                   </div>
@@ -156,7 +156,7 @@
         {/block}
 
         {if $product.description}
-          <div class="product-description d-md-none">
+          <div class="product-description d-md-none mb-xs-3 mb-sm-3">
             <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
             {$product.description nofilter}
           </div>
