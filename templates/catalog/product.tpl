@@ -122,13 +122,15 @@
                   {block name='product_pack'}
                     {if $packItems}
                       <section class="product-pack">
-                        <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
-                        {foreach from=$packItems item="product_pack"}
-                          {block name='product_miniature'}
-                            {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack}
-                          {/block}
-                        {/foreach}
-                    </section>
+                        <p class="h6">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
+                        <ul class="list-group">
+                          {foreach from=$packItems item="product_pack"}
+                            {block name='product_miniature'}
+                              <li class="list-group-item list-group-item-action small">{$product_pack.name}</li>
+                            {/block}
+                          {/foreach}
+                        </ul>
+                      </section>
                     {/if}
                   {/block}
 
