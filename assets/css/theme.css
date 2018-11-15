@@ -6550,26 +6550,40 @@ a.text-dark:hover, a.text-dark:focus {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(1, 1fr); }
-  @media (min-width: 546px) {
+  @media (min-width: 635px) {
     .category-grid {
       grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 811px) {
+  @media (min-width: 915px) {
     .category-grid {
       grid-template-columns: repeat(3, 1fr); } }
 
 .category-miniature {
   position: relative;
   background-color: #e9ecef;
-  height: 150px;
+  height: 75px;
   padding-left: 1.25rem;
   padding-right: 155px; }
-  .category-miniature a.image-link {
+  @media (min-width: 635px) {
+    .category-miniature {
+      height: 112.5px; } }
+  @media (min-width: 915px) {
+    .category-miniature {
+      height: 150px; } }
+  .category-miniature .image-link {
     position: absolute;
+    display: none;
     right: 0;
     top: 0;
     bottom: 0; }
-    .category-miniature a.image-link img {
+    @media (min-width: 635px) {
+      .category-miniature .image-link {
+        display: block; } }
+    .category-miniature .image-link img {
       max-height: 100%; }
+  @media (max-width: 634px) {
+    .category-miniature .view-button {
+      position: absolute;
+      right: 1.25rem; } }
 
 .container-fluid.max-width {
   max-width: 1350px; }

@@ -3,11 +3,11 @@
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(1, 1fr);
-    @media (min-width: 546px) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 635px) {
+        grid-template-columns: repeat(2, 1fr);
     }
-    @media (min-width: 811px) {
-      grid-template-columns: repeat(3, 1fr);
+    @media (min-width: 915px) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -16,17 +16,38 @@ $category-img-height: 150px;
 .category-miniature {
     position: relative;
     background-color: $gray-200;
-    height: $category-img-height;
+    height: $category-img-height * 0.5;
     padding-left: 1.25rem;
     padding-right: $category-img-height + 5px;
 
-    a.image-link {
+    @media (min-width: 635px) {
+        height: $category-img-height * 0.75;
+    }
+    @media (min-width: 915px) {
+        height: $category-img-height;
+    }
+
+    .image-link {
         position: absolute;
+        display: none;
         right: 0;
         top: 0;
         bottom: 0;
+        
+        @media (min-width: 635px) {
+            display: block;
+        }
+
         img {
             max-height: 100%;
         }
     }
+
+    @media (max-width: 634px) {
+        .view-button {
+            position: absolute;
+            right: 1.25rem;
+        }
+    }
+
 }
