@@ -1,4 +1,4 @@
-<section class="featured-products clearfix">
+<section class="featured-products clearfix mb-3">
   <h4 class="section-title">
     {l s='Popular Products' d='Shop.Theme.Catalog'}
   </h4>

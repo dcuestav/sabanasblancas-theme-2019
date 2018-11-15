@@ -1,5 +1,5 @@
 <!-- Block SB homecategories -->
-<section id="sb-home-categories">
+<section id="sb-home-categories" class="mb-3">
   <h4 class="section-title">
     {l s='Main categories' d='Shop.Theme.Catalog'}
   </h4>
