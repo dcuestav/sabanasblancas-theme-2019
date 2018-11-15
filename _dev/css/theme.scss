@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~material-design-icons/iconfont/material-icons.css";
 @import "product-detail";
+@import "category-cards";
 
 .container-fluid.max-width {
   max-width: 1350px;
@@ -63,17 +64,6 @@
   display: none !important;
 }
 
-.category-grid {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(1, 1fr);
-  @media (min-width: 546px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 811px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 // Product miniatures
 

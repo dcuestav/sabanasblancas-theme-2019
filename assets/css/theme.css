@@ -6546,6 +6546,31 @@ a.text-dark:hover, a.text-dark:focus {
         overflow: hidden;
         z-index: 1; }
 
+.category-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(1, 1fr); }
+  @media (min-width: 546px) {
+    .category-grid {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 811px) {
+    .category-grid {
+      grid-template-columns: repeat(3, 1fr); } }
+
+.category-miniature {
+  position: relative;
+  background-color: #e9ecef;
+  height: 150px;
+  padding-left: 1.25rem;
+  padding-right: 155px; }
+  .category-miniature a.image-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+    .category-miniature a.image-link img {
+      max-height: 100%; }
+
 .container-fluid.max-width {
   max-width: 1350px; }
 
@@ -6588,17 +6613,6 @@ a.text-dark:hover, a.text-dark:focus {
 .category-description h1,
 #category-description h1 {
   display: none !important; }
-
-.category-grid {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(1, 1fr); }
-  @media (min-width: 546px) {
-    .category-grid {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 811px) {
-    .category-grid {
-      grid-template-columns: repeat(3, 1fr); } }
 
 .product-miniature-card .card-img-top {
   text-align: center; }
