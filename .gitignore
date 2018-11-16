@@ -1,1 +1,4 @@
 node_modules/
+cache/
+assets/css/theme.css.map
+assets/js/theme.js.map

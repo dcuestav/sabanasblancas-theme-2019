@@ -3,7 +3,7 @@
   data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 
     {block name='product_thumbnail'}
-      <a href="{$product.url}" class="card-img-top">
+      <a href="{$product.url}" class="card-img-top position-relative">
         <img
           class="img-fluid"
           src = "{$product.cover.medium.url}"
@@ -19,6 +19,10 @@
           data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
           data-brand-name = "{$product.manufacturer_name}"
         >
+        <span class="show-brand-on-product-miniature"
+          data-brand-img-base-url = "{$urls.img_manu_url}"
+          data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
+          data-brand-name = "{$product.manufacturer_name}"></span>
       </a>
     {/block}
 

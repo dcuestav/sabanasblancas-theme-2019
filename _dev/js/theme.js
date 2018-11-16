@@ -15,6 +15,7 @@ import 'bootstrap/js/src/modal';
 import 'flexslider/jquery.flexslider';
 import './product-detail';
 import './replace-image-effect';
+import './show-brand-on-product-miniature';
 
 
 (function() {
