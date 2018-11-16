@@ -5,7 +5,7 @@
             $this = $(this);
             var brandId = parseInt($this.data('brand-id'));
             var brandName = $this.data('brand-name');
-            var baseUrl = $this.data('brand-img-base-url');
+            var baseUrl = prestashop.urls.img_manu_url;
             if (brandId && brandName) {
                 $this.append(`<img src="${baseUrl}${brandId}-small_default.jpg" alt="${brandName} logo" class="img-fluid"/>`);
             }

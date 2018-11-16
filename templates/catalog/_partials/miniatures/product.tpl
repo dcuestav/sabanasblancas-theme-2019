@@ -16,11 +16,8 @@
               data-alternative-image = "{$product.images[1].medium.url}"
             {/if}
           {/if}
-          data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
-          data-brand-name = "{$product.manufacturer_name}"
         >
         <span class="show-brand-on-product-miniature"
-          data-brand-img-base-url = "{$urls.img_manu_url}"
           data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
           data-brand-name = "{$product.manufacturer_name}"></span>
       </a>

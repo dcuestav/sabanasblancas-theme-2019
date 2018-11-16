@@ -203,11 +203,12 @@
             {include file='catalog/_partials/product-additional-info.tpl'}
           {/block}
 
-          {foreach from=$product.extraContent item=extra key=extraKey}
-            <div class="tab-pane fade in {$extra.attr.class}" id="extra-{$extraKey}" role="tabpanel" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
+          {* Hook extra content deshabilitado *}
+          {* {foreach from=$product.extraContent item=extra key=extraKey}
+            <div class="{$extra.attr.class}" id="extra-{$extraKey}" {foreach $extra.attr as $key => $val} {$key}="{$val}" {/foreach}>
               {$extra.content nofilter}
             </div>
-          {/foreach}
+          {/foreach} *}
 
         </div>
       </div>

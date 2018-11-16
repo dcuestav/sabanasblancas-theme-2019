@@ -58,7 +58,7 @@
 
   {block name='product_features'}
     {if $product.grouped_features}
-      <section>
+      <section class="mb-3">
         <h4 class="section-title">{l s='Data sheet' d='Shop.Theme.Catalog'}</h4>
         <div class="list-group">
           {foreach from=$product.grouped_features item=feature}
@@ -75,14 +75,16 @@
   {* if product have specific references, a table will be added to product details section *}
   {block name='product_specific_references'}
     {if isset($product.specific_references)}
-      <section class="product-features">
-        <h3 class="h6">{l s='Specific References' d='Shop.Theme.Catalog'}</h3>
-        <dl class="data-sheet">
+      <section class="mb-3">
+        <h4 class="section-title">{l s='Specific References' d='Shop.Theme.Catalog'}</h4>
+        <div class="list-group">
           {foreach from=$product.specific_references item=reference key=key}
-            <dt class="name">{$key}</dt>
-            <dd class="value">{$reference}</dd>
+            <div class="list-group-item list-group-item-action">
+              <div class="d-inline-block w-50">{$key}</div>
+              <div class="d-inline-block"><strong>{$reference}</strong></div>
+            </div>
           {/foreach}
-        </dl>
+        </div>
       </section>
     {/if}
   {/block}

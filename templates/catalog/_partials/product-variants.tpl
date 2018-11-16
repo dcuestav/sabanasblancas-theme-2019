@@ -23,11 +23,14 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <div class="product-variants mb-3">
+
+  <div>Medida real: {$supplier_reference}</div>
+
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
     <div class="product-variants-item form-group d-flex flex-row mb-1">
       <label class="col-form-label mr-3">{$group.name}</label>
-      
+
         {if $group.group_type == 'select'}
           <div>
           <select

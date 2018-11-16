@@ -116,7 +116,7 @@ var n="undefined"!=typeof window&&"undefined"!=typeof document,i=["Edge","Triden
   !*** ./js/show-brand-on-product-miniature.js ***!
   \***********************************************/
 /*! no static exports found */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */function(t,e,n){(function(t){t(window).load(function(){t(".show-brand-on-product-miniature").each(function(){$this=t(this);var e=parseInt($this.data("brand-id")),n=$this.data("brand-name"),i=$this.data("brand-img-base-url");e&&n&&$this.append('<img src="'.concat(i).concat(e,'-small_default.jpg" alt="').concat(n,' logo" class="img-fluid"/>'))})})}).call(this,n(/*! jquery */1))},
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */function(t,e,n){(function(t){t(window).load(function(){t(".show-brand-on-product-miniature").each(function(){$this=t(this);var e=parseInt($this.data("brand-id")),n=$this.data("brand-name"),i=prestashop.urls.img_manu_url;e&&n&&$this.append('<img src="'.concat(i).concat(e,'-small_default.jpg" alt="').concat(n,' logo" class="img-fluid"/>'))})})}).call(this,n(/*! jquery */1))},
 /*!************************!*\
   !*** ./css/theme.scss ***!
   \************************/
