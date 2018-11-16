@@ -9,6 +9,15 @@
           src = "{$product.cover.medium.url}"
           alt = "{$product.cover.legend}"
           data-full-size-image-url = "{$product.cover.large.url}"
+          {if count($product.images) >= 2}
+            {if $product.images[0].id_image != $product.cover.id_image }
+              data-alternative-image = "{$product.images[0].medium.url}"
+            {else}
+              data-alternative-image = "{$product.images[1].medium.url}"
+            {/if}
+          {/if}
+          data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
+          data-brand-name = "{$product.manufacturer_name}"
         >
       </a>
     {/block}

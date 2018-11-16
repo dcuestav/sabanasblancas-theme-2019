@@ -1,4 +1,5 @@
-<div id="product-details" data-product="{$product|json_encode}">
+{* <div id="product-details" data-product="{$product|json_encode}"> *}
+<div id="product-details">
 
   <section class="mb-3">
   <h4 class="section-title">{l s='Product Details' d='Shop.Theme.Catalog'}</h4>

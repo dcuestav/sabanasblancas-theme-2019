@@ -13,7 +13,8 @@ import 'bootstrap/js/src/modal';
 // import 'bootstrap/js/src/tooltip';
 
 import 'flexslider/jquery.flexslider';
-import './product-detail'
+import './product-detail';
+import './replace-image-effect';
 
 
 (function() {
