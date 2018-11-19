@@ -1,0 +1,44 @@
+$header-nav-background: #312e2d;
+$header-nav-color: white;
+$header-nav-color-hover: rgb(188, 219, 219);
+$header-nav-font-size: 0.9rem;
+
+.header-nav {
+    border-bottom: 2px solid #f1f1f1;
+    margin-bottom: 10px;
+    background-color: $header-nav-background;
+    color: $header-nav-color;
+    font-size: $header-nav-font-size;
+
+    .header-nav-item {
+        display: inline-block;
+        padding: 0.25rem 0;
+    }
+
+    a {
+        color: $header-nav-color;
+        &:hover {
+            color: $header-nav-color-hover;
+            text-decoration: none;
+        }
+    }
+
+    .dropdown-menu {
+        background-color: $header-nav-background;
+        color: $header-nav-color;
+        font-size: $header-nav-font-size;
+    }
+
+    .material-icons {
+        font-size: 20px;
+    }
+    
+}
+  
+#header #search_widget {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 250px;
+    height: 60px;
+}

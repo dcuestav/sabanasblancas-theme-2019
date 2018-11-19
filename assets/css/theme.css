@@ -6398,6 +6398,34 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+.header-nav {
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 10px;
+  background-color: #312e2d;
+  color: white;
+  font-size: 0.9rem; }
+  .header-nav .header-nav-item {
+    display: inline-block;
+    padding: 0.25rem 0; }
+  .header-nav a {
+    color: white; }
+    .header-nav a:hover {
+      color: #bcdbdb;
+      text-decoration: none; }
+  .header-nav .dropdown-menu {
+    background-color: #312e2d;
+    color: white;
+    font-size: 0.9rem; }
+  .header-nav .material-icons {
+    font-size: 20px; }
+
+#header #search_widget {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 250px;
+  height: 60px; }
+
 .product-variants .color-option .input-color {
   position: absolute;
   opacity: 0;
@@ -6599,20 +6627,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .container-fluid.max-width {
   max-width: 1350px; }
-
-#header .header-nav {
-  border-bottom: 2px solid #f1f1f1;
-  margin-bottom: 10px; }
-  #header .header-nav .left-nav > div,
-  #header .header-nav .right-nav > div {
-    display: inline-block; }
-
-#header #search_widget {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  width: 250px;
-  height: 60px; }
 
 .psgdpr_consent_message i {
   display: none !important; }

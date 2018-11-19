@@ -1,6 +1,9 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 @import "~material-design-icons/iconfont/material-icons.css";
+
+// Estilo SabanasBlancas
+@import "header";
 @import "product-detail";
 @import "category-cards";
 @import "product-cards";
@@ -9,24 +12,7 @@
   max-width: 1350px;
 }
 
-#header .header-nav {
-  border-bottom: 2px solid #f1f1f1;
-  margin-bottom: 10px;
 
-  .left-nav>div,
-  .right-nav>div {
-    display: inline-block;
-  }
-
-}
-
-#header #search_widget {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  width: 250px;
-  height: 60px;
-}
 
 .psgdpr_consent_message i {
   display: none !important;
