@@ -1,42 +1,18 @@
-{**
- * 2007-2018 PrestaShop
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * https://opensource.org/licenses/AFL-3.0
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@prestashop.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
- *
- * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2018 PrestaShop SA
- * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- * International Registered Trademark & Property of PrestaShop SA
- *}
-<div id="_desktop_contact_link">
-  <div id="contact-link">
-    {if $contact_infos.phone}
-      {* [1][/1] is for a HTML tag. *}
-      {l
-        s='Call us: [1]%phone%[/1]'
-        sprintf=[
-          '[1]' => '<span>',
-          '[/1]' => '</span>',
-          '%phone%' => $contact_infos.phone
-        ]
-        d='Shop.Theme.Global'
-      }
-    {else}
-      <a href="{$urls.pages.contact}">{l s='Contact us' d='Shop.Theme.Global'}</a>
-    {/if}
-  </div>
+<div id="contact-with-whatsapp">
+	<a href="https://api.whatsapp.com/send?phone=34{$contact_infos.phone}" method="get" target="_blank" class="icon-adjust">
+		<img class="icon" alt="" src="{$urls.theme_assets}img/whatsapp.png" style="width:26px;"> 
+		<span class="d-none d-sm-inline">Whatsapp</span> 
+	</a>
+	<span class="separator"> | </span>
+	<a href="tel:+34 {$contact_infos.phone}" class="icon-adjust">
+		<i class="material-icons">call</i>
+		<span class="d-none d-sm-inline">{$contact_infos.phone}</span>
+	</a>
+	<span class="separator"> | </span> 
+	<a href="mailto:{$contact_infos.email}" class="icon-adjust">
+		<i class="material-icons">email</i>
+		<span class="d-none d-sm-inline">{* {$contact_infos.email} *}</span>
+	</a>
+	<span class="separator"> | </span>
+	<span>L a V de 9h a 13h y de 15h a 17h</span>
 </div>

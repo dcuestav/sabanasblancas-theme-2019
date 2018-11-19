@@ -6624,9 +6624,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .icon-adjust {
   position: relative; }
-  .icon-adjust i.material-icons {
+  .icon-adjust i.material-icons,
+  .icon-adjust .icon {
     position: absolute; }
-  .icon-adjust i.material-icons + * {
+  .icon-adjust i.material-icons + *,
+  .icon-adjust .icon + * {
     margin-left: 2em; }
 
 .product-accessories,

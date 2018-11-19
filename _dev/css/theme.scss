@@ -40,10 +40,12 @@
 
 .icon-adjust {
   position: relative;
-  i.material-icons {
+  i.material-icons,
+  .icon {
     position: absolute;
   }
-  i.material-icons + * {
+  i.material-icons + *,
+  .icon + * {
     margin-left: 2em;
   }
 }
