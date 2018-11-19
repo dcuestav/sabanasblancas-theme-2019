@@ -6434,6 +6434,9 @@ a.text-dark:hover, a.text-dark:focus {
 .product-variants .radio-option.selected label {
   font-weight: 600; }
 
+.product-variants select {
+  font-weight: 600; }
+
 .has-discount .discount {
   opacity: .7; }
 
