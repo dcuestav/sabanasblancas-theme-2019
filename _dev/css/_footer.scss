@@ -5,9 +5,14 @@ $footer-nav-font-size: 0.9rem;
 
 #footer {
     padding-top: 30px;
+    padding-bottom: 10px;
     background-color: $footer-nav-background;
     color: $footer-nav-color;
     font-size: $footer-nav-font-size;
+
+    .aeuc_footer_info {
+        display: none;
+    }
 
     h4 {
         color: $footer-nav-color-hover;

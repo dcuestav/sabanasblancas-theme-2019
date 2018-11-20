@@ -6438,9 +6438,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 #footer {
   padding-top: 30px;
+  padding-bottom: 10px;
   background-color: #312e2d;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem; }
+  #footer .aeuc_footer_info {
+    display: none; }
   #footer h4 {
     color: #fcffff; }
   #footer .list-unstyled li {
