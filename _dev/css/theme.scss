@@ -4,6 +4,7 @@
 
 // Estilo SabanasBlancas
 @import "header";
+@import "footer";
 @import "product-detail";
 @import "category-cards";
 @import "product-cards";
@@ -11,8 +12,6 @@
 .max-width {
   max-width: 1350px;
 }
-
-
 
 .psgdpr_consent_message i {
   display: none !important;

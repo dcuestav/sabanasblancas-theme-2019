@@ -6403,8 +6403,7 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 10px;
   background-color: #312e2d;
   color: white;
-  font-size: 0.9rem;
-  vertical-align: middle; }
+  font-size: 0.9rem; }
   .header-nav .header-nav-item {
     display: flex; }
     .header-nav .header-nav-item > * {
@@ -6436,6 +6435,23 @@ a.text-dark:hover, a.text-dark:focus {
   right: 15px;
   width: 250px;
   height: 60px; }
+
+#footer {
+  padding-top: 30px;
+  background-color: #312e2d;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem; }
+  #footer h4 {
+    color: #fcffff; }
+  #footer .list-unstyled li {
+    display: flex; }
+  #footer .list-unstyled a {
+    padding: 3px;
+    color: rgba(255, 255, 255, 0.7); }
+  #footer .list-unstyled a:hover {
+    color: #fcffff;
+    text-decoration: none;
+    transition: 0.2s; }
 
 .product-variants .color-option .input-color {
   position: absolute;

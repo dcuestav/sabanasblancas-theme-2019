@@ -1,0 +1,35 @@
+$footer-nav-background: #312e2d;
+$footer-nav-color: rgba(255,255,255,0.7);
+$footer-nav-color-hover: rgba(252, 255, 255,1);
+$footer-nav-font-size: 0.9rem;
+
+#footer {
+    padding-top: 30px;
+    background-color: $footer-nav-background;
+    color: $footer-nav-color;
+    font-size: $footer-nav-font-size;
+
+    h4 {
+        color: $footer-nav-color-hover;
+    }
+
+    .list-unstyled {
+
+        li {
+            display: flex;
+        }
+
+        a {
+            padding: 3px;
+            color: $footer-nav-color;
+            
+        }
+
+        a:hover {
+            color: $footer-nav-color-hover;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+    }
+}
