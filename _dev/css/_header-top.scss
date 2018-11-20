@@ -17,19 +17,63 @@ $header-top-font-size: 0.9rem;
     a:hover {
         color: $header-top-color-hover;
         text-decoration: none;
-        transition: 0.2s;
+        transition: color 0.2s;
+        transition: background-color 0.2s;
     }
 
     .logo {
         margin-bottom: 10px;
     }
 
+    .searchbar-space {
+        width: 250px + 10px;
+    }
+
+    #main-menu {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+
+        a {
+            border-bottom: 2px solid $header-top-background;
+        }
+
+        a.active {
+            background-color: inherit;
+            border-bottom-color: $accent;
+        }
+
+        a:hover {
+            background-color: lighten($header-top-background, 10%);
+            border-bottom-color: $accent;
+        }
+    }
+
     #search_widget {
         position: absolute;
         top: 10px;
-        right: 15px;
+        right: 0;
         width: 250px;
         height: 60px;
+
+        label {
+            color: $header-top-color-hover;
+        }
+
+        input {
+            background-color: inherit;
+            color: $header-top-color-hover;
+            border: 0 solid $header-top-color-hover;
+            border-radius: 0;
+            border-bottom-width: 1px;
+            margin-left: -25px;
+            padding-left: 30px;
+            box-shadow: none !important;
+        }
+
+        input::placeholder {
+            color: $header-top-color;
+        }
     }
 }
 

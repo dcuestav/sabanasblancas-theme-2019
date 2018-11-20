@@ -1,4 +1,4 @@
-<div class="d-none d-md-block">
+<div id="main-menu" class="d-none d-md-block">
   <ul class="nav nav-pills nav-fill">
       {foreach from=$menu.children item=node}
         

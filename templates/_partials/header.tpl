@@ -24,33 +24,33 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container-fluid max-width position-relative">
-       <div class="row">
+      <div class="row">
         <div class="col text-center" id="_desktop_logo">
-            {if $page.page_name == 'index'}
-              <h1 class="text-center mb-0">
-                <a href="{$urls.base_url}">
-                  <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_white_397_60.png" alt="{$shop.name}">
-                </a>
-              </h1>
-            {else}
+          {if $page.page_name == 'index'}
+            <h1 class="text-center mb-0">
               <a href="{$urls.base_url}">
                 <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_white_397_60.png" alt="{$shop.name}">
               </a>
-            {/if}
+            </h1>
+          {else}
+            <a href="{$urls.base_url}">
+              <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_white_397_60.png" alt="{$shop.name}">
+            </a>
+          {/if}
         </div>
+        <div class="searchbar-space d-none d-md-block d-xl-none"></div>
       </div>
-      <div class="row">
-        <div class="col position-static">
-          {hook h='displayTop'}
-          <div class="clearfix"></div>
-        </div>
+    <div class="row">
+      <div class="col position-static">
+        {hook h='displayTop'}
+        <div class="clearfix"></div>
       </div>
-      <div id="mobile_top_menu_wrapper" class="row d-lg-none" style="display:none;">
-        <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
-        <div class="js-top-menu-bottom">
-          <div id="_mobile_language_selector"></div>
-          <div id="_mobile_contact_link"></div>
-        </div>
+    </div>
+    <div id="mobile_top_menu_wrapper" class="row d-lg-none" style="display:none;">
+      <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
+      <div class="js-top-menu-bottom">
+        <div id="_mobile_language_selector"></div>
+        <div id="_mobile_contact_link"></div>
       </div>
     </div>
   </div>
