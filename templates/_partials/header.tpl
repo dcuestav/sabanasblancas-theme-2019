@@ -5,18 +5,18 @@
 {/block}
 
 {block name='header_nav'}
-  <nav class="header-nav container-fluid max-width">
-    <div class="d-flex pt-1 pb-1">
-      <div class="mr-auto">
-        {hook h='displayNav1'}
-        {* Module contact info *}
-      </div>
-      <div class="d-flex">
-        {hook h='displayNav2'}
-        {* Module language selector *}
-        {* Module customer sign in *}
-        {* Module language selector *}
-      </div>
+  <nav class="header-nav">
+    <div class="d-flex container-fluid max-width">
+        <div class="d-flex mr-auto">
+          {hook h='displayNav1'}
+          {* Module contact info *}
+        </div>
+        <div class="d-flex">
+          {hook h='displayNav2'}
+          {* Module language selector *}
+          {* Module customer sign in *}
+          {* Module language selector *}
+        </div>
     </div>
   </nav>
 {/block}

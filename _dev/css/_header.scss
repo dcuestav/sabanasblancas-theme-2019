@@ -1,6 +1,6 @@
 $header-nav-background: #312e2d;
 $header-nav-color: white;
-$header-nav-color-hover: rgb(188, 219, 219);
+$header-nav-color-hover: white;
 $header-nav-font-size: 0.9rem;
 
 .header-nav {
@@ -9,10 +9,17 @@ $header-nav-font-size: 0.9rem;
     background-color: $header-nav-background;
     color: $header-nav-color;
     font-size: $header-nav-font-size;
+    vertical-align: middle;
 
     .header-nav-item {
-        display: inline-block;
-        padding: 0.25rem 0;
+        display: flex;
+        &>* {
+            padding: 10px 5px;
+        }
+        a:hover {
+            transition: 0.2s;
+            background-color: lighten( $header-nav-background, 20% );
+        }
     }
 
     a {
