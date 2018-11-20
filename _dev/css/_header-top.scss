@@ -1,0 +1,35 @@
+$header-top-background: lighten($header-nav-background, 5%);
+$header-top-color: rgba(255, 255, 255,0.7);
+$header-top-color-hover: rgba(255, 255, 255,1);
+$header-top-font-size: 0.9rem;
+
+.header-top {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background-color: $header-top-background;
+    color: $header-top-color;
+    font-size: $header-top-font-size;
+
+    a {
+        color: $header-top-color;
+    }
+
+    a:hover {
+        color: $header-top-color-hover;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    #search_widget {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        width: 250px;
+        height: 60px;
+    }
+}
+

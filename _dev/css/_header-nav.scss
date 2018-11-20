@@ -1,11 +1,9 @@
-$header-nav-background: #312e2d;
+$header-nav-background: darken($primary, 10%);
 $header-nav-color: white;
 $header-nav-color-hover: white;
 $header-nav-font-size: 0.9rem;
 
 .header-nav {
-    border-bottom: 2px solid #f1f1f1;
-    margin-bottom: 10px;
     background-color: $header-nav-background;
     color: $header-nav-color;
     font-size: $header-nav-font-size;
@@ -50,12 +48,4 @@ $header-nav-font-size: 0.9rem;
             margin-left: 2em;
         }
     }
-}
-  
-#header #search_widget {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    width: 250px;
-    height: 60px;
 }

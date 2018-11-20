@@ -1,6 +1,6 @@
-$footer-nav-background: #312e2d;
+$footer-nav-background: $header-nav-background;
 $footer-nav-color: rgba(255,255,255,0.7);
-$footer-nav-color-hover: rgba(252, 255, 255,1);
+$footer-nav-color-hover: rgba(255, 255, 255,1);
 $footer-nav-font-size: 0.9rem;
 
 #footer {
@@ -18,6 +18,16 @@ $footer-nav-font-size: 0.9rem;
         color: $footer-nav-color-hover;
     }
 
+    a {
+        color: $footer-nav-color;
+    }
+
+    a:hover {
+        color: $footer-nav-color-hover;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
     .list-unstyled {
 
         li {
@@ -26,15 +36,6 @@ $footer-nav-font-size: 0.9rem;
 
         a {
             padding: 3px;
-            color: $footer-nav-color;
-            
         }
-
-        a:hover {
-            color: $footer-nav-color-hover;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
     }
 }
