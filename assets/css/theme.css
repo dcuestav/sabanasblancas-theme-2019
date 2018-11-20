@@ -6408,7 +6408,7 @@ a.text-dark:hover, a.text-dark:focus {
   .header-nav .header-nav-item {
     display: flex; }
     .header-nav .header-nav-item > * {
-      padding: 10px 5px; }
+      padding: 8px 5px; }
     .header-nav .header-nav-item a:hover {
       transition: 0.2s;
       background-color: #66605e; }

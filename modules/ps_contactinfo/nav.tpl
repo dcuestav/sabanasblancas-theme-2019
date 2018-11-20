@@ -4,7 +4,7 @@
 
 	<div class="header-nav-item">
 		<a href="https://api.whatsapp.com/send?phone=34{$contact_infos.phone}" method="get" target="_blank" class="position-relative">
-			<img alt="" src="{$urls.theme_assets}img/whatsapp.png" class="position-absolute" style="width:24px;top:8px;"> 
+			<img alt="" src="{$urls.theme_assets}img/whatsapp.png" class="position-absolute" style="width:24px;top:6px;"> 
 			<span style="margin-left: 2rem;">Whatsapp</span>
 		</a>
 	</div>
