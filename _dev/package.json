@@ -6,7 +6,7 @@
     "scripts": {
         "build": "webpack --progress -p",
         "watch": "webpack --progress --colors --watch",
-        "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch"
+        "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch --mode=development"
     },
     "author": "Daniel Cuesta",
     "license": "UNLICENSED",

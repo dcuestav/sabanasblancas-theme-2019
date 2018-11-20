@@ -25,14 +25,27 @@
 }
 
 .icon-adjust {
+  display: inline-block;
   position: relative;
-  i.material-icons,
-  .icon {
+  i.material-icons {
     position: absolute;
   }
-  i.material-icons + *,
-  .icon + * {
+  i.material-icons + * {
     margin-left: 2em;
+  }
+}
+
+.icon-adjust.only-icon-on-mobile {
+  @include media-breakpoint-down(sm) {
+    width: 2em;
+    height: 100%;
+    i.material-icons {
+      left: calc(50% - 10px);
+    }
+    i.material-icons + * {
+      margin-left: 0;
+      display: none;
+    }
   }
 }
 

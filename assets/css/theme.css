@@ -6419,6 +6419,12 @@ a.text-dark:hover, a.text-dark:focus {
   .header-nav .material-icons {
     font-size: 20px; }
 
+@media (max-width: 767.98px) {
+  .blockcart .icon-adjust span:not(.cart-products-count) {
+    display: none; }
+  .blockcart .icon-adjust span.cart-products-count {
+    margin-left: 2em; } }
+
 #header #search_widget {
   position: absolute;
   top: 10px;
@@ -6637,13 +6643,22 @@ a.text-dark:hover, a.text-dark:focus {
   top: 4px; }
 
 .icon-adjust {
+  display: inline-block;
   position: relative; }
-  .icon-adjust i.material-icons,
-  .icon-adjust .icon {
+  .icon-adjust i.material-icons {
     position: absolute; }
-  .icon-adjust i.material-icons + *,
-  .icon-adjust .icon + * {
+  .icon-adjust i.material-icons + * {
     margin-left: 2em; }
+
+@media (max-width: 767.98px) {
+  .icon-adjust.only-icon-on-mobile {
+    width: 2em;
+    height: 100%; }
+    .icon-adjust.only-icon-on-mobile i.material-icons {
+      left: calc(50% - 10px); }
+    .icon-adjust.only-icon-on-mobile i.material-icons + * {
+      margin-left: 0;
+      display: none; } }
 
 .product-accessories,
 .featured-products {

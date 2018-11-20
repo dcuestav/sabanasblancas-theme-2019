@@ -34,6 +34,17 @@ $header-nav-font-size: 0.9rem;
     }
     
 }
+
+.blockcart .icon-adjust {
+    @include media-breakpoint-down(sm) {
+        span:not(.cart-products-count) {
+            display: none;
+        }
+        span.cart-products-count {
+            margin-left: 2em;
+        }
+    }
+}
   
 #header #search_widget {
     position: absolute;

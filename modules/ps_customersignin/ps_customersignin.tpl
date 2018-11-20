@@ -4,7 +4,7 @@
       class="logout"
       href="{$logout_url}"
       rel="nofollow"
-      class="icon-adjust"
+      class="icon-adjust only-icon-on-mobile"
     >
       <i class="material-icons">exit_to_app</i>
       <span>{l s='Sign out' d='Shop.Theme.Actions'}</span>
@@ -14,7 +14,7 @@
       href="{$my_account_url}"
       title="{l s='View my customer account' d='Shop.Theme.Customeraccount'}"
       rel="nofollow"
-      class="icon-adjust"
+      class="icon-adjust only-icon-on-mobile"
     >
       <i class="material-icons">logged</i>
       <span>{$customerName}</span>
@@ -24,7 +24,7 @@
       href="{$my_account_url}"
       title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}"
       rel="nofollow"
-      class="icon-adjust"
+      class="icon-adjust only-icon-on-mobile"
     >
       <i class="material-icons">person</i>
       <span>{l s='Sign in' d='Shop.Theme.Actions'}</span>
