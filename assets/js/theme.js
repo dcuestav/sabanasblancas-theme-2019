@@ -108,6 +108,60 @@
 
 /***/ }),
 
+/***/ "./js/main-menu.js":
+/*!*************************!*\
+  !*** ./js/main-menu.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {(function () {
+  function getOffsetX(toggle) {
+    var $toggle = $(toggle);
+    var $dropdown = $toggle.closest('.dropdown');
+    return -Math.floor($toggle.position().left);
+  }
+
+  function updateMenuDropdownsOffset() {
+    $('#main-menu .dropdown-toggle').each(function () {
+      var offset = "".concat(getOffsetX(this));
+      $(this).attr('data-offset', offset);
+      $(this).data('offset', offset);
+    });
+  }
+
+  function openDropdownMenuOnHover() {
+    $('body').on('mouseenter mouseleave', '#main-menu .dropdown', function (e) {
+      var $dropdown = $(e.target).closest('.dropdown');
+      var $toggle = $dropdown.children('.dropdown-toggle');
+      var $menu = $dropdown.children('.dropdown-menu');
+
+      if (e.type === 'mouseleave' && !$dropdown.hasClass('show')) {
+        return;
+      }
+
+      if (!$dropdown.hasClass('show')) {
+        $toggle.dropdown('toggle');
+      }
+
+      setTimeout(function () {
+        var isHover = $toggle.is(':hover') || $menu.is(':hover');
+
+        if (isHover != $menu.hasClass('show')) {
+          $toggle.dropdown('toggle');
+        }
+      }, 300);
+    });
+  }
+
+  $(window).resize(updateMenuDropdownsOffset);
+  $(window).load(updateMenuDropdownsOffset);
+  $(window).load(openDropdownMenuOnHover);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
 /***/ "./js/product-detail.js":
 /*!******************************!*\
   !*** ./js/product-detail.js ***!
@@ -242,12 +296,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_js_src_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/js/src/modal */ "./node_modules/bootstrap/js/src/modal.js");
 /* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! flexslider/jquery.flexslider */ "./node_modules/flexslider/jquery.flexslider.js");
 /* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11__);
  // import 'bootstrap/js/src/alert';
 
 
@@ -259,6 +315,7 @@ __webpack_require__.r(__webpack_exports__);
 // import 'bootstrap/js/src/scrollspy';
 // import 'bootstrap/js/src/tab';
 // import 'bootstrap/js/src/tooltip';
+
 
 
 

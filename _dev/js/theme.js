@@ -13,13 +13,14 @@ import 'bootstrap/js/src/modal';
 // import 'bootstrap/js/src/tooltip';
 
 import 'flexslider/jquery.flexslider';
+import './main-menu';
 import './product-detail';
 import './replace-image-effect';
 import './show-brand-on-product-miniature';
 
 
 (function() {
- 
+
     // store the slider in a local variable
     var $window = $(window),
         flexslider = { vars:{} };

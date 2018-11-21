@@ -30,23 +30,37 @@ $header-top-font-size: 0.9rem;
     }
 
     #main-menu {
-        text-transform: uppercase;
-        font-size: 1rem;
-        font-weight: 600;
-
-        a {
+        .nav-link {
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 600;
             border-bottom: 2px solid $header-top-background;
+            &.active {
+                background-color: inherit;
+                border-bottom-color: $accent;
+            }
+            &:hover {
+                background-color: lighten($header-top-background, 10%);
+                border-bottom-color: $accent;
+            }
         }
 
-        a.active {
-            background-color: inherit;
-            border-bottom-color: $accent;
+        .dropdown-menu {
+            background-color: white;
+            a {
+                color: $body-color;
+                max-width: 350px;
+                &.active {
+                    background-color: inherit;
+                    color: inherit;
+                }
+                &:hover {
+                    background-color: $gray-200;
+                    color: inherit;
+                }
+            }
         }
-
-        a:hover {
-            background-color: lighten($header-top-background, 10%);
-            border-bottom-color: $accent;
-        }
+        
     }
 
     #search_widget {

@@ -6444,18 +6444,28 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 10px; }
   .header-top .searchbar-space {
     width: 260px; }
-  .header-top #main-menu {
+  .header-top #main-menu .nav-link {
     text-transform: uppercase;
     font-size: 1rem;
-    font-weight: 600; }
-    .header-top #main-menu a {
-      border-bottom: 2px solid #063871; }
-    .header-top #main-menu a.active {
+    font-weight: 600;
+    border-bottom: 2px solid #063871; }
+    .header-top #main-menu .nav-link.active {
       background-color: inherit;
       border-bottom-color: yellow; }
-    .header-top #main-menu a:hover {
+    .header-top #main-menu .nav-link:hover {
       background-color: #0950a1;
       border-bottom-color: yellow; }
+  .header-top #main-menu .dropdown-menu {
+    background-color: white; }
+    .header-top #main-menu .dropdown-menu a {
+      color: #212529;
+      max-width: 350px; }
+      .header-top #main-menu .dropdown-menu a.active {
+        background-color: inherit;
+        color: inherit; }
+      .header-top #main-menu .dropdown-menu a:hover {
+        background-color: #e9ecef;
+        color: inherit; }
   .header-top #search_widget {
     position: absolute;
     top: 10px;
