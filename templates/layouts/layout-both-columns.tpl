@@ -53,7 +53,7 @@
         {include file='_partials/notifications.tpl'}
       {/block}
 
-      <section id="wrapper" class="container-fluid max-width">
+      <section id="wrapper" class="container-fluid max-width pt-3">
         {hook h="displayWrapperTop"}
 
         {block name='breadcrumb'}
