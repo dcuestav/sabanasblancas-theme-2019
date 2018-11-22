@@ -6457,8 +6457,7 @@ a.text-dark:hover, a.text-dark:focus {
   .header-top #main-menu .dropdown-menu {
     background-color: white; }
     .header-top #main-menu .dropdown-menu a {
-      color: #212529;
-      max-width: 350px; }
+      color: #212529; }
       .header-top #main-menu .dropdown-menu a.active {
         background-color: inherit;
         color: inherit; }
