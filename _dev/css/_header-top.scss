@@ -42,6 +42,9 @@ $header-top-font-size: 0.9rem;
                 background-color: lighten($header-top-background, 10%);
                 border-bottom-color: $accent;
             }
+            &:focus {
+                outline: 0;
+            }
         }
 
         .dropdown-menu {

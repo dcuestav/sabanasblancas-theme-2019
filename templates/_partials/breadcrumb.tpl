@@ -5,7 +5,11 @@
         {block name='breadcrumb_item'}
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemprop="item" href="{$path.url}">
-              <span itemprop="name">{$path.title}</span>
+              {if $smarty.foreach.breadcrumb.iteration == 1}
+                <i class="material-icons">home</i>
+              {else}
+                <span itemprop="name">{$path.title}</span>
+              {/if}
             </a>
             <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}">
           </li>

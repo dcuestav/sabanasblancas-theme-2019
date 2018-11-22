@@ -18,3 +18,16 @@ $accent: yellow;
 $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
+
+// Breadcrumbs
+
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: 1rem;
+$breadcrumb-bg: inherit;
+$breadcrumb-divider: quote(">");
+
+// Pagination
+
+$pagination-bg:                     inherit;
+$pagination-border-width:           0;
