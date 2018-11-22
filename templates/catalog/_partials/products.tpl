@@ -38,10 +38,10 @@
   {/block}
 
   {block name='back_to_top'}
-    <div class="text-center">
-      <a href="#header">
-        <i class="material-icons position-absolute">keyboard_arrow_up</i>
-        <span class="d-inline-block pl-4">{l s='Back to top' d='Shop.Theme.Actions'}</span>
+    <div class="text-center mt-3 mb-3">
+      <a href="#header" role="button" class="btn btn-light">
+        <i class="material-icons">keyboard_arrow_up</i>
+        <span class="">{l s='Back to top' d='Shop.Theme.Actions'}</span>
       </a>
     </div>
   {/block}

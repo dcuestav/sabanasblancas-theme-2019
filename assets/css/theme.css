@@ -6593,15 +6593,15 @@ a.text-dark:hover, a.text-dark:focus {
     font-weight: 700;
     line-height: 2em; }
 
-.quantity-button button i.material-icons {
-  margin: -6px;
-  top: 6px; }
-
 .quantity-button input {
+  padding-left: 1px;
   margin: 0 10px;
   text-align: center;
   font-size: 22px;
   font-weight: 600; }
+
+.add-to-cart i {
+  line-height: 1.3; }
 
 .images-container {
   position: relative;
@@ -6756,9 +6756,17 @@ a.text-dark:hover, a.text-dark:focus {
   display: none !important; }
 
 .btn i.material-icons {
-  margin: -3px;
-  position: relative;
-  top: 4px; }
+  position: absolute; }
+  .btn i.material-icons + span {
+    padding-left: 2em; }
+
+.btn.icon-only {
+  width: 2em;
+  position: relative; }
+  .btn.icon-only i.material-icons {
+    line-height: 0;
+    left: 0;
+    right: 0; }
 
 .icon-adjust {
   display: inline-block;
@@ -6766,7 +6774,7 @@ a.text-dark:hover, a.text-dark:focus {
   .icon-adjust i.material-icons {
     position: absolute; }
   .icon-adjust i.material-icons + * {
-    margin-left: 2em; }
+    padding-left: 2em; }
 
 @media (max-width: 767.98px) {
   .icon-adjust.only-icon-on-mobile {

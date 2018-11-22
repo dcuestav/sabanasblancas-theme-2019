@@ -29,7 +29,7 @@
       {* <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label> *}
       <div class="col-sm-6">
         <div class="input-group quantity-button">
-          <button class="btn btn-secondary" type="button" id="button_remove_qty"><i class="material-icons">remove</i></button>
+          <button class="btn btn-secondary icon-only" type="button" id="button_remove_qty"><i class="material-icons">remove</i></button>
           <input
               type="number"
               name="qty"
@@ -39,7 +39,7 @@
               min="{$product.minimal_quantity}"
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
-          <button class="btn btn-secondary" type="button" id="button_add_qty"><i class="material-icons">add</i></button>
+          <button class="btn btn-secondary icon-only" type="button" id="button_add_qty"><i class="material-icons">add</i></button>
         </div>
 
       </div>
@@ -58,8 +58,8 @@
               disabled
             {/if}
           >
-            <i class="material-icons shopping-cart mr-2">&#xE547;</i>
-            {l s='Add to cart' d='Shop.Theme.Actions'}
+            <i class="material-icons">shopping_cart</i>
+            <span>{l s='Add to cart' d='Shop.Theme.Actions'}</span>
           </button>
         </div>
       </div>

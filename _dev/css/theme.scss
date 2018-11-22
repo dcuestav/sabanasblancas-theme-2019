@@ -24,9 +24,20 @@
 }
 
 .btn i.material-icons {
-  margin: -3px;
+  position: absolute;
+  & + span {
+    padding-left: 2em;
+  }
+}
+
+.btn.icon-only {
+  width: 2em;
   position: relative;
-  top: 4px;
+  i.material-icons {
+      line-height: 0;
+      left: 0;
+      right: 0;
+  }
 }
 
 .icon-adjust {
@@ -36,7 +47,7 @@
     position: absolute;
   }
   i.material-icons + * {
-    margin-left: 2em;
+    padding-left: 2em;
   }
 }
 
