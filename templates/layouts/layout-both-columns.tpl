@@ -53,8 +53,10 @@
         {include file='_partials/notifications.tpl'}
       {/block}
 
-      <section id="wrapper" class="container-fluid max-width pt-3">
+      <section id="wrapper" class="container-fluid max-width pt-3 position-relative">
         {hook h="displayWrapperTop"}
+
+        <div id="menu-backdrop" style="display:none;"></div>
 
         {block name='breadcrumb'}
           {include file='_partials/breadcrumb.tpl'}

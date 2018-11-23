@@ -1,6 +1,17 @@
 (function() {
 
     function createMainMenuDropdowns() {
+
+        function showBlur() {
+            $('#menu-backdrop').show();
+            $('#wrapper').addClass('blurred');
+        }
+    
+        function hideBlur() {
+            $('#menu-backdrop').hide();
+            $('#wrapper').removeClass('blurred');
+        }
+
         $('#main-menu .dropdown-toggle').each(function() {
             reference = $(this).closest('ul')[0];
             boundary = $('#wrapper')[0];
@@ -11,29 +22,40 @@
                 display: 'dynamic',
                 offset: 0
             });
+            var $dropdown = $(this).closest('.dropdown');
+            $dropdown.on('show.bs.dropdown', showBlur);
+            $dropdown.on('hide.bs.dropdown', hideBlur);
         })
     }
 
     function openDropdownMenuOnHover() {
-        $('body').on('mouseenter mouseleave','#main-menu .dropdown', function(e){
 
+        function showMenu($dropdown) {
+            if (!$dropdown.hasClass('show')) {
+                $dropdown.children('.dropdown-toggle').dropdown('toggle');
+            }
+        }
+    
+        function hideMenu($dropdown) {
+            if ($dropdown.hasClass('show')) {
+                $dropdown.children('.dropdown-toggle').dropdown('toggle');
+            }
+        }
+        
+        $('body').on('mouseenter mouseleave','#main-menu .dropdown', function(e){
             var $dropdown = $(e.target).closest('.dropdown');
-            var $toggle = $dropdown.children('.dropdown-toggle');
-            var $menu = $dropdown.children('.dropdown-menu');
 
             if (e.type === 'mouseleave' && !$dropdown.hasClass('show')) {
                 return;
             }
 
-            if (!$dropdown.hasClass('show')) {
-                $toggle.dropdown('toggle');
-            }
+            showMenu($dropdown);
 
             setTimeout(function(){
+                var $toggle = $dropdown.children('.dropdown-toggle');
+                var $menu = $dropdown.children('.dropdown-menu');
                 var isHover = $toggle.is(':hover') || $menu.is(':hover');
-                if (isHover != $menu.hasClass('show')) {
-                    $toggle.dropdown('toggle');
-                }
+                isHover ? showMenu($dropdown) : hideMenu($dropdown);
             }, 300);
         });
     }

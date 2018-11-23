@@ -14,6 +14,25 @@
   max-width: 1350px;
 }
 
+#wrapper {
+  background-color: inherit;
+  margin-top: -5px;
+  &.blurred {
+    filter: blur(2px);
+  }
+}
+
+#menu-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -10000px;
+  right: -10000px;
+  z-index: 1;
+  background-color: $primary;
+  opacity: .2;
+}
+
 .breadcrumb {
   font-size: 0.9rem;
   border-bottom: 1px solid $gray-300;

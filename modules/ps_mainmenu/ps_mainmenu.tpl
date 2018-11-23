@@ -20,14 +20,14 @@
 
 {function name="get_category_description" page_identifier=''}
   {if isset($descriptions[$page_identifier])}
-    <p>{$descriptions[$page_identifier]}</p>
+    <p class="d-none d-sm-block">{$descriptions[$page_identifier]}</p>
   {/if}
 {/function}
 
 <div id="main-menu" class="">
   <ul class="nav nav-pills nav-fill position-relative">
 
-    {* Menu BASIC + PREMIUM para pantalla SM, MD y LG *}
+    {* Menu BASIC + PREMIUM para pantalla XS, SM, MD y LG *}
 
     <li class="nav-item dropdown d-xl-none">
       <a id="{$sabanas_basic_premium}"
