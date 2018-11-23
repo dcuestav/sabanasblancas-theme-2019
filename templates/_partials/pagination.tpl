@@ -5,7 +5,6 @@
 
   {block name='pagination_page_list'}
     {if $pagination.should_be_displayed}
-    {debug}
     <ul class="pagination">
       {foreach from=$pagination.pages item="page"}
         <li class="page-item {if $page.current} active {/if}">
