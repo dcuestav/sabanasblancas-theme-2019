@@ -131,12 +131,19 @@
 
 // Actions
 
-.quantity-button input {
-    padding-left: 1px;
-    margin: 0 10px;
+.quantity-button-input {
+    padding: 0 1px;
+    margin: 0;
     text-align: center;
     font-size: 22px;
     font-weight: 600;
+}
+
+.cart-overview {
+    .quantity-button-input {
+        font-size: 16px;
+        height: 2rem;
+    }
 }
 
 .add-to-cart i {

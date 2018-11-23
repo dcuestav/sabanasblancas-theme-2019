@@ -158,11 +158,15 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   function handleQuantityChange() {
-    $('.js-cart-line-product-quantity').change(function () {
+    $('.js-cart-line-product-quantity').change(function (event) {
+      var oldValue = $(event.target).attr('value');
+      var newValue = event.target.value;
       var updateUrl = $(this).data('update-url');
       var requestData = {
         ajax: 1,
-        action: 'update'
+        action: 'update',
+        op: newValue > oldValue ? 'up' : 'down',
+        qty: Math.abs(newValue - oldValue)
       };
       $.post(updateUrl, requestData, null, 'json').then(function (resp) {
         prestashop.emit('updateCart', {
