@@ -9,38 +9,38 @@
 {/block}
 
 {block name="address_form_url"}
-  <form
-    method="POST"
-    action="{url entity='order' params=['id_address' => $id_address]}"
-    data-id-address="{$id_address}"
-    data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
-  >
+    <form
+      method="POST"
+      action="{url entity='order' params=['id_address' => $id_address]}"
+      data-id-address="{$id_address}"
+      data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
+    >
 {/block}
 
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
   {if $type === "delivery"}
-    <label>
-      <input  name    = "use_same_address"
-              type    = "checkbox"
-              value   = "1"
-              {if $use_same_address} checked {/if}
-      >
-      <span>{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</span>
-    </label>
+    <div class="form-group row">
+      <div class="col-md-9 col-md-offset-3">
+        <input name = "use_same_address" type = "checkbox" value = "1" {if $use_same_address} checked {/if}>
+        <label>{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
+      </div>
+    </div>
   {/if}
 {/block}
 
 {block name='form_buttons'}
   {if !$form_has_continue_button}
-    <a href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
-    <button type="submit">{l s='Save Address' d='Shop.Theme.Actions'}</button>
+    <button type="submit" class="btn btn-primary float-xs-right">{l s='Save' d='Shop.Theme.Actions'}</button>
+    <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
   {else}
-    {if $customer.addresses|count > 0}
-      <a href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
-    {/if}
-    <button type="submit" class="continue" name="confirm-addresses" value="1">
-      {l s='Continue' d='Shop.Theme.Actions'}
-    </button>
+    <form>
+      <button type="submit" class="continue btn btn-primary float-xs-right" name="confirm-addresses" value="1">
+          {l s='Continue' d='Shop.Theme.Actions'}
+      </button>
+      {if $customer.addresses|count > 0}
+        <a class="js-cancel-address cancel-address float-xs-right" href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+      {/if}
+    </form>
   {/if}
 {/block}

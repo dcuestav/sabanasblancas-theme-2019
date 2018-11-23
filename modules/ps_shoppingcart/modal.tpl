@@ -9,7 +9,6 @@
           <span>{l s='Product successfully added to your shopping cart' d='Shop.Theme.Checkout'}</span>
         </h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          {* <span aria-hidden="true">&times;</span> *}
           <i class="material-icons">clear</i>
         </button>
       </div>

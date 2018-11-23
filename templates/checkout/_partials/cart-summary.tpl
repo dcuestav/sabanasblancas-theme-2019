@@ -1,5 +1,5 @@
 {**
- * 2007-2017 PrestaShop
+ * 2007-2018 PrestaShop
  *
  * NOTICE OF LICENSE
  *
@@ -18,37 +18,60 @@
  * needs please refer to http://www.prestashop.com for more information.
  *
  * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2017 PrestaShop SA
+ * @copyright 2007-2018 PrestaShop SA
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section id="js-checkout-summary" class="js-cart js-checkout-summary" data-refresh-url="{url entity='cart' params=['ajax' => 1]}">
-  {block name='hook_checkout_summary_top'}
-    {hook h='displayCheckoutSummaryTop'}
-  {/block}
+<section id="js-checkout-summary" class="card js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
+  <div class="card-block">
+    {block name='hook_checkout_summary_top'}
+      {hook h='displayCheckoutSummaryTop'}
+    {/block}
 
-  {block name='cart_summary_header'}
-    <header>
-      <h1 class="h3">{l s='Your order' d='Shop.Theme.Customeraccount'}</h1>
-      <p>{$cart.summary_string}</p>
-    </header>
-  {/block}
+    {block name='cart_summary_products'}
+      <div class="cart-summary-products">
 
-  {block name='cart_summary_product_list'}
-    <div id="cart-summary-product-list">
-      <ul>
-        {foreach from=$cart.products item=product}
-          <li>{include file='checkout/_partials/cart-summary-product-line.tpl' product=$product}</li>
-        {/foreach}
-      </ul>
-    </div>
-  {/block}
+        <p>{$cart.summary_string}</p>
 
-  {block name='cart_voucher'}
+        <p>
+          <a href="#" data-toggle="collapse" data-target="#cart-summary-product-list">
+            {l s='show details' d='Shop.Theme.Actions'}
+          </a>
+        </p>
+
+        {block name='cart_summary_product_list'}
+          <div class="collapse" id="cart-summary-product-list">
+            <ul class="media-list">
+              {foreach from=$cart.products item=product}
+                <li class="media">{include file='checkout/_partials/cart-summary-product-line.tpl' product=$product}</li>
+              {/foreach}
+            </ul>
+          </div>
+        {/block}
+      </div>
+    {/block}
+
+    {block name='cart_summary_subtotals'}
+      {foreach from=$cart.subtotals item="subtotal"}
+        {if $subtotal && $subtotal.type !== 'tax'}
+          <div class="cart-summary-line cart-summary-subtotals" id="cart-subtotal-{$subtotal.type}">
+            <span class="label">{$subtotal.label}</span>
+            <span class="value">{$subtotal.value}</span>
+          </div>
+        {/if}
+      {/foreach}
+    {/block}
+
+  </div>
+
+  {block name='cart_summary_voucher'}
     {include file='checkout/_partials/cart-voucher.tpl'}
   {/block}
 
-  {block name='cart_totals'}
+  <hr class="separator">
+
+  {block name='cart_summary_totals'}
     {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
   {/block}
+
 </section>

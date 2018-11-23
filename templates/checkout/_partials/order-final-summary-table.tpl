@@ -22,16 +22,17 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{extends file='customer/_partials/login-form.tpl'}
+{extends file='checkout/_partials/order-confirmation-table.tpl'}
 
-{block name='form_buttons'}
-  <button
-    class="continue btn btn-primary float-xs-right"
-    name="continue"
-    data-link-action="sign-in"
-    type="submit"
-    value="1"
-  >
-    {l s='Continue' d='Shop.Theme.Actions'}
-  </button>
+{block name='order-items-table-head'}
+<div id="order-items" class="col-md-12">
+  <h3 class="card-title h3">
+    {if $products_count == 1}
+       {l s='%product_count% item in your cart' sprintf=['%product_count%' => $products_count] d='Shop.Theme.Checkout'}
+    {else}
+       {l s='%products_count% items in your cart' sprintf=['%products_count%' => $products_count] d='Shop.Theme.Checkout'}
+    {/if}
+  	<a href="{url entity=cart params=['action' => 'show']}"><span class="step-edit"><i class="material-icons edit">mode_edit</i> {l s='edit' d='Shop.Theme.Actions'}</span></a>
+  </h3>
+</div>
 {/block}
