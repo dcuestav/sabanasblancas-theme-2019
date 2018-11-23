@@ -108,6 +108,85 @@
 
 /***/ }),
 
+/***/ "./js/add-to-cart.js":
+/*!***************************!*\
+  !*** ./js/add-to-cart.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  prestashop.blockcart = prestashop.blockcart || {};
+
+  prestashop.blockcart.showModal = function (modal) {
+    $('body').append(modal);
+    $('#blockcart-modal').siblings().addClass('blurred');
+    $('#blockcart-modal').modal() // Mostrar la ventana
+    .on('hidden.bs.modal', function (e) {
+      // Destruirla completamente al ocultarla
+      $('.blurred').removeClass('blurred');
+      $(this).modal('dispose').remove();
+    });
+    $('[data-button-action="add-to-cart"]').removeClass('spinner').removeAttr('disabled');
+  };
+
+  $('[data-button-action="add-to-cart"]').click(function () {
+    var me = this;
+    setTimeout(function () {
+      // Tiene que ejecutarse después del envío del formulario
+      $(me).attr('disabled', true);
+      $(me).addClass('spinner');
+    }, 0);
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./js/flexslider.js":
+/*!**************************!*\
+  !*** ./js/flexslider.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {(function () {
+  // store the slider in a local variable
+  var $window = $(window),
+      flexslider = {
+    vars: {}
+  }; // tiny helper function to add breakpoints
+
+  function getGridSize() {
+    return window.innerWidth < 283 ? 1 : window.innerWidth < 551 ? 2 : window.innerWidth < 819 ? 3 : window.innerWidth < 1087 ? 4 : 5;
+  }
+
+  $.flexslider.defaults.prevText = '';
+  $.flexslider.defaults.nextText = '';
+  $window.load(function () {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      slideshow: false,
+      animationSpeed: 400,
+      animationLoop: false,
+      itemWidth: 252,
+      itemMargin: 15,
+      minItems: 1,
+      // use function to pull in initial value
+      maxItems: getGridSize() // use function to pull in initial value
+
+    });
+  }); // check grid size on resize event
+
+  $window.resize(function () {
+    var gridSize = getGridSize();
+    flexslider.vars.maxItems = gridSize;
+  });
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
 /***/ "./js/main-menu.js":
 /*!*************************!*\
   !*** ./js/main-menu.js ***!
@@ -305,7 +384,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var bootstrap_js_src_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/src/util */ "./node_modules/bootstrap/js/src/util.js");
+/* harmony import */ var bootstrap_js_src_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/src/util */ "./node_modules/bootstrap/js/src/util.js");
 /* harmony import */ var bootstrap_js_src_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/js/src/button */ "./node_modules/bootstrap/js/src/button.js");
 /* harmony import */ var bootstrap_js_src_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/carousel */ "./node_modules/bootstrap/js/src/carousel.js");
 /* harmony import */ var bootstrap_js_src_collapse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/js/src/collapse */ "./node_modules/bootstrap/js/src/collapse.js");
@@ -314,14 +393,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_js_src_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/js/src/modal */ "./node_modules/bootstrap/js/src/modal.js");
 /* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! flexslider/jquery.flexslider */ "./node_modules/flexslider/jquery.flexslider.js");
 /* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
-/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _flexslider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./flexslider */ "./js/flexslider.js");
+/* harmony import */ var _flexslider__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_flexslider__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./add-to-cart */ "./js/add-to-cart.js");
+/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_add_to_cart__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13__);
  // import 'bootstrap/js/src/alert';
 
 
@@ -340,40 +423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(function () {
-  // store the slider in a local variable
-  var $window = $(window),
-      flexslider = {
-    vars: {}
-  }; // tiny helper function to add breakpoints
 
-  function getGridSize() {
-    return window.innerWidth < 283 ? 1 : window.innerWidth < 551 ? 2 : window.innerWidth < 819 ? 3 : window.innerWidth < 1087 ? 4 : 5;
-  }
-
-  $.flexslider.defaults.prevText = '';
-  $.flexslider.defaults.nextText = '';
-  $window.load(function () {
-    $('.flexslider').flexslider({
-      animation: "slide",
-      slideshow: false,
-      animationSpeed: 400,
-      animationLoop: false,
-      itemWidth: 252,
-      itemMargin: 15,
-      minItems: 1,
-      // use function to pull in initial value
-      maxItems: getGridSize() // use function to pull in initial value
-
-    });
-  }); // check grid size on resize event
-
-  $window.resize(function () {
-    var gridSize = getGridSize();
-    flexslider.vars.maxItems = gridSize;
-  });
-})();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
 

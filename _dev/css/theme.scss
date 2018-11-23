@@ -14,12 +14,29 @@
   max-width: 1350px;
 }
 
+#blockcart-modal {
+
+  .modal-dialog {
+    max-width: 1140px;
+    width: 100%;
+  }
+
+  .modal-header {
+    background-color: $success;
+    color: white;
+    .modal-title {
+      margin: auto;
+    }
+  }
+}
+
+.blurred {
+  filter: blur(2px);
+}
+
 #wrapper {
   background-color: inherit;
   margin-top: -5px;
-  &.blurred {
-    filter: blur(2px);
-  }
 }
 
 #menu-backdrop {
@@ -29,8 +46,32 @@
   left: -10000px;
   right: -10000px;
   z-index: 1;
+}
+
+#menu-backdrop,
+.modal-backdrop {
   background-color: $primary;
   opacity: .2;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spinner .6s linear infinite;
 }
 
 .breadcrumb {

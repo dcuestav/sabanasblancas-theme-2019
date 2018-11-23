@@ -51,7 +51,7 @@
 
         <div class="add">
           <button
-            class="btn btn-lg btn-block btn-primary add-to-cart"
+            class="btn btn-lg btn-block btn-primary add-to-cart position-relative"
             data-button-action="add-to-cart"
             type="submit"
             {if !$product.add_to_cart_url}
