@@ -29,17 +29,17 @@
       {* <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label> *}
       <div class="col">
         <div class="input-group quantity-button">
-          <button class="btn btn-secondary icon-only" type="button" id="button_remove_qty"><i class="material-icons">remove</i></button>
+          <button class="btn btn-secondary icon-only quantity-button-remove" type="button"><i class="material-icons">remove</i></button>
           <input
               type="number"
               name="qty"
               id="quantity_wanted"
               value="{$product.quantity_wanted}"
-              class="form-control"
+              class="form-control quantity-button-input"
               min="{$product.minimal_quantity}"
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
-          <button class="btn btn-secondary icon-only" type="button" id="button_add_qty"><i class="material-icons">add</i></button>
+          <button class="btn btn-secondary icon-only quantity-button-add" type="button"><i class="material-icons">add</i></button>
         </div>
 
       </div>

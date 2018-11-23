@@ -143,6 +143,82 @@
 
 /***/ }),
 
+/***/ "./js/cart.js":
+/*!********************!*\
+  !*** ./js/cart.js ***!
+  \********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common */ "./js/common.js");
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_0__);
+
+
+(function () {
+  function handleQuantityChange() {
+    $('.js-cart-line-product-quantity').change(function () {
+      var updateUrl = $(this).data('update-url');
+      var requestData = {
+        ajax: 1,
+        action: 'update'
+      };
+      $.post(updateUrl, requestData, null, 'json').then(function (resp) {
+        prestashop.emit('updateCart', {
+          reason: resp.cart,
+          resp: resp
+        });
+      }).fail(function (resp) {
+        prestashop.emit('handleError', {
+          eventType: 'updateShoppingCart',
+          resp: resp
+        });
+      });
+    });
+  }
+
+  $(document).ready(handleQuantityChange);
+  prestashop.on('updatedCart', handleQuantityChange);
+  prestashop.on('updatedCart', _common__WEBPACK_IMPORTED_MODULE_0___default.a);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./js/common.js":
+/*!**********************!*\
+  !*** ./js/common.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {// Quantity button
+function quantityButtonHandlers() {
+  $('.quantity-button-add').click(function () {
+    var qtyInput = $(this).siblings('.quantity-button-input');
+    var qtyInputMin = qtyInput.attr('min');
+    var min = qtyInputMin && qtyInputMin > 0 ? qtyInputMin : 1;
+    var newValue = Number(qtyInput.val()) + 1;
+    qtyInput.val(newValue >= min ? newValue : min);
+    qtyInput.trigger('change');
+  });
+  $('.quantity-button-remove').click(function () {
+    var qtyInput = $(this).siblings('.quantity-button-input');
+    var qtyInputMin = qtyInput.attr('min');
+    var min = qtyInputMin && qtyInputMin > 0 ? qtyInputMin : 1;
+    var newValue = Number(qtyInput.val()) - 1;
+    qtyInput.val(newValue >= min ? newValue : min);
+    qtyInput.trigger('change');
+  });
+}
+
+$(document).ready(quantityButtonHandlers);
+module.exports = quantityButtonHandlers;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
 /***/ "./js/flexslider.js":
 /*!**************************!*\
   !*** ./js/flexslider.js ***!
@@ -252,8 +328,7 @@
     });
   }
 
-  $(window).load(createMainMenuDropdowns);
-  $(window).load(openDropdownMenuOnHover);
+  $(window).load(createMainMenuDropdowns); // $(window).load(openDropdownMenuOnHover);
 })();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
@@ -267,22 +342,6 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {(function () {
-  $('#button_add_qty').click(function () {
-    var qtyInput = $('#quantity_wanted');
-    var qtyInputMin = qtyInput.attr('min');
-    var min = qtyInputMin && qtyInputMin > 0 ? qtyInputMin : 1;
-    var newValue = Number(qtyInput.val()) + 1;
-    qtyInput.val(newValue >= min ? newValue : min);
-    updateTotalPrice();
-  });
-  $('#button_remove_qty').click(function () {
-    var qtyInput = $('#quantity_wanted');
-    var qtyInputMin = qtyInput.attr('min');
-    var min = qtyInputMin && qtyInputMin > 0 ? qtyInputMin : 1;
-    var newValue = Number(qtyInput.val()) - 1;
-    qtyInput.val(newValue >= min ? newValue : min);
-    updateTotalPrice();
-  });
   $('#quantity_wanted').change(updateTotalPrice);
 
   function productImagesActions(data) {
@@ -395,16 +454,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _flexslider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./flexslider */ "./js/flexslider.js");
 /* harmony import */ var _flexslider__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_flexslider__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
-/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./add-to-cart */ "./js/add-to-cart.js");
-/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_add_to_cart__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
-/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
-/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./common */ "./js/common.js");
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
+/* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./add-to-cart */ "./js/add-to-cart.js");
+/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_add_to_cart__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
+/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
+/* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
+/* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./cart */ "./js/cart.js");
  // import 'bootstrap/js/src/alert';
 
 
@@ -416,6 +478,8 @@ __webpack_require__.r(__webpack_exports__);
 // import 'bootstrap/js/src/scrollspy';
 // import 'bootstrap/js/src/tab';
 // import 'bootstrap/js/src/tooltip';
+
+
 
 
 

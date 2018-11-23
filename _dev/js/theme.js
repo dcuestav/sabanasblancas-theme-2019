@@ -14,10 +14,12 @@ import 'bootstrap/js/src/modal';
 
 import 'flexslider/jquery.flexslider';
 import './flexslider';
+import './common';
 import './main-menu';
 import './add-to-cart';
 import './product-detail';
 import './replace-image-effect';
 import './show-brand-on-product-miniature';
+import './cart';
 
 

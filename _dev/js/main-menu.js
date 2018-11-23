@@ -61,6 +61,6 @@
     }
 
     $(window).load(createMainMenuDropdowns);
-    $(window).load(openDropdownMenuOnHover);
+    // $(window).load(openDropdownMenuOnHover);
     
 })();
