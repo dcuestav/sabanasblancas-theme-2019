@@ -25,9 +25,9 @@
 <div class="product-add-to-cart">
   {if !$configuration.is_catalog}
 
-    <div class="form-group row mb-3">
+    <div class="form-row mb-3">
       {* <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label> *}
-      <div class="col-sm-6">
+      <div class="col">
         <div class="input-group quantity-button">
           <button class="btn btn-secondary icon-only" type="button" id="button_remove_qty"><i class="material-icons">remove</i></button>
           <input
@@ -43,7 +43,7 @@
         </div>
 
       </div>
-      <label id="total_price_message" class="col-sm-6 col-form-label text-right text-muted invisible">Total <span id="total_price"></span> €</label>
+      <label id="total_price_message" class="col col-form-label text-right text-muted invisible">Total <span id="total_price"></span> €</label>
     </div>
 
     {block name='product_quantity'}

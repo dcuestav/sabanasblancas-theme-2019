@@ -6767,7 +6767,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .breadcrumb {
   font-size: 0.9rem;
-  border-bottom: 1px solid #dee2e6; }
+  border-bottom: 1px solid #dee2e6;
+  flex-wrap: nowrap; }
+  .breadcrumb li {
+    white-space: nowrap; }
 
 .psgdpr_consent_message i {
   display: none !important; }

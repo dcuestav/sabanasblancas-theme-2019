@@ -36,6 +36,10 @@
 .breadcrumb {
   font-size: 0.9rem;
   border-bottom: 1px solid $gray-300;
+  flex-wrap: nowrap;
+  li {
+    white-space: nowrap;
+  }
 }
 
 .psgdpr_consent_message i {
