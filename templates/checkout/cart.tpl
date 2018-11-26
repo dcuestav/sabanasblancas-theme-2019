@@ -22,8 +22,9 @@
         </div>
 
         {block name='continue_shopping'}
-          <a class="label" href="{$urls.pages.index}">
-            <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+          <a class="label icon-adjust pt-2 pb-2" href="{$urls.pages.index}">
+            <i class="material-icons">chevron_left</i>
+            <span>{l s='Continue shopping' d='Shop.Theme.Actions'}</span>
           </a>
         {/block}
 
@@ -37,7 +38,7 @@
       <div class="cart-grid-right col-xs-12 col-lg-4">
 
         {block name='cart_summary'}
-          <div class="card cart-summary">
+          <div class="card cart-summary mb-3">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}

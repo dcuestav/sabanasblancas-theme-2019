@@ -11,13 +11,15 @@ $h4-font-size: $font-size-base * 1.25;
 $h5-font-size: $font-size-base;
 $h6-font-size: $font-size-base;
 
-$primary: lighten(#052c59, 10%);
+// $primary: lighten(#052c59, 10%);
+$base-color: lighten(#052c59, 10%);
 $accent: yellow;
 
 
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
+$enable-rounded: false;
+$enable-gradients: true;
+$enable-shadows: false;
+$enable-transitions: true;
 
 // Breadcrumbs
 

@@ -1,3 +1,33 @@
+// Product grid
+
+.product-grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: 281px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 546px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 811px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1076px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.pagination .navigate-before,
+.pagination .navigate-next {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 14px;
+  top: -2px;
+  left: -5px;
+}
+
 // Product miniatures
 
 .product-miniature-card {

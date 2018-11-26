@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='cart_detailed_totals'}
-<div class="cart-detailed-totals">
+<div class="card-body cart-detailed-totals">
 
   <div class="card-block">
     {foreach from=$cart.subtotals item="subtotal"}
@@ -63,6 +63,5 @@
     </div>
   </div>
 
-  <hr class="separator">
 </div>
 {/block}
