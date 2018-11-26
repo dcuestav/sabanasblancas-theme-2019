@@ -56,7 +56,7 @@
           }
         </div>
       {elseif $customer.addresses|count > 0}
-        <div id="delivery-addresses" class="address-selector js-address-selector">
+        <div id="delivery-addresses" class="address-selector js-address-selector row">
           {include  file        = 'checkout/_partials/address-selector-block.tpl'
                     addresses   = $customer.addresses
                     name        = "id_address_delivery"
@@ -73,7 +73,7 @@
         {/if}
 
         <p class="add-address">
-          <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+          <a href="{$new_address_delivery_url}" class="icon-adjust"><i class="material-icons">add</i><span>{l s='add new address' d='Shop.Theme.Actions'}</span></a>
         </p>
 
         {if $use_same_address && !$cart.is_virtual}
@@ -100,7 +100,7 @@
             }
           </div>
         {else}
-          <div id="invoice-addresses" class="address-selector js-address-selector">
+          <div id="invoice-addresses" class="address-selector js-address-selector row">
             {include  file        = 'checkout/_partials/address-selector-block.tpl'
                       addresses   = $customer.addresses
                       name        = "id_address_invoice"
@@ -117,15 +117,15 @@
           {/if}
 
           <p class="add-address">
-            <a href="{$new_address_invoice_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+            <a href="{$new_address_invoice_url}" class="icon-adjust"><i class="material-icons">add</i><span>{l s='add new address' d='Shop.Theme.Actions'}</span></a>
           </p>
         {/if}
 
       {/if}
 
       {if !$form_has_continue_button}
-        <div class="clearfix">
-          <button type="submit" class="btn btn-primary continue float-xs-right" name="confirm-addresses" value="1">
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary continue" name="confirm-addresses" value="1">
               {l s='Continue' d='Shop.Theme.Actions'}
           </button>
           <input type="hidden" id="not-valid-addresses" value="{$not_valid_addresses}">

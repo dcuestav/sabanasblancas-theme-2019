@@ -1,35 +1,12 @@
-{**
- * 2007-2017 PrestaShop
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * https://opensource.org/licenses/AFL-3.0
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@prestashop.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
- *
- * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2017 PrestaShop SA
- * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- * International Registered Trademark & Property of PrestaShop SA
- *}
-<aside id="notifications">
+
+<aside id="notifications" class="container-fluid max-width">
 
   {if $notifications.error}
     {block name='notifications_error'}
       <article class="notification notification-danger" role="alert" data-alert="danger">
-        <ul>
+        <ul class="list-unstyled">
           {foreach $notifications.error as $notif}
-            <li>{$notif nofilter}</li>
+            <li class="alert alert-danger">{$notif nofilter}</li>
           {/foreach}
         </ul>
       </article>
@@ -39,9 +16,9 @@
   {if $notifications.warning}
     {block name='notifications_warning'}
       <article class="notification notification-warning" role="alert" data-alert="warning">
-        <ul>
+        <ul class="list-unstyled">
           {foreach $notifications.warning as $notif}
-            <li>{$notif nofilter}</li>
+            <li class="alert alert-warning">{$notif nofilter}</li>
           {/foreach}
         </ul>
       </article>
@@ -51,9 +28,9 @@
   {if $notifications.success}
     {block name='notifications_success'}
       <article class="notification notification-success" role="alert" data-alert="success">
-        <ul>
+        <ul class="list-unstyled">
           {foreach $notifications.success as $notif}
-            <li>{$notif nofilter}</li>
+            <li class="alert alert-success">{$notif nofilter}</li>
           {/foreach}
         </ul>
       </article>
@@ -63,9 +40,9 @@
   {if $notifications.info}
     {block name='notifications_info'}
       <article class="notification notification-info" role="alert" data-alert="info">
-        <ul>
+        <ul class="list-unstyled">
           {foreach $notifications.info as $notif}
-            <li>{$notif nofilter}</li>
+            <li class="alert alert-info">{$notif nofilter}</li>
           {/foreach}
         </ul>
       </article>

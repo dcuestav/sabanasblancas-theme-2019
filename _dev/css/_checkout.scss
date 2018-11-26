@@ -4,7 +4,7 @@
     }
 }
 
-#checkout-personal-information-step {
+#checkout {
     .nav-link {
         font-weight: 700;
         font-size: 1.1em;
@@ -13,4 +13,21 @@
             opacity: 1;
         } 
     }
+
+    .step-title {
+        text-transform: uppercase;
+    }
+
+    .address {
+        font-size: 0.9em;
+    }
+
+    .address-footer {
+        font-size: 0.8em;
+        padding: .25rem 1.25rem .5rem;
+        .material-icons {
+            font-size: 20px;
+        }
+    }
+
 }
