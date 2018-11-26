@@ -18,9 +18,10 @@
     {* Module legalcompliance *}
   {/block}
 
-  <p>
-    {block name='copyright_link'}
-      <div class="row justify-content-center">© 2019 - Nidara Online S.L. - CIF B12938577</div>
-    {/block}
-  </p>
+  {block name='copyright_link'}
+    <div class="text-sm-center mb-2 mt-2">
+      {* {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'} *}
+      © 2019 - Nidara Online S.L. - CIF B12938577
+    </div>
+  {/block}
 </div>

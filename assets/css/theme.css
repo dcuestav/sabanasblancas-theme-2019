@@ -6663,7 +6663,7 @@ a {
           filter: blur(2px); }
 
 #wrapper {
-  background-color: inherit;
+  background-color: transparent;
   margin-top: -5px; }
 
 #menu-backdrop {
