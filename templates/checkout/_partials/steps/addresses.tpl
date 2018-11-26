@@ -47,7 +47,7 @@
       {/if}
 
       {if $show_delivery_address_form}
-        <div id="delivery-address">
+        <div id="delivery-address" class="mb-3">
           {render file                      = 'checkout/_partials/address-form.tpl'
                   ui                        = $address_form
                   use_same_address          = $use_same_address
