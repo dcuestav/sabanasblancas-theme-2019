@@ -3,3 +3,14 @@
         float: right;
     }
 }
+
+#checkout-personal-information-step {
+    .nav-link {
+        font-weight: 700;
+        font-size: 1.1em;
+        opacity: 0.4;
+        &.active {
+            opacity: 1;
+        } 
+    }
+}

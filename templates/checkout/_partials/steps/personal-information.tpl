@@ -32,7 +32,7 @@
 
   {else}
 
-    <ul class="nav nav-inline my-2" role="tablist">
+    <ul class="nav my-4" role="tablist">
       <li class="nav-item">
         <a
           class="nav-link {if !$show_login_form}active{/if}"
@@ -50,9 +50,9 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      {* <li class="nav-item">
         <span href="nav-separator"> | </span>
-      </li>
+      </li> *}
 
       <li class="nav-item">
         <a

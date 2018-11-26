@@ -1,103 +1,108 @@
-{**
- * 2007-2017 PrestaShop
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * https://opensource.org/licenses/AFL-3.0
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@prestashop.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
- *
- * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2017 PrestaShop SA
- * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- * International Registered Trademark & Property of PrestaShop SA
- *}
+{$random_number = rand()}
 {if $field.type === 'select'}
 
   {block name='form_field_item_select'}
-    <label class='select-field {if $field.required}required{/if}'>
-      <span>{$field.label}</span>
-      <select name="{$field.name}" {if $field.required}required{/if}>
-        <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
-        {foreach from=$field.availableValues item="label" key="value"}
-          <option value="{$value}" {if $value eq $field.value}selected{/if}>{$label}</option>
-        {/foreach}
-      </select>
-    </label>
+    <div class="form-group row">
+      <label for="{$field.name}{$random_number}" class='select-field col-md-3 {if $field.required}required{/if}'>{$field.label}</label>
+      <div class="col-md-6">
+        <select 
+          id="{$field.name}{$random_number}"
+          class="form-control"
+          name="{$field.name}" 
+          {if $field.required}required{/if} 
+          >
+          <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
+          {foreach from=$field.availableValues item="label" key="value"}
+            <option value="{$value}" {if $value eq $field.value}selected{/if}>{$label}</option>
+          {/foreach}
+        </select>
+      </div>
+    </div>
   {/block}
 
 {elseif $field.type === 'countrySelect'}
 
   {block name='form_field_item_country'}
-    <label class='select-field {if $field.required}required{/if}'>
-      <span>{$field.label}</span>
-      <select class="js-country" name="{$field.name}" {if $field.required}required{/if}>
-        <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
-        {foreach from=$field.availableValues item="label" key="value"}
-          <option value="{$value}" {if $value eq $field.value} selected {/if}>{$label}</option>
-        {/foreach}
-      </select>
-    </label>
+    <div class="form-group row">
+      <label for="{$field.name}{$random_number}" class='select-field col-md-3 {if $field.required}required{/if}'>{$field.label}</label>
+      <div class="col-md-6">
+        <select 
+          id="{$field.name}{$random_number}"
+          class="js-country form-control" 
+          name="{$field.name}" 
+          {if $field.required}required{/if} 
+          >
+          <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
+          {foreach from=$field.availableValues item="label" key="value"}
+            <option value="{$value}" {if $value eq $field.value} selected {/if}>{$label}</option>
+          {/foreach}
+        </select>
+      </div>
+    </div>
   {/block}
 
 {elseif $field.type === 'radio-buttons'}
 
   {block name='form_field_item_radio'}
-    <label class='radio-field {if $field.required}required{/if}'>
-      <span>{$field.label}</span>
-      {foreach from=$field.availableValues item="label" key="value"}
-        <label>
-          <input
-            name="{$field.name}"
-            type="radio"
-            value="{$value}"
-            {if $field.required}required{/if}
-            {if $value eq $field.value}checked{/if}
-          >
-          {$label}
-        </label>
-      {/foreach}
-    </label>
+    <div class="form-group row">
+      <label class='radio-field col-md-3 {if $field.required}required{/if}'>{$field.label}</label>
+      <div class="col-md-6">
+        {foreach from=$field.availableValues item="label" key="value"}
+          <div class="form-check">
+            <input
+              id="{$field.name}{$random_number}-{$value}"
+              class="form-check-input"
+              name="{$field.name}"
+              type="radio"
+              value="{$value}"
+              {if $field.required}required{/if}
+              {if $value eq $field.value}checked{/if}
+            >
+            <label class="form-check-label" for="{$field.name}{$random_number}-{$value}">{$label}</label>
+          </div>
+        {/foreach}
+      </div>
+    </div>
   {/block}
 
 {elseif $field.type === 'checkbox'}
 
   {block name='form_field_item_checkbox'}
-    <label class='checkbox-field {if $field.required}required{/if}'>
-      <input
-        name="{$field.name}"
-        type="checkbox"
-        value="1"
-        {if $field.required}required{/if}
-        {if $field.value}checked{/if}
-      >
-      <span>{$field.label}</span>
-    </label>
+    <div class="form-group row">
+      <div class="offset-md-3 col-md-6">
+        <div class="form-check">
+          <input
+            id="{$field.value}{$random_number}"
+            class="form-check-input"
+            name="{$field.name}"
+            type="checkbox"
+            value="1"
+            {if $field.required}required{/if}
+            {if $field.value}checked{/if}
+          >
+          <label class="form-check-label" for="{$field.value}{$random_number}">{$field.label}</label>
+        </div>
+      </div>
+    </div>
   {/block}
 
 {elseif $field.type === 'password'}
-
+  
   {block name='form_field_item_password'}
-    <label {if $field.required}class="required"{/if}>
-      <span>{$field.label}</span>
-      <input
-        name="{$field.name}"
-        type="password"
-        value=""
-        pattern=".{literal}{{/literal}5,{literal}}{/literal}"
-        {if $field.required}required{/if}
-      >
-    </label>
+    <div class="form-group row">
+      <label for="{$field.name}{$random_number}" class='col-md-3 col-form-label {if $field.required}required{/if}'>{$field.label}</label>
+      <div class="col-md-6">
+        <input
+          id="{$field.name}{$random_number}"
+          class="form-control"
+          name="{$field.name}"
+          type="password"
+          value=""
+          pattern=".{literal}{{/literal}5,{literal}}{/literal}"
+          {if $field.required}required{/if}
+        >
+      </div>
+    </div>
   {/block}
 
 {elseif $field.type === 'hidden'}
@@ -109,10 +114,18 @@
 {else}
 
   {block name='form_field_item_other'}
-    <label {if $field.required}class="required"{/if}>
-      <span>{$field.label}</span>
-      <input name="{$field.name}" type="{$field.type}" value="{$field.value}" {if $field.required}required{/if}>
-    </label>
+    <div class="form-group row">
+      <label for="{$field.name}{$random_number}" class="col-md-3 col-form-label {if $field.required}required{/if}">{$field.label}</label>
+      <div class="col-md-6">
+        <input 
+          id="{$field.name}{$random_number}"
+          class="form-control"
+          name="{$field.name}" 
+          type="{$field.type}" 
+          value="{$field.value}" 
+          {if $field.required}required{/if}>
+      </div>
+    </div>
   {/block}
 
 {/if}
