@@ -16,6 +16,17 @@
 
     .step-title {
         text-transform: uppercase;
+
+        .step-edit {
+            font-size: 1rem;
+            text-transform: lowercase;
+            .material-icons {
+                font-size: 20px;
+            }
+            span {
+                padding-left: 1.5em;
+            }
+        }
     }
 
     .address {

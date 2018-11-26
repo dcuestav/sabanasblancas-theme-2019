@@ -6648,6 +6648,13 @@ a.text-dark:hover, a.text-dark:focus {
 
 #checkout .step-title {
   text-transform: uppercase; }
+  #checkout .step-title .step-edit {
+    font-size: 1rem;
+    text-transform: lowercase; }
+    #checkout .step-title .step-edit .material-icons {
+      font-size: 20px; }
+    #checkout .step-title .step-edit span {
+      padding-left: 1.5em; }
 
 #checkout .address {
   font-size: 0.9em; }

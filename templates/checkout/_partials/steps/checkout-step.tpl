@@ -9,15 +9,19 @@
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
-    <h1 class="step-title h4">
-      {* <i class="material-icons rtl-no-flip done">&#xE876;</i> *}
+    <h1 class="card-header step-title h4">
+      {* <i class="material-icons rtl-no-flip ">done</i> *}
       <span class="step-number">{$position}.</span>
       {$title}
-      {* <span class="step-edit text-muted"><i class="material-icons edit">mode_edit</i> {l s='Edit' d='Shop.Theme.Actions'}</span> *}
+      <a href="#{$identifier}" class="step-edit text-muted icon-adjust float-right" data-toggle="collapse" data-target="#{$identifier} .collapse">
+        <i class="material-icons">edit</i>
+        <span>{l s='Edit' d='Shop.Theme.Actions'}</span>
+      </a>
     </h1>
-
-    <div class="content">
-      {block name='step_content'}DUMMY STEP CONTENT{/block}
+    <div class="collapse{if $step_is_current} show{/if}" data-parent="#accordion">
+      <div class="card-body content">
+        {block name='step_content'}DUMMY STEP CONTENT{/block}
+      </div>
     </div>
   </section>
 {/block}

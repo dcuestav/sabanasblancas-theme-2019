@@ -29,14 +29,10 @@
       {block name='content'}
         <section id="content">
           <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                {block name='cart_summary'}
-                  <ul class="list-group list-group-flush">
-                    {render file='checkout/checkout-process.tpl' ui=$checkout_process}
-                  </ul>
-                {/block}
-              </div>
+            <div id="accordion" class="col-md-8">
+              {block name='cart_summary'}
+                {render file='checkout/checkout-process.tpl' ui=$checkout_process}
+              {/block}
             </div>
             <div class="col-md-4">
 
