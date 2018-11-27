@@ -27,22 +27,22 @@
                       </div>
                       <label for="delivery_option_{$carrier.id}" class="col-sm-11 delivery-option-2">
                         <div class="row">
-                          <div class="col-sm-5 col-xs-12">
+                          <div class="col-sm-5 col-12">
                             <div class="row">
                               {if $carrier.logo}
-                              <div class="col-xs-3">
+                              <div class="col-3">
                                   <img src="{$carrier.logo}" alt="{$carrier.name}" />
                               </div>
                               {/if}
-                              <div class="{if $carrier.logo}col-xs-9{else}col-xs-12{/if}">
+                              <div class="{if $carrier.logo}col-9{else}col-12{/if}">
                                 <span class="h6 carrier-name">{$carrier.name}</span>
                               </div>
                             </div>
                           </div>
-                          <div class="col-sm-4 col-xs-12">
+                          <div class="col-sm-4 col-12">
                             <span class="carrier-delay">{$carrier.delay}</span>
                           </div>
-                          <div class="col-sm-3 col-xs-12">
+                          <div class="col-sm-3 col-12">
                             <span class="carrier-price">{$carrier.price}</span>
                           </div>
                         </div>
@@ -54,29 +54,29 @@
 
                   {* <div class="row delivery-option">
                     <div class="col-sm-1">
-                      <span class="custom-radio float-xs-left">
+                      <span class="custom-radio float-left">
                         <input type="radio" name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if $delivery_option == $carrier_id} checked{/if}>
                         <span></span>
                       </span>
                     </div>
                     <label for="delivery_option_{$carrier.id}" class="col-sm-11 delivery-option-2">
                       <div class="row">
-                        <div class="col-sm-5 col-xs-12">
+                        <div class="col-sm-5 col-12">
                           <div class="row">
                             {if $carrier.logo}
-                            <div class="col-xs-3">
+                            <div class="col-3">
                                 <img src="{$carrier.logo}" alt="{$carrier.name}" />
                             </div>
                             {/if}
-                            <div class="{if $carrier.logo}col-xs-9{else}col-xs-12{/if}">
+                            <div class="{if $carrier.logo}col-9{else}col-12{/if}">
                               <span class="h6 carrier-name">{$carrier.name}</span>
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-4 col-xs-12">
+                        <div class="col-sm-4 col-12">
                           <span class="carrier-delay">{$carrier.delay}</span>
                         </div>
-                        <div class="col-sm-3 col-xs-12">
+                        <div class="col-sm-3 col-12">
                           <span class="carrier-price">{$carrier.price}</span>
                         </div>
                       </div>
@@ -119,7 +119,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-end">
-          <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
+          <button type="submit" class="continue btn btn-primary float-right" name="confirmDeliveryOption" value="1">
             {l s='Continue' d='Shop.Theme.Actions'}
           </button>
         </div>

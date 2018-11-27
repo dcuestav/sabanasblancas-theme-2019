@@ -62,10 +62,10 @@
                     <div class="modal-body">
                       {foreach from=$customization.fields item="field"}
                         <div class="product-customization-line row">
-                          <div class="col-sm-3 col-xs-4 label">
+                          <div class="col-sm-3 col-4 label">
                             {$field.label}
                           </div>
-                          <div class="col-sm-9 col-xs-8 value">
+                          <div class="col-sm-9 col-8 value">
                             {if $field.type == 'text'}
                               {if (int)$field.id_module}
                                 {$field.text nofilter}
@@ -128,7 +128,7 @@
           </span>
         </div>
 
-        <div class="col-2 col-sm-2 text-xs-right">
+        <div class="col-2 col-sm-2 text-right">
           <div class="cart-line-product-actions pt-1">
             <a
                 class                       = "remove-from-cart"
@@ -140,7 +140,7 @@
                 data-id-customization   	  = "{$product.id_customization|escape:'javascript'}"
             >
               {if !isset($product.is_gift) || !$product.is_gift}
-              <i class="material-icons float-xs-left">delete</i>
+              <i class="material-icons float-left">delete</i>
               {/if}
             </a>
 
