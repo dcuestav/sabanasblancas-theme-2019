@@ -7,24 +7,21 @@
   {if $is_free}
     <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
   {/if}
-  <div class="payment-options {if $is_free}hidden-xs-up{/if}">
+  <div class="payment-options {if $is_free}d-none{/if}">
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
         <div>
-          <div id="{$option.id}-container" class="payment-option clearfix">
+          <div id="{$option.id}-container" class="payment-option form-check">
             {* This is the way an option should be selected when Javascript is enabled *}
-            <span class="custom-radio float-xs-left">
-              <input
-                class="ps-shown-by-js {if $option.binary} binary {/if}"
-                id="{$option.id}"
-                data-module-name="{$option.module_name}"
-                name="payment-option"
-                type="radio"
-                required
-                {if $selected_payment_option == $option.id || $is_free} checked {/if}
-              >
-              <span></span>
-            </span>
+            <input
+              class="ps-shown-by-js form-check-input {if $option.binary} binary {/if}"
+              id="{$option.id}"
+              data-module-name="{$option.module_name}"
+              name="payment-option"
+              type="radio"
+              required
+              {if $selected_payment_option == $option.id || $is_free} checked {/if}
+            >
             {* This is the way an option should be selected when Javascript is disabled *}
             <form method="GET" class="ps-hidden-by-js">
               {if $option.id === $selected_payment_option}
@@ -36,10 +33,10 @@
               {/if}
             </form>
 
-            <label for="{$option.id}">
+            <label for="{$option.id}" class="form-check-label">
               <span>{$option.call_to_action_text}</span>
               {if $option.logo}
-                <img src="{$option.logo}">
+                <img src="{$option.logo}" class="img-fluid">
               {/if}
             </label>
 
@@ -86,23 +83,18 @@
     </p>
 
     <form id="conditions-to-approve" method="GET">
-      <ul>
+      <ul class="list-unstyled">
         {foreach from=$conditions_to_approve item="condition" key="condition_name"}
           <li>
-            <div class="float-xs-left">
-              <span class="custom-checkbox">
-                <input  id    = "conditions_to_approve[{$condition_name}]"
+            <div class="form-check">
+              <input id="conditions_to_approve[{$condition_name}]"
                         name  = "conditions_to_approve[{$condition_name}]"
                         required
                         type  = "checkbox"
                         value = "1"
-                        class = "ps-shown-by-js"
+                        class = "ps-shown-by-js form-check-input"
                 >
-                <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
-              </span>
-            </div>
-            <div class="condition-label">
-              <label class="js-terms" for="conditions_to_approve[{$condition_name}]">
+              <label class="js-terms form-check-label" for="conditions_to_approve[{$condition_name}]">
                 {$condition nofilter}
               </label>
             </div>

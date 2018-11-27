@@ -55,4 +55,11 @@ $card-selected-color: #c7e8ff;
             display: inline-block !important;
         }
     }
+
+    .additional-information {
+        margin-left: 1.5rem;
+        margin-top: 1.25rem;
+        font-size: .9rem;
+        color: lighten($body-color, 10%);
+    }
 }

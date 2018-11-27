@@ -6674,6 +6674,12 @@ a.text-dark:hover, a.text-dark:focus {
   #accordion .card-header:hover .step-edit {
     display: inline-block !important; }
 
+#accordion .additional-information {
+  margin-left: 1.5rem;
+  margin-top: 1.25rem;
+  font-size: .9rem;
+  color: #383f45; }
+
 body {
   overflow-x: hidden; }
 
