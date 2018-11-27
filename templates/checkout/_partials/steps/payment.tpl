@@ -23,7 +23,7 @@
               {if $selected_payment_option == $option.id || $is_free} checked {/if}
             >
             {* This is the way an option should be selected when Javascript is disabled *}
-            <form method="GET" class="ps-hidden-by-js">
+            {* <form method="GET" class="ps-hidden-by-js">
               {if $option.id === $selected_payment_option}
                 {l s='Selected' d='Shop.Theme.Checkout'}
               {else}
@@ -31,7 +31,7 @@
                   {l s='Choose' d='Shop.Theme.Actions'}
                 </button>
               {/if}
-            </form>
+            </form> *}
 
             <label for="{$option.id}" class="form-check-label">
               <span>{$option.call_to_action_text}</span>
@@ -74,13 +74,13 @@
   </div>
 
   {if $conditions_to_approve|count}
-    <p class="ps-hidden-by-js">
+    {* <p class="ps-hidden-by-js"> *}
       {* At the moment, we're not showing the checkboxes when JS is disabled
          because it makes ensuring they were checked very tricky and overcomplicates
          the template. Might change later.
       *}
-      {l s='By confirming the order, you certify that you have read and agree with all of the conditions below:' d='Shop.Theme.Checkout'}
-    </p>
+      {* {l s='By confirming the order, you certify that you have read and agree with all of the conditions below:' d='Shop.Theme.Checkout'}
+    </p> *}
 
     <form id="conditions-to-approve" method="GET">
       <ul class="list-unstyled">
@@ -109,7 +109,7 @@
   {/if}
 
   <div id="payment-confirmation">
-    <div class="ps-shown-by-js">
+    <div class="ps-shown-by-js d-flex justify-content-center">
       <button type="submit" {if !$selected_payment_option} disabled {/if} class="btn btn-primary center-block">
         {l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}
       </button>
@@ -128,11 +128,11 @@
         </article>
       {/if}
     </div>
-    <div class="ps-hidden-by-js">
+    {* <div class="ps-hidden-by-js">
       {if $selected_payment_option and $all_conditions_approved}
         <label for="pay-with-{$selected_payment_option}">{l s='Order with an obligation to pay' d='Shop.Theme.Checkout'}</label>
       {/if}
-    </div>
+    </div> *}
   </div>
 
   {hook h='displayPaymentByBinaries'}

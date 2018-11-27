@@ -11,9 +11,9 @@
   >
     <div class="card">
       <h1 class="card-header step-title h4" data-toggle="collapse" data-target="#{$identifier} .collapse">
-        {* <i class="material-icons rtl-no-flip ">done</i> *}
         <span class="step-number">{$position}.</span>
         {$title}
+        {if $step_is_complete}<i class="material-icons rtl-no-flip step-done-check">done</i>{/if}
         <a href="#" class="step-edit text-muted icon-adjust float-right d-none">
           <i class="material-icons">edit</i>
           <span>{l s='Edit' d='Shop.Theme.Actions'}</span>

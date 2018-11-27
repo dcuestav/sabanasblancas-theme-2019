@@ -190,6 +190,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./js/checkout.js":
+/*!************************!*\
+  !*** ./js/checkout.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function checkAtLeastLastStepIsOpen() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#accordion').on('hidden.bs.collapse', function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.collapse.show').length === 0) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout-step.-reachable').last().find('.collapse').collapse('show');
+    }
+  });
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(checkAtLeastLastStepIsOpen);
+
+/***/ }),
+
 /***/ "./js/common.js":
 /*!**********************!*\
   !*** ./js/common.js ***!
@@ -471,6 +496,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
 /* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./cart */ "./js/cart.js");
+/* harmony import */ var _checkout__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./checkout */ "./js/checkout.js");
  // import 'bootstrap/js/src/alert';
 
 
@@ -482,6 +508,7 @@ __webpack_require__.r(__webpack_exports__);
 // import 'bootstrap/js/src/scrollspy';
 // import 'bootstrap/js/src/tab';
 // import 'bootstrap/js/src/tooltip';
+
 
 
 

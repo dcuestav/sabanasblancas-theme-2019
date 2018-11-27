@@ -89,7 +89,7 @@
               {/foreach}
             </div>
           {/block}
-          <div class="order-options">
+          <div class="order-options mt-3">
             <div id="delivery" class="form-group">
               <label for="delivery_message">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Checkout'}</label>
               <textarea class="form-control" rows="2" cols="120" id="delivery_message" name="delivery_message">{$delivery_message}</textarea>
@@ -103,7 +103,7 @@
               </span>
             {/if} *}
 
-            {if $gift.allowed}
+            {* {if $gift.allowed}
               <span class="custom-checkbox">
                 <input class="js-gift-checkbox" id="input_gift" name="gift" type="checkbox" value="1" {if $gift.isGift}checked="checked"{/if}>
                 <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
@@ -114,7 +114,7 @@
                 <label for="gift_message">{l s='If you\'d like, you can add a note to the gift:' d='Shop.Theme.Checkout'}</label>
                 <textarea rows="2" cols="120" id="gift_message" name="gift_message">{$gift.message}</textarea>
               </div>
-            {/if}
+            {/if} *}
 
           </div>
         </div>

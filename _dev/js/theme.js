@@ -21,5 +21,6 @@ import './product-detail';
 import './replace-image-effect';
 import './show-brand-on-product-miniature';
 import './cart';
+import './checkout';
 
 

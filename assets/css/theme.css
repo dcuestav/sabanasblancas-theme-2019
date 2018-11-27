@@ -6680,6 +6680,12 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: .9rem;
   color: #383f45; }
 
+#accordion .step-done-check {
+  color: #28a745;
+  line-height: 0;
+  position: relative;
+  top: 2px; }
+
 body {
   overflow-x: hidden; }
 

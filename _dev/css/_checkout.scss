@@ -62,4 +62,11 @@ $card-selected-color: #c7e8ff;
         font-size: .9rem;
         color: lighten($body-color, 10%);
     }
+
+    .step-done-check {
+        color: $green;
+        line-height: 0;
+        position: relative;
+        top: 2px;    
+    }
 }
