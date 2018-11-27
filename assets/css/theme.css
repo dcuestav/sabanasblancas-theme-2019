@@ -6570,6 +6570,9 @@ a.text-dark:hover, a.text-dark:focus {
       position: absolute;
       right: 1.25rem; } }
 
+.slides {
+  display: flex; }
+
 .product-grid {
   display: grid;
   grid-gap: 15px;
