@@ -49,14 +49,14 @@ $header-top-font-size: 0.9rem;
 
         .dropdown-menu {
             background-color: white;
-            a {
+            a.dropdown-item {
                 color: $body-color;
                 &.active {
-                    background-color: inherit;
+                    background: transparent;
                     color: inherit;
                 }
                 &:hover {
-                    background-color: $gray-200;
+                    background: $gray-200;
                     color: inherit;
                 }
             }
