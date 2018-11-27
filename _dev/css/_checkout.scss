@@ -43,6 +43,31 @@ $card-selected-color: #c7e8ff;
         }
     }
 
+    #cart-summary-product-list {
+        font-size: .875rem;
+        .media {
+            overflow: hidden;
+            .value {
+                float: none;
+            }
+        }
+        .media-body,
+        .media-left,
+        .media-right {
+            display: table-cell;
+            vertical-align: top;
+        }
+        .media-left {
+            padding-right: 10px;
+        }
+        .media-object {
+            width: 80px;
+        }
+        .product-price {
+            color: $primary;
+        }
+    }
+
 }
 #accordion {
     .card.selected {

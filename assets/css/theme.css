@@ -6665,6 +6665,24 @@ a.text-dark:hover, a.text-dark:focus {
   #checkout .address-footer .material-icons {
     font-size: 20px; }
 
+#checkout #cart-summary-product-list {
+  font-size: .875rem; }
+  #checkout #cart-summary-product-list .media {
+    overflow: hidden; }
+    #checkout #cart-summary-product-list .media .value {
+      float: none; }
+  #checkout #cart-summary-product-list .media-body,
+  #checkout #cart-summary-product-list .media-left,
+  #checkout #cart-summary-product-list .media-right {
+    display: table-cell;
+    vertical-align: top; }
+  #checkout #cart-summary-product-list .media-left {
+    padding-right: 10px; }
+  #checkout #cart-summary-product-list .media-object {
+    width: 80px; }
+  #checkout #cart-summary-product-list .product-price {
+    color: #007bff; }
+
 #accordion .card.selected {
   background-color: #c7e8ff; }
 
