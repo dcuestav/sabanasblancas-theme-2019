@@ -6704,6 +6704,12 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
   top: 2px; }
 
+body#order-confirmation #order-confirmation-title .material-icons {
+  font-size: 39px; }
+
+body#order-confirmation #order-confirmation-title span {
+  padding-left: 3.5rem; }
+
 body {
   overflow-x: hidden; }
 
