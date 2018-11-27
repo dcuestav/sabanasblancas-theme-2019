@@ -1,5 +1,6 @@
 
 {block name='address_selector_blocks'}
+  {$random = rand()}
   {foreach $addresses as $address}
     <div class="col-md-6 mb-3">
       <article
@@ -10,14 +11,14 @@
 
           <div class="form-check">
             <input
-                id="address-{$address.id}"
+                id="address-{$random}-{$address.id}"
                 class="form-check-input"
                 type="radio"
                 name="{$name}"
                 value="{$address.id}"
                 {if $address.id == $selected}checked{/if}
               >
-            <label class="form-check-label" for="address-{$address.id}">
+            <label class="form-check-label w-100" for="address-{$random}-{$address.id}">
               <span class="address-alias h4">{$address.alias}</span>
               <div class="address">{$address.formatted nofilter}</div>
             </label>
