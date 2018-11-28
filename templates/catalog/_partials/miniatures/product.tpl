@@ -85,6 +85,10 @@
         {/if}
       {/block}
 
+      {* NO SE MUESTRA LA DISPONBINILIDAD EN EL LISTADO DE PRODUCTOS *}
+      {* Solo hay datos de la variante por defecto *}
+
+      {* 
       {block name='product_availability'}
         {if $product.show_availability && $product.availability_message}
           {if $product.availability == 'available'}
@@ -96,6 +100,7 @@
           {/if}
         {/if}
       {/block}
+       *}
 
       {hook h='displayProductListReviews' product=$product}
     </div>
