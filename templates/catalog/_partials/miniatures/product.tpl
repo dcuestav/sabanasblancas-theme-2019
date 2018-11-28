@@ -102,6 +102,12 @@
       {/block}
        *}
 
+       {block name='product_sizes'}
+        {if isset($product.number_of_sizes) && $product.number_of_sizes > 0}
+          <small class="text-success">{$product.number_of_sizes} tallas disponibles</small>
+        {/if}
+      {/block}
+
       {hook h='displayProductListReviews' product=$product}
     </div>
 
