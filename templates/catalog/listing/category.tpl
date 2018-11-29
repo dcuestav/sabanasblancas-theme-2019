@@ -3,18 +3,26 @@
 
 {block name='product_list_header'}
 
+  {if $category.level_depth > 3}
+    {$prev_category = $breadcrumb.links[$category.level_depth-2]}
+    <a class="btn btn-light icon-adjust mb-3" href="{$prev_category.url}" role="button">
+      <i class="material-icons">reply</i>
+      <span>{l s='Back to %prev_category%' d='Shop.Theme.Catalog' sprintf=['%prev_category%' => $prev_category.title]}</span>
+    </a>
+  {/if}
+
   <h1 class="display-4">{$category.name}</h1>
   {if $category.image}
     <div class="category-cover">
       <img src="{$category.image.large.url}" alt="{$category.image.legend}">
     </div>
   {/if}
-  <div id="category-description" class="lead">{$category.description nofilter}</div>
+  <div id="category-description" class="lead mb-4">{$category.description nofilter}</div>
 
   {block name='category_subcategories'}
     <aside>
       {if $subcategories|count}
-        <nav class="subcategories">
+        <nav class="subcategories mb-5">
           <ul class="category-grid list-unstyled">
             {foreach from=$subcategories item="subcategory"}
               <li>
