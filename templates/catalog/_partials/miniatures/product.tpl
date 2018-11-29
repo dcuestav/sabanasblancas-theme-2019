@@ -103,8 +103,8 @@
        *}
 
        {block name='product_sizes'}
-        {if isset($product.number_of_sizes) && $product.number_of_sizes > 0}
-          <small class="text-success">{$product.number_of_sizes} tallas disponibles</small>
+        {if isset($product.number_of_sizes) && $product.number_of_sizes > 1}
+          <small class="text-success">{l s='%sizes_count% available sizes' d='Shop.Theme.Catalog' sprintf=['%sizes_count%' => $product.number_of_sizes]}</small>
         {/if}
       {/block}
 
