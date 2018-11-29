@@ -107,7 +107,7 @@
     {hook h='displayProductPriceBlock' product=$product type="price"}
     {hook h='displayProductPriceBlock' product=$product type="after_price"}
 
-    {* DISPONIBILIDAD *}
+    
 
     {* <div class="debug text-muted">
       show_availability: {$product.show_availability}<br>
@@ -120,7 +120,11 @@
       delivery_out_stock: {$product.delivery_out_stock}<br>
     </div> *}
 
-    <div class="d-flex justify-content-around">
+    {* {debug} *}
+
+    {* DISPONIBILIDAD *}
+
+    {* <div class="d-flex justify-content-around">
       <div class="">
           {if $product.show_availability && $product.availability_message}
             {if $product.availability == 'available'}
@@ -181,11 +185,80 @@
         {/if}
       {/if}
 
+    </div> *}
+
+    {* FIN DISPONIBILIDAD *}
+
+    <div id="availability-delivery-help" data-partial-delivery-from="10" data-quantity="{$product.quantity}">
+
+      {if $product.allow_oosp}
+
+        {if $product.quantity==0}
+
+          <div class="out-of-stock text-center">
+            <div class="text-black icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Theme.Availability'}">
+              <i class="material-icons">error_outline</i>
+              <span>{l s='Out of stock' d='Shop.Theme.Availability'}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+
+        {else}
+
+          <div class="quantity-wanted-greater-than-stock text-center{if $product.quantity_wanted <= $product.quantity or $product.quantity >= 10} d-none{/if}">
+            <div class="text-black icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Theme.Availability'}">
+              <i class="material-icons">error_outline</i>
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+                sprintf=['%quantity%' => $product.quantity]}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+
+
+          <div class="quantity-wanted-greater-than-stock-with-partial-delivery text-center{if $product.quantity_wanted <= $product.quantity or $product.quantity < 10} d-none{/if}">
+            <div class="text-black icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Theme.Availability'}">
+              <i class="material-icons">error_outline</i>
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+                sprintf=['%quantity%' => $product.quantity]}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+
+
+          <div class="quantity-wanted-lower-than-stock text-center{if $product.quantity_wanted > $product.quantity} d-none{/if}">
+            <div class="text-success icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Theme.Availability'}">
+              <i class="material-icons">check_circle</i>
+              <span>{l s='En stock, envío en 24 horas' d='Shop.Theme.Availability'}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+          
+        {/if}
+
+      {/if}
     </div>
+
+    {* DISPONIBILIDAD v2 *}
+
+
+
+    {* FIN DISPONIBILIDAD v2 *}
 
     <hr>
 
-    {* FIN DISPONIBILIDAD *}
+    
 
   </div>
 

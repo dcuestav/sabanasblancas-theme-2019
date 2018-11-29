@@ -10,7 +10,7 @@ import 'bootstrap/js/src/modal';
 // import 'bootstrap/js/src/popover';
 // import 'bootstrap/js/src/scrollspy';
 // import 'bootstrap/js/src/tab';
-// import 'bootstrap/js/src/tooltip';
+import 'bootstrap/js/src/tooltip';
 
 import 'flexslider/jquery.flexslider';
 import './flexslider';
@@ -22,5 +22,3 @@ import './replace-image-effect';
 import './show-brand-on-product-miniature';
 import './cart';
 import './checkout';
-
-
