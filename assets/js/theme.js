@@ -367,49 +367,55 @@ module.exports = quantityButtonHandlers;
 /*!******************************!*\
   !*** ./js/product-detail.js ***!
   \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {(function () {
-  $('#quantity_wanted').change(updateTotalPrice);
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_1__);
 
-  function productImagesActions(data) {
-    if (data) {
-      $('#product-modal').replaceWith(data.product_images_modal);
-    }
 
-    $('.js-thumb').click(function () {
-      var largeImage = $(this).attr('data-image-large-src');
-      $('.js-qv-product-cover, .js-modal-product-cover').attr('src', largeImage);
-      $('.js-thumb').removeClass('selected');
-      $(this).addClass('selected');
-    });
-    $('.js-modal-thumb').click(function () {
-      var largeImage = $(this).attr('data-image-large-src');
-      $('.js-modal-product-cover').attr('src', largeImage);
-    });
+
+function productImagesActions(data) {
+  if (data) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#product-modal').replaceWith(data.product_images_modal);
   }
 
-  function formatNumber(value) {
-    return value.toFixed(2).replace('.', ',');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-thumb').click(function () {
+    var largeImage = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-image-large-src');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-qv-product-cover, .js-modal-product-cover').attr('src', largeImage);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-thumb').removeClass('selected');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('selected');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-modal-thumb').click(function () {
+    var largeImage = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-image-large-src');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-modal-product-cover').attr('src', largeImage);
+  });
+}
+
+function formatNumber(value) {
+  return value.toFixed(2).replace('.', ',');
+}
+
+function updateTotalPrice() {
+  var productPrice = Number(jquery__WEBPACK_IMPORTED_MODULE_0___default()("[itemprop='price']").attr('content'));
+  var quantity = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').val();
+
+  if (productPrice && quantity) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text(formatNumber(productPrice * quantity));
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').removeClass('invisible');
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').addClass('invisible');
   }
+}
 
-  function updateTotalPrice() {
-    var productPrice = Number($("[itemprop='price']").attr('content'));
-    var quantity = $('#quantity_wanted').val();
-
-    if (productPrice && quantity) {
-      $('#total_price').text(formatNumber(productPrice * quantity));
-      $('#total_price_message').removeClass('invisible');
-    } else {
-      $('#total_price_message').addClass('invisible');
-    }
-  }
-
-  productImagesActions();
-  prestashop.on('updatedProduct', productImagesActions);
-})();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+productImagesActions();
+prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', productImagesActions);
+prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', updateTotalPrice);
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateTotalPrice);
 
 /***/ }),
 
@@ -490,7 +496,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./add-to-cart */ "./js/add-to-cart.js");
 /* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_add_to_cart__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
-/* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_product_detail__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
 /* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./show-brand-on-product-miniature */ "./js/show-brand-on-product-miniature.js");
@@ -9105,6 +9110,17 @@ module.exports = __webpack_require__(/*! ./css/theme.less */"./css/theme.less");
 /***/ (function(module, exports) {
 
 module.exports = jQuery;
+
+/***/ }),
+
+/***/ "prestashop":
+/*!*****************************!*\
+  !*** external "prestashop" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = prestashop;
 
 /***/ })
 
