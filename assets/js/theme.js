@@ -112,34 +112,39 @@
 /*!***************************!*\
   !*** ./js/add-to-cart.js ***!
   \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
-  prestashop.blockcart = prestashop.blockcart || {};
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_1__);
 
-  prestashop.blockcart.showModal = function (modal) {
-    $('body').append(modal);
-    $('#blockcart-modal').siblings().addClass('blurred');
-    $('#blockcart-modal').modal() // Mostrar la ventana
-    .on('hidden.bs.modal', function (e) {
-      // Destruirla completamente al ocultarla
-      $('.blurred').removeClass('blurred');
-      $(this).modal('dispose').remove();
-    });
-    $('[data-button-action="add-to-cart"]').removeClass('spinner').removeAttr('disabled');
-  };
 
-  $('[data-button-action="add-to-cart"]').click(function () {
-    var me = this;
-    setTimeout(function () {
-      // Tiene que ejecutarse después del envío del formulario
-      $(me).attr('disabled', true);
-      $(me).addClass('spinner');
-    }, 0);
+prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.blockcart = prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.blockcart || {};
+
+prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.blockcart.showModal = function (modal) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').append(modal);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#blockcart-modal').siblings().addClass('blurred');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#blockcart-modal').modal() // Mostrar la ventana
+  .on('hidden.bs.modal', function (e) {
+    // Destruirla completamente al ocultarla
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.blurred').removeClass('blurred');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).modal('dispose').remove();
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-button-action="add-to-cart"]').removeClass('spinner').removeAttr('disabled');
+};
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-button-action="add-to-cart"]').click(function () {
+  var me = this;
+  setTimeout(function () {
+    // Tiene que ejecutarse después del envío del formulario
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(me).attr('disabled', true);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(me).addClass('spinner');
+  }, 0);
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
 
@@ -379,6 +384,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_js_src_tooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/tooltip */ "./node_modules/bootstrap/js/src/tooltip.js");
 
 
+ // Basic functions
+
+function getProductPrice() {
+  return Number(jquery__WEBPACK_IMPORTED_MODULE_0___default()("[itemprop='price']").attr('content'));
+}
+
+function getQuantityWanted() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').val();
+}
+
+function setTotalPrice(value) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text(formatNumber(value));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').removeClass('invisible');
+}
+
+function hideTotalPrice() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text('');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').addClass('invisible');
+}
+
+function getStock() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help').data('stock');
+}
+
+function getAllowOrdersOutOfStock() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help').data('allow-oosp');
+}
+
+function getPartialDeliveryFrom() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help').data('partial-delivery-from');
+}
+
+function enableCartButton() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-button-action="add-to-cart"]').removeAttr('disabled');
+}
+
+function disableCartButton() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-button-action="add-to-cart"]').attr('disabled', 'disabled');
+}
+
+function hideAllAvailabilityDeliveryHelpBlocks() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help').children().addClass('d-none');
+}
+
+function showAvailabilityDeliveryHelpBlocks(blockSelector) {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help').children(blockSelector).removeClass('d-none');
+}
+
+function formatNumber(value) {
+  return value.toFixed(2).replace('.', ',');
+} // Behaviors
 
 
 function productImagesActions(data) {
@@ -398,41 +454,47 @@ function productImagesActions(data) {
   });
 }
 
-function formatNumber(value) {
-  return value.toFixed(2).replace('.', ',');
-}
-
 function updateTotalPrice() {
-  var productPrice = Number(jquery__WEBPACK_IMPORTED_MODULE_0___default()("[itemprop='price']").attr('content'));
-  var quantity = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').val();
+  var productPrice = getProductPrice();
+  var quantity = getQuantityWanted();
 
   if (productPrice && quantity) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text(formatNumber(productPrice * quantity));
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').removeClass('invisible');
+    setTotalPrice(productPrice * quantity);
   } else {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').addClass('invisible');
+    hideTotalPrice();
+  }
+}
+
+function disableAddToCartIfNecessary() {
+  var quantityWanted = getQuantityWanted();
+  var quantity = getStock();
+  var allowOrdersOutOfStock = getAllowOrdersOutOfStock();
+
+  if (quantityWanted > quantity && !allowOrdersOutOfStock) {
+    disableCartButton();
+  } else {
+    enableCartButton();
   }
 }
 
 function updateStockInfo() {
-  var toggleClass = 'd-none';
-  var quantityWanted = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').val();
-  var deliveryHelpBlock = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#availability-delivery-help');
-  var quantity = deliveryHelpBlock.data('quantity');
-  var partialDeliveryFrom = deliveryHelpBlock.data('partial-delivery-from');
-  deliveryHelpBlock.children().addClass(toggleClass);
+  var quantityWanted = getQuantityWanted();
+  var quantity = getStock();
+  hideAllAvailabilityDeliveryHelpBlocks();
 
   if (quantityWanted && quantity) {
     if (quantity == 0) {
       return;
     }
 
+    var partialDeliveryFrom = getPartialDeliveryFrom();
+
     if (quantityWanted <= quantity) {
-      deliveryHelpBlock.children('.quantity-wanted-lower-than-stock').removeClass(toggleClass);
+      showAvailabilityDeliveryHelpBlocks('.quantity-wanted-lower-than-stock');
     } else if (quantity >= partialDeliveryFrom) {
-      deliveryHelpBlock.children('.quantity-wanted-greater-than-stock-with-partial-delivery').removeClass(toggleClass);
+      showAvailabilityDeliveryHelpBlocks('.quantity-wanted-greater-than-stock-with-partial-delivery');
     } else {
-      deliveryHelpBlock.children('.quantity-wanted-greater-than-stock').removeClass(toggleClass);
+      showAvailabilityDeliveryHelpBlocks('.quantity-wanted-greater-than-stock');
     }
   }
 }
@@ -450,12 +512,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].Constructor = bootstrap_j
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(enableTooltips);
 productImagesActions();
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateTotalPrice);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateStockInfo); // Cada vez que se actualiza el producto se cambian partes de la página por ajax
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateStockInfo);
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(disableAddToCartIfNecessary); // Cada vez que se actualiza el producto se cambian partes de la página por ajax
 // y hay que reasignar los comportamientos
 
 prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', productImagesActions);
 prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', updateTotalPrice);
 prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', enableTooltips);
+prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', disableAddToCartIfNecessary);
 
 /***/ }),
 
@@ -535,7 +599,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main-menu */ "./js/main-menu.js");
 /* harmony import */ var _main_menu__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_main_menu__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./add-to-cart */ "./js/add-to-cart.js");
-/* harmony import */ var _add_to_cart__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_add_to_cart__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _product_detail__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./product-detail */ "./js/product-detail.js");
 /* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./replace-image-effect */ "./js/replace-image-effect.js");
 /* harmony import */ var _replace_image_effect__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_replace_image_effect__WEBPACK_IMPORTED_MODULE_14__);

@@ -2,6 +2,60 @@ import $ from 'jquery';
 import prestashop from 'prestashop';
 import Tooltip from 'bootstrap/js/src/tooltip';
 
+// Basic functions
+
+function getProductPrice() {
+    return Number($("[itemprop='price']").attr('content'));
+}
+
+function getQuantityWanted() {
+    return $('#quantity_wanted').val();
+}
+
+function setTotalPrice(value) {
+    $('#total_price').text(formatNumber(value));
+    $('#total_price_message').removeClass('invisible');
+}
+
+function hideTotalPrice() {
+    $('#total_price').text('');
+    $('#total_price_message').addClass('invisible');
+}
+
+function getStock() {
+    return $('#availability-delivery-help').data('stock');
+}
+
+function getAllowOrdersOutOfStock() {
+    return $('#availability-delivery-help').data('allow-oosp');
+}
+
+function getPartialDeliveryFrom() {
+    return $('#availability-delivery-help').data('partial-delivery-from');
+}
+
+function enableCartButton() {
+    $('[data-button-action="add-to-cart"]').removeAttr('disabled');
+}
+
+function disableCartButton() {
+    $('[data-button-action="add-to-cart"]').attr('disabled', 'disabled');
+}
+
+function hideAllAvailabilityDeliveryHelpBlocks() {
+    return $('#availability-delivery-help').children().addClass('d-none');
+}
+
+function showAvailabilityDeliveryHelpBlocks(blockSelector) {
+    return $('#availability-delivery-help').children(blockSelector).removeClass('d-none');
+}
+
+function formatNumber(value) {
+    return value.toFixed(2).replace('.', ',');
+}
+
+// Behaviors
+
 function productImagesActions(data) {
 
     if (data) {
@@ -22,43 +76,46 @@ function productImagesActions(data) {
     
 }
 
-function formatNumber(value) {
-    return value.toFixed(2).replace('.', ',');
+function updateTotalPrice() {
+    var productPrice = getProductPrice();
+    var quantity = getQuantityWanted();
+    if (productPrice && quantity) {
+        setTotalPrice(productPrice * quantity);
+    } else {
+        hideTotalPrice();
+    }
 }
 
-function updateTotalPrice() {
-    var productPrice = Number($("[itemprop='price']").attr('content'));
-    var quantity = $('#quantity_wanted').val();
-    if (productPrice && quantity) {
-        $('#total_price').text(formatNumber(productPrice * quantity));
-        $('#total_price_message').removeClass('invisible');
+function disableAddToCartIfNecessary() {
+    var quantityWanted = getQuantityWanted();
+    var quantity = getStock();
+    var allowOrdersOutOfStock = getAllowOrdersOutOfStock();
+    if (quantityWanted > quantity && !allowOrdersOutOfStock) {
+        disableCartButton();
     } else {
-        $('#total_price_message').addClass('invisible');
+        enableCartButton();
     }
 }
 
 function updateStockInfo() {
 
-    var toggleClass = 'd-none';
-    
-    var quantityWanted = $('#quantity_wanted').val();
-    var deliveryHelpBlock = $('#availability-delivery-help');
-    var quantity = deliveryHelpBlock.data('quantity');
-    var partialDeliveryFrom = deliveryHelpBlock.data('partial-delivery-from');
-
-    deliveryHelpBlock.children().addClass(toggleClass);
+    var quantityWanted = getQuantityWanted();
+    var quantity = getStock();
+    hideAllAvailabilityDeliveryHelpBlocks();
 
     if (quantityWanted && quantity) {
         if (quantity==0) {
             return;
         }
 
+        var partialDeliveryFrom = getPartialDeliveryFrom();
+
         if (quantityWanted <= quantity) {
-            deliveryHelpBlock.children('.quantity-wanted-lower-than-stock').removeClass(toggleClass);
+            showAvailabilityDeliveryHelpBlocks('.quantity-wanted-lower-than-stock');
         } else if (quantity >= partialDeliveryFrom) {
-            deliveryHelpBlock.children('.quantity-wanted-greater-than-stock-with-partial-delivery').removeClass(toggleClass);
+            showAvailabilityDeliveryHelpBlocks('.quantity-wanted-greater-than-stock-with-partial-delivery');
         } else {
-            deliveryHelpBlock.children('.quantity-wanted-greater-than-stock').removeClass(toggleClass);
+            showAvailabilityDeliveryHelpBlocks('.quantity-wanted-greater-than-stock');
         }
     }
 }
@@ -77,12 +134,14 @@ $(document).ready(enableTooltips);
 productImagesActions();
 $('#quantity_wanted').change(updateTotalPrice);
 $('#quantity_wanted').change(updateStockInfo);
+$('#quantity_wanted').change(disableAddToCartIfNecessary);
 
 // Cada vez que se actualiza el producto se cambian partes de la página por ajax
 // y hay que reasignar los comportamientos
 prestashop.on('updatedProduct', productImagesActions);
 prestashop.on('updatedProduct', updateTotalPrice);
 prestashop.on('updatedProduct', enableTooltips);
+prestashop.on('updatedProduct', disableAddToCartIfNecessary);
 
 
 

@@ -189,9 +189,13 @@
 
     {* FIN DISPONIBILIDAD *}
 
-    <div id="availability-delivery-help" data-partial-delivery-from="10" data-quantity="{$product.quantity}">
+    {* DISPONIBILIDAD v2 *}
+    {* TODO: Tener en cuenta $product.show_availability *}
+
+    <div id="availability-delivery-help" data-partial-delivery-from="10" data-stock="{$product.quantity}" data-cd th="{$product.allow_oosp}">
 
       {if $product.allow_oosp}
+        <!-- Pedidos sin stock habilitados -->
 
         {if $product.quantity==0}
 
@@ -247,10 +251,44 @@
           
         {/if}
 
+      {else}
+        <!-- Pedidos sin stock deshabilitados -->
+
+        {if $product.quantity==0}
+
+          <div class="out-of-stock text-center">
+            <div class="text-black icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto ha dejado de estar a la venta' d='Shop.Theme.Availability'}">
+              <i class="material-icons">error_outline</i>
+              <span>{l s='No disponible' d='Shop.Theme.Availability'}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='Este producto ha dejado de estar a la venta' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+
+        {else}
+
+          <div class="quantity-wanted-greater-than-stock 
+            quantity-wanted-greater-than-stock-with-partial-delivery 
+            quantity-wanted-lower-than-stock text-center">
+            <div class="text-black icon-adjust" 
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Últimas unidades a la venta' d='Shop.Theme.Availability'}">
+              <i class="material-icons">error_outline</i>
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+                sprintf=['%quantity%' => $product.quantity]}</span>
+            </div>
+            <div class="d-md-none">
+              <small>{l s='Últimas unidades a la venta' d='Shop.Theme.Availability'}</small>
+            </div>
+          </div>
+          
+        {/if}
+
       {/if}
     </div>
 
-    {* DISPONIBILIDAD v2 *}
+    
 
 
 
