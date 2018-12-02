@@ -153,10 +153,17 @@
     max-width: 500px;
     margin: 0 auto;
 
+    .js-qv-mask {
+        white-space: nowrap;
+        overflow: hidden;
+        &.scroll {
+          width: calc(100% - 60px);
+          margin: 0 auto;
+        }
+    }
+
     .product-images {
         max-height: 120px;
-        overflow-y: hidden;
-        white-space: nowrap;
     }
 
     .product-cover {
@@ -189,6 +196,26 @@
         }
     }
 }
+.scroll-box-arrows {
+    display: none;
+    user-select: none;
+    &.scroll {
+      display: block;
+    }
+    i {
+      position: absolute;
+      bottom: 1.625rem;
+      height: 100px;
+      line-height: 100px;
+      cursor: pointer;
+    }
+    .left {
+      left: 0;
+    }
+    .right {
+      right: 0;
+    }
+}
 
 // Zoom modal
 
@@ -216,20 +243,54 @@
                 flex-direction: column;
                 margin-left: 0;
             }
-            #thumbnails .product-images {
-                margin-left: 2.5rem;
-                img {
-                    width: 9.25rem;
-                    margin-bottom: 0.625rem;
-                }
-                .thumb-container {
-                    display: inline;
-                }
+            
+            #thumbnails {
+                position: relative;
                 .mask {
                     position: relative;
                     overflow: hidden;
+                    max-height: 46.38rem;
+                    margin-top: 2.188rem;
                     z-index: 1;
+                    &.nomargin {
+                        margin-top: 0;
+                    }
                 }
+                .product-images {
+                    margin-left: 2.5rem;
+                    img {
+                        width: 9.25rem;
+                        margin-bottom: 0.625rem;
+                    }
+                    .thumb-container {
+                        display: inline;
+                    }
+                }
+                .arrows {
+                    user-select: none;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    position: absolute;
+                    top: 0;
+                    color: white;
+                    right: 1.875rem;
+                    z-index: 0;
+                    .arrow-up {
+                      position: absolute;
+                      top: -2rem;
+                      opacity: 0.2;
+                    }
+                    .arrow-down {
+                      position: absolute;
+                      bottom: -2rem;
+                    }
+                    i {
+                      font-size: 6.25rem;
+                      display: inline;
+                    }
+                    cursor: pointer;
+                  }
             }
         }
     }
