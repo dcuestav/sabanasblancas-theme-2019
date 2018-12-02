@@ -1,3 +1,5 @@
+import 'expose-loader?Tether!tether';
+import 'bootstrap-touchspin';
 
 import 'bootstrap/js/src/util';
 // import 'bootstrap/js/src/alert';
@@ -12,13 +14,46 @@ import 'bootstrap/js/src/modal';
 // import 'bootstrap/js/src/tab';
 import 'bootstrap/js/src/tooltip';
 
+import './classic/responsive';
+import './classic/checkout';
+import './classic/customer';
+import './classic/product';
+import './classic/cart';
+
 import 'flexslider/jquery.flexslider';
-import './flexslider';
-import './common';
-import './main-menu';
-import './add-to-cart';
-import './product-detail';
-import './replace-image-effect';
-import './show-brand-on-product-miniature';
-import './cart';
-import './checkout';
+import './sabanasblancas/flexslider';
+import './sabanasblancas/main-menu';
+import './sabanasblancas/replace-image-effect';
+import './sabanasblancas/show-brand-on-product-miniature';
+
+// import './sabanasblancas/common';
+// import './sabanasblancas/add-to-cart';
+// import './sabanasblancas/product-detail';
+// import './sabanasblancas/cart';
+// import './sabanasblancas/checkout';
+
+import Form from './classic/components/form';
+import ProductSelect from './classic/components/product-select';
+
+
+import prestashop from 'prestashop';
+import EventEmitter from 'events';
+
+import './classic/lib/bootstrap-filestyle.min';
+import './classic/lib/jquery.scrollbox.min';
+
+import './classic/components/block-cart';
+
+// "inherit" EventEmitter
+for (var i in EventEmitter.prototype) {
+  prestashop[i] = EventEmitter.prototype[i];
+}
+
+$(document).ready(() => {
+  const form = new Form();
+  let productSelect  = new ProductSelect();
+  form.init();
+  productSelect.init();
+});
+
+
