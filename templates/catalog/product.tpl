@@ -61,18 +61,9 @@
           <section class="page-content" id="content">
             {block name='page_content'}
 
-              <div class="images-container">
-
-                {block name='product_cover_thumbnails'}
-                  {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-                {/block}
-
-                <div class="scroll-box-arrows">
-                  <i class="material-icons left">keyboard_arrow_left</i>
-                  <i class="material-icons right">keyboard_arrow_right</i>
-                </div>
-
-              </div>
+              {block name='product_cover_thumbnails'}
+                {include file='catalog/_partials/product-cover-thumbnails.tpl'}
+              {/block}
 
               {block name='product_description'}
                 {if $product.description}
