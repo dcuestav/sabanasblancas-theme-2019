@@ -1606,6 +1606,31 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 /***/ }),
 
+/***/ "./js/sabanasblancas/checkout.js":
+/*!***************************************!*\
+  !*** ./js/sabanasblancas/checkout.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function checkAtLeastLastStepIsOpen() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#accordion').on('hidden.bs.collapse', function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.collapse.show').length === 0) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.checkout-step.-reachable').last().find('.collapse').collapse('show');
+    }
+  });
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(checkAtLeastLastStepIsOpen);
+
+/***/ }),
+
 /***/ "./js/sabanasblancas/flexslider.js":
 /*!*****************************************!*\
   !*** ./js/sabanasblancas/flexslider.js ***!
@@ -1884,14 +1909,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_21__);
 /* harmony import */ var _sabanasblancas_add_to_cart__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sabanasblancas/add-to-cart */ "./js/sabanasblancas/add-to-cart.js");
 /* harmony import */ var _sabanasblancas_product_detail__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./sabanasblancas/product-detail */ "./js/sabanasblancas/product-detail.js");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! prestashop */ "prestashop");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var _sabanasblancas_checkout__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./sabanasblancas/checkout */ "./js/sabanasblancas/checkout.js");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_25__);
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_26__);
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28__);
 
 
  // import 'bootstrap/js/src/alert';
@@ -1921,15 +1947,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // import './sabanasblancas/cart';
-// import './sabanasblancas/checkout';
+
 
 
 
 
  // "inherit" EventEmitter
 
-for (var i in events__WEBPACK_IMPORTED_MODULE_25___default.a.prototype) {
-  prestashop__WEBPACK_IMPORTED_MODULE_24___default.a[i] = events__WEBPACK_IMPORTED_MODULE_25___default.a.prototype[i];
+for (var i in events__WEBPACK_IMPORTED_MODULE_26___default.a.prototype) {
+  prestashop__WEBPACK_IMPORTED_MODULE_25___default.a[i] = events__WEBPACK_IMPORTED_MODULE_26___default.a.prototype[i];
 }
 
 $(document).ready(function () {

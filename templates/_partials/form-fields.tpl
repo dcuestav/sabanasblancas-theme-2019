@@ -91,16 +91,27 @@
   {block name='form_field_item_password'}
     <div class="form-group row">
       <label for="{$field.name}{$random_number}" class='col-md-3 col-form-label {if $field.required}required{/if}'>{$field.label}</label>
-      <div class="col-md-6">
+      <div class="col-md-6 input-group">
         <input
           id="{$field.name}{$random_number}"
-          class="form-control"
+          class="form-control js-visible-password"
           name="{$field.name}"
           type="password"
           value=""
           pattern=".{literal}{{/literal}5,{literal}}{/literal}"
           {if $field.required}required{/if}
         >
+        <div class="input-group-append">
+          <button
+            class="input-group-text"
+            type="button"
+            data-action="show-password"
+            data-text-show="{l s='Show' d='Shop.Theme.Actions'}"
+            data-text-hide="{l s='Hide' d='Shop.Theme.Actions'}"
+          >
+            {l s='Show' d='Shop.Theme.Actions'}
+          </button>
+        </div>
       </div>
     </div>
   {/block}

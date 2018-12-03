@@ -33,7 +33,7 @@ import './sabanasblancas/show-brand-on-product-miniature';
 import './sabanasblancas/add-to-cart';
 import './sabanasblancas/product-detail';
 // import './sabanasblancas/cart';
-// import './sabanasblancas/checkout';
+import './sabanasblancas/checkout';
 
 import prestashop from 'prestashop';
 import EventEmitter from 'events';
