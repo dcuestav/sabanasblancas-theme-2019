@@ -29,10 +29,8 @@ import './sabanasblancas/main-menu';
 import './sabanasblancas/replace-image-effect';
 import './sabanasblancas/show-brand-on-product-miniature';
 
-// import './sabanasblancas/common';
 import './sabanasblancas/add-to-cart';
 import './sabanasblancas/product-detail';
-// import './sabanasblancas/cart';
 import './sabanasblancas/checkout';
 
 import prestashop from 'prestashop';

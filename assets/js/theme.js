@@ -1627,7 +1627,16 @@ function checkAtLeastLastStepIsOpen() {
   });
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(checkAtLeastLastStepIsOpen);
+function emptyTermsModalOnHide() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modal').on('hidden.bs.modal', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modal .js-modal-content').html('');
+  });
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  checkAtLeastLastStepIsOpen();
+  emptyTermsModalOnHide();
+});
 
 /***/ }),
 
@@ -1943,10 +1952,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import './sabanasblancas/common';
 
 
- // import './sabanasblancas/cart';
 
 
 

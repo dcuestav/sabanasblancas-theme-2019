@@ -8,4 +8,13 @@ function checkAtLeastLastStepIsOpen() {
     });
 }
 
-$(document).ready(checkAtLeastLastStepIsOpen);
+function emptyTermsModalOnHide() {
+    $('#modal').on('hidden.bs.modal', ()=>{
+        $('#modal .js-modal-content').html('');
+    });
+}
+
+$(document).ready(()=>{
+    checkAtLeastLastStepIsOpen();
+    emptyTermsModalOnHide();
+});
