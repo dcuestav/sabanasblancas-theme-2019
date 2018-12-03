@@ -1,27 +1,54 @@
 import $ from 'jquery';
 import prestashop from 'prestashop';
 
-prestashop.blockcart = prestashop.blockcart || {};
-prestashop.blockcart.showModal = function(modal) {
-    $('body').append(modal);
-    $('#blockcart-modal').siblings().addClass('blurred');
-    $('#blockcart-modal')
-        .modal() // Mostrar la ventana
-        .on('hidden.bs.modal', function (e) { // Destruirla completamente al ocultarla
-            $('.blurred').removeClass('blurred');
-            $(this)
-                .modal('dispose')
-                .remove();
-        });
-    $('[data-button-action="add-to-cart"]')
-        .removeClass('spinner')
-        .removeAttr('disabled');
+function getAddToCartButton() {
+    return $('[data-button-action="add-to-cart"]');
 }
 
-$('[data-button-action="add-to-cart"]').click(function() {
-    var me = this;
-    setTimeout(function() { // Tiene que ejecutarse después del envío del formulario
-        $(me).attr('disabled', true);
-        $(me).addClass('spinner');
-    }, 0);
-})
+function enableAddToCartButton() {
+    getAddToCartButton().removeClass('spinner').removeAttr('disabled');
+}
+
+function disableAddToCartButton() {
+    getAddToCartButton().addClass('spinner').attr('disabled', true);
+}
+
+function getBlockCartModal() {
+    return $('#blockcart-modal');
+}
+
+function setBlur() {
+    getBlockCartModal().siblings().addClass('blurred');
+}
+
+function removeBlur() {
+    $('.blurred').removeClass('blurred');
+}
+
+$(document).ready(()=>{
+
+    prestashop.blockcart = prestashop.blockcart || {};
+    prestashop.blockcart.showModal = (html) => {
+        $('body').append(html);
+        setBlur();
+        var $blockCartModal = getBlockCartModal();
+        $blockCartModal.on('shown.bs.modal', enableAddToCartButton);
+        $blockCartModal.on('hidden.bs.modal', function (event) { 
+            prestashop.emit('updateProduct', {
+                reason: event.currentTarget.dataset,
+                event: event
+            });
+            removeBlur();
+            // Destruirla completamente al ocultarla
+            $(this).modal('dispose').remove();
+        });
+        $blockCartModal.modal('show'); // Mostrar la ventana
+    };
+
+    getAddToCartButton().click(function() {
+        setTimeout(function() { // Tiene que ejecutarse después del envío del formulario
+            disableAddToCartButton();
+        }, 0);
+    })
+});
+

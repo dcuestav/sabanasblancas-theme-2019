@@ -1,5 +1,6 @@
 // Mostrar y ocultar el modal de carrito
 // Actualizar el producto después de añadir al carrito
+// SUSTITUIDO por add-to-cart.js
 
 import prestashop from 'prestashop';
 import $ from 'jquery';

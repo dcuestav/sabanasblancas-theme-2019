@@ -30,7 +30,7 @@ import './sabanasblancas/replace-image-effect';
 import './sabanasblancas/show-brand-on-product-miniature';
 
 // import './sabanasblancas/common';
-// import './sabanasblancas/add-to-cart';
+import './sabanasblancas/add-to-cart';
 import './sabanasblancas/product-detail';
 // import './sabanasblancas/cart';
 // import './sabanasblancas/checkout';
@@ -40,8 +40,6 @@ import EventEmitter from 'events';
 
 import './classic/lib/bootstrap-filestyle.min';
 import './classic/lib/jquery.scrollbox.min';
-
-import './classic/components/block-cart';
 
 // "inherit" EventEmitter
 for (var i in EventEmitter.prototype) {
