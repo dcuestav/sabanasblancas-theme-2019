@@ -293,7 +293,7 @@ const CheckUpdateQuantityOperations = {
     }
 
     if ('' !== errorMsg) {
-      let strError = ' <article class="alert alert-danger" role="alert" data-alert="danger"><ul><li>' + errorMsg + '</li></ul></article>';
+      let strError = ' <article class="alert alert-danger" role="alert" data-alert="danger"><ul class="list-unstyled"><li>' + errorMsg + '</li></ul></article>';
       $('#notifications .container').html(strError);
       errorMsg = '';
       isUpdateOperation = false;

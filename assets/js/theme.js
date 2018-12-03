@@ -383,7 +383,7 @@ var CheckUpdateQuantityOperations = {
     }
 
     if ('' !== errorMsg) {
-      var strError = ' <article class="alert alert-danger" role="alert" data-alert="danger"><ul><li>' + errorMsg + '</li></ul></article>';
+      var strError = ' <article class="alert alert-danger" role="alert" data-alert="danger"><ul class="list-unstyled"><li>' + errorMsg + '</li></ul></article>';
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#notifications .container').html(strError);
       errorMsg = '';
       isUpdateOperation = false;

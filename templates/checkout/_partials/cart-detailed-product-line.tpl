@@ -99,7 +99,6 @@
             <span class="gift-quantity">{$product.quantity}</span>
           {else}
             <div class="input-group quantity-button" style="max-width:150px;">
-              <button class="btn btn-secondary icon-only quantity-button-remove" type="button"><i class="material-icons">remove</i></button>
               <input
                 class="form-control js-cart-line-product-quantity quantity-button-input"
                 data-down-url="{$product.down_quantity_url}"
@@ -111,7 +110,6 @@
                 name="product-quantity-spin"
                 min="{$product.minimal_quantity}"
                 >
-              <button class="btn btn-secondary icon-only quantity-button-add" type="button"><i class="material-icons">add</i></button>
             </div>
           {/if}
         </div>
