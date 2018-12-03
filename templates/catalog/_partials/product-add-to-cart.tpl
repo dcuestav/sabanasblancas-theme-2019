@@ -4,8 +4,7 @@
     <div class="form-row mb-3">
       {* <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label> *}
       <div class="col">
-        <div class="input-group quantity-button">
-          <button class="btn btn-secondary icon-only quantity-button-remove" type="button"><i class="material-icons">remove</i></button>
+        <div class="input-group">
           <input
               type="number"
               name="qty"
@@ -16,7 +15,6 @@
               {if !$product.allow_oosp}max="{$product.quantity}" {/if}
               aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
             >
-          <button class="btn btn-secondary icon-only quantity-button-add" type="button"><i class="material-icons">add</i></button>
         </div>
 
       </div>

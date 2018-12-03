@@ -20,6 +20,9 @@ import './classic/customer';
 import './classic/product';
 import './classic/cart';
 
+import Form from './classic/components/form';
+import ProductSelect from './classic/components/product-select';
+
 import 'flexslider/jquery.flexslider';
 import './sabanasblancas/flexslider';
 import './sabanasblancas/main-menu';
@@ -28,13 +31,9 @@ import './sabanasblancas/show-brand-on-product-miniature';
 
 // import './sabanasblancas/common';
 // import './sabanasblancas/add-to-cart';
-// import './sabanasblancas/product-detail';
+import './sabanasblancas/product-detail';
 // import './sabanasblancas/cart';
 // import './sabanasblancas/checkout';
-
-import Form from './classic/components/form';
-import ProductSelect from './classic/components/product-select';
-
 
 import prestashop from 'prestashop';
 import EventEmitter from 'events';
@@ -55,5 +54,3 @@ $(document).ready(() => {
   form.init();
   productSelect.init();
 });
-
-

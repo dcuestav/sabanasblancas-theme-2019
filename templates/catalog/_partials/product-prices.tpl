@@ -192,12 +192,12 @@
     {* DISPONIBILIDAD v2 *}
     {* TODO: Tener en cuenta $product.show_availability *}
 
-    <div id="availability-delivery-help" data-partial-delivery-from="10" data-stock="{$product.quantity}" data-cd th="{$product.allow_oosp}">
+    <div id="availability-delivery-help" data-partial-delivery-from="10" data-stock="{$product.quantity}" data-allow-oosp="{$product.allow_oosp}">
 
       {if $product.allow_oosp}
         <!-- Pedidos sin stock habilitados -->
 
-        {if $product.quantity==0}
+        {if $product.quantity<=0}
 
           <div class="out-of-stock text-center">
             <div class="text-black icon-adjust" 
@@ -210,9 +210,9 @@
             </div>
           </div>
 
-        {else}
+        {else if $product.quantity_wanted > $product.quantity and $product.quantity < 10}
 
-          <div class="quantity-wanted-greater-than-stock text-center{if $product.quantity_wanted <= $product.quantity or $product.quantity >= 10} d-none{/if}">
+          <div class="quantity-wanted-greater-than-stock text-center">
             <div class="text-black icon-adjust" 
               data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Theme.Availability'}">
               <i class="material-icons">error_outline</i>
@@ -224,8 +224,9 @@
             </div>
           </div>
 
+        {else if $product.quantity_wanted > $product.quantity and $product.quantity >= 10}
 
-          <div class="quantity-wanted-greater-than-stock-with-partial-delivery text-center{if $product.quantity_wanted <= $product.quantity or $product.quantity < 10} d-none{/if}">
+          <div class="quantity-wanted-greater-than-stock-with-partial-delivery text-center">
             <div class="text-black icon-adjust" 
               data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Theme.Availability'}">
               <i class="material-icons">error_outline</i>
@@ -237,8 +238,9 @@
             </div>
           </div>
 
+        {else if $product.quantity_wanted <= $product.quantity}
 
-          <div class="quantity-wanted-lower-than-stock text-center{if $product.quantity_wanted > $product.quantity} d-none{/if}">
+          <div class="quantity-wanted-lower-than-stock text-center">
             <div class="text-success icon-adjust" 
               data-toggle="tooltip" data-placement="bottom" title="{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Theme.Availability'}">
               <i class="material-icons">check_circle</i>
@@ -254,7 +256,7 @@
       {else}
         <!-- Pedidos sin stock deshabilitados -->
 
-        {if $product.quantity==0}
+        {if $product.quantity<=0}
 
           <div class="out-of-stock text-center">
             <div class="text-black icon-adjust" 

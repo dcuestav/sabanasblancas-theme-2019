@@ -1693,6 +1693,79 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 /***/ }),
 
+/***/ "./js/sabanasblancas/product-detail.js":
+/*!*********************************************!*\
+  !*** ./js/sabanasblancas/product-detail.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var bootstrap_js_src_tooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/js/src/tooltip */ "./node_modules/bootstrap/js/src/tooltip.js");
+
+
+ // Basic functions
+
+function getProductPrice() {
+  return Number(jquery__WEBPACK_IMPORTED_MODULE_0___default()("[itemprop='price']").attr('content'));
+}
+
+function getQuantityWanted() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').val();
+}
+
+function setTotalPrice(value) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text(formatNumber(value));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').removeClass('invisible');
+}
+
+function hideTotalPrice() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price').text('');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#total_price_message').addClass('invisible');
+}
+
+function formatNumber(value) {
+  return value.toFixed(2).replace('.', ',');
+} // Behaviors
+
+
+function updateTotalPrice() {
+  var productPrice = getProductPrice();
+  var quantity = getQuantityWanted();
+
+  if (productPrice && quantity) {
+    setTotalPrice(productPrice * quantity);
+  } else {
+    hideTotalPrice();
+  }
+}
+
+function enableTooltips() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-toggle="tooltip"]').bstooltip({
+    container: 'body'
+  });
+} // Cargar el tooltip de Bootstrap con otro nombre porque tooltip está ocupado por JQueryUI
+
+
+var NAME = 'bstooltip';
+jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME] = bootstrap_js_src_tooltip__WEBPACK_IMPORTED_MODULE_2__["default"]._jQueryInterface;
+jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].Constructor = bootstrap_js_src_tooltip__WEBPACK_IMPORTED_MODULE_2__["default"]; // Cada vez que se actualiza el producto se cambian partes de la página por ajax
+// y hay que reasignar los comportamientos
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  enableTooltips();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateTotalPrice);
+  prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', updateTotalPrice);
+  prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', enableTooltips);
+});
+
+/***/ }),
+
 /***/ "./js/sabanasblancas/replace-image-effect.js":
 /*!***************************************************!*\
   !*** ./js/sabanasblancas/replace-image-effect.js ***!
@@ -1752,7 +1825,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! expose-loader?Tether!tether */ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js-exposed");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! expose-loader?Tether!tether */ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js");
 /* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap-touchspin */ "./node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js");
 /* harmony import */ var bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1__);
@@ -1769,27 +1842,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classic_customer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./classic/customer */ "./js/classic/customer.js");
 /* harmony import */ var _classic_product__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./classic/product */ "./js/classic/product.js");
 /* harmony import */ var _classic_cart__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./classic/cart */ "./js/classic/cart.js");
-/* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! flexslider/jquery.flexslider */ "./node_modules/flexslider/jquery.flexslider.js");
-/* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./sabanasblancas/flexslider */ "./js/sabanasblancas/flexslider.js");
-/* harmony import */ var _sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./sabanasblancas/main-menu */ "./js/sabanasblancas/main-menu.js");
-/* harmony import */ var _sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sabanasblancas/replace-image-effect */ "./js/sabanasblancas/replace-image-effect.js");
-/* harmony import */ var _sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./sabanasblancas/show-brand-on-product-miniature */ "./js/sabanasblancas/show-brand-on-product-miniature.js");
-/* harmony import */ var _sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _classic_components_form__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./classic/components/form */ "./js/classic/components/form.js");
-/* harmony import */ var _classic_components_product_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./classic/components/product-select */ "./js/classic/components/product-select.js");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! prestashop */ "prestashop");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var _classic_components_block_cart__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./classic/components/block-cart */ "./js/classic/components/block-cart.js");
+/* harmony import */ var _classic_components_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./classic/components/form */ "./js/classic/components/form.js");
+/* harmony import */ var _classic_components_product_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./classic/components/product-select */ "./js/classic/components/product-select.js");
+/* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! flexslider/jquery.flexslider */ "./node_modules/flexslider/jquery.flexslider.js");
+/* harmony import */ var flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(flexslider_jquery_flexslider__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sabanasblancas/flexslider */ "./js/sabanasblancas/flexslider.js");
+/* harmony import */ var _sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_flexslider__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./sabanasblancas/main-menu */ "./js/sabanasblancas/main-menu.js");
+/* harmony import */ var _sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_main_menu__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./sabanasblancas/replace-image-effect */ "./js/sabanasblancas/replace-image-effect.js");
+/* harmony import */ var _sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_replace_image_effect__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./sabanasblancas/show-brand-on-product-miniature */ "./js/sabanasblancas/show-brand-on-product-miniature.js");
+/* harmony import */ var _sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_sabanasblancas_show_brand_on_product_miniature__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _sabanasblancas_product_detail__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sabanasblancas/product-detail */ "./js/sabanasblancas/product-detail.js");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_25__);
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_26__);
+/* harmony import */ var _classic_components_block_cart__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./classic/components/block-cart */ "./js/classic/components/block-cart.js");
 
 
  // import 'bootstrap/js/src/alert';
@@ -1813,13 +1887,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
  // import './sabanasblancas/common';
 // import './sabanasblancas/add-to-cart';
-// import './sabanasblancas/product-detail';
-// import './sabanasblancas/cart';
+
+ // import './sabanasblancas/cart';
 // import './sabanasblancas/checkout';
-
-
 
 
 
@@ -1827,13 +1901,13 @@ __webpack_require__.r(__webpack_exports__);
 
  // "inherit" EventEmitter
 
-for (var i in events__WEBPACK_IMPORTED_MODULE_23___default.a.prototype) {
-  prestashop__WEBPACK_IMPORTED_MODULE_22___default.a[i] = events__WEBPACK_IMPORTED_MODULE_23___default.a.prototype[i];
+for (var i in events__WEBPACK_IMPORTED_MODULE_24___default.a.prototype) {
+  prestashop__WEBPACK_IMPORTED_MODULE_23___default.a[i] = events__WEBPACK_IMPORTED_MODULE_24___default.a.prototype[i];
 }
 
 $(document).ready(function () {
-  var form = new _classic_components_form__WEBPACK_IMPORTED_MODULE_20__["default"]();
-  var productSelect = new _classic_components_product_select__WEBPACK_IMPORTED_MODULE_21__["default"]();
+  var form = new _classic_components_form__WEBPACK_IMPORTED_MODULE_15__["default"]();
+  var productSelect = new _classic_components_product_select__WEBPACK_IMPORTED_MODULE_16__["default"]();
   form.init();
   productSelect.init();
 });
@@ -7160,10 +7234,10 @@ function isUndefined(arg) {
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js-exposed":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/expose-loader?Tether!./node_modules/tether/dist/js/tether.js-exposed ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/expose-loader?Tether!./node_modules/tether/dist/js/tether.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
