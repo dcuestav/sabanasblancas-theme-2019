@@ -20,7 +20,7 @@
             <div class="collapse" id="cart-summary-product-list">
               <ul class="media-list list-unstyled">
                 {foreach from=$cart.products item=product}
-                  <li class="media">{include file='checkout/_partials/cart-summary-product-line.tpl' product=$product}</li>
+                  <li class="media mb-1">{include file='checkout/_partials/cart-summary-product-line.tpl' product=$product}</li>
                 {/foreach}
               </ul>
             </div>

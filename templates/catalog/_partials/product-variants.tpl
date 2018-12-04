@@ -75,7 +75,7 @@
 
   {if !empty($supplier_reference)}
   <div class="alert alert-secondary mt-3">
-    Medida real: <strong>{$supplier_reference}</strong>
+    {l s='Medida real' d='Shop.Theme.Catalog'}: <strong>{$supplier_reference}</strong>
   </div>
   {/if}
 

@@ -123,11 +123,21 @@
                     {if $packItems}
                       <section class="product-pack">
                         <p class="h6">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
-                        <ul class="list-group">
-                          {foreach from=$packItems item="product_pack"}
-                            {block name='product_miniature'}
-                              <li class="list-group-item list-group-item-action small">{$product_pack.name}</li>
-                            {/block}
+                        <ul class="list-unstyled pl-3">
+                          {foreach from=$packItems item=product key=index}
+                            <li class="mb-1">
+                              <div class="" style="font-size:90%;">{$product.pack_quantity}x {$product.legend}</div>
+                              {foreach from=$product.attributes item=attribute}
+                                <div class="d-inline-block text-muted pl-3" style="font-size:80%;">
+                                    {$attribute['group']}: {$attribute['name']}
+                                </div>
+                              {/foreach}
+                              {if !empty($pack_items_supplier_references) && $pack_items_supplier_references[$index]}
+                                <div class="d-inline-block text-muted pl-3" style="font-size:80%;">
+                                    {l s='Medida real' d='Shop.Theme.Catalog'}: {$pack_items_supplier_references[$index]}
+                                </div>
+                              {/if}
+                            </li>
                           {/foreach}
                         </ul>
                       </section>
