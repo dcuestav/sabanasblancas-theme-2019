@@ -102,9 +102,15 @@
       {/block}
        *}
 
-       {block name='product_sizes'}
+      {block name='product_sizes'}
         {if isset($product.number_of_sizes) && $product.number_of_sizes > 1}
-          <small class="text-success">{l s='%sizes_count% available sizes' d='Shop.Theme.Catalog' sprintf=['%sizes_count%' => $product.number_of_sizes]}</small>
+          <small class="text-success">{l s='%sizes_count% tallas disponibles' d='Shop.Theme.Catalog' sprintf=['%sizes_count%' => $product.number_of_sizes]}</small>
+        {/if}
+      {/block}
+
+      {block name='pack_product_stock'}
+        {if $product.pack && $product.quantity_all_versions>0}
+          <small class="text-success">{l s='In stock' d='Shop.Theme.Catalog'}</small>
         {/if}
       {/block}
 
