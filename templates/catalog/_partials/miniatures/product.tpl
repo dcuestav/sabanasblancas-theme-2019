@@ -33,7 +33,7 @@
       {/if}
     {/block}
 
-    <div class="card-body text-center">
+    <div class="card-body d-flex flex-column justify-content-between text-center">
       {block name='product_name'}
         <h5 class="card-title mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
       {/block}
