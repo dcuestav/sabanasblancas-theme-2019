@@ -1,3 +1,4 @@
+{* Se recarga por ajax al cambiar la combinación *}
 
 <div class="modal fade js-product-images-modal" id="product-modal">
   <div class="modal-dialog" role="document">

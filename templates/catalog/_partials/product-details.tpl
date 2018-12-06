@@ -1,3 +1,5 @@
+{* Se recarga por ajax al cambiar la combinación *}
+
 {* <div id="product-details" data-product="{$product|json_encode}"> *}
 <div id="product-details">
 

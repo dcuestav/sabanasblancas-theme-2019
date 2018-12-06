@@ -6579,9 +6579,10 @@ a.text-dark:hover, a.text-dark:focus {
           font-size: 6.25rem;
           display: inline; }
 
-.product-accessories,
-.featured-products {
-  overflow-x: hidden; }
+.product-information .list-group-item {
+  padding: 0.25rem 0rem;
+  border-width: 0 0 1px 0;
+  margin-bottom: 0; }
 
 .category-grid {
   display: grid;

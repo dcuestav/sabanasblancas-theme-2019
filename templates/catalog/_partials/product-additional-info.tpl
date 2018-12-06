@@ -1,3 +1,5 @@
+{* Se recarga por ajax al cambiar la combinación *}
+
 {*
  * This template is used to display additional information from the modules and is regenerated with each ajax call.
  * See ProductController::displayAjaxRefresh()

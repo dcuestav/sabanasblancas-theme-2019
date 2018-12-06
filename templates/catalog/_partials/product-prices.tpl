@@ -1,3 +1,5 @@
+{* Se recarga por ajax al cambiar la combinación *}
+
 {if $product.show_price}
   <div class="product-prices mb-3">
 

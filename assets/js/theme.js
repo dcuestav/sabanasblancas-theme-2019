@@ -1887,7 +1887,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! expose-loader?Tether!tether */ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! expose-loader?Tether!tether */ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js-exposed");
 /* harmony import */ var expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(expose_loader_Tether_tether__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap-touchspin */ "./node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js");
 /* harmony import */ var bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_touchspin__WEBPACK_IMPORTED_MODULE_1__);
@@ -7294,10 +7294,10 @@ function isUndefined(arg) {
 
 /***/ }),
 
-/***/ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/expose-loader?Tether!./node_modules/tether/dist/js/tether.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/expose-loader/index.js?Tether!./node_modules/tether/dist/js/tether.js-exposed":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/expose-loader?Tether!./node_modules/tether/dist/js/tether.js-exposed ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

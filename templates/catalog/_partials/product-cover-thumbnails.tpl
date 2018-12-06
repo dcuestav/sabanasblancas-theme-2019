@@ -1,3 +1,5 @@
+{* Se recarga por ajax al cambiar la combinación *}
+
 <div class="images-container">
 
   {block name='product_cover'}

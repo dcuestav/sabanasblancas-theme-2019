@@ -1,3 +1,5 @@
+{* Se recarga por ajax al cambiar la combinación *}
+
 <div class="product-add-to-cart">
   {if !$configuration.is_catalog}
 
