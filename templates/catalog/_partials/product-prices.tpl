@@ -90,106 +90,11 @@
         {/if}
       {/block}
 
-      {* ECOTASA *}
-      {* {block name='product_ecotax'}
-        {if $product.ecotax.amount > 0}
-          <div class="price-info-column">
-            <p class="price-ecotax price-info-column-text">{l s='Including %amount% for ecotax' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.ecotax.value]}
-              {if $product.has_discount}
-                {l s='(not impacted by the discount)' d='Shop.Theme.Catalog'}
-              {/if}
-            </p>
-          </div>
-        {/if}
-      {/block} *}
-
     </div>
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
     {hook h='displayProductPriceBlock' product=$product type="price"}
     {hook h='displayProductPriceBlock' product=$product type="after_price"}
-
-    
-
-    {* <div class="debug text-muted">
-      show_availability: {$product.show_availability}<br>
-      availability: {$product.availability}<br>
-      availability_message: {$product.availability_message}<br>
-      additional_delivery_times: {$product.additional_delivery_times}<br>
-      delivery_information: {$product.delivery_information}<br>
-      quantity: {$product.quantity}<br>
-      delivery_in_stock: {$product.delivery_in_stock}<br>
-      delivery_out_stock: {$product.delivery_out_stock}<br>
-    </div> *}
-
-    {* {debug} *}
-
-    {* DISPONIBILIDAD *}
-
-    {* <div class="d-flex justify-content-around">
-      <div class="">
-          {if $product.show_availability && $product.availability_message}
-            {if $product.availability == 'available'}
-              {if $product.quantity == 0}
-                <span id="product-availability" class="icon-adjust">
-                  <i class="material-icons">error_outline</i>
-                  <span>{$product.availability_message}</span>
-                </span>
-              {else}
-                <span id="product-availability" class="text-success icon-adjust">
-                  <i class="material-icons">check_circle</i>
-                  <span>{$product.availability_message}</span>
-                </span>
-              {/if}
-            {elseif $product.availability == 'last_remaining_items'}
-              <span id="product-availability" class="icon-adjust">
-                <i class="material-icons">error_outline</i>
-                <span>{$product.availability_message}</span>
-              </span>
-            {else}
-              <span id="product-availability" class="text-danger icon-adjust">
-                <i class="material-icons">warning</i>
-                <span>{$product.availability_message}</span>
-              </span>
-            {/if}
-          {/if}
-        
-      </div>
-    
-
-      {if $product.additional_delivery_times == 1}
-        {if $product.delivery_information}
-          {if $product.quantity > 0}
-            <div class="text-success icon-adjust">
-              <i class="material-icons">check_circle</i>
-              <span>{$product.delivery_information}</span>
-            </div>
-          {elseif $product.quantity == 0 && $product.add_to_cart_url}
-            <div class="icon-adjust">
-              <i class="material-icons">error_outline</i>
-              <span>{$product.delivery_information}</span>
-            </div>
-          {/if}
-        {/if}
-        
-      {elseif $product.additional_delivery_times == 2}
-        {if $product.quantity > 0}
-          <div class="text-success icon-adjust">
-            <i class="material-icons">check_circle</i>
-            <span>{$product.delivery_in_stock}</span>
-          </div>
-        <!-- Out of stock message should not be displayed if customer can't order the product. -->
-        {elseif $product.quantity == 0 && $product.add_to_cart_url}
-          <div class="icon-adjust">
-            <i class="material-icons">error_outline</i>
-            <span>{$product.delivery_out_stock}</span>
-          </div>
-        {/if}
-      {/if}
-
-    </div> *}
-
-    {* FIN DISPONIBILIDAD *}
 
     {* DISPONIBILIDAD v2 *}
     {* TODO: Tener en cuenta $product.show_availability *}
@@ -292,15 +197,15 @@
       {/if}
     </div>
 
-    
-
-
-
     {* FIN DISPONIBILIDAD v2 *}
 
-    <hr>
+    {block name='product_out_of_stock'}
+      <div>
+        {hook h='actionProductOutOfStock' product=$product}
+      </div>
+    {/block}
 
-    
+    <hr>
 
   </div>
 

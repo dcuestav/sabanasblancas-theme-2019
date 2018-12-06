@@ -150,7 +150,7 @@
 .images-container {
     position: relative;
     max-width: 500px;
-    margin: 0 auto;
+    // margin: 0 auto;
 
     .js-qv-mask {
         white-space: nowrap;
@@ -297,17 +297,79 @@
 
 // Product information
 
-.product-information {
+.product-details-constant.text {
+    .list-group {
+        font-size: 90%;
+    }
     .list-group-item {
         padding: 0.25rem 0rem;
         border-width: 0 0 1px 0;
         margin-bottom: 0;
+        .label {
+            display: inline-block;
+            width: 50%;
+        }
+        .value {
+            display: inline-block;
+        }
+    }
+}
+
+// Product information icons
+.product-details-constant.icons {
+
+    position: relative;
+    right: -15px;
+
+    .section-title {
+        display: none;
+    }
+    .list-group-item.brand {
+        
+        margin-bottom: 0;
+        padding: 0 0.2rem 1rem;
+        text-align: center;
+        img {
+            max-width: 100px;
+        }
+    }
+    .icon {
+        position: absolute;
+        color: $gray-400;
+        top: 8px;
+        left: 8px;
+    }
+    .label {
+        text-transform: uppercase;
+        font-size: 70%;
+        color: $gray-600;
+    }
+    .label,
+    .value {
+        padding-left: 2.3rem;
+    }
+    .list-group-item {
+        border: none;
+        position: relative;
+        font-size: 90%;
+        padding: 0.4rem;
+        &:hover {
+            .icon {
+                color: $gray-600;
+                top: 10px;
+            }
+            .label {
+                font-size: 90%;
+                color: $gray-800;
+            }
+        }
+        
     }
 }
 
 // Accesorios
-
+// El overflow rompe el layout de la página. Hay que mantenerlo oculto
 .product-accessories, 
 .featured-products {
-//   overflow-x: hidden;
+  overflow-x: hidden;
 }

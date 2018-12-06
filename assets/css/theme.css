@@ -6465,8 +6465,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .images-container {
   position: relative;
-  max-width: 500px;
-  margin: 0 auto; }
+  max-width: 500px; }
   .images-container .js-qv-mask {
     white-space: nowrap;
     overflow: hidden; }
@@ -6579,10 +6578,53 @@ a.text-dark:hover, a.text-dark:focus {
           font-size: 6.25rem;
           display: inline; }
 
-.product-information .list-group-item {
+.product-details-constant.text .list-group {
+  font-size: 90%; }
+
+.product-details-constant.text .list-group-item {
   padding: 0.25rem 0rem;
   border-width: 0 0 1px 0;
   margin-bottom: 0; }
+  .product-details-constant.text .list-group-item .label {
+    display: inline-block;
+    width: 50%; }
+  .product-details-constant.text .list-group-item .value {
+    display: inline-block; }
+
+.product-details-constant.icons {
+  position: relative;
+  right: -15px; }
+  .product-details-constant.icons .section-title {
+    display: none; }
+  .product-details-constant.icons .list-group-item.brand {
+    margin-bottom: 0;
+    padding: 0 0.2rem 1rem;
+    text-align: center; }
+    .product-details-constant.icons .list-group-item.brand img {
+      max-width: 100px; }
+  .product-details-constant.icons .icon {
+    position: absolute;
+    color: #ced4da;
+    top: 8px;
+    left: 8px; }
+  .product-details-constant.icons .label {
+    text-transform: uppercase;
+    font-size: 70%;
+    color: #6c757d; }
+  .product-details-constant.icons .label,
+  .product-details-constant.icons .value {
+    padding-left: 2.3rem; }
+  .product-details-constant.icons .list-group-item {
+    border: none;
+    position: relative;
+    font-size: 90%;
+    padding: 0.4rem; }
+    .product-details-constant.icons .list-group-item:hover .icon {
+      color: #6c757d;
+      top: 10px; }
+    .product-details-constant.icons .list-group-item:hover .label {
+      font-size: 90%;
+      color: #343a40; }
 
 .category-grid {
   display: grid;

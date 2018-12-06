@@ -56,14 +56,18 @@
     {* FIN DEBUG *}
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-7">
         {block name='page_content_container'}
           <section class="page-content" id="content">
             {block name='page_content'}
 
-              {block name='product_cover_thumbnails'}
-                {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-              {/block}
+              <div class="d-flex justify-content-center">
+                {block name='product_cover_thumbnails'}
+                  {include file='catalog/_partials/product-cover-thumbnails.tpl'}
+                {/block}
+                {* Se incluye dos veces. Aquí se muestra como iconos por el parámetro mode *}
+                {include file='catalog/_partials/product-details-constant.tpl' mode='icons'}
+              </div>
 
               {block name='product_description'}
                 {if $product.description}
@@ -78,15 +82,16 @@
           </section>
         {/block}
       </div>
-      <div class="col-md-6">
+
+      <div class="col-md-5">
 
         <div class="card product-details-card bg-light mb-3">
           <div class="card-header">
-            {if isset($manufacturer_image_url)}
+            {* {if isset($manufacturer_image_url)}
               <a href="{$product_brand_url}" class="brand-logo">
                 <img src="{$manufacturer_image_url}"/>
               </a>
-            {/if}
+            {/if} *}
             {block name='page_header_container'}
               {block name='page_header'}
                 <h1 class="h3 d-inline" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
@@ -188,6 +193,9 @@
 
           {block name='product_details'}
             {include file='catalog/_partials/product-details.tpl'}
+            <div class="d-lg-none">
+              {include file='catalog/_partials/product-details-constant.tpl' mode='text'}
+            </div>
           {/block}
 
           {block name='product_attachments'}
