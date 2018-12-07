@@ -1,5 +1,18 @@
-body#history {
-    table {
+body#history,
+body#order-detail {
+    .table {
         font-size: 85%;
+
+        .table-offset {
+            border: none;
+        }
+        .line-products .table-offset {
+            border-top: 1px solid $table-border-color;
+        }
+
+        td {
+            vertical-align: middle;
+        }
     }
+
 }

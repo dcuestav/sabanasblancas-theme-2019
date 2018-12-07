@@ -1,36 +1,34 @@
 {extends file='page.tpl'}
 
 {block name='page_content_container' prepend}
-    <section id="content-hook_order_confirmation" class="card text-white bg-info mb-3">
-      <div class="card-body">
+    <section id="content-hook_order_confirmation" class="alert alert-primary mb-3">
 
-          {block name='order_confirmation_header'}
-            <h3 class="h1 mb-3 icon-adjust" id="order-confirmation-title">
-              <i class="material-icons">done</i>
-              <span>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}</span>
-            </h3>
-          {/block}
+      {block name='order_confirmation_header'}
+        <h3 class="h1 mb-3 icon-adjust" id="order-confirmation-title">
+          <i class="material-icons">done</i>
+          <span>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}</span>
+        </h3>
+      {/block}
 
-          <p class="mb-0">
-            {l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $customer.email]}
-            {if $order.details.invoice_url}
-              {* [1][/1] is for a HTML tag. *}
-              {l
-                s='You can also [1]download your invoice[/1]'
-                d='Shop.Theme.Checkout'
-                sprintf=[
-                  '[1]' => "<a href='{$order.details.invoice_url}'>",
-                  '[/1]' => "</a>"
-                ]
-              }
-            {/if}
-          </p>
+      <p class="mb-0">
+        {l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $customer.email]}
+        {if $order.details.invoice_url}
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='You can also [1]download your invoice[/1]'
+            d='Shop.Theme.Checkout'
+            sprintf=[
+              '[1]' => "<a href='{$order.details.invoice_url}'>",
+              '[/1]' => "</a>"
+            ]
+          }
+        {/if}
+      </p>
 
-          {block name='hook_order_confirmation'}
-            {$HOOK_ORDER_CONFIRMATION nofilter}
-          {/block}
+      {block name='hook_order_confirmation'}
+        {$HOOK_ORDER_CONFIRMATION nofilter}
+      {/block}
 
-      </div>
     </section>
 {/block}
 
