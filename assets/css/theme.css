@@ -6810,6 +6810,9 @@ body#order-confirmation #order-confirmation-title .material-icons {
 body#order-confirmation #order-confirmation-title span {
   padding-left: 3.5rem; }
 
+body#history table {
+  font-size: 85%; }
+
 html, body, main {
   height: 100%; }
 
