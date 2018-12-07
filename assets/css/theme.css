@@ -6626,6 +6626,10 @@ a.text-dark:hover, a.text-dark:focus {
       font-size: 90%;
       color: #343a40; }
 
+.product-accessories,
+.featured-products {
+  overflow-x: hidden; }
+
 .category-grid {
   display: grid;
   grid-gap: 15px;
@@ -6806,6 +6810,19 @@ body#order-confirmation #order-confirmation-title .material-icons {
 body#order-confirmation #order-confirmation-title span {
   padding-left: 3.5rem; }
 
+html, body, main {
+  height: 100%; }
+
+main {
+  display: flex;
+  flex-direction: column; }
+
+#wrapper {
+  flex: 1 0 auto; }
+
+.footer {
+  flex-shrink: 0; }
+
 body {
   overflow-x: hidden; }
 
@@ -6830,8 +6847,7 @@ a {
           filter: blur(2px); }
 
 #wrapper {
-  background-color: transparent;
-  margin-top: -5px; }
+  background-color: transparent; }
 
 #menu-backdrop {
   position: absolute;

@@ -11,6 +11,24 @@
 @import "product-cards";
 @import "checkout";
 
+
+html, body, main {
+  height: 100%;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+#wrapper {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
+
+
+
 body {
   overflow-x: hidden;
 }
@@ -45,7 +63,7 @@ a {
 
 #wrapper {
   background-color: transparent;
-  margin-top: -5px;
+  // margin-top: -5px;
 }
 
 #menu-backdrop {
