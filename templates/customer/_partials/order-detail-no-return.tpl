@@ -4,7 +4,7 @@
   <table id="order-products" class="table table-bordered">
     <thead class="thead-light">
       <tr>
-        <th>{l s='Reference' d='Shop.Theme.Catalog'}</th>
+        {* <th>{l s='Reference' d='Shop.Theme.Catalog'}</th> *}
         <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
         <th>{l s='Quantity' d='Shop.Theme.Catalog'}</th>
         <th>{l s='Unit price' d='Shop.Theme.Catalog'}</th>
@@ -14,7 +14,7 @@
 
     {foreach from=$order.products item=product}
       <tr>
-        <td>{$product.reference}</td>
+        {* <td>{$product.reference}</td> *}
         <td>
           {$product.name}
           {if $product.customizations}
@@ -49,14 +49,14 @@
     <tfoot class="col-md-6">
       {foreach $order.subtotals as $line}
         <tr class="line-{$line.type}">
-          <td colspan="3" class="table-offset"></td>
+          <td colspan="2" class="table-offset"></td>
           <td>{$line.label}</td>
           <td>{$line.value}</td>
         </tr>
       {/foreach}
 
       <tr class="text-xs-right line-{$order.totals.total.type}">
-        <td colspan="3" class="table-offset"></td>
+        <td colspan="2" class="table-offset"></td>
         <td>{$order.totals.total.label}</td>
         <td>{$order.totals.total.value}</td>
       </tr>

@@ -42,7 +42,7 @@
 
   {block name='order_history'}
     <section id="order-history" class="mb-4">
-      <h3 class="mb-3">{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h3>
+      <h4 class="mb-3">{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h4>
       <table class="table table-bordered" style="max-width:40rem;">
         <thead class="thead-light">
           <tr>

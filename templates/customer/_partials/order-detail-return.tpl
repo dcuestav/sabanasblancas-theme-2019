@@ -6,7 +6,7 @@
       <thead class="thead-light">
         <tr>
           <th><input type="checkbox"></th>
-          <th>{l s='Reference' d='Shop.Theme.Catalog'}</th>
+          {* <th>{l s='Reference' d='Shop.Theme.Catalog'}</th> *}
           <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
           <th>{l s='Quantity' d='Shop.Theme.Catalog'}</th>
           <th>{l s='Returned' d='Shop.Theme.Catalog'}</th>
@@ -26,7 +26,7 @@
               {/foreach}
             {/if}
           </td>
-          <td>{$product.reference}</td>
+          {* <td>{$product.reference}</td> *}
           <td>{$product.name}
             {if $product.customizations}
               <br />
@@ -46,10 +46,10 @@
           <td class="pt-1 pb-1">
             {if !$product.customizedDatas}
 
-              <div class="form-group row mb-0">
-                <label class="col col-form-label">{$product.quantity}</label>
-                <div class="col">
-                  <select name="order_qte_input[{$product.id_order_detail}]" class="form-control">
+              <div class="form-group d-flex mb-0">
+                <label class="col-form-label mr-auto">{$product.quantity}</label>
+                <div>
+                  <select name="order_qte_input[{$product.id_order_detail}]" class="form-control pl-1 pr-2">
                     {section name=quantity start=1 loop=$product.product_quantity+1}
                       <option value="{$smarty.section.quantity.index}">{$smarty.section.quantity.index}</option>
                     {/section}
@@ -78,14 +78,14 @@
         {foreach $order.subtotals as $line}
           <tr class="line-{$line.type}">
             <td colspan="3" class="table-offset"></td>
-            <td colspan="3">{$line.label}</td>
+            <td colspan="2">{$line.label}</td>
             <td colspan="1">{$line.value}</td>
           </tr>
         {/foreach}
 
         <tr class="line-{$order.totals.total.type}">
           <td colspan="3" class="table-offset"></td>
-          <td colspan="3">{$order.totals.total.label}</td>
+          <td colspan="2">{$order.totals.total.label}</td>
           <td colspan="1">{$order.totals.total.value}</td>
         </tr>
       </tfoot>
