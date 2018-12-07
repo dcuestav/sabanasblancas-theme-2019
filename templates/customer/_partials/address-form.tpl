@@ -1,7 +1,7 @@
 {* customer/_partials/address-form.tpl *}
 
 {block name="address-form"}
-  <div class="js-address-form">
+  <div class="js-address-form mt-3">
     {include file='_partials/form-errors.tpl' errors=$errors['']}
 
     {block name="address_form_url"}
@@ -29,7 +29,7 @@
         <footer class="form-footer d-flex justify-content-end">
           <input type="hidden" name="submitAddress" value="1">
           {block name='form_buttons'}
-            <button type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
+            <button type="submit" class="btn btn-primary">{l s='Save' d='Shop.Theme.Actions'}</button>
           {/block}
         </footer>
       {/block}

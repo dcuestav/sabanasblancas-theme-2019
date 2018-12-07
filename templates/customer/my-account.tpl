@@ -33,51 +33,51 @@
 
     <p>{l s='Welcome to your account. Here you can manage all of your personal information and orders.' d='Shop.Theme.Customeraccount'}</p>
 
-    {block name="account_link_list"}
-      <ul class="link-list">
-        {if $customer.addresses|count}
-          <li>
-            <a id="addresses-link" href="{$urls.pages.addresses}">{l s='Addresses' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {else}
-          <li>
-            <a id="address-link" href="{$urls.pages.address}">{l s='Add first address' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {/if}
+    <div class="row">
+      <div class="col-md-6 offset-md-1">
 
-        <li>
-          <a id="identity-link" href="{$urls.pages.identity}">{l s='Information' d='Shop.Theme.Customeraccount'}</a>
-        </li>
+        {block name="account_link_list"}
+          <div class="link-list list-group">
 
-        {if !$configuration.is_catalog}
-          <li>
-            <a id="history-link" href="{$urls.pages.history}">{l s='Order history and details' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {/if}
+            {if $customer.addresses|count}
+              <a id="addresses-link" href="{$urls.pages.addresses}" class="list-group-item list-group-item-action">
+              {l s='Addresses' d='Shop.Theme.Customeraccount'}</a>
+            {else}
+              <a id="address-link" href="{$urls.pages.address}" class="list-group-item list-group-item-action">
+              {l s='Add first address' d='Shop.Theme.Customeraccount'}</a>
+            {/if}
 
-        {if !$configuration.is_catalog}
-          <li>
-            <a id="order-slips-link" href="{$urls.pages.order_slip}">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {/if}
+            <a id="identity-link" href="{$urls.pages.identity}" class="list-group-item list-group-item-action">
+            {l s='Information' d='Shop.Theme.Customeraccount'}</a>
 
-        {if $configuration.voucher_enabled && !$configuration.is_catalog}
-          <li>
-            <a id="discounts-link" href="{$urls.pages.discount}">{l s='Vouchers' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {/if}
+            {if !$configuration.is_catalog}
+              <a id="history-link" href="{$urls.pages.history}" class="list-group-item list-group-item-action">
+              {l s='Order history and details' d='Shop.Theme.Customeraccount'}</a>
+            {/if}
 
-        {if $configuration.return_enabled && !$configuration.is_catalog}
-          <li>
-            <a id="returns-link" href="{$urls.pages.order_follow}">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</a>
-          </li>
-        {/if}
+            {if !$configuration.is_catalog}
+              <a id="order-slips-link" href="{$urls.pages.order_slip}" class="list-group-item list-group-item-action">
+              {l s='Credit slips' d='Shop.Theme.Customeraccount'}</a>
+            {/if}
 
-        {block name='display_customer_account'}
-          {hook h='displayCustomerAccount'}
-        {/block}
+            {if $configuration.voucher_enabled && !$configuration.is_catalog}
+              <a id="discounts-link" href="{$urls.pages.discount}" class="list-group-item list-group-item-action">
+              {l s='Vouchers' d='Shop.Theme.Customeraccount'}</a>
+            {/if}
 
-      </ul>
+            {if $configuration.return_enabled && !$configuration.is_catalog}
+              <a id="returns-link" href="{$urls.pages.order_follow}" class="list-group-item list-group-item-action">
+              {l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</a>
+            {/if}
+
+            {block name='display_customer_account'}
+              {hook h='displayCustomerAccount'}
+            {/block}
+
+          </div>
+        </div>
+
+      </div>
     {/block}
 
   </section>

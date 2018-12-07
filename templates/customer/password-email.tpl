@@ -62,7 +62,10 @@
 {/block}
 
 {block name='page_footer'}
-  <a href="{$urls.pages.authentication}" class="btn btn-light mt-3">
-    {l s='Back to Login' d='Shop.Theme.Actions'}
-  </a>
+  <div class="mt-3 mb-3">
+    <a href="{$urls.pages.authentication}" role="button" class="btn btn-light">
+      <i class="material-icons">arrow_back</i>
+      <span class="">{l s='Back to Login' d='Shop.Theme.Actions'}</span>
+    </a>
+  </div>
 {/block}

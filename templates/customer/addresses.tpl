@@ -31,16 +31,21 @@
 {block name='page_content_container'}
 <section id="content" class="page-content page-addresses">
 
-  {foreach $customer.addresses as $address}
-    {block name='customer_address'}
-      {include file='customer/_partials/block-address.tpl' address=$address}
-    {/block}
-  {/foreach}
+  <div class="card-deck mb-3">
+    {foreach $customer.addresses as $address}
+      {block name='customer_address'}
+        {include file='customer/_partials/block-address.tpl' address=$address}
+      {/block}
+    {/foreach}
+  </div>
 
-  <footer>
-    <a href="{$urls.pages.address}" data-link-action="add-address">
-      {l s='Create new address' d='Shop.Theme.Actions'}
-    </a>
+  <footer class="d-block">
+    <p class="add-address">
+      <a href="{$urls.pages.address}" class="icon-adjust" data-link-action="add-address">
+        <i class="material-icons">add</i>
+        <span>{l s='Create new address' d='Shop.Theme.Actions'}</span>
+      </a>
+    </p>
   </footer>
 
 </section>

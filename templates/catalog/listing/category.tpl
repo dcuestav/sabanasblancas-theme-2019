@@ -6,7 +6,7 @@
   {if $category.level_depth > 3}
     {$prev_category = $breadcrumb.links[$category.level_depth-2]}
     <a class="btn btn-light icon-adjust mb-3" href="{$prev_category.url}" role="button">
-      <i class="material-icons">reply</i>
+      <i class="material-icons">arrow_back</i>
       <span>{l s='Back to %prev_category%' d='Shop.Theme.Catalog' sprintf=['%prev_category%' => $prev_category.title]}</span>
     </a>
   {/if}

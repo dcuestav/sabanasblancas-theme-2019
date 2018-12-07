@@ -45,9 +45,9 @@
       </article>
     </div>
   {/foreach}
-  {if $interactive}
-    <p>
-      <button class="ps-hidden-by-js form-control-submit center-block" type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
-    </p>
-  {/if}
+  {* {if $interactive}
+    <div class="d-flex justify-content-end">
+      <button class="ps-hidden-by-js form-control-submit center-block btn btn-primary" type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
+    </div>
+  {/if} *}
 {/block}
