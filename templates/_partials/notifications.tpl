@@ -1,7 +1,7 @@
 
 <aside id="notifications" class="container-fluid max-width">
 
-  {if $notifications.error || $notifications.warning || $notifications.success || $notifications.info}
+  {if isset($notifications) && ($notifications.error || $notifications.warning || $notifications.success || $notifications.info)}
 
   <div class="container" style="width:100%;max-width:none;padding:15px 0 0;">
 

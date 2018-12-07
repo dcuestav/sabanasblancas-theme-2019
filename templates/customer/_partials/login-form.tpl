@@ -28,7 +28,7 @@
       <footer class="form-footer d-flex justify-content-end">
         <input type="hidden" name="submitLogin" value="1">
         {block name='form_buttons'}
-          <button data-link-action="sign-in" type="submit">{l s='Sign in' d='Shop.Theme.Actions'}</button>
+          <button data-link-action="sign-in" type="submit" class="btn btn-primary">{l s='Sign in' d='Shop.Theme.Actions'}</button>
         {/block}
       </footer>
     {/block}
