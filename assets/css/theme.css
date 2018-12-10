@@ -6633,7 +6633,7 @@ a.text-dark:hover, a.text-dark:focus {
 .category-grid {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(1, 1fr); }
+  justify-items: stretch; }
   @media (min-width: 635px) {
     .category-grid {
       grid-template-columns: repeat(2, 1fr); } }
@@ -6643,27 +6643,37 @@ a.text-dark:hover, a.text-dark:focus {
 
 .category-miniature {
   position: relative;
-  background-color: #e9ecef;
-  height: 75px;
   padding-left: 1.25rem;
-  padding-right: 155px; }
+  padding-right: 155px;
+  height: 75px;
+  background-attachment: fixed;
+  background-color: #aee1f9;
+  background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%); }
   @media (min-width: 635px) {
     .category-miniature {
       height: 112.5px; } }
   @media (min-width: 915px) {
     .category-miniature {
       height: 150px; } }
+  .category-miniature:hover {
+    text-decoration: none;
+    background-attachment: scroll; }
+  .category-miniature .category-miniature-title {
+    color: #212529;
+    font-size: 1.75rem;
+    font-weight: 300; }
+    .category-miniature .category-miniature-title:hover {
+      color: #212529; }
   .category-miniature .image-link {
     position: absolute;
     display: none;
     right: 0;
     top: 0;
-    bottom: 0; }
+    bottom: 0;
+    max-height: 100%; }
     @media (min-width: 635px) {
       .category-miniature .image-link {
         display: block; } }
-    .category-miniature .image-link img {
-      max-height: 100%; }
   @media (max-width: 634px) {
     .category-miniature .view-button {
       position: absolute;

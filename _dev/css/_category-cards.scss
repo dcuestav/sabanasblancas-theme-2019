@@ -1,8 +1,10 @@
 
 .category-grid {
+
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(1, 1fr);
+    justify-items: stretch;
+
     @media (min-width: 635px) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -14,17 +16,45 @@
 $category-img-height: 150px;
 
 .category-miniature {
+    
     position: relative;
-    background-color: $gray-200;
-    height: $category-img-height * 0.5;
     padding-left: 1.25rem;
     padding-right: $category-img-height + 5px;
 
+    height: $category-img-height * 0.5;
     @media (min-width: 635px) {
         height: $category-img-height * 0.75;
     }
     @media (min-width: 915px) {
         height: $category-img-height;
+    }
+
+    background-attachment: fixed;
+    // Lion milk
+    background-color: #aee1f9;
+    background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);
+    // Wedding song (toque rosa)
+    // background-color: #fde7f9;
+    // background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
+    // Fear of swedish (casi imperceptible)
+    // background-color: #e7eff9;
+    // background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+    // Wish stone (oscuro)
+    // background-color: #e3efe8;
+    // background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+
+    &:hover {
+        text-decoration: none;
+        background-attachment: scroll;
+    }
+
+    .category-miniature-title {
+        color: $body-color;
+        font-size: 1.75rem;
+        font-weight: 300;
+        &:hover {
+            color: $body-color;
+        }
     }
 
     .image-link {
@@ -33,13 +63,10 @@ $category-img-height: 150px;
         right: 0;
         top: 0;
         bottom: 0;
+        max-height: 100%;
         
         @media (min-width: 635px) {
             display: block;
-        }
-
-        img {
-            max-height: 100%;
         }
     }
 
