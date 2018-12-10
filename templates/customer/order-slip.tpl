@@ -6,12 +6,12 @@
 {/block}
 
 {block name='page_content'}
-  <h2>{l s='Credit slips you have received after canceled orders.' d='Shop.Theme.Customeraccount'}</h2>
+  <p>{l s='Credit slips you have received after canceled orders.' d='Shop.Theme.Customeraccount'}</p>
 
   {block name='credit_slip_table'}
     {if $credit_slips}
       <table id="credit-slips" class="table">
-        <thead>
+        <thead class="thead-light">
           <tr>
             <th scope="col">{l s='Credit slip' d='Shop.Theme.Customeraccount'}</th>
             <th scope="col">{l s='Order' d='Shop.Theme.Customeraccount'}</th>

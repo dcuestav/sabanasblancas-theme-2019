@@ -31,7 +31,7 @@
           sprintf=[
             '[1]' => '<strong>',
             '[/1]' => '</strong>',
-            '%state%' => $return.state_name
+            '%status%' => $return.state_name
           ]
         }
       </p>
@@ -39,8 +39,8 @@
     </div>
   {/block}
 
-  <table>
-    <thead>
+  <table class="table">
+    <thead class="thead-light">
       <tr>
         <th>{l s='Reference' d='Shop.Theme.Catalog'}</th>
         <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
@@ -48,6 +48,7 @@
       </tr>
     </thead>
     <tbody>
+    {debug}
     {foreach from=$products item=product}
       <tr>
         <td>{$product.product_reference}</td>
@@ -68,7 +69,7 @@
           {/if}
         </td>
         <td>
-          {if $product.customizations}
+          {if empty($product.customizations)}
             {$product.product_quantity}
           {else}
             {foreach $product.customizations as $customization}

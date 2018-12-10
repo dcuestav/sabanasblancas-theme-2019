@@ -34,7 +34,7 @@
   {if $orders}
     <div class="table-responsive">
       <table class="table table-striped">
-        <thead>
+        <thead class="thead-light">
           <tr>
             <th scope="col">{l s='Order reference' d='Shop.Theme.Checkout'}</th>
             <th scope="col">{l s='Date' d='Shop.Theme.Checkout'}</th>
