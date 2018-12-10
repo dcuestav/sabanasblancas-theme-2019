@@ -2,8 +2,6 @@
 
 {if $product.grouped_features|count || isset($product_manufacturer->id)}
 
-<div class="d-none d-lg-block" style="flex-grow:1;">
-
 <div class="product-details-constant {$mode}">
 
   <section class="mb-3">
@@ -57,5 +55,4 @@
 
 </div>
 
-</div>
 {/if}

@@ -66,7 +66,9 @@
                   {include file='catalog/_partials/product-cover-thumbnails.tpl'}
                 {/block}
                 {* Se incluye dos veces. Aquí se muestra como iconos por el parámetro mode *}
-                {include file='catalog/_partials/product-details-constant.tpl' mode='icons'}
+                <div class="d-none d-lg-block" style="flex-grow:1;">
+                  {include file='catalog/_partials/product-details-constant.tpl' mode='icons'}
+                </div>
               </div>
 
               {block name='product_description'}

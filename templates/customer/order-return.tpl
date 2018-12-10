@@ -48,7 +48,6 @@
       </tr>
     </thead>
     <tbody>
-    {debug}
     {foreach from=$products item=product}
       <tr>
         <td>{$product.product_reference}</td>

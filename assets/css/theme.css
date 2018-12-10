@@ -6826,6 +6826,10 @@ body#order-detail .table {
 html, body, main {
   height: 100%; }
 
+body {
+  width: 100%;
+  overflow-x: hidden; }
+
 main {
   display: flex;
   flex-direction: column; }
@@ -6835,9 +6839,6 @@ main {
 
 .footer {
   flex-shrink: 0; }
-
-body {
-  overflow-x: hidden; }
 
 a {
   color: #084489; }
@@ -6903,8 +6904,7 @@ a {
 
 .breadcrumb {
   font-size: 0.9rem;
-  border-bottom: 1px solid #dee2e6;
-  flex-wrap: nowrap; }
+  border-bottom: 1px solid #dee2e6; }
   .breadcrumb li {
     white-space: nowrap; }
 

@@ -16,6 +16,10 @@
 html, body, main {
   height: 100%;
 }
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -28,11 +32,6 @@ main {
 }
 
 
-
-
-body {
-  overflow-x: hidden;
-}
 
 a {
   color: $base-color;
@@ -105,7 +104,6 @@ a {
 .breadcrumb {
   font-size: 0.9rem;
   border-bottom: 1px solid $gray-300;
-  flex-wrap: nowrap;
   li {
     white-space: nowrap;
   }
