@@ -6645,6 +6645,7 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
   padding-left: 1.25rem;
   padding-right: 155px;
+  overflow-y: hidden;
   height: 75px;
   background-attachment: fixed;
   background-color: #aee1f9;

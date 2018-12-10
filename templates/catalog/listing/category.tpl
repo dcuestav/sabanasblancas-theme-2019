@@ -11,13 +11,17 @@
     </a>
   {/if}
 
-  <h1 class="display-4">{$category.name}</h1>
-  {if $category.image}
-    <div class="category-cover">
-      <img src="{$category.image.large.url}" alt="{$category.image.legend}">
+  <div class="d-flex flex-column flex-sm-row mb-3">
+    {if $category.image}
+      <div class="category-cover text-center mr-3">
+        <img src="{$category.image.large.url}" alt="{$category.image.legend}">
+      </div>
+    {/if}
+    <div>
+      <h1 class="display-4">{$category.name}</h1>
+      <div id="category-description" class="lead mb-4">{$category.description nofilter}</div>
     </div>
-  {/if}
-  <div id="category-description" class="lead mb-4">{$category.description nofilter}</div>
+  </div>
 
   {block name='category_subcategories'}
     <aside>
