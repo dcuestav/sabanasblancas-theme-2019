@@ -36,14 +36,22 @@
           </div>
           
         {elseif $group.group_type == 'radio'}
-          <div class="pt-2">
-            {foreach from=$group.attributes key=id_attribute item=group_attribute}
-              <div class="form-check radio-option {if $group_attribute.selected}selected{/if}">
-                <input id="attribute-{$id_attribute_group}-{$id_attribute}" class="form-check-input" type="radio" data-product-attribute="{$id_attribute_group}"
-                  name="group[{$id_attribute_group}]" value="{$id_attribute}" {if $group_attribute.selected} checked="checked"{/if}>
-                <label class="form-check-label" for="attribute-{$id_attribute_group}-{$id_attribute}">{$group_attribute.name}</label>
-              </div>
-            {/foreach}
+          <div class="pt-2 w-100 row justify-content-between no-gutters" style="font-size: 90%;">
+            <div class="col">
+              {$cols = 2}
+              {$rows = ceil(sizeOf($group.attributes)/$cols) }
+              {foreach from=$group.attributes key=id_attribute item=group_attribute name=fr_attributes}
+                <div class="form-check radio-option {if $group_attribute.selected}selected{/if} pb-2">
+                  <input id="attribute-{$id_attribute_group}-{$id_attribute}" class="form-check-input" type="radio" data-product-attribute="{$id_attribute_group}"
+                    name="group[{$id_attribute_group}]" value="{$id_attribute}" {if $group_attribute.selected} checked="checked"{/if}>
+                  <label class="form-check-label" for="attribute-{$id_attribute_group}-{$id_attribute}">{$group_attribute.name}</label>
+                </div>
+                {if 1==($smarty.foreach.fr_attributes.iteration/$rows) }
+                  </div> 
+                  <div class="col">
+                {/if}
+              {/foreach}
+            </div>  
           </div>
         {/if}
 
