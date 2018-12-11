@@ -2,7 +2,7 @@
 
 {if $product.grouped_features|count || isset($product_manufacturer->id)}
 
-{if $mode=icons}
+{if $mode==icons}
   <div class="d-none d-lg-block" style="flex-grow:1;">
 {else}
   <div class="d-lg-none">
