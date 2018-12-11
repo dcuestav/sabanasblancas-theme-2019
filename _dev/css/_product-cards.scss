@@ -46,18 +46,20 @@
       position: absolute;
       top: 0.5rem; 
       left: 0.75rem;
-      &>li {
+      &>.badge {
         display: block;
         margin-bottom: 0.5rem;
-        background-color: $primary;
+        border-radius: 5px;
+        background-color: rgba(white, 0.8);
+        color: $primary;
         &.discount {
-          background-color: $success;
+          color: $success;
         }
         &.on-sale {
-            background-color: $orange;
+          color: $orange;
         }
         &.pack {
-          background-color: $orange;
+          color: $orange;
         } 
       }
     }
