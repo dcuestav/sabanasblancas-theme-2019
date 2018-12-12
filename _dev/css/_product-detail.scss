@@ -180,7 +180,8 @@
         left: 0;
         top: 0;
         opacity: 0;
-        background: hsla(0,0%,100%,.7);
+        transition: opacity 500ms;
+        background: hsla(0,0%,100%,.4);
         text-align: center;
         cursor: pointer;
 

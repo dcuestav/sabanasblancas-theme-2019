@@ -47,6 +47,10 @@ $category-img-height: 150px;
     &:hover {
         text-decoration: none;
         background-attachment: scroll;
+
+        .image-link {
+            opacity: .8;
+        }
     }
 
     .category-miniature-title {
@@ -65,6 +69,8 @@ $category-img-height: 150px;
         top: 0;
         bottom: 0;
         max-height: 100%;
+        opacity: .2;
+        transition: opacity 500ms;
         
         @media (min-width: 635px) {
             display: block;
