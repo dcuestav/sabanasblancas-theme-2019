@@ -38,7 +38,7 @@
   {/block}
 
   {block name='back_to_top'}
-    <div class="text-center mt-3 mb-3">
+    <div class="text-center mt-3 mb-3 d-block d-md-none">
       <a href="#header" role="button" class="btn btn-light">
         <i class="material-icons">keyboard_arrow_up</i>
         <span class="">{l s='Back to top' d='Shop.Theme.Actions'}</span>
