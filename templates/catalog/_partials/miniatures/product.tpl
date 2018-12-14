@@ -6,14 +6,19 @@
       <a href="{$product.url}" class="card-img-top position-relative">
         <img
           class="img-fluid"
-          src = "{$product.cover.medium.url}"
-          alt = "{$product.cover.legend}"
-          data-full-size-image-url = "{$product.cover.large.url}"
-          {if count($product.images) >= 2}
-            {if $product.images[0].id_image != $product.cover.id_image }
-              data-alternative-image = "{$product.images[0].medium.url}"
-            {else}
-              data-alternative-image = "{$product.images[1].medium.url}"
+          {if $product.cover_images}  {* Se define en el módulo sb_product_cards *}
+            src="{$product.cover_images.main.url}"
+            alt="{$product.cover_images.main.legend}"
+            data-alternative-image="{$product.cover_images.alternative.url}"
+          {else}
+            src = "{$product.cover.medium.url}"
+            alt = "{$product.cover.legend}"
+            {if count($product.images) > 1}
+              {if $product.images[0].id_image != $product.cover.id_image }
+                data-alternative-image = "{$product.images[0].medium.url}"
+              {else}
+                data-alternative-image = "{$product.images[1].medium.url}"
+              {/if}
             {/if}
           {/if}
         >
