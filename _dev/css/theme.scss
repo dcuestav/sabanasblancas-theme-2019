@@ -7,6 +7,7 @@
 @import "header-top";
 @import "footer";
 @import "product-detail";
+@import "category-page";
 @import "category-cards";
 @import "product-cards";
 @import "checkout";
@@ -163,14 +164,6 @@ a {
   border-bottom: 1px solid $gray-500;
   font-weight: 300;
   font-size: 1.5rem;
-}
-
-// Category
-
-// TODO: Hay que eliminar el h1 de dentro de la descripción de las categorías o convertirlo en un subtítulo
-.category-description h1,
-#category-description h1 { 
-  display: none !important;
 }
 
 

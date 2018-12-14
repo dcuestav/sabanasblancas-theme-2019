@@ -1,0 +1,39 @@
+// TODO: Hay que eliminar el h1 de dentro de la descripción de las categorías o convertirlo en un subtítulo
+.category-description h1,
+#category-description h1 { 
+  display: none !important;
+}
+
+.category-cover {
+    padding-left: 2.5rem;
+    @include media-breakpoint-down(sm) {
+        padding-left: 0;
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
+    @include media-breakpoint-down(xs) {
+        img {
+            width: 200px;
+        }
+    }
+
+}
+.category-text {
+    padding-left: 2.5rem;
+    padding-right: 7rem;
+    @include media-breakpoint-down(lg) {
+        padding-right: 5rem;
+    }
+    @include media-breakpoint-down(md) {
+        padding-right: 0;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-left: 1rem;
+        
+    }
+    @include media-breakpoint-down(xs) {
+        padding-left: 0;
+    }
+}

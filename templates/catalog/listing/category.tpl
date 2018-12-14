@@ -13,11 +13,11 @@
 
   <div class="d-flex flex-column flex-sm-row mb-3">
     {if $category.image}
-      <div class="category-cover text-center mr-3">
+      <div class="category-cover text-center">
         <img src="{$category.image.large.url}" alt="{$category.image.legend}">
       </div>
     {/if}
-    <div>
+    <div class="category-text">
       <h1 class="display-4">{$category.name}</h1>
       <div id="category-description" class="lead mb-4">{$category.description nofilter}</div>
     </div>
