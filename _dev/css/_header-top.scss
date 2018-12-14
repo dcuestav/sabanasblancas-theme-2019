@@ -34,6 +34,7 @@ $header-top-font-size: 0.9rem;
             font-size: 1rem;
             font-weight: 600;
             border-bottom: 2px solid $header-top-background;
+            padding: .5rem;
             &.active {
                 background-color: inherit;
                 border-bottom-color: $accent;
