@@ -17,17 +17,19 @@
         position: relative;
         top: -2px;
         
-        &>li {
-            background-color: $primary;
+        &>.badge {
+            border-radius: 5px;
+            background-color: rgba(white, 0.8);
+            color: $primary;
             &.discount {
-                background-color: $success;
+                color: $success;
             }
             &.on-sale {
-                background-color: $orange;
+                color: $orange;
             }
             &.pack {
-                background-color: $orange;
-            }
+                color: $orange;
+            } 
         }
     }
 }

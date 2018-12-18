@@ -6,14 +6,17 @@
 
 .category-cover {
     padding-left: 2.5rem;
+    padding-right: 2.5rem;
     @include media-breakpoint-down(sm) {
         padding-left: 0;
+        padding-right: 1rem;
         img {
             width: 150px;
             height: auto;
         }
     }
     @include media-breakpoint-down(xs) {
+        padding-right: 0;
         img {
             width: 200px;
         }
@@ -21,19 +24,11 @@
 
 }
 .category-text {
-    padding-left: 2.5rem;
     padding-right: 7rem;
     @include media-breakpoint-down(lg) {
         padding-right: 5rem;
     }
     @include media-breakpoint-down(md) {
         padding-right: 0;
-    }
-    @include media-breakpoint-down(sm) {
-        padding-left: 1rem;
-        
-    }
-    @include media-breakpoint-down(xs) {
-        padding-left: 0;
     }
 }

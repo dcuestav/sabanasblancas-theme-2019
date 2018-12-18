@@ -6384,14 +6384,16 @@ a.text-dark:hover, a.text-dark:focus {
 .product-details-card .product-flags {
   position: relative;
   top: -2px; }
-  .product-details-card .product-flags > li {
-    background-color: #007bff; }
-    .product-details-card .product-flags > li.discount {
-      background-color: #28a745; }
-    .product-details-card .product-flags > li.on-sale {
-      background-color: #fd7e14; }
-    .product-details-card .product-flags > li.pack {
-      background-color: #fd7e14; }
+  .product-details-card .product-flags > .badge {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #007bff; }
+    .product-details-card .product-flags > .badge.discount {
+      color: #28a745; }
+    .product-details-card .product-flags > .badge.on-sale {
+      color: #fd7e14; }
+    .product-details-card .product-flags > .badge.pack {
+      color: #fd7e14; }
 
 .product-variants .color-option .input-color {
   position: absolute;
@@ -6637,19 +6639,22 @@ a.text-dark:hover, a.text-dark:focus {
   display: none !important; }
 
 .category-cover {
-  padding-left: 2.5rem; }
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; }
   @media (max-width: 767.98px) {
     .category-cover {
-      padding-left: 0; }
+      padding-left: 0;
+      padding-right: 1rem; }
       .category-cover img {
         width: 150px;
         height: auto; } }
   @media (max-width: 575.98px) {
-    .category-cover img {
-      width: 200px; } }
+    .category-cover {
+      padding-right: 0; }
+      .category-cover img {
+        width: 200px; } }
 
 .category-text {
-  padding-left: 2.5rem;
   padding-right: 7rem; }
   @media (max-width: 1199.98px) {
     .category-text {
@@ -6657,12 +6662,6 @@ a.text-dark:hover, a.text-dark:focus {
   @media (max-width: 991.98px) {
     .category-text {
       padding-right: 0; } }
-  @media (max-width: 767.98px) {
-    .category-text {
-      padding-left: 1rem; } }
-  @media (max-width: 575.98px) {
-    .category-text {
-      padding-left: 0; } }
 
 .category-grid {
   display: grid;
@@ -6766,7 +6765,8 @@ a.text-dark:hover, a.text-dark:focus {
       .product-miniature-card ul.product-flags > .badge.on-sale {
         color: #fd7e14; }
       .product-miniature-card ul.product-flags > .badge.pack {
-        color: #fd7e14; }
+        color: #fd7e14;
+        display: none !important; }
   .product-miniature-card .card-body {
     padding: 1rem 0.5rem 0.5rem; }
   .product-miniature-card .price {
