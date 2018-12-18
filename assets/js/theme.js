@@ -1665,7 +1665,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       animation: "slide",
       slideshow: false,
       animationSpeed: 400,
-      animationLoop: false,
+      animationLoop: true,
       itemWidth: 252,
       itemMargin: 15,
       minItems: 1,

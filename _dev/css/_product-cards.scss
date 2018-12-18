@@ -37,6 +37,15 @@
 .product-miniature-card {
 
     height: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: $gray-200;
+      box-shadow: 0 8px 6px -6px $gray-600;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
 
     .card-img-top {
       text-align: center;

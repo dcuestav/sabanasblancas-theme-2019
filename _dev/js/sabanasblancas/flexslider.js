@@ -20,7 +20,7 @@
         animation: "slide",
         slideshow: false,
         animationSpeed: 400,
-        animationLoop: false,
+        animationLoop: true,
         itemWidth: 252,
         itemMargin: 15,
         minItems: 1, // use function to pull in initial value

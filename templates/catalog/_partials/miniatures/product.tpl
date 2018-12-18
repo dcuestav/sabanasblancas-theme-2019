@@ -1,11 +1,10 @@
 {block name='product_miniature_item'}
   <article class="card product-miniature-card" data-id-product="{$product.id_product}" 
-  data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
-    <div>{$level_depth}</div>
+  data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product" onclick="window.location.href='{$product.url}'">
 
     {block name='product_thumbnail'}
-      {if !$hide_images}
-        <a href="{$product.url}" class="card-img-top position-relative">
+      {if !$hide_images} {* Categorías juego de sábanas y juegos nórdicos *}
+        <div class="card-img-top position-relative">
           <img
             class="img-fluid"
             {if $product.cover_images}  {* Se define en el módulo sb_product_cards *}
@@ -27,7 +26,7 @@
           <span class="show-brand-on-product-miniature"
             data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
             data-brand-name = "{$product.manufacturer_name}"></span>
-        </a>
+        </div>
       {/if}
     {/block}
 
