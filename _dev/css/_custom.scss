@@ -11,10 +11,10 @@ $h4-font-size: $font-size-base * 1.25;
 $h5-font-size: $font-size-base;
 $h6-font-size: $font-size-base;
 
-// $primary: lighten(#052c59, 10%);
-$base-color: lighten(#052c59, 10%);
 $accent: yellow;
-
+$base-color: lighten(#052c59, 10%);
+$header-nav-background: darken($base-color, 10%);
+$footer-nav-background: $header-nav-background;
 
 $enable-rounded: false;
 $enable-gradients: true;

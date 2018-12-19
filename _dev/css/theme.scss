@@ -3,15 +3,18 @@
 @import "~material-design-icons/iconfont/material-icons.css";
 
 // Estilo SabanasBlancas
+@import "blockreassurance";
+@import "category-cards";
+@import "category-page";
+@import "checkout";
+@import "cms";
+@import "customer";
+@import "footer";
 @import "header-nav";
 @import "header-top";
-@import "footer";
-@import "product-detail";
-@import "category-page";
-@import "category-cards";
 @import "product-cards";
-@import "checkout";
-@import "customer";
+@import "product-detail";
+
 
 
 html, body, main {
