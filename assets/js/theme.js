@@ -1811,6 +1811,21 @@ function enableTooltips() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-toggle="tooltip"]').bstooltip({
     container: 'body'
   });
+} // if body id product -> show modal add class blurred to #wrapper. On hide modal remove class blurred
+
+
+function blurScreenOnShowModal() {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('body#product') === 0) {
+    return;
+  }
+
+  var $itemsToBlur = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header, #footer, .breadcrumb, #main>*:not(.modal)');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.modal').on('show.bs.modal', function (e) {
+    $itemsToBlur.addClass('blurred');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.modal').on('hide.bs.modal', function (e) {
+    $itemsToBlur.removeClass('blurred');
+  });
 } // Cargar el tooltip de Bootstrap con otro nombre porque tooltip está ocupado por JQueryUI
 
 
@@ -1821,6 +1836,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn[NAME].Constructor = bootstrap_j
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   enableTooltips();
+  blurScreenOnShowModal();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#quantity_wanted').change(updateTotalPrice);
   prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', updateTotalPrice);
   prestashop__WEBPACK_IMPORTED_MODULE_1___default.a.on('updatedProduct', enableTooltips);

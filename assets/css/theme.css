@@ -6520,10 +6520,11 @@ a.text-dark:hover, a.text-dark:focus {
   .scroll-box-arrows .right {
     right: 0; }
 
-.thumb.selected,
-.thumb:hover {
-  border: 3px solid #084489;
-  cursor: pointer; }
+.thumb {
+  border: 1px solid white; }
+  .thumb.selected, .thumb:hover {
+    border: 1px solid #084489;
+    cursor: pointer; }
 
 #product-modal .modal-content {
   background: transparent;

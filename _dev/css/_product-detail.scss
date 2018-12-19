@@ -221,10 +221,13 @@
 
 // Zoom modal
 
-.thumb.selected, 
-.thumb:hover {
-    border: 3px solid $base-color;
-    cursor: pointer;
+.thumb {
+    border: 1px solid white;
+    &.selected, 
+    &:hover {
+        border: 1px solid $base-color;
+        cursor: pointer;
+    }
 }
 
 #product-modal {
