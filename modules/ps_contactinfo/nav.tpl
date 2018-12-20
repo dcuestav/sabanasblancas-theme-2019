@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="header-nav-item d-none d-lg-flex">
-		<span>L - V: 9h - 13h y 15h - 17h</span>
+		<span>{l s='L - V: 9h - 13h y 15h - 17h' d='Shop.Theme.Global'}</span>
 	</div>
 	
 </div>
@@ -48,7 +48,7 @@
 			</a>
 		</div>
 		<div>
-			L - V: 9h - 13h y 15h - 17h
+			{l s='L - V: 9h - 13h y 15h - 17h' d='Shop.Theme.Global'}
 		</div>
 	</div>
 </div>

@@ -6439,6 +6439,11 @@ body#cms {
   body#cms h2, body#cms h3, body#cms h4 {
     margin-top: 1.5rem; }
 
+body#contact .contact-rich {
+  font-size: 90%; }
+  body#contact .contact-rich .material-icons {
+    color: #007bff; }
+
 body#history .table,
 body#order-detail .table {
   font-size: 85%; }

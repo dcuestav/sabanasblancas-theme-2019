@@ -1,45 +1,32 @@
+{* Aparece a la derecha del footer *}
 
 <div id="block_contact_footer" class="col">
-  <h4>{l s='Store information' d='Shop.Theme.Global'}</h4>
-  <div>
-    {$contact_infos.address.formatted nofilter}
-    {if $contact_infos.phone}
-      <br>
-      {* [1][/1] is for a HTML tag. *}
-      {l s='Call us: [1]%phone%[/1]'
-        sprintf=[
-        '[1]' => '<span>',
-        '[/1]' => '</span>',
-        '%phone%' => $contact_infos.phone
-        ]
-        d='Shop.Theme.Global'
-      }
-    {/if}
-    {if $contact_infos.fax}
-      <br>
-      {* [1][/1] is for a HTML tag. *}
-      {l
-        s='Fax: [1]%fax%[/1]'
-        sprintf=[
-          '[1]' => '<span>',
-          '[/1]' => '</span>',
-          '%fax%' => $contact_infos.fax
-        ]
-        d='Shop.Theme.Global'
-      }
-    {/if}
-    {if $contact_infos.email}
-      <br>
-      {* [1][/1] is for a HTML tag. *}
-      {l
-        s='Email us: [1]%email%[/1]'
-        sprintf=[
-          '[1]' => '<a href="mailto:'|cat:$contact_infos.email|cat:'" class="dropdown">',
-          '[/1]' => '</a>',
-          '%email%' => $contact_infos.email
-        ]
-        d='Shop.Theme.Global'
-      }
-    {/if}
-  </div>
+
+  <div class="mb-3">
+		<h4>{l s='L - V: 9h - 13h y 15h - 17h' d='Shop.Theme.Global'}</h4>
+	</div>
+
+  <div class="mb-3">
+		<a href="https://api.whatsapp.com/send?phone=34{$contact_infos.phone}" method="get" target="_blank" class="position-relative">
+			<img alt="" src="{$urls.theme_assets}img/whatsapp.png" class="position-absolute" style="width:24px;top:0;"> 
+			<span style="margin-left: 2rem;">Whatsapp</span>
+		</a>
+	</div>
+
+	<div class="mb-3">
+		<a href="tel:+34 {$contact_infos.phone}" class="icon-adjust">
+			<i class="material-icons">call</i>
+			<span>{$contact_infos.phone}</span>
+		</a>
+	</div>
+
+	<div class="mb-3">
+		<a href="mailto:{$contact_infos.email}" class="icon-adjust">
+			<i class="material-icons">email</i>
+			<span>{$contact_infos.email}</span>
+		</a>
+	</div>
+
+	
+
 </div>
