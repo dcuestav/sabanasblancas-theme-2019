@@ -117,4 +117,4 @@ theme_settings:
     best-sales: layout-full-width
     new-products: layout-full-width
     prices-drop: layout-full-width
-    contact: layout-full-width
+    contact: layout-left-column
