@@ -80,7 +80,7 @@
             {if $field.required}required{/if}
             {if $field.value}checked{/if}
           >
-          <label class="form-check-label" for="{$field.value}{$random_number}">{$field.label}</label>
+          <label class="form-check-label" for="{$field.value}{$random_number}">{$field.label nofilter}</label>
         </div>
       </div>
     </div>

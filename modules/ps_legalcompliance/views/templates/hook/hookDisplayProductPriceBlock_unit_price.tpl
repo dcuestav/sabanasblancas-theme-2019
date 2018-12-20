@@ -23,13 +23,11 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+{if isset($smartyVars)}
+    {* "Unit Price" Price Hook templating *}
+    {if isset($smartyVars.unit_price) && isset($smartyVars.unit_price.unit_price)}
+        <div class="aeuc_unit_price_label">
+            {$smartyVars.unit_price.unit_price}
+        </div>
+    {/if}
+{/if}

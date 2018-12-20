@@ -23,13 +23,8 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+{if $directPrint}
+	<input type="submit" name="printCMSPage" value="{l s='Print this page' d='Modules.Legalcompliance.Shop'}" class="btn btn-secondary" onclick="window.print()" />
+{else}
+	<a href="{$print_link}" class="btn btn-secondary" target="_blank">{l s='Print this page' d='Modules.Legalcompliance.Shop'}</a>
+{/if}

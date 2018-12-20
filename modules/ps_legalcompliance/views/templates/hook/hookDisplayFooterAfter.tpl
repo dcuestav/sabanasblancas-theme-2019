@@ -23,13 +23,25 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+<div class="aeuc_footer_info">
+	{if isset($delivery_additional_information)}
+		* {$delivery_additional_information}
+		<a href="{$link_shipping}">{l s='Shipping and payment' d='Modules.Legalcompliance.Shop'}</a>
+	{else}
+		{if $tax_included}
+			{l s='All prices are mentioned tax included' d='Modules.Legalcompliance.Shop'}
+		{else}
+			{l s='All prices are mentioned tax excluded' d='Modules.Legalcompliance.Shop'}
+		{/if}
+		{if $show_shipping}
+			{l s='and' d='Modules.Legalcompliance.Shop'}
+			{if $link_shipping}
+				<a href="{$link_shipping}">
+			{/if}
+			{l s='shipping excluded' d='Modules.Legalcompliance.Shop'}
+			{if $link_shipping}
+				</a>
+			{/if}
+		{/if}
+	{/if}
+</div>

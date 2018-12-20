@@ -23,13 +23,10 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+<h4>
+	{l s='Information regarding online dispute resolution pursuant to Art. 14 Para. 1 of the ODR (Online Dispute Resolution Regulation):' d='Modules.Legalcompliance.Shop'}
+</h4>
+
+<p>
+	{l s='The European Commission gives consumers the opportunity to resolve online disputes pursuant to Art. 14 Para. 1 of the ODR on one of their platforms. The platform ([1]http://ec.europa.eu/consumers/odr[/1]) serves as a site where consumers can try to reach out-of-court settlements of disputes arising from online purchases and contracts for services.' sprintf=['[1]' => '<a href="http://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">', '[/1]' => '</a>'] d='Modules.Legalcompliance.Shop'}
+</p>

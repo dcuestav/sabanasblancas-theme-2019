@@ -23,13 +23,11 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+{if isset($smartyVars)}
+    {* "Tax Inc/Exc" Price Hook templating *}
+    {if isset($smartyVars.price) && isset($smartyVars.price.tax_str_i18n)}
+        <span class="aeuc_tax_label_shopping_cart">
+            {$smartyVars.price.tax_str_i18n|escape:'htmlall'}
+        </span>
+    {/if}
+{/if}

@@ -23,13 +23,18 @@
  *  International Registered Trademark & Property of PrestaShop SA
  *}
 
- <div class="euAboutUsCMS col-md-2">
- 	<h3 class="h3">{l s='Information' d='Modules.Legalcompliance.Shop'}</h3>
- 	<ul>
- 		{foreach from=$cms_links item=cms_link}
- 			<li>
- 				<a href="{$cms_link.link}" class="cms-page-link" title="{$cms_link.description|default:''}" id="{$cms_link.id}"> {$cms_link.title} </a>
- 			</li>
- 		{/foreach}
- 	</ul>
- </div>
+<div style="background-color:#fff;width:650px;font-family:Open-sans,sans-serif;color:#555454;font-size:13px;line-height:18px;margin:auto">
+    <table style="width:100%;margin-top:10px">
+        <tbody>
+            {foreach from=$cms_contents item=content}
+            <tr>
+                <td style="width:20px;padding:7px 0">&nbsp;</td>
+                <td style="padding:7px 0">
+                    {$content nofilter}
+                </td>
+                <td style="width:20px;padding:7px 0">&nbsp;</td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+</div>

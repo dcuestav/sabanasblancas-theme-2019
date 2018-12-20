@@ -5,7 +5,7 @@
       <!--  product left content: image-->
       <div class="product-line-grid-left col-md-4 col-4">
         <span class="product-image media-middle">
-          <img src="{$product.cover.bySize.home_default.url}" alt="{$product.name|escape:'quotes'}" class="img-fluid">
+          <img src="{$product.cover.bySize.small_default.url}" alt="{$product.name|escape:'quotes'}" class="img-fluid">
         </span>
       </div>
 
