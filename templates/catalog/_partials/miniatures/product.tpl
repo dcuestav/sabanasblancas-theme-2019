@@ -44,7 +44,11 @@
 
     <div class="card-body d-flex flex-column justify-content-between text-center">
       {block name='product_name'}
-        <h5 class="card-title mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
+        {if !$hide_images || empty($product.description)}
+          <h5 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
+        {else}
+           <h4 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.description|truncate:30|replace:'<p>':''|replace:'</p>':''}</a></h4>
+        {/if}
       {/block}
 
       {block name='product_description_short'}

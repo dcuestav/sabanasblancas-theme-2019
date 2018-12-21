@@ -47,17 +47,10 @@
               </div>
 
               {block name='product_description'}
-                {if $product.description}
-                  <div class="product-description d-none d-md-block mb-md-3">
-                    <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
-                    {$product.description nofilter}
-                  </div>
-                {else if $product.description_short}
-                  <div class="product-description d-none d-md-block mb-md-3">
-                    <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
-                    {$product.description_short nofilter}
-                  </div>
-                {/if}
+                <div class="product-description d-none d-md-block mb-md-3">
+                  <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
+                  {$product.description_short nofilter}
+                </div>
               {/block}
 
             {/block}
