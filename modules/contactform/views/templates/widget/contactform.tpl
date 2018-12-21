@@ -68,8 +68,8 @@
             <div class="col-md-6 input-group">
               <input type="file" name="fileUpload" class="form-control filestyle" data-buttonText="{l s='Choose file' d='Shop.Theme.Actions'}">
             </div>
-            <span class="col-md-3 form-control-comment">
-              {l s='optional' d='Shop.Forms.Help'}
+            <span class="col-md-3 col-form-label">
+              ({l s='optional' d='Shop.Forms.Help'})
             </span>
           </div>
         {/if}
