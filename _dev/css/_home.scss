@@ -1,0 +1,22 @@
+body#index .homeslider img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    width: 100%;
+    border: 0;
+
+    @include media-breakpoint-down(md) {
+        width: 1000px;
+        left: -500px;
+        margin-left: 50%;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 770px;
+        left: -385px;
+    }
+    @include media-breakpoint-down(xs) {
+        width: 580px;
+        left: -290px;
+    }
+}

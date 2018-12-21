@@ -55,10 +55,13 @@ $category-img-height: 150px;
 
     .category-miniature-title {
         color: $body-color;
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         font-weight: 300;
         &:hover {
             color: $body-color;
+        }
+        @media (min-width: 635px) {
+            font-size: 1.75rem;
         }
     }
 

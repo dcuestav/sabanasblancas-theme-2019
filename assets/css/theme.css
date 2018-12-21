@@ -6306,10 +6306,13 @@ a.text-dark:hover, a.text-dark:focus {
       opacity: .8; }
   .category-miniature .category-miniature-title {
     color: #212529;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 300; }
     .category-miniature .category-miniature-title:hover {
       color: #212529; }
+    @media (min-width: 635px) {
+      .category-miniature .category-miniature-title {
+        font-size: 1.75rem; } }
   .category-miniature .image-link {
     position: absolute;
     display: none;
@@ -6572,6 +6575,27 @@ body#order-detail .table {
       color: rgba(255, 255, 255, 0.7); }
     .header-top #search_widget input::placeholder {
       color: rgba(255, 255, 255, 0.7); }
+
+body#index .homeslider img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  border: 0; }
+  @media (max-width: 991.98px) {
+    body#index .homeslider img {
+      width: 1000px;
+      left: -500px;
+      margin-left: 50%; } }
+  @media (max-width: 767.98px) {
+    body#index .homeslider img {
+      width: 770px;
+      left: -385px; } }
+  @media (max-width: 575.98px) {
+    body#index .homeslider img {
+      width: 580px;
+      left: -290px; } }
 
 .slides {
   display: flex; }

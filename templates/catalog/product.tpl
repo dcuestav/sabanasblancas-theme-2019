@@ -147,10 +147,10 @@
           {hook h='displayReassurance'}
         {/block}
 
-        {if $product.description}
+        {if $product.description_short}
           <div class="product-description d-md-none mb-xs-3 mb-sm-3">
             <h4 class="section-title">{l s='Description' d='Shop.Theme.Catalog'}</h4>
-            {$product.description nofilter}
+            {$product.description_short nofilter}
           </div>
         {/if}
 
