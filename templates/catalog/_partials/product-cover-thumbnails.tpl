@@ -16,6 +16,7 @@
   {/block}
 
   {block name='product_images'}
+    {if $product.images|count > 1 }
     <div class="js-qv-mask mask">
       <ul class="product-images js-qv-product-images list-unstyled">
         {foreach from=$product.images item=image}
@@ -34,6 +35,7 @@
         {/foreach}
       </ul>
     </div>
+    {/if}
   {/block}
   {hook h='displayAfterProductThumbs'}
 
