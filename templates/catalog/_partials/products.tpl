@@ -3,7 +3,11 @@
     {foreach from=$listing.products item="product"}
       <li>
         {block name='product_miniature'}
-          {include file='catalog/_partials/miniatures/product.tpl' product=$product hide_images=$category.level_depth>=4}
+          {if $category.level_depth>=4}
+            {include file='catalog/_partials/miniatures/product-no-image.tpl' product=$product}
+          {else}
+            {include file='catalog/_partials/miniatures/product.tpl' product=$product}
+          {/if}
         {/block}
       </li>
     {/foreach}

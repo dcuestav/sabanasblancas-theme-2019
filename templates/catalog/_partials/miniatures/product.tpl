@@ -3,52 +3,44 @@
   data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product" onclick="window.location.href='{$product.url}'">
 
     {block name='product_thumbnail'}
-      {if !$hide_images} {* Categorías juego de sábanas y juegos nórdicos *}
-        <div class="card-img-top position-relative">
-          <img
-            class="img-fluid"
-            {if $product.cover_images}  {* Se define en el módulo sb_product_cards *}
-              src="{$product.cover_images.main.url}"
-              alt="{$product.cover_images.main.legend}"
-              data-alternative-image="{$product.cover_images.alternative.url}"
-            {else}
-              src = "{$product.cover.medium.url}"
-              alt = "{$product.cover.legend}"
-              {if count($product.images) > 1}
-                {if $product.images[0].id_image != $product.cover.id_image }
-                  data-alternative-image = "{$product.images[0].medium.url}"
-                {else}
-                  data-alternative-image = "{$product.images[1].medium.url}"
-                {/if}
+      <div class="card-img-top position-relative">
+        <img
+          class="img-fluid"
+          {if $product.cover_images}  {* Se define en el módulo sb_product_cards *}
+            src="{$product.cover_images.main.url}"
+            alt="{$product.cover_images.main.legend}"
+            data-alternative-image="{$product.cover_images.alternative.url}"
+          {else}
+            src = "{$product.cover.medium.url}"
+            alt = "{$product.cover.legend}"
+            {if count($product.images) > 1}
+              {if $product.images[0].id_image != $product.cover.id_image }
+                data-alternative-image = "{$product.images[0].medium.url}"
+              {else}
+                data-alternative-image = "{$product.images[1].medium.url}"
               {/if}
             {/if}
-          >
-          <span class="show-brand-on-product-miniature"
-            data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
-            data-brand-name = "{$product.manufacturer_name}"></span>
-        </div>
-      {/if}
+          {/if}
+        >
+        <span class="show-brand-on-product-miniature"
+          data-brand-id = "{$product.embedded_attributes.id_manufacturer}"
+          data-brand-name = "{$product.manufacturer_name}"></span>
+      </div>
     {/block}
 
     {block name='product_flags'}
-      {if !$hide_images}
-        {if count($product.flags)}
-          <ul class="product-flags list-unstyled h4">
-            {foreach from=$product.flags item=flag}
-              <li class="badge badge-success {$flag.type}">{$flag.label}</li>
-            {/foreach}
-          </ul>
-        {/if}
+      {if count($product.flags)}
+        <ul class="product-flags list-unstyled h4">
+          {foreach from=$product.flags item=flag}
+            <li class="badge badge-success {$flag.type}">{$flag.label}</li>
+          {/foreach}
+        </ul>
       {/if}
     {/block}
 
     <div class="card-body d-flex flex-column justify-content-between text-center">
       {block name='product_name'}
-        {if !$hide_images || empty($product.description)}
-          <h5 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
-        {else}
-           <h4 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.description|truncate:30|replace:'<p>':''|replace:'</p>':''}</a></h4>
-        {/if}
+        <h5 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
       {/block}
 
       {block name='product_description_short'}
