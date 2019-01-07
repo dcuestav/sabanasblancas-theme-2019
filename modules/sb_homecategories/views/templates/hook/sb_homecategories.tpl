@@ -1,7 +1,7 @@
 <!-- Block SB homecategories -->
 <section id="sb-home-categories" class="mb-3">
   <h4 class="section-title">
-    {l s='Main categories' d='Shop.Theme.Catalog'}
+    {l s='Categorías principales' d='Shop.Sabanasblancas'}
   </h4>
   <ul class="category-grid list-unstyled">
     {foreach from=$homecategories item="homecategory"}
@@ -13,5 +13,4 @@
     {/foreach}
   </ul>
 </section>
-{* {debug} *}
 <!-- /Block SB homecategories -->

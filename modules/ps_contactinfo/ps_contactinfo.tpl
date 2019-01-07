@@ -3,7 +3,7 @@
 <div id="block_contact_footer" class="col">
 
   <div class="mb-3">
-		<h4>{l s='L - V: 9h - 13h y 15h - 17h' d='Shop.Theme.Global'}</h4>
+		<h4>{l s='L - V: 9h - 13h y 15h - 17h' d='Shop.Sabanasblancas'}</h4>
 	</div>
 
   <div class="mb-3">
