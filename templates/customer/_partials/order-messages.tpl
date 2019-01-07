@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-          <textarea class="form-control" rows="3" name="msgText" placeholder="{l s='Escriba su mensaje...' d='Shop.Theme.Customeraccount'}"></textarea>
+          <textarea class="form-control" rows="3" name="msgText" placeholder="{l s='Escriba su mensaje...' d='Shop.Sabanasblancas'}"></textarea>
         </div>
 
       </section>

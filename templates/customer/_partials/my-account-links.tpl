@@ -30,7 +30,7 @@
     </a>
     <a href="{$urls.pages.index}" role="button" class="btn btn-light ml-3">
       <i class="material-icons">shopping_cart</i>
-      <span class="">{l s='Volver a la tienda' d='Shop.Theme.Customeraccount'}</span>
+      <span class="">{l s='Volver a la tienda' d='Shop.Sabanasblancas'}</span>
     </a>
   </div>
 {/block}

@@ -108,12 +108,12 @@
 
           <div class="out-of-stock text-center">
             <div class="text-black icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
-              <span>{l s='Out of stock' d='Shop.Theme.Availability'}</span>
+              <span>{l s='Sin stock' d='Shop.Sabanasblancas'}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Theme.Availability'}</small>
+              <small>{l s='Este producto estará disponible en los próximos días. Le avisaremos cuando hagamos el envío' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
 
@@ -121,13 +121,13 @@
 
           <div class="quantity-wanted-greater-than-stock text-center">
             <div class="text-black icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
-              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Sabanasblancas'
                 sprintf=['%quantity%' => $product.quantity]}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Theme.Availability'}</small>
+              <small>{l s='Consultenos el plazo de entrega si necesita una cantidad mayor' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
 
@@ -135,7 +135,7 @@
 
           <div class="quantity-wanted-greater-than-stock-with-partial-delivery text-center">
             <div class="text-black icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
               <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
                 sprintf=['%quantity%' => $product.quantity]}</span>
@@ -149,12 +149,12 @@
 
           <div class="quantity-wanted-lower-than-stock text-center">
             <div class="text-success icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Sabanasblancas'}">
               <i class="material-icons">check_circle</i>
-              <span>{l s='En stock, envío en 24 horas' d='Shop.Theme.Availability'}</span>
+              <span>{l s='En stock, envío en 24 horas' d='Shop.Sabanasblancas'}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Theme.Availability'}</small>
+              <small>{l s='El producto está disponible y lo enviaremos en un plazo de 24 horas (de lunes a viernes)' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
           
@@ -167,12 +167,12 @@
 
           <div class="out-of-stock text-center">
             <div class="text-black icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto ha dejado de estar a la venta' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Este producto ha dejado de estar a la venta' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
-              <span>{l s='No disponible' d='Shop.Theme.Availability'}</span>
+              <span>{l s='No disponible' d='Shop.Sabanasblancas'}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='Este producto ha dejado de estar a la venta' d='Shop.Theme.Availability'}</small>
+              <small>{l s='Este producto ha dejado de estar a la venta' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
 
@@ -182,9 +182,9 @@
             quantity-wanted-greater-than-stock-with-partial-delivery 
             quantity-wanted-lower-than-stock text-center">
             <div class="text-black icon-adjust" 
-              data-toggle="tooltip" data-placement="bottom" title="{l s='Últimas unidades a la venta' d='Shop.Theme.Availability'}">
+              data-toggle="tooltip" data-placement="bottom" title="{l s='Últimas unidades a la venta' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
-              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Sabanasblancas'
                 sprintf=['%quantity%' => $product.quantity]}</span>
             </div>
             <div class="d-md-none">

@@ -1,3 +1,5 @@
+{* NO SE USA *}
+
 {*
  * With this file, we display all product from a supplier the same way than any other page
  * but we want a different header so we give more details about the supplier.

@@ -20,8 +20,7 @@
 
   {block name='copyright_link'}
     <div class="text-sm-center mb-2 mt-2">
-      {* {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'} *}
-      © 2019 - Nidara Online S.L. - CIF B12938577
+      {l s='%copyright% %year% - Nidara Online S.L. - B12938577' sprintf=['%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Sabanasblancas'}
     </div>
   {/block}
 </div>

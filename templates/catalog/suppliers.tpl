@@ -1,3 +1,5 @@
+{* NO SE USA *}
+
 {*
  * This is an example of supplier page, extending the brand page. We changed the title and
  * used a different template for each supplier miniature.

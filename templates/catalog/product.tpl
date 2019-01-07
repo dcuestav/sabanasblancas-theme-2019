@@ -114,7 +114,7 @@
                               {/foreach}
                               {if !empty($pack_items_supplier_references) && $pack_items_supplier_references[$index]}
                                 <div class="d-inline-block text-muted pl-3" style="font-size:80%;">
-                                    {l s='Medida real' d='Shop.Theme.Catalog'}: {$pack_items_supplier_references[$index]}
+                                    {l s='Medida real' d='Shop.Sabanasblancas'}: {$pack_items_supplier_references[$index]}
                                 </div>
                               {/if}
                             </li>

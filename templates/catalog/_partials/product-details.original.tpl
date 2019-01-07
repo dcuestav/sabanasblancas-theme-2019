@@ -61,7 +61,7 @@
   {block name='product_features'}
     {if $product.grouped_features}
       <section class="mb-3">
-        <h4 class="section-title">{l s='Información adicional' d='Shop.Theme.Catalog'}</h4>
+        <h4 class="section-title">{l s='Información adicional' d='Shop.Sabanasblancas'}</h4>
         <div class="list-group">
           {foreach from=$product.grouped_features item=feature}
             <div class="list-group-item list-group-item-action">

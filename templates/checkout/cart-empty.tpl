@@ -31,7 +31,7 @@
 {block name='continue_shopping' append}
   <a href="{$urls.pages.index}" role="button" class="btn btn-light mt-3">
     <i class="material-icons">arrow_back</i>
-    <span class="">{l s='Volver a la tienda' d='Shop.Theme.Customeraccount'}</span>
+    <span class="">{l s='Volver a la tienda' d='Shop.Sabanasblancas'}</span>
   </a>
 {/block}
 

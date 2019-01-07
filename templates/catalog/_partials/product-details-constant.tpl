@@ -11,7 +11,7 @@
   <div class="product-details-constant {$mode}">
 
     <section class="mb-3">
-      <h4 class="section-title">{l s='Información adicional' d='Shop.Theme.Catalog'}</h4>
+      <h4 class="section-title">{l s='Información adicional' d='Shop.Sabanasblancas'}</h4>
 
       <div class="list-group">
 
