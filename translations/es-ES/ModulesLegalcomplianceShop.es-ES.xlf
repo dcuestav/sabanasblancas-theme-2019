@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCartPriceBlock_shipping_details.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="6af90b162bd8ab1c547c76492d8a2380">
+        <source>(Under conditions)</source>
+        <target>(Consultar condiciones)</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCartPriceBlock_shipping_details.tpl:27</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCheckoutSummaryTop.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="59a297091dace235b4bce5af7b86ead6">
+        <source>My shopping cart</source>
+        <target>Mi carrito</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCheckoutSummaryTop.tpl:26</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCMSDisputeInformation.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="ded564687a6602917eb07c460577f456">
+        <source>Information regarding online dispute resolution pursuant to Art. 14 Para. 1 of the ODR (Online Dispute Resolution Regulation):</source>
+        <target>Información relacionada con la resolución de disputa en línea del Art. 14, párr. 1 del ODR (Regulación de resolución de disputa en línea):</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCMSDisputeInformation.tpl:27</note>
+      </trans-unit>
+      <trans-unit id="29bd9770285cd28ad9e55714db33e8bd">
+        <source>The European Commission gives consumers the opportunity to resolve online disputes pursuant to Art. 14 Para. 1 of the ODR on one of their platforms. The platform ([1]http://ec.europa.eu/consumers/odr[/1]) serves as a site where consumers can try to reach out-of-court settlements of disputes arising from online purchases and contracts for services.</source>
+        <target>La Comisión Europea ofrece a los consumidores la oportunidad de resolver disputas en línea conforme al Art. 14, párr. 1 del ODR en una de sus plataformas. La plataforma ([1]http://ec.europa.eu/consumers/odr[/1]) sirve como web en la que los consumidores pueden intentar llegar a acuerdos sin ir a juicio relacionados con las disputas que surjan en las compras y contratos de servicios en línea.</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCMSDisputeInformation.tpl:31</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCMSPrintButton.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="427e29628d9f5d9bfde0e58b32569619">
+        <source>Print this page</source>
+        <target>Imprimir esta página</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayCMSPrintButton.tpl:29</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooter.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="a82be0f551b8708bc08eb33cd9ded0cf">
+        <source>Information</source>
+        <target>Información</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooter.tpl:27</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="5fb4f05f62f9967052977077d783fc2d">
+        <source>Shipping and payment</source>
+        <target>Envío y pago</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl:29</note>
+      </trans-unit>
+      <trans-unit id="361e7fe59f227267dd4a926de69fc658">
+        <source>All prices are mentioned tax included</source>
+        <target>Precios con IVA</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl:32</note>
+      </trans-unit>
+      <trans-unit id="ceae7caad3d61341d1ddc4c78b21546c">
+        <source>All prices are mentioned tax excluded</source>
+        <target>Precios sin IVA</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl:34</note>
+      </trans-unit>
+      <trans-unit id="be5d5d37542d75f93a87094459f76678">
+        <source>and</source>
+        <target>y</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl:37</note>
+      </trans-unit>
+      <trans-unit id="53ae8b43aace8a1d1349d659c150d99f">
+        <source>shipping excluded</source>
+        <target>envío no incluido</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/ps_legalcompliance/views/templates/hook/hookDisplayFooterAfter.tpl:41</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

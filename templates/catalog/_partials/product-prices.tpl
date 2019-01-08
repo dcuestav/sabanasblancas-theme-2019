@@ -137,11 +137,11 @@
             <div class="text-black icon-adjust" 
               data-toggle="tooltip" data-placement="bottom" title="{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Sabanasblancas'}">
               <i class="material-icons">error_outline</i>
-              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Theme.Availability'
+              <span>{l s='Solo quedan %quantity% en stock' d='Shop.Sabanasblancas'
                 sprintf=['%quantity%' => $product.quantity]}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Theme.Availability'}</small>
+              <small>{l s='Consultenos la posibilidad de hacer un envío parcial' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
 
@@ -188,7 +188,7 @@
                 sprintf=['%quantity%' => $product.quantity]}</span>
             </div>
             <div class="d-md-none">
-              <small>{l s='Últimas unidades a la venta' d='Shop.Theme.Availability'}</small>
+              <small>{l s='Últimas unidades a la venta' d='Shop.Sabanasblancas'}</small>
             </div>
           </div>
           

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl" source-language="en-GB" target-language="en-GB" datatype="plaintext">
+    <body>
+      <trans-unit id="c654dacdea4ad6f75ad36553a8a947cd">
+        <source>My personal data</source>
+        <target>My personal data</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:18</note>
+      </trans-unit>
+      <trans-unit id="a8308387f3ffc2d045d2b6125e74317d">
+        <source>Access to my data</source>
+        <target>Access to my data</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:25</note>
+      </trans-unit>
+      <trans-unit id="915f4446a47b51378e37374cfbb72d7f">
+        <source>At any time, you have the right to retrieve the data you have provided to our site. Click on "Get my data" to automatically download a copy of your personal data on a pdf or csv file.</source>
+        <target>At any time, you have the right to retrieve the data you have provided to our site. Click on "Get my data" to automatically download a copy of your personal data on a pdf or csv file.</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:26</note>
+      </trans-unit>
+      <trans-unit id="49b5d04f5f20820830f080d4674c8669">
+        <source>GET MY DATA TO CSV</source>
+        <target>GET MY DATA TO CSV</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:27</note>
+      </trans-unit>
+      <trans-unit id="7b0b06bfe69473081553bcccb12ca068">
+        <source>GET MY DATA TO PDF</source>
+        <target>GET MY DATA TO PDF</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:28</note>
+      </trans-unit>
+      <trans-unit id="91a49c1d45a5d37e85658d01b6f37423">
+        <source><![CDATA[Rectification & Erasure requests]]></source>
+        <target><![CDATA[Rectification & Erasure requests]]></target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:31</note>
+      </trans-unit>
+      <trans-unit id="01cb324ae91e9bd16213cc2945334249">
+        <source>You have the right to modify all the personal information found in the "My Account" page. For any other request you might have regarding the rectification and/or erasure of your personal data, please contact us through our</source>
+        <target>You have the right to modify all the personal information found in the "My Account" page. For any other request you might have regarding the rectification and/or erasure of your personal data, please contact us through our</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:32</note>
+      </trans-unit>
+      <trans-unit id="af5efea250326c1c34d69aa9364b482c">
+        <source>contact page</source>
+        <target>contact page</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:32</note>
+      </trans-unit>
+      <trans-unit id="332087a4991d8bc866abd3fd78a2e514">
+        <source>We will review your request and reply as soon as possible.</source>
+        <target>We will review your request and reply as soon as possible.</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/psgdpr/views/templates/front/customerPersonalData17.tpl:32</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

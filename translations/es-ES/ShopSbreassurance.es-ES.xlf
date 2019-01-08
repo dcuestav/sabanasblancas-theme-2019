@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="3fd0e795b3c45729622974e9164b7965">
+        <source>Envío gratis 24/48h</source>
+        <target>Envío gratis 24/48h</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:21</note>
+      </trans-unit>
+      <trans-unit id="a20f7e35271d67bcd34467ff912da7bb">
+        <source>por 50€ de compra</source>
+        <target>por 50€ de compra</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:21</note>
+      </trans-unit>
+      <trans-unit id="00a4eedfd32c8f581386fb580a43e090">
+        <source>3,90€ para pedidos de menos de 50€</source>
+        <target>3,90€ para pedidos de menos de 50€</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:26</note>
+      </trans-unit>
+      <trans-unit id="f090f7a33b065202f280c5dc7530d6de">
+        <source>Válido para España penínsular y Baleares. Sólo días laborables</source>
+        <target>Válido para España penínsular y Baleares. Sólo días laborables</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:26</note>
+      </trans-unit>
+      <trans-unit id="7c60d5b4b524865ce90f64e37411d961">
+        <source>También enviamos a Canarias y Europa</source>
+        <target>También enviamos a Canarias y Europa</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:26</note>
+      </trans-unit>
+      <trans-unit id="9859a5f24dc2fd91f39fc7db179e4ee7">
+        <source>Clic para más info...</source>
+        <target>Clic para más info...</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:35</note>
+      </trans-unit>
+      <trans-unit id="acee7e37a83fc03ad731805e5a5066a7">
+        <source>14 días</source>
+        <target>14 días</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:31</note>
+      </trans-unit>
+      <trans-unit id="4d27bc2a6a66f8b6471e5ca99913e46d">
+        <source>para cambios y devoluciones</source>
+        <target>para cambios y devoluciones</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:31</note>
+      </trans-unit>
+      <trans-unit id="288f95872673d42d14507558587cd3b9">
+        <source>Conserve el embalaje original</source>
+        <target>Conserva el embalaje original</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:35</note>
+      </trans-unit>
+      <trans-unit id="7a868691f9f21b5c0cec176e0a3d7ec2">
+        <source>El transporte de vuelta es por cuenta del cliente, excepto defectos de fabricación</source>
+        <target>El transporte de vuelta es por cuenta del cliente, excepto defectos de fabricación</target>
+        <note>Context:
+File: themes/sabanasblancas/modules/blockreassurance/views/templates/hook/blockreassurance.tpl:35</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
