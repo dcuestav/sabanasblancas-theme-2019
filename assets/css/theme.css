@@ -7133,7 +7133,10 @@ body#order-detail .table {
   height: 18px;
   width: 27px;
   position: relative;
-  bottom: 2px; }
+  bottom: 2px;
+  opacity: .8; }
+  .language-selector .dropdown-toggle img:hover {
+    opacity: 1; }
 
 @media (max-width: 767.98px) {
   .blockcart .icon-adjust span:not(.cart-products-count) {

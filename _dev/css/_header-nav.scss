@@ -44,6 +44,10 @@ $header-nav-font-size: 0.9rem;
         width: 27px;
         position: relative;
         bottom: 2px;
+        opacity: .8;
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
