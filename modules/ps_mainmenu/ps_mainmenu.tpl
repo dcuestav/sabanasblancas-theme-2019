@@ -3,24 +3,34 @@
 {$sabanas_premium="category-33"}
 
 {$sabanas_basic_premium="category-32-33"}
-{$sabanas_basic_premium_label="Sábanas"}
+{capture name='temp_translation'}{l s='Sábanas' d='Shop.Sbmenu'}{/capture}
+{$sabanas_basic_premium_label=$smarty.capture.temp_translation}
 
 {$bed_complements_pages=["category-13","category-15","category-16","category-17","category-19"]}
 {$bed_complements="bed-complements"}
-{$bed_complements_label="Complementos de cama"}
+{capture name='temp_translation'}{l s='Complementos de cama' d='Shop.Sbmenu'}{/capture}
+{$bed_complements_label=$smarty.capture.temp_translation}
 
 {$more_products="more-products"}
-{$more_products_label="Más productos"}
+{capture name='temp_translation'}{l s='Más productos' d='Shop.Sbmenu'}{/capture}
+{$more_products_label=$smarty.capture.temp_translation}
 
-{$descriptions=['category-12' => 'Económicas y fáciles de planchar',
-'category-28' => 'Naturales y confortables',
-'category-31' => 'Excelente acabado y resistencia',
-'category-29' => 'Frescura y tacto consistente',
-'category-34' => 'Tacto suave y ligero brillo']}
+{capture name='sabanas_5050_desc'}{l s='Económicas y fáciles de planchar' d='Shop.Sbmenu'}{/capture}
+{capture name='sabanas_100_desc'}{l s='Naturales y confortables' d='Shop.Sbmenu'}{/capture}
+{capture name='sabanas_per5050_desc'}{l s='Excelente acabado y resistencia' d='Shop.Sbmenu'}{/capture}
+{capture name='sabanas_per100_desc'}{l s='Frescura y tacto firme' d='Shop.Sbmenu'}{/capture}
+{capture name='sabanas_sat100_desc'}{l s='Tacto suave y ligero brillo' d='Shop.Sbmenu'}{/capture}
+
+{$descriptions=[
+'category-12' => $smarty.capture.sabanas_5050_desc,
+'category-28' => $smarty.capture.sabanas_100_desc,
+'category-31' => $smarty.capture.sabanas_per5050_desc,
+'category-29' => $smarty.capture.sabanas_per100_desc,
+'category-34' => $smarty.capture.sabanas_sat100_desc]}
 
 {function name="get_category_description" page_identifier=''}
   {if isset($descriptions[$page_identifier])}
-    <p class="d-none d-sm-block">{$descriptions[$page_identifier]}</p>
+    <p class="d-none d-sm-block">{$descriptions[$page_identifier] nofilter}</p>
   {/if}
 {/function}
 
@@ -34,7 +44,7 @@
         class="nav-link dropdown-toggle" 
         href="#"
         role="button" data-toggle="dropdown" data-offset="0" {* Se actualiza en main-menu.js *} 
-        data-aria-haspopup="true" aria-expanded="false">{$sabanas_basic_premium_label}</a>
+        data-aria-haspopup="true" aria-expanded="false">{$sabanas_basic_premium_label nofilter}</a>
         <!-- submenu -->
       <div class="dropdown-menu w-100 p-3" aria-labelledby="{$sabanas_basic_premium}">
         {foreach from=$menu.children item=node}
@@ -60,7 +70,7 @@
         class="nav-link dropdown-toggle" 
         href="#"
         role="button" data-toggle="dropdown" data-offset="0" {* Se actualiza en main-menu.js *} 
-        data-aria-haspopup="true" aria-expanded="false">{$bed_complements_label}</a>
+        data-aria-haspopup="true" aria-expanded="false">{$bed_complements_label nofilter}</a>
         <!-- submenu -->
       <div class="dropdown-menu w-100 p-3" aria-labelledby="{$bed_complements}">
         <div class="row">
@@ -82,7 +92,7 @@
         class="nav-link dropdown-toggle" 
         href="#"
         role="button" data-toggle="dropdown" data-offset="0" {* Se actualiza en main-menu.js *} 
-        data-aria-haspopup="true" aria-expanded="false">{$more_products_label}</a>
+        data-aria-haspopup="true" aria-expanded="false">{$more_products_label nofilter}</a>
         <!-- submenu -->
       <div class="dropdown-menu w-100 p-3" aria-labelledby="{$more_products}">
         <div class="row">
