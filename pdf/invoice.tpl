@@ -43,7 +43,7 @@
 	</tr>
 
 	<!-- TVA -->
-	<tr>
+	{* <tr>
 		<!-- Code TVA -->
 		<td colspan="6" class="left">
 
@@ -57,10 +57,10 @@
 			{$total_tab}
 
 		</td>
-	</tr>
+	</tr> *}
 
 	{$note_tab}
-
+	
 	<tr>
 		<td colspan="12" height="10">&nbsp;</td>
 	</tr>
@@ -72,6 +72,11 @@
 
 		</td>
 		<td colspan="1">&nbsp;</td>
+		<td colspan="5" rowspan="5" class="right">
+
+			{$total_tab}
+
+		</td>
 	</tr>
 
 	<tr>
@@ -108,7 +113,7 @@
 	</tr>
 
 	<tr>
-		<td colspan="2">&nbsp;</td>
+		<td colspan="2">{l s='Comentarios:' d='Shop.Sbpdf' pdf='true'}</td>
 		<td colspan="10">
 			{$HOOK_DISPLAY_PDF}
 		</td>

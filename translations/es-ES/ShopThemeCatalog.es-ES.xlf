@@ -146,7 +146,7 @@ File: themes/sabanasblancas/modules/ps_specials/views/templates/hook/ps_specials
       </trans-unit>
       <trans-unit id="f95ceb82c51c99dc9b9e5678b291c44b">
         <source>All sale products</source>
-        <target>Todas los productos en oferta</target>
+        <target>Todos los productos en oferta</target>
         <note>Context:
 File: themes/sabanasblancas/modules/ps_specials/views/templates/hook/ps_specials.tpl:36</note>
       </trans-unit>
@@ -314,7 +314,7 @@ File: themes/sabanasblancas/templates/catalog/_partials/product-discounts.tpl:5<
       </trans-unit>
       <trans-unit id="861c0c6ef832cd96c5fe152f9d610973">
         <source>You Save</source>
-        <target>Usted ahorra</target>
+        <target>Te ahorras</target>
         <note>Context:
 File: themes/sabanasblancas/templates/catalog/_partials/product-discounts.tpl:12</note>
       </trans-unit>
@@ -364,7 +364,7 @@ File: themes/sabanasblancas/templates/customer/_partials/order-detail-return.tpl
     <body>
       <trans-unit id="9060587edeb01a63e3d3edc959678d1e">
         <source>Before</source>
-        <target>Before</target>
+        <target>Antes</target>
         <note>Context:
 File: themes/sabanasblancas/templates/catalog/_partials/product-prices.tpl:32</note>
       </trans-unit>
@@ -376,19 +376,19 @@ File: themes/sabanasblancas/templates/catalog/_partials/product-prices.tpl:45</n
       </trans-unit>
       <trans-unit id="fedd0f80cc8238bacbb2c92b6e0e0c80">
         <source>Per unit</source>
-        <target>Per unit</target>
+        <target>La unidad</target>
         <note>Context:
 File: themes/sabanasblancas/templates/catalog/_partials/product-prices.tpl:61</note>
       </trans-unit>
       <trans-unit id="026ae2d56e2ebbdc3763e735983acd9f">
         <source>Tax. excl.</source>
-        <target>Tax. excl.</target>
+        <target>IVA excl.</target>
         <note>Context:
 File: themes/sabanasblancas/templates/catalog/_partials/product-prices.tpl:73</note>
       </trans-unit>
       <trans-unit id="8244cf379b2a4a11d4706e53f510a5f6">
         <source>Separate</source>
-        <target>Separate</target>
+        <target>Por separado</target>
         <note>Context:
 File: themes/sabanasblancas/templates/catalog/_partials/product-prices.tpl:85</note>
       </trans-unit>

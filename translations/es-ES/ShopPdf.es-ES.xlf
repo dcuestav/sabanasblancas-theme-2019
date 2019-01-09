@@ -94,7 +94,7 @@ File: themes/sabanasblancas/pdf/supply-order.product-tab.tpl:37</note>
       </trans-unit>
       <trans-unit id="20a34c4e30c5bbe1d3f870ac55f0d831">
         <source>Tax rate</source>
-        <target>Tasa de impuesto</target>
+        <target>IVA</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/supply-order.product-tab.tpl:38</note>
       </trans-unit>
@@ -122,7 +122,7 @@ File: themes/sabanasblancas/pdf/invoice.product-tab.tpl:124</note>
       </trans-unit>
       <trans-unit id="9fec2102dd0b5b29d6cdf9d5614fabf7">
         <source>(Tax excl.)</source>
-        <target>(Impuestos excl.)</target>
+        <target>(IVA excl.)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/invoice.product-tab.tpl:39</note>
       </trans-unit>
@@ -224,7 +224,7 @@ File: themes/sabanasblancas/pdf/invoice.note-tab.tpl:34</note>
     <body>
       <trans-unit id="8fe77c2601e54f1aaef28cfde997bbad">
         <source>Tax Rate</source>
-        <target>Tasa de impuesto</target>
+        <target>IVA</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/supply-order.tax-tab.tpl:31</note>
       </trans-unit>
@@ -340,7 +340,7 @@ File: themes/sabanasblancas/pdf/invoice.total-tab.tpl:66</note>
       </trans-unit>
       <trans-unit id="b94cb106eaa958b2ab473da305e57977">
         <source>Total (Tax excl.)</source>
-        <target>Total (Imp. excl.)</target>
+        <target>Total (sin IVA)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/invoice.total-tab.tpl:74</note>
       </trans-unit>
@@ -372,31 +372,31 @@ File: themes/sabanasblancas/pdf/invoice.summary-tab.tpl:30</note>
     <body>
       <trans-unit id="b602e0d0c6a72053d0a5be60cb2f8126">
         <source>Total Tax</source>
-        <target>Total impuesto</target>
+        <target>Total IVA</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:76</note>
       </trans-unit>
       <trans-unit id="f61e91b684fc1063894baa9e61fde630">
         <source>Shipping (Tax Excl.)</source>
-        <target>Envío (impuestos excl.)</target>
+        <target>Envío (sin IVA)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:30</note>
       </trans-unit>
       <trans-unit id="4bcc004e904bd1b84d255a9953e242fd">
         <source>Shipping (Tax Incl.)</source>
-        <target>Envío (impuestos incl.)</target>
+        <target>Envío (IVA incl.)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:32</note>
       </trans-unit>
       <trans-unit id="7926243ab60a08b15932021bf108c578">
         <source>Product Total (Tax Excl.)</source>
-        <target>Total Productos (sin impuestos)</target>
+        <target>Total Productos (sin IVA)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:45</note>
       </trans-unit>
       <trans-unit id="984a93f9899bf0b0a250ba66f022c630">
         <source>Product Total (Tax Incl.)</source>
-        <target>Total Productos (impuestos inc.)</target>
+        <target>Total Productos (IVA inc.)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:54</note>
       </trans-unit>
@@ -408,13 +408,13 @@ File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:64</note>
       </trans-unit>
       <trans-unit id="4118e1a6606ae9bff5134ba3cf50db67">
         <source>Total (Tax Excl.)</source>
-        <target>Total (Imp. Excl.)</target>
+        <target>Total (sin IVA)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:87</note>
       </trans-unit>
       <trans-unit id="11ef70f0c7f9fed90c43dffb9a0e813e">
         <source>Total (Tax Incl.)</source>
-        <target>Total (Imp. Incl.)</target>
+        <target>Total (IVA incl.)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.total-tab.tpl:103</note>
       </trans-unit>
@@ -520,13 +520,13 @@ File: themes/sabanasblancas/pdf/order-slip.product-tab.tpl:32</note>
       </trans-unit>
       <trans-unit id="078ac079d154d21533c57bced9fcb10f">
         <source>(Tax Excl.)</source>
-        <target>(sin impuestos)</target>
+        <target>(sin IVA)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.product-tab.tpl:33</note>
       </trans-unit>
       <trans-unit id="29103375229a5c363403ec4afb5c3e8f">
         <source>(Tax Incl.)</source>
-        <target>(Imp. incl.)</target>
+        <target>(IVA incl.)</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/order-slip.product-tab.tpl:33</note>
       </trans-unit>
@@ -590,7 +590,7 @@ File: themes/sabanasblancas/pdf/supply-order.total-tab.tpl:42</note>
       </trans-unit>
       <trans-unit id="699e6bd4690ed3bd5f658052e12aba04">
         <source>Tax value</source>
-        <target>Valor del impuesto</target>
+        <target>IVA</target>
         <note>Context:
 File: themes/sabanasblancas/pdf/supply-order.total-tab.tpl:48</note>
       </trans-unit>
