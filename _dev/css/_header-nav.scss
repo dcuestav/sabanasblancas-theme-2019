@@ -7,22 +7,22 @@ $header-nav-font-size: 0.9rem;
     color: $header-nav-color;
     font-size: $header-nav-font-size;
 
-    .header-nav-item {
-        display: flex;
-        &>* {
-            padding: 8px 5px;
-        }
-        a:hover {
-            transition: 0.2s;
-            background-color: lighten( $header-nav-background, 20% );
-        }
-    }
-
-    a {
+    a,
+    .dropdown-toggle,
+    .dropdown-item {
         color: $header-nav-color;
         &:hover {
             color: $header-nav-color-hover;
             text-decoration: none;
+            transition: 0.2s;
+            background: lighten( $header-nav-background, 20% );
+        }
+    }
+
+    .header-nav-item {
+        display: flex;
+        &>* {
+            padding: 8px 5px;
         }
     }
 
@@ -36,6 +36,15 @@ $header-nav-font-size: 0.9rem;
         font-size: 20px;
     }
     
+}
+
+.language-selector {
+    .dropdown-toggle img {
+        height: 18px;
+        width: 27px;
+        position: relative;
+        bottom: 2px;
+    }
 }
 
 .blockcart .icon-adjust {

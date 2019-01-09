@@ -7107,24 +7107,33 @@ body#order-detail .table {
   background-color: #052c59;
   color: white;
   font-size: 0.9rem; }
+  .header-nav a,
+  .header-nav .dropdown-toggle,
+  .header-nav .dropdown-item {
+    color: white; }
+    .header-nav a:hover,
+    .header-nav .dropdown-toggle:hover,
+    .header-nav .dropdown-item:hover {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+      background: #0a5cba; }
   .header-nav .header-nav-item {
     display: flex; }
     .header-nav .header-nav-item > * {
       padding: 8px 5px; }
-    .header-nav .header-nav-item a:hover {
-      transition: 0.2s;
-      background-color: #0a5cba; }
-  .header-nav a {
-    color: white; }
-    .header-nav a:hover {
-      color: white;
-      text-decoration: none; }
   .header-nav .dropdown-menu {
     background-color: #052c59;
     color: white;
     font-size: 0.9rem; }
   .header-nav .material-icons {
     font-size: 20px; }
+
+.language-selector .dropdown-toggle img {
+  height: 18px;
+  width: 27px;
+  position: relative;
+  bottom: 2px; }
 
 @media (max-width: 767.98px) {
   .blockcart .icon-adjust span:not(.cart-products-count) {
