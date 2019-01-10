@@ -32,14 +32,14 @@
       data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
     >
 
-      {if !$use_same_address}
+      {* {if !$use_same_address} *}
         <h2 class="h4">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
-      {/if}
+      {* {/if} *}
 
       {if $use_same_address && !$cart.is_virtual}
-        <p>
+        {* <p>
           {l s='The selected address will be used both as your personal address (for invoice) and as your delivery address.' d='Shop.Theme.Checkout'}
-        </p>
+        </p> *}
       {elseif $use_same_address && $cart.is_virtual}
         <p>
           {l s='The selected address will be used as your personal address (for invoice).' d='Shop.Theme.Checkout'}
@@ -76,19 +76,36 @@
           <a href="{$new_address_delivery_url}" class="icon-adjust"><i class="material-icons">add</i><span>{l s='add new address' d='Shop.Theme.Actions'}</span></a>
         </p>
 
-        {if $use_same_address && !$cart.is_virtual}
+        {* {if $use_same_address && !$cart.is_virtual}
           <p>
             <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
               {l s='Billing address differs from shipping address' d='Shop.Theme.Checkout'}
             </a>
           </p>
-        {/if}
+        {/if} *}
 
       {/if}
 
-      {if !$use_same_address}
+      <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
 
-        <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
+      {if $use_same_address && !$cart.is_virtual}
+
+        <a class="form-check" data-link-action="different-invoice-address" href="{$use_different_address_url}">
+          <i class="form-check-input material-icons" id="exampleCheck1">check_box</i>
+          <label class="form-check-label" for="exampleCheck1">{l s='Utilizar la misma' d='Shop.Sbcheckout'}</label>
+        </a>
+
+        <p>
+          {l s='Utilizar la misma' d='Shop.Sbcheckout'}<br>
+          {l s='o' d='Shop.Sbcheckout'} 
+          <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
+            {l s='utilizar una dirección diferente' d='Shop.Sbcheckout'}
+          </a>
+        </p>
+      {/if}
+
+
+      {if !$use_same_address}
 
         {if $show_invoice_address_form}
           <div id="invoice-address">

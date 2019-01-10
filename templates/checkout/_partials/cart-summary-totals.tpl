@@ -9,8 +9,8 @@
 
   {block name='cart_summary_tax'}
     <div class="cart-summary-line">
-      <span class="label sub">{$cart.subtotals.tax.label}</span>
-      <span class="value sub">{$cart.subtotals.tax.value}</span>
+      <small class="label sub">{$cart.subtotals.tax.label}</small>
+      <small class="value sub">{$cart.subtotals.tax.value}</small>
     </div>
   {/block}
 
