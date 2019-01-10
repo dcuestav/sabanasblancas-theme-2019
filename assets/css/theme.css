@@ -7595,6 +7595,22 @@ main {
 a {
   color: #084489; }
 
+input::-webkit-input-placeholder {
+  font-style: italic; }
+
+input:-ms-input-placeholder {
+  font-style: italic; }
+
+input::-ms-input-placeholder {
+  font-style: italic; }
+
+input::placeholder {
+  font-style: italic; }
+
+.required:after {
+  content: " *";
+  color: red; }
+
 .max-width {
   max-width: 1350px; }
 

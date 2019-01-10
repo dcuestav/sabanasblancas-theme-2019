@@ -10,6 +10,7 @@
         action="{url entity='address' params=['id_address' => $id_address]}"
         data-id-address="{$id_address}"
         data-refresh-url="{url entity='address' params=['ajax' => 1, 'action' => 'addressForm']}"
+        novalidate
       >
     {/block}
 
@@ -22,6 +23,9 @@
               {/block}
             {/foreach}
           {/block}
+          <p>
+            <span class="required"></span> {l s='Campos obligatorios' d='Shop.Sabanasblancas'}
+          </p>
         </section>
       {/block}
 

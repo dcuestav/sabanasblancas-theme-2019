@@ -43,6 +43,15 @@ a {
   color: $base-color;
 }
 
+input::placeholder {
+  font-style: italic;
+}
+
+.required:after { 
+  content:" *"; 
+  color: red;
+}
+
 .max-width {
   max-width: 1350px;
 }

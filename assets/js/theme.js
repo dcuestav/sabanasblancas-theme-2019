@@ -1606,6 +1606,77 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 /***/ }),
 
+/***/ "./js/sabanasblancas/address-form.js":
+/*!*******************************************!*\
+  !*** ./js/sabanasblancas/address-form.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-address-form')) {
+    return;
+  }
+
+  var CURRENT_LANGUAGE_ISO_CODE = prestashop.language.iso_code;
+  var SPANISH = 'es';
+  var ENGLISH = 'en';
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-address-form form').removeAttr('novalidate');
+
+  var CustomizedField =
+  /*#__PURE__*/
+  function () {
+    function CustomizedField(name) {
+      _classCallCheck(this, CustomizedField);
+
+      this.$field = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[name="' + name + '"]');
+    }
+
+    _createClass(CustomizedField, [{
+      key: "setRequired",
+      value: function setRequired() {
+        this.$field.attr('required', '').closest('.form-group').find('label').addClass('required');
+        return this;
+      }
+    }, {
+      key: "setMinLength",
+      value: function setMinLength(length) {
+        this.$field.attr('minlength', length);
+      }
+    }, {
+      key: "setPlaceholder",
+      value: function setPlaceholder(isoCode, placeholderString) {
+        if (isoCode === CURRENT_LANGUAGE_ISO_CODE) {
+          this.$field.attr('placeholder', placeholderString);
+        }
+
+        return this;
+      }
+    }]);
+
+    return CustomizedField;
+  }();
+
+  new CustomizedField('alias').setPlaceholder(SPANISH, "(opcional) Título de esta dirección. Ej. 'Casa'").setPlaceholder(ENGLISH, "(optional) Title of this address. Eg. 'Home'");
+  new CustomizedField('company').setPlaceholder(SPANISH, '(opcional) Si el pedido es para una empresa').setPlaceholder(ENGLISH, '(optional) If the order is for a company');
+  new CustomizedField('dni').setPlaceholder(SPANISH, '(opcional) Aparecerá en la factura').setPlaceholder(ENGLISH, '(optional) Will appear in the invoice');
+  new CustomizedField('address2').setPlaceholder(SPANISH, '(opcional)').setPlaceholder(ENGLISH, '(optional)');
+  new CustomizedField('phone').setRequired().setMinLength(9).setPlaceholder(SPANISH, 'Por si necesitamos contactar contigo').setPlaceholder(ENGLISH, 'In case we need to contact you');
+});
+
+/***/ }),
+
 /***/ "./js/sabanasblancas/checkout.js":
 /*!***************************************!*\
   !*** ./js/sabanasblancas/checkout.js ***!
@@ -1954,14 +2025,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sabanasblancas_add_to_cart__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sabanasblancas/add-to-cart */ "./js/sabanasblancas/add-to-cart.js");
 /* harmony import */ var _sabanasblancas_product_detail__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./sabanasblancas/product-detail */ "./js/sabanasblancas/product-detail.js");
 /* harmony import */ var _sabanasblancas_checkout__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./sabanasblancas/checkout */ "./js/sabanasblancas/checkout.js");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! prestashop */ "prestashop");
-/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
-/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_27__);
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
-/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_28__);
+/* harmony import */ var _sabanasblancas_address_form__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./sabanasblancas/address-form */ "./js/sabanasblancas/address-form.js");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! prestashop */ "prestashop");
+/* harmony import */ var prestashop__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(prestashop__WEBPACK_IMPORTED_MODULE_26__);
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./classic/lib/bootstrap-filestyle.min */ "./js/classic/lib/bootstrap-filestyle.min.js");
+/* harmony import */ var _classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_bootstrap_filestyle_min__WEBPACK_IMPORTED_MODULE_28__);
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./classic/lib/jquery.scrollbox.min */ "./js/classic/lib/jquery.scrollbox.min.js");
+/* harmony import */ var _classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(_classic_lib_jquery_scrollbox_min__WEBPACK_IMPORTED_MODULE_29__);
 
 
  // import 'bootstrap/js/src/alert';
@@ -1994,10 +2066,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  // "inherit" EventEmitter
 
-for (var i in events__WEBPACK_IMPORTED_MODULE_26___default.a.prototype) {
-  prestashop__WEBPACK_IMPORTED_MODULE_25___default.a[i] = events__WEBPACK_IMPORTED_MODULE_26___default.a.prototype[i];
+for (var i in events__WEBPACK_IMPORTED_MODULE_27___default.a.prototype) {
+  prestashop__WEBPACK_IMPORTED_MODULE_26___default.a[i] = events__WEBPACK_IMPORTED_MODULE_27___default.a.prototype[i];
 }
 
 $(document).ready(function () {

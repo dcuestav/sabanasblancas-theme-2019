@@ -19,16 +19,16 @@
 
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
-  {if $type === "delivery"}
+  {* {if $type === "delivery"}
     <div class="form-group row">
       <div class="col-md-9 offset-md-3">
         <div class="form-check">
-        <input id="use_same_address" class="form-check-input" name="use_same_address" type="checkbox" value="1" {if $use_same_address} checked {/if}>
-        <label for="use_same_address" class="form-check-label">{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
+          <input id="use_same_address" class="form-check-input" name="use_same_address" type="checkbox" value="1" {if $use_same_address} checked {/if}>
+          <label for="use_same_address" class="form-check-label">{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</label>
         </div>
       </div>
     </div>
-  {/if}
+  {/if} *}
 {/block}
 
 {block name='form_buttons'}
