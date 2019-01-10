@@ -14,19 +14,18 @@ function emptyTermsModalOnHide() {
     });
 }
 
-function selectRadioCard() {
+function addClassSelectedInRadioCards() {
     $('#checkout [name="payment-option"], #checkout [name="shipping-option"]').change( (event) => {
         $(event.target)
             .closest('.card')
             .addClass('selected')
             .siblings()
             .removeClass('selected');
-        // console.log(event.target.checked);
     })
 }
 
 $(document).ready(()=>{
     checkAtLeastLastStepIsOpen();
     emptyTermsModalOnHide();
-    selectRadioCard();
+    addClassSelectedInRadioCards();
 });

@@ -1704,16 +1704,16 @@ function emptyTermsModalOnHide() {
   });
 }
 
-function selectRadioCard() {
+function addClassSelectedInRadioCards() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#checkout [name="payment-option"], #checkout [name="shipping-option"]').change(function (event) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).closest('.card').addClass('selected').siblings().removeClass('selected'); // console.log(event.target.checked);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).closest('.card').addClass('selected').siblings().removeClass('selected');
   });
 }
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   checkAtLeastLastStepIsOpen();
   emptyTermsModalOnHide();
-  selectRadioCard();
+  addClassSelectedInRadioCards();
 });
 
 /***/ }),
