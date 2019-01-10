@@ -2,7 +2,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
       {block name='hook_checkout_summary_top'}
-        {hook h='displayCheckoutSummaryTop'}
+        {* {hook h='displayCheckoutSummaryTop'} *}
       {/block}
 
       {block name='cart_summary_products'}

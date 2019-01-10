@@ -10,47 +10,39 @@
   <div class="payment-options mb-5{if $is_free} d-none{/if}">
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
-        <div>
-          <div id="{$option.id}-container" class="payment-option form-check">
-            {* This is the way an option should be selected when Javascript is enabled *}
-            <input
-              class="ps-shown-by-js form-check-input {if $option.binary} binary {/if}"
-              id="{$option.id}"
-              data-module-name="{$option.module_name}"
-              name="payment-option"
-              type="radio"
-              required
-              {if $selected_payment_option == $option.id || $is_free} checked {/if}
-            >
-            {* This is the way an option should be selected when Javascript is disabled *}
-            {* <form method="GET" class="ps-hidden-by-js">
-              {if $option.id === $selected_payment_option}
-                {l s='Selected' d='Shop.Theme.Checkout'}
-              {else}
-                <button class="ps-hidden-by-js" type="submit" name="select_payment_option" value="{$option.id}">
-                  {l s='Choose' d='Shop.Theme.Actions'}
-                </button>
-              {/if}
-            </form> *}
 
-            <label for="{$option.id}" class="form-check-label">
-              <span>{$option.call_to_action_text}</span>
-              {if $option.logo}
-                <img src="{$option.logo}" class="img-fluid">
-              {/if}
-            </label>
+        <div class="card">
+          <div class="card-body">
+            <div id="{$option.id}-container" class="row payment-option mb-0">
+              <div class="col-sm-1">
+                <input
+                  class="ps-shown-by-js {if $option.binary} binary {/if}"
+                  id="{$option.id}"
+                  data-module-name="{$option.module_name}"
+                  name="payment-option"
+                  type="radio"
+                  required
+                  {if $selected_payment_option == $option.id || $is_free} checked {/if}
+                >
+              </div>
+              <label for="{$option.id}" class="col-sm-11">
+                <span>{$option.call_to_action_text}</span>
+                {if $option.logo}
+                  <img src="{$option.logo}" class="img-fluid">
+                {/if}
+              </label>
 
+              {if $option.module_name!='paypal' && $option.additionalInformation}
+                <div
+                  id="{$option.id}-additional-information"
+                  class="js-additional-information definition-list additional-information{if $option.id != $selected_payment_option} ps-hidden {/if}"
+                >
+                  {$option.additionalInformation nofilter}
+                </div>
+              {/if}
+            </div>
           </div>
         </div>
-
-        {if $option.additionalInformation}
-          <div
-            id="{$option.id}-additional-information"
-            class="js-additional-information definition-list additional-information{if $option.id != $selected_payment_option} ps-hidden {/if}"
-          >
-            {$option.additionalInformation nofilter}
-          </div>
-        {/if}
 
         <div
           id="pay-with-{$option.id}-form"
