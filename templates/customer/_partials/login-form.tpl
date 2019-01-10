@@ -4,7 +4,7 @@
     {include file='_partials/form-errors.tpl' errors=$errors['']}
   {/block}
 
-  <form id="login-form" action=" {block name='login_form_actionurl'}{$action}{/block}" method="post">
+  <form id="login-form" action=" {block name='login_form_actionurl'}{$action}{/block}" method="post" novalidate>
 
     <section class="form-fields">
       {block name='form_fields'}

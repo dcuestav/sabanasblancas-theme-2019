@@ -73,7 +73,7 @@
         <div class="form-check">
           <input
             id="{$field.value}{$random_number}"
-            class="form-check-input"
+            class="form-check-input {if $field.errors|count}is-invalid{/if}"
             name="{$field.name}"
             type="checkbox"
             value="1"
@@ -81,6 +81,13 @@
             {if $field.value}checked{/if}
           >
           <label class="form-check-label" for="{$field.value}{$random_number}">{$field.label nofilter}</label>
+          {if $field.errors|count}
+            <ul class='invalid-feedback list-unstyled'>
+              {foreach $field.errors as $error}
+                <li>{$error}</li>
+              {/foreach}
+            </ul>
+          {/if}
         </div>
       </div>
     </div>
@@ -94,7 +101,7 @@
       <div class="col-md-6 input-group">
         <input
           id="{$field.name}{$random_number}"
-          class="form-control js-visible-password"
+          class="form-control js-visible-password {if $field.errors|count}is-invalid{/if}"
           name="{$field.name}"
           type="password"
           value=""
@@ -112,6 +119,13 @@
             {l s='Show' d='Shop.Theme.Actions'}
           </button>
         </div>
+        {if $field.errors|count}
+          <ul class='invalid-feedback list-unstyled'>
+            {foreach $field.errors as $error}
+              <li>{$error}</li>
+            {/foreach}
+          </ul>
+        {/if}
       </div>
     </div>
   {/block}
@@ -130,17 +144,36 @@
       <div class="col-md-6">
         <input 
           id="{$field.name}{$random_number}"
-          class="form-control"
+          class="form-control {if $field.errors|count}is-invalid{/if}"
           name="{$field.name}" 
           type="{$field.type}" 
           value="{$field.value}" 
           {if $field.required}required{/if}>
+        {if $field.errors|count}
+          <ul class='invalid-feedback list-unstyled'>
+            {foreach $field.errors as $error}
+              <li>{$error}</li>
+            {/foreach}
+          </ul>
+        {/if}
       </div>
+      
     </div>
   {/block}
 
 {/if}
 
-{block name='form_field_errors'}
+{* {block name='form_field_errors'}
   {include file='_partials/form-errors.tpl' errors=$field.errors}
-{/block}
+{/block} *}
+
+{* form-errors.tpl *}
+{* {block name='form_errors'}
+  {if $errors|count}
+    <ul class='form-errors list-unstyled'>
+      {foreach $errors as $error}
+        <li class="alert alert-danger">{$error}</li>
+      {/foreach}
+    </ul>
+  {/if}
+{/block} *}
