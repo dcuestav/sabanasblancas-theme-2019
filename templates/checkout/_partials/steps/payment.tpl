@@ -4,6 +4,8 @@
 
   {hook h='displayPaymentTop'}
 
+  {debug}
+
   {if $is_free}
     <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
   {/if}
@@ -26,9 +28,12 @@
                 >
               </div>
               <label for="{$option.id}" class="col-sm-11">
-                <span>{$option.call_to_action_text}</span>
+                {* TODO: Añadir logos a las formas de pago *}
                 {if $option.logo}
-                  <img src="{$option.logo}" class="img-fluid">
+                  <span>{$option.call_to_action_text}</span>
+                  {* <img src="{$option.logo}" class="img-fluid" alt="{$option.call_to_action_text}"> *}
+                {else}
+                  <span>{$option.call_to_action_text}</span>
                 {/if}
               </label>
 
