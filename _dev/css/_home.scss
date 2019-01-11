@@ -1,3 +1,14 @@
+
+body#index .homeslider-container {
+    float: none !important;
+    @include media-breakpoint-down(sm) {
+        .homeslider_nav {
+            display: none;
+        }
+    }
+    
+}
+
 body#index .homeslider img {
     display: block;
     position: relative;
@@ -12,11 +23,33 @@ body#index .homeslider img {
         margin-left: 50%;
     }
     @include media-breakpoint-down(sm) {
-        width: 770px;
-        left: -385px;
+        width: 840px;
+        left: -420px;
+    }
+}
+
+body#index #custom-text {
+    h2 {
+        font-size: 2em;
+        font-weight: 300;
+        line-height: 1.2;
+        position: relative;
+        top: -0.3em;
+    }
+    p {
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 90%;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 80%;
+        h2 {
+            font-size: 1.8em;
+        }
     }
     @include media-breakpoint-down(xs) {
-        width: 580px;
-        left: -290px;
+        font-size: 70%;
     }
 }

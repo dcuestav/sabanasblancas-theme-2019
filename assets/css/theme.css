@@ -7218,6 +7218,12 @@ body#order-detail .table {
     .header-top #search_widget input::placeholder {
       color: rgba(255, 255, 255, 0.7); }
 
+body#index .homeslider-container {
+  float: none !important; }
+  @media (max-width: 767.98px) {
+    body#index .homeslider-container .homeslider_nav {
+      display: none; } }
+
 body#index .homeslider img {
   display: block;
   position: relative;
@@ -7232,12 +7238,33 @@ body#index .homeslider img {
       margin-left: 50%; } }
   @media (max-width: 767.98px) {
     body#index .homeslider img {
-      width: 770px;
-      left: -385px; } }
-  @media (max-width: 575.98px) {
-    body#index .homeslider img {
-      width: 580px;
-      left: -290px; } }
+      width: 840px;
+      left: -420px; } }
+
+body#index #custom-text h2 {
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.2;
+  position: relative;
+  top: -0.3em; }
+
+body#index #custom-text p {
+  font-size: 1.2em;
+  font-weight: 300; }
+
+@media (max-width: 991.98px) {
+  body#index #custom-text {
+    font-size: 90%; } }
+
+@media (max-width: 767.98px) {
+  body#index #custom-text {
+    font-size: 80%; }
+    body#index #custom-text h2 {
+      font-size: 1.8em; } }
+
+@media (max-width: 575.98px) {
+  body#index #custom-text {
+    font-size: 70%; } }
 
 .slides {
   display: flex; }
