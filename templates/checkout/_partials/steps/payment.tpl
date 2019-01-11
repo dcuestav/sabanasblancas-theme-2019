@@ -4,8 +4,6 @@
 
   {hook h='displayPaymentTop'}
 
-  {debug}
-
   {if $is_free}
     <p>{l s='No payment needed for this order' d='Shop.Theme.Checkout'}</p>
   {/if}
