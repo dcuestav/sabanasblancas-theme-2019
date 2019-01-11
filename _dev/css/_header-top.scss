@@ -39,11 +39,10 @@ $header-top-font-size: 0.9rem;
                 background-color: inherit;
                 border-bottom-color: $accent;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 background-color: lighten($header-top-background, 10%);
                 border-bottom-color: $accent;
-            }
-            &:focus {
                 outline: 0;
             }
         }

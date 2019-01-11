@@ -7177,10 +7177,9 @@ body#order-detail .table {
     .header-top #main-menu .nav-link.active {
       background-color: inherit;
       border-bottom-color: yellow; }
-    .header-top #main-menu .nav-link:hover {
+    .header-top #main-menu .nav-link:hover, .header-top #main-menu .nav-link:focus {
       background-color: #0950a1;
-      border-bottom-color: yellow; }
-    .header-top #main-menu .nav-link:focus {
+      border-bottom-color: yellow;
       outline: 0; }
   .header-top #main-menu .dropdown-menu {
     background-color: white; }
