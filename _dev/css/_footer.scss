@@ -2,6 +2,18 @@ $footer-nav-color: rgba(255,255,255,0.7);
 $footer-nav-color-hover: rgba(255, 255, 255,1);
 $footer-nav-font-size: 0.9rem;
 
+// Footer pequeño. Hay que forzar que se quede pegado abajo
+
+#checkout {
+    padding-bottom: 40px;
+    #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
 #footer {
     padding-top: 30px;
     padding-bottom: 10px;

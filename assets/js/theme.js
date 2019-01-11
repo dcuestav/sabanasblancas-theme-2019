@@ -1625,7 +1625,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-address-form')) {
+  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-address-form').length) {
     return;
   }
 
@@ -1646,18 +1646,25 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     _createClass(CustomizedField, [{
       key: "setRequired",
       value: function setRequired() {
-        this.$field.attr('required', '').closest('.form-group').find('label').addClass('required');
+        if (this.$field.length) {
+          this.$field.attr('required', '').closest('.form-group').find('label').addClass('required');
+        }
+
         return this;
       }
     }, {
       key: "setMinLength",
       value: function setMinLength(length) {
-        this.$field.attr('minlength', length);
+        if (this.$field.length) {
+          this.$field.attr('minlength', length);
+        }
+
+        return this;
       }
     }, {
       key: "setPlaceholder",
       value: function setPlaceholder(isoCode, placeholderString) {
-        if (isoCode === CURRENT_LANGUAGE_ISO_CODE) {
+        if (this.$field.length && isoCode === CURRENT_LANGUAGE_ISO_CODE) {
           this.$field.attr('placeholder', placeholderString);
         }
 

@@ -7082,6 +7082,14 @@ body#order-detail .table {
   body#order-detail .table td {
     vertical-align: middle; }
 
+#checkout {
+  padding-bottom: 40px; }
+  #checkout #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden; }
+
 #footer {
   padding-top: 30px;
   padding-bottom: 10px;
@@ -7575,10 +7583,12 @@ body#index .homeslider img {
 .featured-products {
   overflow-x: hidden; }
 
-html, body, main {
-  height: 100%; }
+html {
+  position: relative;
+  min-height: 100%; }
 
 body {
+  min-height: 100%;
   width: 100%;
   overflow-x: hidden; }
 
