@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 $(document).ready(()=>{
 
-    if (!$('.js-address-form')) {
+    if (!$('.js-address-form').length) {
         return;
     }
 
@@ -17,14 +17,19 @@ $(document).ready(()=>{
             this.$field = $('[name="'+name+'"]');
         }
         setRequired() {
-            this.$field.attr('required', '').closest('.form-group').find('label').addClass('required');
+            if (this.$field.length) {
+                this.$field.attr('required', '').closest('.form-group').find('label').addClass('required');
+            }
             return this;
         }
         setMinLength(length) {
-            this.$field.attr('minlength', length);
+            if (this.$field.length) {
+                this.$field.attr('minlength', length);
+            }
+            return this;
         }
         setPlaceholder(isoCode, placeholderString) {
-            if (isoCode === CURRENT_LANGUAGE_ISO_CODE) {
+            if (this.$field.length && isoCode === CURRENT_LANGUAGE_ISO_CODE) {
                 this.$field.attr('placeholder', placeholderString);
             }
             return this;
