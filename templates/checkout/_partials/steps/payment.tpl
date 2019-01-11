@@ -32,7 +32,7 @@
                 {/if}
               </label>
 
-              {if $option.module_name!='paypal' && $option.additionalInformation}
+              {if $option.additionalInformation}
                 <div
                   id="{$option.id}-additional-information"
                   class="js-additional-information definition-list additional-information{if $option.id != $selected_payment_option} ps-hidden {/if}"
