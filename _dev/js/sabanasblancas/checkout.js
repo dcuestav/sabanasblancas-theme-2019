@@ -15,7 +15,7 @@ function emptyTermsModalOnHide() {
 }
 
 function addClassSelectedInRadioCards() {
-    $('#checkout [name="payment-option"], #checkout [name="shipping-option"]').change( (event) => {
+    $('#checkout [name="payment-option"], #checkout .delivery-option input').change( (event) => {
         $(event.target)
             .closest('.card')
             .addClass('selected')
