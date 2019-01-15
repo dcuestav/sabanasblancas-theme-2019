@@ -17,28 +17,25 @@
 @import "product-cards";
 @import "product-detail";
 
+// LAYOUT
 
+html { // Ocupa toda la pantalla
+  min-height: 100%;
+  display: flex;
+}
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  min-height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-}
-main {
+body, main { // Son contenedores flex y a la vez componentes que ocupan toda la pantalla
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-#wrapper {
-  flex: 1 0 auto;
-}
-.footer {
-  flex-shrink: 0;
+  overflow-x: hidden;
 }
 
+#wrapper { // Crece para que el footer se quede siempre pegado abajo
+  flex-grow: 1;
+}
+
+// FIN LAYOUT
 
 a {
   color: $base-color;
