@@ -53,8 +53,8 @@
       {/block}
     {/if}
 
-    {/if}
-
   </div>
+
+  {/if}
 
 </aside>

@@ -22,11 +22,9 @@
           {include file='catalog/_partials/products.tpl' listing=$listing}
         {/block}
 
-        <div id="js-product-list-bottom">
-          {block name='product_list_bottom'}
-            {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
-          {/block}
-        </div>
+        {block name='product_list_bottom'}
+          {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
+        {/block}
 
       {* {else} *}
         {* {include file='errors/not-found.tpl'} *}
