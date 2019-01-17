@@ -37,6 +37,11 @@
     <div class="card-body">
       <div class="row">
 
+        {* Variable para que Google Ads obtenga el valor de la transacción *}
+        <script>
+          window.gtm_orderValueTaxExcl = {$order.subtotals.products.amount - $order.subtotals.tax.amount};
+        </script>
+
         {block name='order_confirmation_table'}
           {include
             file='checkout/_partials/order-confirmation-table.tpl'
