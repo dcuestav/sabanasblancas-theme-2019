@@ -38,11 +38,13 @@
             </a>
           {/if}
         </div>
-        <div class="searchbar-space d-none d-md-block d-xl-none"></div>
+        <div class="searchbar-space d-none d-md-block d-xl-none">
+        </div>
       </div>
-    <div class="row">
-      <div class="col position-static">
-        {hook h='displayTop'}
+      <div class="row">
+        <div class="col position-static">
+          {hook h='displayTop'}
+        </div>
       </div>
     </div>
   </div>

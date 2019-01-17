@@ -5,7 +5,7 @@
 
     <h3 class="category-miniature-title">{$category.name}</h3>
     <div class="view-button">
-      <button class="btn btn-sm btn-outline-primary">{l s='Ver productos' d='Shop.Sabanasblancas'}</button>
+      <div class="btn btn-sm btn-outline-primary">{l s='Ver productos' d='Shop.Sabanasblancas'}</div>
     </div>
 
   </a>

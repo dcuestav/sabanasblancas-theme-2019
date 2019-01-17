@@ -16,7 +16,7 @@
       <div class=""><i class="material-icons">call</i></div>
       <div class="pl-3">
         {l s='Call us:' d='Shop.Theme.Global'}<br/>
-        <a href="tel:{$contact_infos.phone}">{$contact_infos.phone}</a>
+        <a href="tel:+34{$contact_infos.phone}">{$contact_infos.phone}</a>
       </div>
     </li>
 
