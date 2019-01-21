@@ -6,7 +6,7 @@
           <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemprop="item" href="{$path.url}">
               {if $smarty.foreach.breadcrumb.iteration == 1}
-                <i class="material-icons">home</i>
+                <i itemprop="name" class="material-icons">home</i>
               {else}
                 <span itemprop="name">{$path.title}</span>
               {/if}
