@@ -5,30 +5,8 @@
   <link rel="canonical" href="{$product.canonical_url}">
 {/block}
 
-{function product_combination}{if $product.embedded_attributes && $product.embedded_attributes.attributes}{foreach from=$product.embedded_attributes.attributes item=attribute key=code} - {$attribute.name}{/foreach}{/if}{/function}
-{function product_color}{if $product.embedded_attributes && $product.embedded_attributes.attributes}{$product.embedded_attributes.attributes.3.name}{/if}{/function}
-
 {block name='structured_data' append}
-<script>var product = {$product|json_encode nofilter}</script>
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org/",
-    "@type": "Product",
-    "name": "{$product.name}{product_combination}",
-    "image": "{$product.cover_images.main.url}",
-    "description": "{$page.meta.description}",
-    "sku": "{$product.reference_to_display}",
-    "color": "{product_color}",
-    "brand": "{if strpos($product_brand_url,'mash')}Mash{else}SabanasBlancas.es{/if}",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "{$currency.iso_code}",
-      "price": "{$product.price_amount}",
-      "availability": "{$product.seo_availability}",
-      "url": "{$product.url}"
-    }
-  }
-</script>
+  {include file='catalog/_partials/product-structured-data.tpl'}
 {/block}
 
 {block name='content'}
