@@ -7,11 +7,11 @@
         {assign var=imagesCount value=$product.images|count}
         <figure>
           <img class="js-modal-product-cover product-cover-modal" width="{$product.cover.large.width}" 
-            src="{$product.cover.large.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image"
+            src="{$product.cover.large.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}"
             data-toggle="modal" data-target="#product-modal">
           {* <figcaption class="image-caption">
           {block name='product_description_short'}
-            <div id="product-description-short" itemprop="description">{$product.description_short nofilter}</div>
+            <div id="product-description-short">{$product.description_short nofilter}</div>
           {/block}
         </figcaption> *}
         </figure>
@@ -21,7 +21,7 @@
               <ul class="product-images js-modal-product-images list-unstyled">
                 {foreach from=$product.images item=image}
                   <li class="thumb-container">
-                    <img data-image-large-src="{$image.large.url}" class="thumb js-modal-thumb" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}" itemprop="image">
+                    <img data-image-large-src="{$image.large.url}" class="thumb js-modal-thumb" src="{$image.medium.url}" alt="{$image.legend}" title="{$image.legend}" width="{$image.medium.width}">
                   </li>
                 {/foreach}
               </ul>

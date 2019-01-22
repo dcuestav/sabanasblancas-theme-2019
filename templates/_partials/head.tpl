@@ -42,6 +42,47 @@
   {include file="_partials/javascript.tpl" javascript=$javascript.head vars=$js_custom_vars}
 {/block}
 
+{block name='structured_data'}
+    <script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "{$shop.name}",
+        "url" : "{$urls.shop_domain_url}",
+        "logo" : {
+          "@type": "ImageObject",
+          "url": "{$urls.shop_domain_url}{$shop.logo}"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context":	"http://schema.org",
+        "@type": "WebSite",
+        "url": "{$urls.shop_domain_url}",
+        "name": "{$shop.name}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{$urls.shop_domain_url}{$shop.logo}"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context":"http://schema.org",
+        "@type":"WebPage",
+        "isPartOf": {
+          "@type":"WebSite",
+          "url":  "{$urls.shop_domain_url}",
+          "name": "{$shop.name}"
+        },
+        "name": "{$page.meta.title}",
+        "description": "{$page.meta.description}",
+        "url":  "{$urls.current_url}"
+      }
+    </script>
+{/block}
+
 {block name='hook_header'}
   {$HOOK_HEADER nofilter}
 {/block}

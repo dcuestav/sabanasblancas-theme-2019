@@ -17,7 +17,7 @@
     {if $product.reference}
       <div>
         <label>{l s='Reference' d='Shop.Theme.Catalog'} </label>
-        <span itemprop="sku">{$product.reference}</span>
+        <span>{$product.reference}</span>
       </div>
     {/if}
   {/block}
@@ -26,7 +26,6 @@
     {if $product.condition}
       <div class="product-condition">
         <label class="label">{l s='Condition' d='Shop.Theme.Catalog'} </label>
-        <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
         <span>{$product.condition.label}</span>
       </div>
     {/if}

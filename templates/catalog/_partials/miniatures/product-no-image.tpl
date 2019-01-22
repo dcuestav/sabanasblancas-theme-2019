@@ -7,19 +7,19 @@
 
 {block name='product_miniature_item'}
   <article class="card product-miniature-card" data-id-product="{$product.id_product}" 
-  data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product" onclick="window.location.href='{$product.url}'">
+  data-id-product-attribute="{$product.id_product_attribute}" onclick="window.location.href='{$product.url}'">
 
     <div class="card-body d-flex flex-column justify-content-between text-center">
       {block name='product_name'}
         {if empty($product.description)}
-            <h5 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
+            <h5 class="mb-3"><a href="{$product.url}">{$product.name}</a></h5>
         {else}
-            <h4 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.description|truncate:30|replace:'<p>':''|replace:'</p>':''}</a></h4>
+            <h4 class="mb-3"><a href="{$product.url}">{$product.description|truncate:30|replace:'<p>':''|replace:'</p>':''}</a></h4>
         {/if}
       {/block}
 
       {block name='product_description_short'}
-        <div class="card-text mb-2" itemprop="description" hidden>{$product.description_short nofilter}</div>
+        <div class="card-text mb-2" hidden>{$product.description_short nofilter}</div>
       {/block}
 
       {block name='product_variants'}
@@ -32,7 +32,7 @@
 
             {hook h='displayProductPriceBlock' product=$product type="before_price"} {* Desde *}
 
-            <span itemprop="price" class="price">{$product.price}</span>
+            <span class="price">{$product.price}</span>
 
             {if $product.has_discount}
               {hook h='displayProductPriceBlock' product=$product type="old_price"}

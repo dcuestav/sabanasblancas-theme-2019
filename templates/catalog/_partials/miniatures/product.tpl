@@ -40,11 +40,11 @@
 
     <div class="card-body d-flex flex-column justify-content-between text-center">
       {block name='product_name'}
-        <h5 class="mb-3" itemprop="name"><a href="{$product.url}">{$product.name}</a></h5>
+        <h5 class="mb-3"><a href="{$product.url}">{$product.name}</a></h5>
       {/block}
 
       {block name='product_description_short'}
-        <div class="card-text mb-2" itemprop="description" hidden>{$product.description_short nofilter}</div>
+        <div class="card-text mb-2" hidden>{$product.description_short nofilter}</div>
       {/block}
 
       {* {block name='product_list_actions'}
@@ -76,7 +76,7 @@
 
             {hook h='displayProductPriceBlock' product=$product type="before_price"} {* Desde *}
 
-            <span itemprop="price" class="price">{$product.price}</span>
+            <span class="price">{$product.price}</span>
 
             {if $product.has_discount}
               {hook h='displayProductPriceBlock' product=$product type="old_price"}

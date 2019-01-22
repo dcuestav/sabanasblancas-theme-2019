@@ -5,32 +5,35 @@
   <link rel="canonical" href="{$product.canonical_url}">
 {/block}
 
-{block name='head' append}
-  <meta property="og:type" content="product">
-  <meta property="og:url" content="{$urls.current_url}">
-  <meta property="og:title" content="{$page.meta.title}">
-  <meta property="og:site_name" content="{$shop.name}">
-  <meta property="og:description" content="{$page.meta.description}">
-  <meta property="og:image" content="{$product.cover.large.url}">
-  <meta property="product:pretax_price:amount" content="{$product.price_tax_exc}">
-  <meta property="product:pretax_price:currency" content="{$currency.iso_code}">
-  <meta property="product:price:amount" content="{$product.price_amount}">
-  <meta property="product:price:currency" content="{$currency.iso_code}">
-  {if isset($product.weight) && ($product.weight != 0)}
-  <meta property="product:weight:value" content="{$product.weight}">
-  <meta property="product:weight:units" content="{$product.weight_unit}">
-  {/if}
+{function product_combination}{if $product.embedded_attributes && $product.embedded_attributes.attributes}{foreach from=$product.embedded_attributes.attributes item=attribute key=code} - {$attribute.name}{/foreach}{/if}{/function}
+{function product_color}{if $product.embedded_attributes && $product.embedded_attributes.attributes}{$product.embedded_attributes.attributes.3.name}{/if}{/function}
+
+{block name='structured_data' append}
+<script>var product = {$product|json_encode nofilter}</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "{$product.name}{product_combination}",
+    "image": "{$product.cover_images.main.url}",
+    "description": "{$page.meta.description}",
+    "sku": "{$product.reference_to_display}",
+    "color": "{product_color}",
+    "brand": "{if strpos($product_brand_url,'mash')}Mash{else}SabanasBlancas.es{/if}",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "{$currency.iso_code}",
+      "price": "{$product.price_amount}",
+      "availability": "{$product.seo_availability}",
+      "url": "{$product.url}"
+    }
+  }
+</script>
 {/block}
 
 {block name='content'}
 
-  <section id="main" itemscope itemtype="https://schema.org/Product">
-    <meta itemprop="url" content="{$product.url}">
-
-    {* DEBUG *}
-    {* <div id="product-debug" class="hidden" data-product="{$product|json_encode}"></div>
-    <script>productDebug = JSON.parse(document.getElementById('product-debug').dataset.product);console.log(productDebug);</script> *}
-    {* FIN DEBUG *}
+  <section id="main">
 
     <div class="row">
       <div class="col-md-6 col-lg-7">
@@ -69,7 +72,7 @@
             {/if} *}
             {block name='page_header_container'}
               {block name='page_header'}
-                <h1 class="h3 d-inline" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
+                <h1 class="h3 d-inline">{block name='page_title'}{$product.name}{/block}</h1>
               {/block}
             {/block}
             {block name='product_flags'}
@@ -157,7 +160,7 @@
         <div class="product-information">
 
           {* {block name='product_description_short'}
-            <div id="product-description-short-{$product.id}" itemprop="description">{$product.description_short nofilter}</div>
+            <div id="product-description-short-{$product.id}">{$product.description_short nofilter}</div>
           {/block} *}
 
           {if $product.is_customizable && count($product.customizations.fields)}

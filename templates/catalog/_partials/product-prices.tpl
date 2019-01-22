@@ -8,16 +8,9 @@
       {* PRECIO FINAL Y ORIGINAL *}
       {block name='product_price'}
         <div class="price-info-column main-price">
-          <div
-            class="product-price"
-            itemprop="offers"
-            itemscope
-            itemtype="https://schema.org/Offer"
-          >
-            <link itemprop="availability" href="{$product.seo_availability}"/>
-            <meta itemprop="priceCurrency" content="{$currency.iso_code}">
+          <div class="product-price">
             <div class="current-price">
-              <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
+              <span content="{$product.price_amount}">{$product.price}</span>
             </div>
           </div>
           {if $configuration.display_taxes_label}
