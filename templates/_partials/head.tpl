@@ -52,7 +52,12 @@
         "logo" : {
           "@type": "ImageObject",
           "url": "{$urls.shop_domain_url}{$shop.logo}"
-        }
+        },
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+34{$shop.phone}",
+          "contactType": "customer service"
+        }]
       }
     </script>
     <script type="application/ld+json">
