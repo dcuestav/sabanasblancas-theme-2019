@@ -17,7 +17,7 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-sm-6">
-                <img class="product-image img-fluid" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
+                <img class="product-image img-fluid" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}">
               </div>
               <div class="col-sm-6">
                 <h6 class="h6 product-name">{$product.name}</h6>

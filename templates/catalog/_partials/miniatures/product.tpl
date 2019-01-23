@@ -1,6 +1,6 @@
 {block name='product_miniature_item'}
   <article class="card product-miniature-card" data-id-product="{$product.id_product}" 
-  data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product" onclick="window.location.href='{$product.url}'">
+  data-id-product-attribute="{$product.id_product_attribute}" onclick="window.location.href='{$product.url}'">
 
     {block name='product_thumbnail'}
       <div class="card-img-top position-relative">
