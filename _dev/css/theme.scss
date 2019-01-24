@@ -25,6 +25,7 @@ html { // Ocupa toda la pantalla
 }
 
 body, main { // Son contenedores flex y a la vez componentes que ocupan toda la pantalla
+  width: 100%; // Soluciona problema en Edge
   flex-grow: 1;
   display: flex;
   flex-direction: column;
