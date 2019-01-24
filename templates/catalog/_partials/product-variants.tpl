@@ -60,9 +60,21 @@
   {/foreach}
 
   {if !empty($supplier_reference)}
-  <div class="alert alert-secondary mt-3">
-    {l s='Medida real' d='Shop.Sabanasblancas'}: <strong>{$supplier_reference}</strong>
-  </div>
+    <p class="mb-1">{l s='Medida real' d='Shop.Sabanasblancas'}:  {$supplier_reference}</p>
+
+    {* Tiene que estar aquí porque depende del mismo módulo *}
+    {* Si el módulo está deshabilitado el contenido de pack no es correcto *}
+    {if $packs|count}
+      <p class="mb-1">{l s='Packs disponibles:' d='Shop.Sabanasblancas'}</p>
+      <ul class="list-unstyled" style="font-size:90%;margin-top:0;">
+      {foreach from=$packs item=pack}
+        <li class="ml-3 mb-2 clearfix"><a href="{$pack.link}">{$pack.name}<span style="float:right;">{$pack.displayPrice}</span></a></li>
+      {/foreach}
+      </ul>
+    {/if}
+
   {/if}
+
+  
 
 </div>
