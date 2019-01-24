@@ -65,8 +65,8 @@
     {* Tiene que estar aquí porque depende del mismo módulo *}
     {* Si el módulo está deshabilitado el contenido de pack no es correcto *}
     {if $packs|count}
-      <p class="mb-1">{l s='Packs disponibles:' d='Shop.Sabanasblancas'}</p>
-      <ul class="list-unstyled" style="font-size:90%;margin-top:0;">
+      <p class="mb-1">{l s='Packs disponibles:' d='Shop.Sabanasblancas'} <a href="#pack-list" data-toggle="collapse" class="text-primary">{l s='Ver packs' d='Shop.Sabanasblancas'}</a></p>
+      <ul class="list-unstyled collapse" id="pack-list" style="font-size:90%;margin-top:0;">
       {foreach from=$packs item=pack}
         <li class="ml-3 mb-2 clearfix"><a href="{$pack.link}">{$pack.name}<span style="float:right;">{$pack.displayPrice}</span></a></li>
       {/foreach}
