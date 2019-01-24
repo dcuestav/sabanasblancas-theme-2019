@@ -16,7 +16,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        include: [
+          path.resolve(__dirname, "js"),
+          path.resolve(__dirname, "node_modules/bootstrap")
+        ],
         use: {
           loader: 'babel-loader',
           options: {
