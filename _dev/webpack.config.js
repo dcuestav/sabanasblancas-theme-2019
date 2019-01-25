@@ -1,6 +1,6 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require('webpack');
+const MiniCssExtractPlugin = require(path.resolve(__dirname, 'node_modules', 'mini-css-extract-plugin'));
+const webpack = require(path.resolve(__dirname, 'node_modules', 'webpack'));
 
 module.exports = {
   entry: [
@@ -18,7 +18,7 @@ module.exports = {
         test: /\.js$/,
         include: [
           path.resolve(__dirname, "js"),
-          path.resolve(__dirname, "node_modules/bootstrap")
+          path.resolve(__dirname, 'node_modules', 'bootstrap')
         ],
         use: {
           loader: 'babel-loader',
@@ -40,11 +40,10 @@ module.exports = {
           {
             loader: 'postcss-loader', // Run post css actions
             options: {
-              plugins: function () { // post css plugins, can be exported to postcss.config.js
-                return [
-                  require('autoprefixer')
-                ];
-              }
+              plugins: () => [
+                require(path.resolve(__dirname, 'node_modules', 'autoprefixer'))({grid: "autoplace"})
+              ],
+              sourceMap: true
             }
           },
           {

@@ -1,16 +1,26 @@
 
 .category-grid {
 
-    display: grid;
-    grid-gap: 15px;
-    justify-items: stretch;
+    & > * { 
+        margin-bottom: 15px;
+    }
 
     @media (min-width: 635px) {
+        display: grid;
+        grid-gap: 15px;
+        & > * { 
+            justify-self: stretch;
+            margin-bottom: 0;
+        }
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
     }
     @media (min-width: 915px) {
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
     }
+
+    
 }
 
 $category-img-height: 150px;
