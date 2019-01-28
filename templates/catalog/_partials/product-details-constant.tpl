@@ -41,9 +41,9 @@
     </section>
 
 
-    {* TODO: Averiguar que es esto *}
+    {* EAN13, GTIN, etc. No mostrar *}
     {* if product have specific references, a table will be added to product details section *}
-    {block name='product_specific_references'}
+    {* {block name='product_specific_references'}
       {if isset($product.specific_references)}
         <section class="mb-3">
           <h4 class="section-title">{l s='Specific References' d='Shop.Theme.Catalog'}</h4>
@@ -57,7 +57,7 @@
           </div>
         </section>
       {/if}
-    {/block}
+    {/block} *}
 
   </div>
 
