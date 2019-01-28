@@ -1,5 +1,28 @@
 {extends file='page.tpl'}
 
+{block name='order_confirmation_transaction_details'}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'transactionId': '{$order.details.id}',
+      'transactionTotal': parseFloat({$order.totals.total_paid.amount}) - parseFloat({$order.amounts.subtotals.tax.amount}) - parseFloat({$order.shipping[0].shipping_cost_tax_incl}),
+      'transactionTax': parseFloat({$order.amounts.subtotals.tax.amount}),
+      'transactionShipping': parseFloat({$order.shipping[0].shipping_cost_tax_incl}),
+      'transactionProducts': [
+        {foreach from=$order.products item=product}
+          {
+          'sku': '{$product.product_reference}',
+          'name': '{$product.name}',
+          'category': '{$product.reference}'.substr(0,8),
+          'price': parseFloat({$product.total_price_tax_excl}),
+          'quantity': parseInt({$product.quantity})
+          },
+        {/foreach}
+      ]
+    });
+  </script>
+{/block}
+
 {block name='page_content_container' prepend}
     <section id="content-hook_order_confirmation" class="alert alert-primary mb-3">
 
