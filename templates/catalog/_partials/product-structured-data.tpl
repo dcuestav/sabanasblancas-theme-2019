@@ -12,7 +12,7 @@
             "description": "{$page.meta.description}",
             "sku": "{$combination.reference}",
             "color": "{product_color data=$combination}",
-            "brand": "{if strpos($product_brand_url,'mash')}Mash{else}SabanasBlancas.es{/if}",
+            "brand": "{if strpos($product_brand_url,'mash')}Mash{else}{if strpos($product_brand_url,'mimar')}Mimar Textil{else}SabanasBlancas.es{/if}{/if}",
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "{$currency.iso_code}",
@@ -32,7 +32,7 @@
         "image": "{$product.cover_images.main.url}", {* Ojo! Viene de un módulo SB *}
         "description": "{$page.meta.description}",
         "sku": "{$product.reference}",
-        "brand": "{if strpos($product_brand_url,'mash')}Mash{else}SabanasBlancas.es{/if}",
+        "brand": "SabanasBlancas.es",
         "offers": {
             "@type": "Offer",
             "priceCurrency": "{$currency.iso_code}",
