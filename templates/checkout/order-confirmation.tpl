@@ -1,7 +1,6 @@
 {extends file='page.tpl'}
 
 {block name='gtm_data_layer' append}
-  
   <script>
     window.dataLayer = window.dataLayer || [];
     {assign "products_tax" $order.amounts.subtotals.tax.amount - ($order.shipping[0].shipping_cost_tax_incl - $order.shipping[0].shipping_cost_tax_excl)};
@@ -14,6 +13,7 @@
       'transactionTotal': {$order.totals.total.amount - $products_tax - $transaction_shipping},
       'transactionTax': {$products_tax},
       'transactionShipping': {$transaction_shipping},
+      'transactionCurrency': '{$currency.iso_code}',
       'transactionProducts': [
         {foreach from=$order.products item=product}
           {
@@ -65,11 +65,6 @@
   <section id="content" class="page-content page-order-confirmation card mb-3">
     <div class="card-body">
       <div class="row">
-
-        {* Variable para que Google Ads obtenga el valor de la transacción *}
-        <script>
-          window.gtm_orderValueTaxExcl = {$order.subtotals.products.amount - $order.subtotals.tax.amount};
-        </script>
 
         {block name='order_confirmation_table'}
           {include
