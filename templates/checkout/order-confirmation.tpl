@@ -1,9 +1,9 @@
 {extends file='page.tpl'}
 
-{block name='order_confirmation_transaction_details'}
+{block name='gtm_data_layer' append}
   <script>
     window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
+    window.dataLayer.push({
       'transactionId': '{$order.details.id}',
       'transactionTotal': parseFloat({$order.totals.total_paid.amount}) - parseFloat({$order.amounts.subtotals.tax.amount}) - parseFloat({$order.shipping[0].shipping_cost_tax_incl}),
       'transactionTax': parseFloat({$order.amounts.subtotals.tax.amount}),

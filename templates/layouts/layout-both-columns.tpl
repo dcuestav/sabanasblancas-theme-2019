@@ -13,9 +13,6 @@
       {hook h='displayAfterBodyOpeningTag'}
     {/block}
 
-    {block name='order_confirmation_transaction_details'}
-    {/block}
-
     {include file='_partials/google-tag-body.tpl'}
 
     <main>

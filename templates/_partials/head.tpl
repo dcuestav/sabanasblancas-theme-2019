@@ -38,6 +38,11 @@
 {/block}
 
 {block name='javascript_head'}
+  {block name='gtm_data_layer'}
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+  {/block}
   {include file='_partials/google-tag-head.tpl'}
   {include file="_partials/javascript.tpl" javascript=$javascript.head vars=$js_custom_vars}
 {/block}
