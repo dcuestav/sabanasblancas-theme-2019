@@ -1,13 +1,19 @@
 {extends file='page.tpl'}
 
 {block name='gtm_data_layer' append}
+  
   <script>
     window.dataLayer = window.dataLayer || [];
+    {assign "products_tax" $order.amounts.subtotals.tax.amount - ($order.shipping[0].shipping_cost_tax_incl - $order.shipping[0].shipping_cost_tax_excl)};
+    {assign "transaction_shipping" 0}
+    {if $order.shipping|count}
+      {assign "transaction_shipping" $order.shipping[0].shipping_cost_tax_incl}
+    {/if}
     window.dataLayer.push({
       'transactionId': '{$order.details.id}',
-      'transactionTotal': parseFloat({$order.totals.total_paid.amount}) - parseFloat({$order.amounts.subtotals.tax.amount}) - parseFloat({$order.shipping[0].shipping_cost_tax_incl}),
-      'transactionTax': parseFloat({$order.amounts.subtotals.tax.amount}),
-      'transactionShipping': parseFloat({$order.shipping[0].shipping_cost_tax_incl}),
+      'transactionTotal': {$order.totals.total.amount - $products_tax - $transaction_shipping},
+      'transactionTax': {$products_tax},
+      'transactionShipping': {$transaction_shipping},
       'transactionProducts': [
         {foreach from=$order.products item=product}
           {

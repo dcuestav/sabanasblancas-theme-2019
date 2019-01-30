@@ -39,9 +39,7 @@
 
 {block name='javascript_head'}
   {block name='gtm_data_layer'}
-    <script>
-      window.dataLayer = window.dataLayer || [];
-    </script>
+    {* Utilizarlo siempre con append porque puede haber más de uno *}
   {/block}
   {include file='_partials/google-tag-head.tpl'}
   {include file="_partials/javascript.tpl" javascript=$javascript.head vars=$js_custom_vars}
