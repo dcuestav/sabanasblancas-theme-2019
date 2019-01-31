@@ -1,6 +1,10 @@
 import $ from 'jquery';
 import prestashop from 'prestashop';
 
+function getQuantityWanted() {
+    return parseInt($('#quantity_wanted').val());
+}
+
 function getAddToCartButton() {
     return $('[data-button-action="add-to-cart"]');
 }
@@ -45,10 +49,28 @@ $(document).ready(()=>{
         $blockCartModal.modal('show'); // Mostrar la ventana
     };
 
-    getAddToCartButton().click(function() {
-        setTimeout(function() { // Tiene que ejecutarse después del envío del formulario
-            disableAddToCartButton();
-        }, 0);
-    })
+    prestashop.on('updateProduct', (event)=>{
+        disableAddToCartButton();
+    });
+
+    prestashop.on('updatedProduct', (event)=>{
+        enableAddToCartButton();
+    });
+
+    // Analytics
+    prestashop.on('updateCart', ()=>{
+        window.current_product = window.current_product || {};
+        window.current_product.quantity = getQuantityWanted();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'addToCart',
+            'ecommerce': {
+                'add': {
+                    'products': [window.current_product]
+                }
+            }
+        });
+    });
+
 });
 

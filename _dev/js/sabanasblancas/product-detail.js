@@ -70,6 +70,31 @@ $(document).ready(()=>{
     $('#quantity_wanted').change(updateTotalPrice);
     prestashop.on('updatedProduct', updateTotalPrice);
     prestashop.on('updatedProduct', enableTooltips);
+
+    // Analytics
+    window.dataLayer = window.dataLayer || [];
+    
+    window.dataLayer.push({
+        'event': 'productVariantView',
+        'ecommerce': {
+            'detail': {
+            'products': [window.current_product]
+            }
+        }
+    });
+
+    prestashop.on('updatedProduct', ()=>{
+        if (window.current_product && window.current_product.id !== window.previous_product_id) {
+            window.dataLayer.push({
+                'event': 'productVariantView',
+                'ecommerce': {
+                    'detail': {
+                    'products': [window.current_product]
+                    }
+                }
+            });
+        }
+    });
 });
 
 
