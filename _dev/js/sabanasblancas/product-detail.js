@@ -5,7 +5,7 @@ import Tooltip from 'bootstrap/js/src/tooltip';
 // Basic functions
 
 function getProductPrice() {
-    return Number($("[itemprop='price']").attr('content'));
+    return Number($('.current-price>span').attr('content'));
 }
 
 function getQuantityWanted() {
