@@ -30,9 +30,10 @@ import './sabanasblancas/replace-image-effect';
 import './sabanasblancas/show-brand-on-product-miniature';
 
 import './sabanasblancas/add-to-cart';
-import './sabanasblancas/product-detail';
-import './sabanasblancas/checkout';
 import './sabanasblancas/address-form';
+import './sabanasblancas/cart-review';
+import './sabanasblancas/checkout';
+import './sabanasblancas/product-detail';
 
 import prestashop from 'prestashop';
 import EventEmitter from 'events';

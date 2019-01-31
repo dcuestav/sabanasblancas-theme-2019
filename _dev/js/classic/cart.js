@@ -155,9 +155,19 @@ $(document).ready(() => {
       var $quantityInput = getTouchSpinInput($target);
       $quantityInput.val(resp.quantity);
 
+      // AÑADIDO
+      var query = extractQueryStringFromUrl(cartAction.url);
+      prestashop.emit('updateCartAnalytics', { 
+        id_product: query.id_product,
+        id_product_attribute: query.id_product_attribute,
+        quantity: query.op === 'up' ? 1 : -1
+      });
+      // FIN AÑADIDO
+
       // Refresh cart preview
       prestashop.emit('updateCart', {
-        reason: dataset
+        // reason: dataset
+        reason: resp
       });
     }).fail((resp) => {
       prestashop.emit('handleError', {
@@ -199,6 +209,14 @@ $(document).ready(() => {
         dataset = resp;
       }
 
+      // AÑADIDO
+      var query = extractQueryStringFromUrl(updateQuantityInCartUrl);
+      prestashop.emit('updateCartAnalytics', { 
+        id_product: query.id_product,
+        id_product_attribute: query.id_product_attribute,
+        quantity: requestData.op === 'up' ? requestData.qty : -requestData.qty
+      });
+      // FIN AÑADIDO
 
       // Refresh cart preview
       prestashop.emit('updateCart', {
@@ -208,6 +226,18 @@ $(document).ready(() => {
       prestashop.emit('handleError', {eventType: 'updateProductQuantityInCart', resp: resp})
     });
   }
+
+  // AÑADIDO
+  function extractQueryStringFromUrl(url) {
+    var query = url.substring(url.indexOf('?') + 1).split('&');
+    var result = {};
+    query.forEach(element => {
+      var items = element.split('=');
+      result[items[0]] = items[1];
+    });
+    return result;
+  }
+  // FIN AÑADIDO
 
   function getRequestData(quantity) {
     return {
