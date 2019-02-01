@@ -122,14 +122,21 @@ $(document).ready(() => {
   };
 
   var getTouchSpinInput = ($button) => {
-    return $($button.parents('.bootstrap-touchspin').find('input'));
+    return $($button.parents('.product-line-actions').find('input'));
   };
 
+  function findProductQuantityInCart(id_product, id_product_attribute) {
+    var product = prestashop.cart.products.find( product => product.id_product===id_product && product.id_product_attribute===id_product_attribute);
+    return product ? product.cart_quantity : 0;
+  }
+
+  // Procesa el +1/ -1 y la eliminación de una línea
+  // MODIFICADO: el dataset que se lanza con el evento updateCart no es correcto y causa que la pérdida de prestashop.cart 
   var handleCartAction = (event) => {
     event.preventDefault();
 
     let $target = $(event.currentTarget);
-    let dataset = event.currentTarget.dataset;
+    // let dataset = event.currentTarget.dataset;
 
     let cartAction = parseCartAction($target, event.namespace);
     let requestData = {
@@ -157,10 +164,17 @@ $(document).ready(() => {
 
       // AÑADIDO
       var query = extractQueryStringFromUrl(cartAction.url);
+
+      var initialQuantity = findProductQuantityInCart(query.id_product, query.id_product_attribute);
+      var finalQuantity = resp.quantity;
+      var quantityIncrease = finalQuantity - initialQuantity;
+
+      $quantityInput.val(finalQuantity);
+      
       prestashop.emit('updateCartAnalytics', { 
         id_product: query.id_product,
         id_product_attribute: query.id_product_attribute,
-        quantity: query.op === 'up' ? 1 : -1
+        quantity: quantityIncrease
       });
       // FIN AÑADIDO
 
