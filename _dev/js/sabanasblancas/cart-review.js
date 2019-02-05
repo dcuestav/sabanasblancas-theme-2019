@@ -8,10 +8,9 @@ if ($('body#cart').length) {
         return product ? product.reference_to_display : '';
     }
 
-    // FALTA EL CASO DE ELIMINAR COMPLETAMENTE UN PRODUCTO DEL CARRITO
-
     $(document).ready(()=>{
 
+        // Analytics
         prestashop.on('updateCartAnalytics', (event)=>{
 
             window.dataLayer = window.dataLayer || [];

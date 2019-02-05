@@ -1,6 +1,7 @@
 {extends file='page.tpl'}
 
 {block name='gtm_data_layer' append}
+  {* Transacciones de Adwords *}
   <script>
     window.dataLayer = window.dataLayer || [];
     {assign "products_tax" $order.amounts.subtotals.tax.amount - ($order.shipping[0].shipping_cost_tax_incl - $order.shipping[0].shipping_cost_tax_excl)};
@@ -25,6 +26,38 @@
           },
         {/foreach}
       ]
+    });
+  </script>
+  {* Transacciones de comercio mejorado de Analytics *}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    {assign "products_tax" $order.amounts.subtotals.tax.amount - ($order.shipping[0].shipping_cost_tax_incl - $order.shipping[0].shipping_cost_tax_excl)};
+    {assign "transaction_shipping" 0}
+    {if $order.shipping|count}
+      {assign "transaction_shipping" $order.shipping[0].shipping_cost_tax_incl}
+    {/if}
+    window.dataLayer.push({
+      'ecommerce': {
+        'purchase': {
+          'actionField': {
+            'id': '{$order.details.id}',
+            'revenue': '{$order.totals.total.amount}',
+            'tax':'{$products_tax}',
+            'shipping': '{$transaction_shipping}'
+          },
+          'products': [
+            {foreach from=$order.products item=product}
+              {
+              'id': '{$product.product_reference}',
+              'name': '{$product.name}',
+              'category': '{$product.reference}'.substr(0,8),
+              'price': parseFloat({$product.total_price_tax_excl}),
+              'quantity': parseInt({$product.quantity})
+              },
+            {/foreach}
+          ]
+        }
+      }
     });
   </script>
 {/block}
