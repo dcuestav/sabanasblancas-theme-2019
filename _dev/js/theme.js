@@ -34,6 +34,7 @@ import './sabanasblancas/address-form';
 import './sabanasblancas/cart-review';
 import './sabanasblancas/checkout';
 import './sabanasblancas/product-detail';
+import './sabanasblancas/reassurance-tooltip';
 
 import prestashop from 'prestashop';
 import EventEmitter from 'events';
