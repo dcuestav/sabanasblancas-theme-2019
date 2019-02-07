@@ -19,17 +19,30 @@ if ($('body#product,body#cart,body#checkout').length) {
 
     $('#block-reassurance a>i').on('click', (event) => {
         event.preventDefault();
-        var url = $(event.target).parent().attr('href');
+        var anchor = $(event.target).parent();
+        var url = anchor.attr('href');
         if (url) {
-          // TODO: Handle request if no pretty URL
-          url += `?content_only=1`;
-          $.get(url, (content) => {
-            $('#modal').find('.js-modal-content').html($(content).find('.page-cms').contents());
-          }).fail((resp) => {
-            prestashop.emit('handleError', {eventType: 'clickTerms', resp: resp});
-          });
+            // TODO: Handle request if no pretty URL
+            url += `?content_only=1`;
+
+            $('#cms-modal').find('.js-modal-content')
+                .empty()
+                .addClass('spinner');
+
+            $('#cms-modal').find('.modal-title').text(anchor.attr('title'));
+
+            $('#cms-modal').modal('show');
+
+            $.get(url, (content) => {
+                $('#cms-modal').find('.js-modal-content')
+                .removeClass('spinner')
+                .html($(content).find('.page-cms').contents());
+
+            }).fail((resp) => {
+                prestashop.emit('handleError', {eventType: 'clickTerms', resp: resp});
+            });
+        } else {
+            console.error('cms url not found');
         }
-    
-        $('#modal').modal('show');
     });
 }

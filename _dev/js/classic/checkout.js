@@ -9,18 +9,32 @@ function setUpCheckout() {
 
   $('.js-terms a').on('click', (event) => {
     event.preventDefault();
-    var url = $(event.target).attr('href');
+    var anchor = $(event.target);
+    var url = anchor.attr('href');
     if (url) {
       // TODO: Handle request if no pretty URL
       url += `?content_only=1`;
+
+      $('#cms-modal').find('.js-modal-content')
+        .empty()
+        .addClass('spinner');
+
+      $('#cms-modal').find('.modal-title').text(anchor.text());
+
+      $('#cms-modal').modal('show');
+
       $.get(url, (content) => {
-        $('#modal').find('.js-modal-content').html($(content).find('.page-cms').contents());
+        $('#cms-modal').find('.js-modal-content')
+          .removeClass('spinner')
+          .html($(content).find('.page-cms').contents());
+
       }).fail((resp) => {
         prestashop.emit('handleError', {eventType: 'clickTerms', resp: resp});
       });
+    } else {
+      console.error('cms url not found');
     }
-
-    $('#modal').modal('show');
+    
   });
 
   $('.js-gift-checkbox').on('click', (event) => {

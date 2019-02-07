@@ -20,7 +20,7 @@
       <p><strong>{l s='Envío gratis 24/48h' d='Shop.Sbreassurance'}</strong> {l s='por 50€ de compra' d='Shop.Sbreassurance'}</p>
       <img class="img-fluid" src="{$urls.theme_assets}img/logos-envio.png" alt="MRW UPS Click Canarias">
 
-      <a href="{$urls.pages.cms}&id_cms=1" rel="nofollow">
+      <a href="{$urls.pages.cms}&id_cms=1" title="{l s='Condiciones de envío' d='Shop.Sbreassurance'}" rel="nofollow">
         <i class="material-icons more-info-icon" 
           data-toggle="tooltip" data-html="true" data-placement="left"
           title="<p>{l s='3,90€ para pedidos de menos de 50€' d='Shop.Sbreassurance'}</p><p>{l s='Válido para España penínsular y Baleares. Sólo días laborables' d='Shop.Sbreassurance'}</p><p>{l s='También enviamos a Canarias y Europa' d='Shop.Sbreassurance'}</p><p>{l s='Clic para más info...' d='Shop.Sbreassurance'}</p>"
@@ -31,7 +31,7 @@
       <i class="material-icons">swap_horiz</i>
       <span><strong>{l s='14 días' d='Shop.Sbreassurance'}</strong> {l s='para cambios y devoluciones' d='Shop.Sbreassurance'}</span>
 
-      <a href="{$urls.pages.cms}&id_cms=6" rel="nofollow">
+      <a href="{$urls.pages.cms}&id_cms=6" title="{l s='Política de devoluciones' d='Shop.Sbreassurance'}" rel="nofollow">
         <i class="material-icons more-info-icon" 
           data-toggle="tooltip" data-html="true" data-placement="left"
           title="<p>{l s='Conserve el embalaje original' d='Shop.Sbreassurance'}</p><p>{l s='El transporte de vuelta es por cuenta del cliente, excepto defectos de fabricación' d='Shop.Sbreassurance'}</p><p>{l s='Clic para más info...' d='Shop.Sbreassurance'}</p>"
