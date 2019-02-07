@@ -1,6 +1,10 @@
 
 {extends file='catalog/listing/product-list.tpl'}
 
+{block name='structured_data' append}
+  {include file='catalog/_partials/category-structured-data.tpl'}
+{/block}
+
 {block name='product_list_header'}
 
   {if $category.level_depth > 3}
