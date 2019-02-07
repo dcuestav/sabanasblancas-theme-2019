@@ -15,6 +15,21 @@ if ($('body#product,body#cart,body#checkout').length) {
 
     $(document).ready(()=>{
         enableTooltips();
-        prestashop.on('updatedProduct', enableTooltips);
+    });
+
+    $('#block-reassurance a>i').on('click', (event) => {
+        event.preventDefault();
+        var url = $(event.target).parent().attr('href');
+        if (url) {
+          // TODO: Handle request if no pretty URL
+          url += `?content_only=1`;
+          $.get(url, (content) => {
+            $('#modal').find('.js-modal-content').html($(content).find('.page-cms').contents());
+          }).fail((resp) => {
+            prestashop.emit('handleError', {eventType: 'clickTerms', resp: resp});
+          });
+        }
+    
+        $('#modal').modal('show');
     });
 }

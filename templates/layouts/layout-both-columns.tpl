@@ -92,6 +92,10 @@
     {block name='hook_before_body_closing_tag'}
       {hook h='displayBeforeBodyClosingTag'}
     {/block}
+
+    {block name='modal'}
+      {include file='_partials/cms-modal.tpl'}
+    {/block}
   </body>
 
 </html>

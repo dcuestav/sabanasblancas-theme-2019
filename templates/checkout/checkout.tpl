@@ -45,6 +45,10 @@
           </div>
         </section>
       {/block}
+
+      {block name='modal'}
+        {include file='_partials/cms-modal.tpl'}
+      {/block}
       
       {hook h="displayWrapperBottom"}
     </section>
