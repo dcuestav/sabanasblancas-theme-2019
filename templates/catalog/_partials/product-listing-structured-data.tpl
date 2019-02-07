@@ -1,4 +1,4 @@
-{foreach from=$listing.products item=product}
+{foreach from=$product_listing item=product}
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",

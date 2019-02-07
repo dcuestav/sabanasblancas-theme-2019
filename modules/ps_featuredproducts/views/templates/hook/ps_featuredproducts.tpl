@@ -27,4 +27,8 @@
   {* <a class="all-product-link float-xs-left float-md-right h4" href="{$allProductsLink}">
     {l s='All products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
   </a> *}
+
+  {* DATOS ESTRUCTURADOS JSON-LD *}
+  {include file='catalog/_partials/product-listing-structured-data.tpl' product_listing=$products}
+
 </section>

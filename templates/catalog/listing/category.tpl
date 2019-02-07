@@ -2,7 +2,7 @@
 {extends file='catalog/listing/product-list.tpl'}
 
 {block name='structured_data' append}
-  {include file='catalog/_partials/category-structured-data.tpl'}
+  {include file='catalog/_partials/product-listing-structured-data.tpl' product_listing=$listing.products}
 {/block}
 
 {block name='product_list_header'}
