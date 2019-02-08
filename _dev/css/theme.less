@@ -12,36 +12,35 @@
 @import "../node_modules/flexslider/css/responsive.less";
 
 
-.flex-direction-nav a {
-    text-shadow: none;
-    width: 60px;
-    height: 60px;
-    margin: -30px 0 0;
+.flex-direction-nav a.flex-prev,
+.flex-direction-nav a.flex-next {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 52%;
+  left: 0 !important;
+  opacity: 0.7 !important;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("/themes/sabanasblancas/assets/img/arrows.gif") no-repeat left top;
+  margin-top: -45px;
+
+  &:active {
+    opacity: 1.0 !important;
+  }
+
+  &.flex-disabled {
+    opacity: 0 !important;
+    z-index: -1 !important;
+  }
+
 }
 
-.flex-direction-nav a:before {
-    display: block;
-    position: relative;
-    top: 10px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    border: 3px solid black;
-    border-bottom: none;
-    border-right: none;
-}
-
-.flex-direction-nav a.flex-prev:before {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-.flex-direction-nav a.flex-next:before {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-}
-
-.flex-control-paging li a {
-    width: 15px;
-    height: 15px;
+.flex-direction-nav a.flex-next {
+  left: auto !important;
+  background-position: right top;
+  right: 0 !important;
 }
