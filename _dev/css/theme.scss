@@ -59,14 +59,21 @@ input::placeholder {
 
   .modal-dialog {
     max-width: 1140px;
-    width: 100%;
   }
 
   .modal-header {
     background-color: $success;
     color: white;
-    .modal-title {
-      margin: auto;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .cart-content p {
+      margin-top: .5em;
+      margin-bottom: .5em;
+    }
+    .cart-content-btn .btn {
+      margin-top: 0.5em;
+      width: 100%;
     }
   }
 }

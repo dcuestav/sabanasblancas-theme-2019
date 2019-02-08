@@ -16,10 +16,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-6">
                 <img class="product-image img-fluid" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}">
               </div>
-              <div class="col-sm-6">
+              <div class="col-6">
                 <h6 class="h6 product-name">{$product.name}</h6>
                 <p>{$product.price}</p>
                 {hook h='displayProductPriceBlock' product=$product type="unit_price"}
@@ -39,9 +39,9 @@
               {/if}
               <p><strong>{l s='Total products:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.products.value}</p>
               <p><strong>{l s='Total shipping:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.shipping.value} {hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</p>
-              {if $cart.subtotals.tax}
+              {* {if $cart.subtotals.tax}
               	<p><strong>{$cart.subtotals.tax.label}</strong>&nbsp;{$cart.subtotals.tax.value}</p>
-              {/if}
+              {/if} *}
               <p><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total.value} {$cart.labels.tax_short}</p>
               <div class="cart-content-btn">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
