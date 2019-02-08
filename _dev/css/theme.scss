@@ -127,9 +127,15 @@ input::placeholder {
 
 .breadcrumb {
   font-size: 0.9rem;
-  border-bottom: 1px solid $gray-300;
+  @include media-breakpoint-up(md) {
+    border-bottom: 1px solid $gray-300;
+  }
   li {
     white-space: nowrap;
+    line-height: 2em;
+    &:first-child {
+      line-height: 1em;
+    }
   }
 }
 

@@ -41,7 +41,7 @@
 
       <div class="col-md-6 col-lg-5">
 
-        <div class="card product-details-card bg-light mb-3">
+        <div class="card product-details-card bg-light mb-md-3">
           <div class="card-header">
             {* {if isset($manufacturer_image_url)}
               <a href="{$product_brand_url}" class="brand-logo">
