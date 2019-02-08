@@ -1,8 +1,15 @@
-
 .category-grid {
 
     & > * { 
         margin-bottom: 15px;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 3px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
     @media (min-width: 635px) {
@@ -26,17 +33,20 @@
 $category-img-height: 150px;
 
 .category-miniature {
-    
+
     position: relative;
-    padding-left: 1.25rem;
-    padding-right: $category-img-height + 5px;
+    padding-left: 1rem;
+    padding-right: ($category-img-height * 0.5) + 15px;
+    height: $category-img-height * 0.5;
     overflow-y: hidden;
 
-    height: $category-img-height * 0.5;
     @media (min-width: 635px) {
+        padding-left: 1.25rem;
+        padding-right: ($category-img-height * 0.75) + 5px;
         height: $category-img-height * 0.75;
     }
     @media (min-width: 915px) {
+        padding-right: $category-img-height + 5px;
         height: $category-img-height;
     }
 
@@ -77,7 +87,7 @@ $category-img-height: 150px;
 
     .image-link {
         position: absolute;
-        display: none;
+        display: block;
         right: 0;
         top: 0;
         bottom: 0;
@@ -85,15 +95,16 @@ $category-img-height: 150px;
         opacity: .2;
         transition: opacity 500ms;
         
-        @media (min-width: 635px) {
-            display: block;
+        @include media-breakpoint-down(sm) {
+            opacity: 1;
+            right: 10px;
         }
     }
 
     @media (max-width: 634px) {
-        .view-button {
-            position: absolute;
-            right: 1.25rem;
+        .view-button>.btn {
+            padding: 0.1rem 0.5rem 0.15rem;
+            font-size: 0.75rem;
         }
     }
 
