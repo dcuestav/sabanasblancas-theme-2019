@@ -22,8 +22,8 @@
         </div>
 
         {block name='continue_shopping'}
-          <a href="{$urls.pages.index}" role="button" class="btn btn-light mt-3">
-            <i class="material-icons">arrow_back</i>
+          <a href="{$urls.pages.index}" role="button" class="btn btn-light mt-3 mb-3 ml-3 ml-md-0">
+            <i class="material-icons">reply</i>
             <span class="">{l s='Volver a la tienda' d='Shop.Sabanasblancas'}</span>
           </a>
         {/block}
@@ -38,7 +38,7 @@
       <div class="cart-grid-right col-12 col-lg-4">
 
         {block name='cart_summary'}
-          <div class="card cart-summary mb-3">
+          <div class="card cart-summary mb-md-3">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}

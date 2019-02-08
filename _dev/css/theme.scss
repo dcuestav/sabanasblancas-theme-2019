@@ -4,6 +4,7 @@
 
 // Estilo SabanasBlancas
 @import "blockreassurance";
+@import "cart";
 @import "category-cards";
 @import "category-page";
 @import "checkout";
@@ -78,8 +79,10 @@ input::placeholder {
   }
 }
 
-.blurred {
-  filter: blur(2px);
+@include media-breakpoint-up(md) {
+  .blurred {
+    filter: blur(2px);
+  }
 }
 
 #wrapper {

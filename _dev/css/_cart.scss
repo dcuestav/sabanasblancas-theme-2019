@@ -1,0 +1,24 @@
+body#cart {
+    @include media-breakpoint-down(sm) {
+        #main {
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-top: -1rem !important;
+            margin-bottom: -1rem !important;
+        }
+        #main .card {
+            border-width: 1px 0 1px;
+        }
+
+        #block-reassurance .list-group-item {
+            border-width: 1px 0 1px;
+            &:first-child {
+                border-top-width: 0;
+            }
+        }
+
+        .featured-products { // Carrito vacío
+            margin-top: 2rem;
+        }
+    }
+}

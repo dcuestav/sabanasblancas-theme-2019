@@ -14,7 +14,7 @@
   </div>
 {/if} *}
 
-<div id="block-reassurance" class="mb-3">
+<div id="block-reassurance" class="mb-md-3">
   <ul class="list-group">
     <li class="list-group-item list-group-item-action text-center">
       <p><strong>{l s='Envío gratis 24/48h' d='Shop.Sbreassurance'}</strong> {l s='por 50€ de compra' d='Shop.Sbreassurance'}</p>
