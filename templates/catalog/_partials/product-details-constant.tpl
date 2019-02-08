@@ -15,7 +15,7 @@
 
       <div class="list-group">
 
-          {if isset($product_manufacturer->id)}
+          {if isset($product_manufacturer->id) && $product_manufacturer->name == 'Mash'}
             <div class="list-group-item list-group-item-action brand">
               {if $mode=='icons'}
                 <img src="{$manufacturer_image_url}" title="{l s='Brand' d='Shop.Theme.Catalog'} {$product_manufacturer->name}"/>
