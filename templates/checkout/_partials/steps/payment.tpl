@@ -11,39 +11,32 @@
     {foreach from=$payment_options item="module_options"}
       {foreach from=$module_options item="option"}
 
-        <div class="card">
+        <div class="card js-selectable-card">
           <div class="card-body">
-            <div id="{$option.id}-container" class="row payment-option mb-0">
-              <div class="col-sm-1">
-                <input
-                  class="ps-shown-by-js {if $option.binary} binary {/if}"
+            <div id="{$option.id}-container" class="form-check payment-option">
+              {* TODO: Añadir logos *}
+              {* <img src="{$option.logo}" class="img-fluid" alt="{$option.call_to_action_text}"> *}
+              <input 
+                  type="radio" 
+                  class="ps-shown-by-js form-check-input {if $option.binary} binary {/if}"
+                  name="payment-option" 
                   id="{$option.id}"
                   data-module-name="{$option.module_name}"
-                  name="payment-option"
-                  type="radio"
                   required
                   {if $selected_payment_option == $option.id || $is_free} checked {/if}
-                >
-              </div>
-              <label for="{$option.id}" class="col-sm-11">
-                {* TODO: Añadir logos a las formas de pago *}
-                {if $option.logo}
-                  <span>{$option.call_to_action_text}</span>
-                  {* <img src="{$option.logo}" class="img-fluid" alt="{$option.call_to_action_text}"> *}
-                {else}
-                  <span>{$option.call_to_action_text}</span>
-                {/if}
+              >
+              <label class="form-check-label" for="{$option.id}">
+                <div class="h5">{$option.call_to_action_text}</div>
               </label>
-
               {if $option.additionalInformation}
-                <div
-                  id="{$option.id}-additional-information"
-                  class="js-additional-information definition-list additional-information{if $option.id != $selected_payment_option} ps-hidden {/if}"
-                >
+                <div id="{$option.id}-additional-information"
+                  class="js-additional-information definition-list additional-information{if $option.id != $selected_payment_option} ps-hidden {/if}">
                   {$option.additionalInformation nofilter}
                 </div>
               {/if}
+
             </div>
+            
           </div>
         </div>
 

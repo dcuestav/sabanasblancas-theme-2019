@@ -17,14 +17,28 @@ if ($('body#checkout').length) {
             $('#modal .js-modal-content').html('');
         });
     }
-    
-    function addClassSelectedInRadioCards() {
-        $('#checkout [name="payment-option"], #checkout .delivery-option input').change( (event) => {
-            $(event.target)
+
+    function selectableCardsBehavior() {
+        $('.js-selectable-card').click( (event) => {
+
+            var $selectedCard = $(event.target).closest('.card');
+            var $radio = $selectedCard.find('input[type="radio"]');
+
+            var radioGroup = $radio.attr('name');
+
+            // Desactivar todas las opciones
+            $(`input[type="radio"][name="${radioGroup}"]`)
                 .closest('.card')
+                .removeClass('selected')
+                .find('.js-additional-information').hide();
+
+            // Activar la opción seleccionada
+            $selectedCard
                 .addClass('selected')
-                .siblings()
-                .removeClass('selected');
+                .find('.js-additional-information').show();
+            
+            $radio.prop("checked", true);
+
         })
     }
 
@@ -65,8 +79,8 @@ if ($('body#checkout').length) {
     $(document).ready(()=>{
         checkAtLeastLastStepIsOpen();
         emptyTermsModalOnHide();
-        addClassSelectedInRadioCards();
         triggerAnalyticsCheckoutEvent();
+        selectableCardsBehavior();
     });
 
 }

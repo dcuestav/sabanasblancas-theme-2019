@@ -19,35 +19,24 @@
             <div class="delivery-options">
               {foreach from=$delivery_options item=carrier key=carrier_id}
 
-                <div class="card{if $delivery_option == $carrier_id} selected{/if}">
+                <div class="card js-selectable-card{if $delivery_option == $carrier_id} selected{/if}">
                   <div class="card-body">
-                    <div class="row delivery-option mb-0">
-                      <div class="col-sm-1">
-                        <input type="radio" name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if $delivery_option == $carrier_id} checked{/if}>
-                      </div>
-                      <label for="delivery_option_{$carrier.id}" class="col-sm-11 delivery-option-2">
-                        <div class="row">
-                          <div class="col-sm-5 col-12">
-                            <div class="row">
-                              {if $carrier.logo}
-                              <div class="col-3">
-                                  <img src="{$carrier.logo}" alt="{$carrier.name}" />
-                              </div>
-                              {/if}
-                              <div class="{if $carrier.logo}col-9{else}col-12{/if}">
-                                <span class="h6 carrier-name">{$carrier.name}</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-4 col-12">
-                            <span class="carrier-delay">{$carrier.delay}</span>
-                          </div>
-                          <div class="col-sm-3 col-12">
-                            <span class="carrier-price">{$carrier.price}</span>
-                          </div>
-                        </div>
+                    <div class="form-check">
+                      <input 
+                          type="radio" 
+                          class="form-check-input"
+                          name="delivery_option[{$id_address}]" 
+                          id="delivery_option_{$carrier.id}" 
+                          value="{$carrier_id}"
+                          {if $delivery_option == $carrier_id} checked{/if}
+                      >
+                      <label class="form-check-label" for="delivery_option_{$carrier.id}">
+                        <div class="h5">{$carrier.name}</div>
+                        <div class="additional-information">{$carrier.delay}</div>
+                        <div class="additional-information">{$carrier.price}</div>
                       </label>
-                    </div>  
+                    </div>
+                    
                   </div>  
                 </div>
 

@@ -3,67 +3,61 @@ body#checkout {
     $card-selected-color: #c7e8ff;
 
     #accordion {
+
+        .card.checkout-step {
+
+            .step-title {
+                text-transform: uppercase;
+        
+                .step-edit {
+                    font-size: 1rem;
+                    text-transform: lowercase;
+                    .material-icons {
+                        font-size: 20px;
+                    }
+                    span {
+                        padding-left: 1.5em;
+                    }
+                }
+            }
+
+            .step-title:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.06);
+                .step-edit {
+                    display: inline-block !important;
+                }
+            }
+
+            .step-done-check {
+                color: $green;
+                line-height: 0;
+                position: relative;
+                top: 2px;    
+            }
+        }
+
         .card.selected {
             background-color: $card-selected-color;
         }
-        .card-header:hover {
+
+        .js-selectable-card,
+        .js-selectable-card label {
             cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.06);
-            .step-edit {
-                display: inline-block !important;
-            }
         }
-    
+
         .additional-information {
-            margin-left: 1.5rem;
-            margin-top: 1.25rem;
-            font-size: .9rem;
-            color: lighten($body-color, 10%);
+            font-size: 0.9em;
         }
-    
-        .step-done-check {
-            color: $green;
-            line-height: 0;
-            position: relative;
-            top: 2px;    
-        }
-    
-    }
-
-    .nav-link {
-        font-weight: 700;
-        font-size: 1.1em;
-        opacity: 0.4;
-        &.active {
-            opacity: 1;
-        } 
-    }
-
-    .step-title {
-        text-transform: uppercase;
-
-        .step-edit {
-            font-size: 1rem;
-            text-transform: lowercase;
+            
+        .address-footer {
+            font-size: 0.8em;
+            padding: .25rem 1.25rem .5rem;
             .material-icons {
                 font-size: 20px;
             }
-            span {
-                padding-left: 1.5em;
-            }
         }
-    }
-
-    .address {
-        font-size: 0.9em;
-    }
-
-    .address-footer {
-        font-size: 0.8em;
-        padding: .25rem 1.25rem .5rem;
-        .material-icons {
-            font-size: 20px;
-        }
+    
     }
 
     // Resumen del pedido
@@ -118,6 +112,9 @@ body#checkout {
         }
         .-unreachable {
             display: none;
+        }
+        #payment-confirmation button {
+            width: 100%;
         }
     }
 

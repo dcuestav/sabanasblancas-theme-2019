@@ -7,7 +7,7 @@
         class="card address-item{if $address.id == $selected} selected{/if}"
         id="{$name|classname}-address-{$address.id}"
       >
-        <header class="card-body">
+        <header class="card-body js-selectable-card">
 
           <div class="form-check">
             <input
@@ -18,9 +18,9 @@
                 value="{$address.id}"
                 {if $address.id == $selected}checked{/if}
               >
-            <label class="form-check-label w-100" for="address-{$random}-{$address.id}">
+            <label class="form-check-label" for="address-{$random}-{$address.id}">
               <span class="address-alias h4">{$address.alias}</span>
-              <div class="address">{$address.formatted nofilter}</div>
+              <div class="additional-information">{$address.formatted nofilter}</div>
             </label>
           </div>
         </header>
