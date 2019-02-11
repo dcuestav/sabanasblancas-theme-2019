@@ -1,4 +1,7 @@
 <section id="js-checkout-summary" class="card cart-summary js-cart mb-3" data-refresh-url="{$urls.pages.cart}?ajax=1&action=refresh">
+  <div class="card-header">
+    {l s='Shopping Cart' d='Shop.Theme.Checkout'}
+  </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
       {block name='hook_checkout_summary_top'}

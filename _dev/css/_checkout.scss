@@ -1,12 +1,35 @@
-$card-selected-color: #c7e8ff;
+body#checkout {
 
-.cart-summary {
-    .value {
-        float: right;
+    $card-selected-color: #c7e8ff;
+
+    #accordion {
+        .card.selected {
+            background-color: $card-selected-color;
+        }
+        .card-header:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.06);
+            .step-edit {
+                display: inline-block !important;
+            }
+        }
+    
+        .additional-information {
+            margin-left: 1.5rem;
+            margin-top: 1.25rem;
+            font-size: .9rem;
+            color: lighten($body-color, 10%);
+        }
+    
+        .step-done-check {
+            color: $green;
+            line-height: 0;
+            position: relative;
+            top: 2px;    
+        }
+    
     }
-}
 
-#checkout {
     .nav-link {
         font-weight: 700;
         font-size: 1.1em;
@@ -43,6 +66,14 @@ $card-selected-color: #c7e8ff;
         }
     }
 
+    // Resumen del pedido
+
+    .cart-summary {
+        .value {
+            float: right;
+        }
+    }
+
     #cart-summary-product-list {
         font-size: .875rem;
         .media {
@@ -68,41 +99,26 @@ $card-selected-color: #c7e8ff;
         }
     }
 
-}
-#accordion {
-    .card.selected {
-        background-color: $card-selected-color;
-    }
-    .card-header:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.06);
-        .step-edit {
-            display: inline-block !important;
+    @include media-breakpoint-down(sm) {
+        #content {
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-top: -1rem !important;
+            margin-bottom: -1rem !important;
+        }
+        #content .card.checkout-step {
+            border-width: 1px 0 1px;
+        }
+        #accordion {
+            margin-bottom: 1rem !important;
+        }
+        .card.cart-summary {
+            margin-bottom: 0 !important;
+            border-width: 1px 0 1px;
+        }
+        .-unreachable {
+            display: none;
         }
     }
 
-    .additional-information {
-        margin-left: 1.5rem;
-        margin-top: 1.25rem;
-        font-size: .9rem;
-        color: lighten($body-color, 10%);
-    }
-
-    .step-done-check {
-        color: $green;
-        line-height: 0;
-        position: relative;
-        top: 2px;    
-    }
-}
-
-body#order-confirmation {
-    #order-confirmation-title {
-        .material-icons {
-            font-size: 39px;
-        }
-        span {
-            padding-left: 3.5rem;
-        }
-    }
 }

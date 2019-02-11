@@ -27,12 +27,13 @@
         >error_outline</i>
       </a>
     </li>
-    <li class="list-group-item list-group-item-action text-center icon-adjust">
-      <i class="material-icons">swap_horiz</i>
-      <span><strong>{l s='14 días' d='Shop.Sbreassurance'}</strong> {l s='para cambios y devoluciones' d='Shop.Sbreassurance'}</span>
-
-      <a href="{$urls.pages.cms}&id_cms=6" title="{l s='Política de devoluciones' d='Shop.Sbreassurance'}" rel="nofollow">
-        <i class="material-icons more-info-icon" 
+    <li class="list-group-item list-group-item-action text-center">
+      <div class="icon-adjust">
+        <i class="material-icons">swap_horiz</i>
+        <span><strong>{l s='14 días' d='Shop.Sbreassurance'}</strong> {l s='para cambios y devoluciones' d='Shop.Sbreassurance'}</span>
+      </div>
+      <a href="{$urls.pages.cms}&id_cms=6" title="{l s='Política de devoluciones' d='Shop.Sbreassurance'}" rel="nofollow" class="more-info-icon">
+        <i class="material-icons" 
           data-toggle="tooltip" data-html="true" data-placement="left"
           title="<p>{l s='Conserve el embalaje original' d='Shop.Sbreassurance'}</p><p>{l s='El transporte de vuelta es por cuenta del cliente, excepto defectos de fabricación' d='Shop.Sbreassurance'}</p><p>{l s='Clic para más info...' d='Shop.Sbreassurance'}</p>"
         >error_outline</i>
