@@ -7,14 +7,14 @@
         padding-right: 28px;
     }
     .more-info-icon {
+        display: block;
         position:absolute;
         top: 2px;
         right: 2px;
         opacity: 0.8;
-        cursor: pointer;
         color: $primary;
         i {
-            transform:rotate(180deg);
+            transform: rotate(180deg);
         }
     }
 

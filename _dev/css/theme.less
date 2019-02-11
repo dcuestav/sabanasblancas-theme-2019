@@ -9,16 +9,16 @@
 @import "../node_modules/flexslider/css/resets.less";
 @import "../node_modules/flexslider/css/base.less";
 @import "../node_modules/flexslider/css/theme.less";
-@import "../node_modules/flexslider/css/responsive.less";
+// @import "../node_modules/flexslider/css/responsive.less";
 
 
-.flex-direction-nav a.flex-prev,
-.flex-direction-nav a.flex-next {
+.flex-direction-nav .flex-prev,
+.flex-direction-nav .flex-next {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   top: 52%;
-  left: 0 !important;
-  opacity: 0.7 !important;
+  left: 0;
+  opacity: 0.7;
   z-index: 3;
   text-indent: -9999px;
   overflow: hidden;
@@ -29,18 +29,31 @@
   margin-top: -45px;
 
   &:active {
-    opacity: 1.0 !important;
+    opacity: 1;
   }
 
   &.flex-disabled {
-    opacity: 0 !important;
+    opacity: 0;
     z-index: -1 !important;
   }
 
 }
 
-.flex-direction-nav a.flex-next {
-  left: auto !important;
+.flex-direction-nav .flex-next {
+  left: auto;
   background-position: right top;
-  right: 0 !important;
+  right: 0;
+}
+
+@media screen and ( max-width: 860px ) {
+
+  .flex-direction-nav .flex-prev {
+    // opacity: 1; 
+    left: -15px !important;
+  }
+
+  .flex-direction-nav .flex-next {
+    // opacity: 1; 
+    right: -15px !important;
+  }
 }

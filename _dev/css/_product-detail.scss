@@ -379,13 +379,6 @@
     }
 }
 
-// Accesorios
-// El overflow rompe el layout de la página. Hay que mantenerlo oculto
-.product-accessories, 
-.featured-products {
-  overflow-x: hidden;
-}
-
 // Ajustes versión móvil
 @include media-breakpoint-down(sm) {
     body#product {

@@ -15,7 +15,7 @@ if ($('body#product,body#cart,body#checkout').length) {
     }
 
     function loadCmsInfo() {
-        $('#block-reassurance a>i').on('click', (event) => {
+        $('#block-reassurance .more-info-icon').on('click', (event) => {
             event.preventDefault();
             var anchor = $(event.target).parent();
             var url = anchor.attr('href');

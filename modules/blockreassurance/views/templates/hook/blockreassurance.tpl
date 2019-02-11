@@ -20,8 +20,8 @@
       <p><strong>{l s='Envío gratis 24/48h' d='Shop.Sbreassurance'}</strong> {l s='por 50€ de compra' d='Shop.Sbreassurance'}</p>
       <img class="img-fluid" src="{$urls.theme_assets}img/logos-envio.png" alt="MRW UPS Click Canarias">
 
-      <a href="{$urls.pages.cms}&id_cms=1" title="{l s='Condiciones de envío' d='Shop.Sbreassurance'}" rel="nofollow">
-        <i class="material-icons more-info-icon" 
+      <a href="{$urls.pages.cms}&id_cms=1" title="{l s='Condiciones de envío' d='Shop.Sbreassurance'}" rel="nofollow" class="more-info-icon">
+        <i class="material-icons" 
           data-toggle="tooltip" data-html="true" data-placement="left"
           title="<p>{l s='3,90€ para pedidos de menos de 50€' d='Shop.Sbreassurance'}</p><p>{l s='Válido para España penínsular y Baleares. Sólo días laborables' d='Shop.Sbreassurance'}</p><p>{l s='También enviamos a Canarias y Europa' d='Shop.Sbreassurance'}</p><p>{l s='Clic para más info...' d='Shop.Sbreassurance'}</p>"
         >error_outline</i>
