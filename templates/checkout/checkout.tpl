@@ -46,10 +46,6 @@
         </section>
       {/block}
 
-      {block name='modal'}
-        {include file='_partials/cms-modal.tpl'}
-      {/block}
-      
       {hook h="displayWrapperBottom"}
     </section>
 
@@ -58,6 +54,10 @@
         {include file='checkout/_partials/footer.tpl'}
       {/block}
     </footer>
+
+    {block name='modal'}
+      {include file='_partials/cms-modal.tpl'}
+    {/block}
 
     {block name='javascript_bottom'}
       {include file="_partials/javascript.tpl" javascript=$javascript.bottom}
