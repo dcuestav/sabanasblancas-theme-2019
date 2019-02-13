@@ -32,7 +32,7 @@
 
   {else}
 
-    <ul class="nav my-4" role="tablist">
+    <ul class="nav nav-pills bg-light mb-4" role="tablist">
       <li class="nav-item">
         <a
           class="nav-link {if !$show_login_form}active{/if}"
