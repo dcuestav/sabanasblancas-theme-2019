@@ -62,11 +62,14 @@
   </script>
 {/block}
 
+{block name='page_header_container'}
+{/block}
+
 {block name='page_content_container' prepend}
     <section id="content-hook_order_confirmation" class="alert alert-primary mb-3">
 
       {block name='order_confirmation_header'}
-        <h3 class="h1 mb-3 icon-adjust" id="order-confirmation-title">
+        <h3 class="mb-3 icon-adjust" id="order-confirmation-title">
           <i class="material-icons">done</i>
           <span>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}</span>
         </h3>
