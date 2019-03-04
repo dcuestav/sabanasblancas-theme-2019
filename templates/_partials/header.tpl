@@ -29,12 +29,12 @@
           {if $page.page_name == 'index'}
             <h1 class="text-center mb-0">
               <a href="{$urls.base_url}">
-                <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_white_397_60.png" alt="{$shop.name}">
+                <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_8marzo_397_60.png" alt="{$shop.name}">
               </a>
             </h1>
           {else}
             <a href="{$urls.base_url}">
-              <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_white_397_60.png" alt="{$shop.name}">
+              <img class="logo img-fluid" src="{$urls.theme_assets}img/sabanasblancas_8marzo_397_60.png" alt="{$shop.name}">
             </a>
           {/if}
         </div>

@@ -52,8 +52,8 @@ $category-img-height: 150px;
 
     background-attachment: fixed;
     // Lion milk
-    background-color: #aee1f9;
-    background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);
+    // background-color: #aee1f9;
+    // background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);
     // Wedding song (toque rosa)
     // background-color: #fde7f9;
     // background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
@@ -63,6 +63,9 @@ $category-img-height: 150px;
     // Wish stone (oscuro)
     // background-color: #e3efe8;
     // background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+    // Wedding song al revés
+    background-color: #fde7f9;
+    background-image: linear-gradient(315deg, #aacaef 0%, #fde7f9 74%);
 
     &:hover {
         text-decoration: none;

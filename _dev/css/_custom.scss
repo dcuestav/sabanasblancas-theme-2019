@@ -12,7 +12,8 @@ $h5-font-size: $font-size-base;
 $h6-font-size: $font-size-base;
 
 $accent: yellow;
-$base-color: lighten(#052c59, 10%);
+// $base-color: lighten(#052c59, 10%); // COLOR ORIGINAL
+$base-color: lighten(#480559, 10%);
 $header-nav-background: darken($base-color, 10%);
 $footer-nav-background: $header-nav-background;
 
