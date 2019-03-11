@@ -4,7 +4,8 @@
     {include file='_partials/form-errors.tpl' errors=$errors['']}
   {/block}
 
-  <form action="{block name='customer_form_actionurl'}{$action}{/block}" id="customer-form" method="post" novalidate>
+  {* Si se usa novalidate, hay que hacer ver las condiciones que genera Prestashop y añadirlas en javascript *}
+  <form action="{block name='customer_form_actionurl'}{$action}{/block}" id="customer-form" method="post">
 
     <section class="form-fields">
       {block "form_fields"}

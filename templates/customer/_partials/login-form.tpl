@@ -4,7 +4,8 @@
     {include file='_partials/form-errors.tpl' errors=$errors['']}
   {/block}
 
-  <form id="login-form" action=" {block name='login_form_actionurl'}{$action}{/block}" method="post" novalidate>
+  {* Si se usa novalidate, hay que hacer ver las condiciones que genera Prestashop y añadirlas en javascript *}
+  <form id="login-form" action=" {block name='login_form_actionurl'}{$action}{/block}" method="post">
 
     <section class="form-fields">
       {block name='form_fields'}

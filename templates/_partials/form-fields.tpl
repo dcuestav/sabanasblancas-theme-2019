@@ -96,7 +96,7 @@
 {elseif $field.type === 'password'}
   
   {block name='form_field_item_password'}
-    <div class="form-group row">
+    <div class="form-group row mb-0">
       <label for="{$field.name}{$random_number}" class='col-md-3 col-form-label {if $field.required}required{/if}'>{$field.label}</label>
       <div class="col-md-6 input-group">
         <input
@@ -127,6 +127,13 @@
           </ul>
         {/if}
       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-6 offset-md-3">
+        <small class="text-muted">
+          {l s='Al menos 5 caracteres' d='Shop.Forms.Help'}
+        </small>
+      </div> 
     </div>
   {/block}
 
